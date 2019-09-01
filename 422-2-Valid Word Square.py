@@ -2,25 +2,14 @@
 # 1x1 为有效，例如[""]和["a"]
 # 第一行和第一列不相同为无效
 # 第一行和第一列若相同，检查子方块
-# some error
 
 
 class Solution:
-    def check(self, matrix, n):
-        j = n+1
-        for i in range(n+1, len(matrix)):
-            print(matrix[i][n], matrix[n][j])
-            if matrix[i][n] != matrix[n][j]:
-                return False
-            j += 1
-        return True
-
     def validWordSquare(self, words):
-        for i in range(len(words)):
-            if i == len(words[i])-1:
-                break
-            if self.check(words, i) == False:
-                return False
+        for i in range(0, len(words)):
+          for j in range(0, len(words[i])):
+            if j >= len(words) or i >= len(words[j]) or words[j][i] != words[i][j]:
+              return False
         return True
 
 
