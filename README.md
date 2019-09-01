@@ -12,3 +12,15 @@ https://github.com/guancongyi/LeetCode/tree/master/LeetCode
 200
 
 222
+
+
+
+# Day 02
+
+1057 - pending
+
+766
+
+422
+
+266
