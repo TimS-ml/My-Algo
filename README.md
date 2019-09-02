@@ -7,20 +7,41 @@ https://github.com/guancongyi/LeetCode/tree/master/LeetCode
 
 # Day 01
 
-929
+E929
 
-200
+M200
 
-222
+M222
 
 
 
 # Day 02
 
-1057 - pending
+E266
 
-766
+M1057 - pending
 
-422
+M766
 
-266
+M422
+
+
+
+
+
+# Day 03
+
+M56
+
+M582
+
+
+
+# Day 04
+
+E993
+
+M749
+
+M939
+
