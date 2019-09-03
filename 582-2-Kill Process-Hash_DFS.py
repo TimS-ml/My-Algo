@@ -12,7 +12,7 @@ class Solution:
             else:
                 mpppid[ppid[i]] = [i]
         # mpppid存了ppid[i]的location，用location去找对应的子pid
-        # print(mpppid)
+        print(mpppid)
         res = [kill]
 
         def dfs(x):
