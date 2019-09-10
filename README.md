@@ -3,6 +3,8 @@ Just some casual LeetCode practices.
 If you need cpp version:
 https://github.com/guancongyi/LeetCode/tree/master/LeetCode
 
+The Add question is not included in Guan's repository.
+
 
 
 # Day 01
@@ -17,21 +19,21 @@ M222
 
 # Day 02
 
-E266
-
-M1057 - pending
+M422
 
 M766
 
-M422
+M1057 - pending
 
+Add:
 
+E266
 
 
 
 # Day 03
 
-M56
+M056
 
 M582
 
@@ -57,9 +59,9 @@ M570
 
 # Day 06
 
-E800 - pending
-
 E604
+
+E800 - pending
 
 M549
 
@@ -82,3 +84,31 @@ E380
 # Day 09
 
 E204
+
+
+
+# Day 10
+
+M022
+
+Review:
+
+E929
+
+M200
+
+
+
+# Day 11
+
+M003
+
+M078
+
+Review:
+
+M222
+
+Add:
+
+H340
