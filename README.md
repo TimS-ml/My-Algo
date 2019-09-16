@@ -7,7 +7,7 @@ The Add question is not included in Guan's repository.
 
 
 
-# Day 01
+# Day 01 - Aug. 30
 
 E929
 
@@ -25,7 +25,7 @@ M766
 
 M1057 - pending
 
-Add:
+## Add:
 
 E266
 
@@ -99,7 +99,7 @@ M200
 
 
 
-# Day 11
+# Day 11 - Sep. 09
 
 M003
 
@@ -109,6 +109,52 @@ Review:
 
 M222
 
-Add:
+## Add:
 
 H340
+
+
+
+# Day 12
+
+H159
+
+Review:
+
+M422
+
+M766
+
+## Add:
+
+M395
+
+# Day 13
+
+H076
+
+Review:
+
+M422
+
+M766
+
+## Add:
+
+M424
+
+
+
+# Day 14
+
+55
+
+376
+
+
+
+# Day 15
+
+406
+
+763

@@ -1,32 +1,8 @@
-# https://leetcode-cn.com/problems/longest-substring-with-at-most-k-distinct-characters/
-# See 003 for template
-# https://leetcode-cn.com/problems/longest-substring-with-at-most-k-distinct-characters/solution/zhi-shao-bao-han-k-ge-bu-t
+directions = [(-1, 0), (0, -1), (1, 0), (0, 1)]
 
+i, j = 1, 1
 
-class Solution:
-    def lengthOfLongestSubstringKDistinct(self, s: str, k: int) -> int:
-        if k == 0 or len(s) == 0:
-            return 0
-        
-        dic = {}
-        start, end = 0, 0
-        res = 0
-        
-        while end < len(s):
-            # move end pointer
-            dic[s[end]] = end
-            end += 1
-
-            # slidewindow contains 3 characters
-            if len(dic) == k + 1:
-                temp = min(dic.values())  # delete the leftmost character
-                del dic[s[temp]]
-                start = temp + 1  # move start pointer of the slidewindow
-            res = max(res, end-start)
-        return res
-
-
-s1, k1 = "a", 0
-s2, k2 = "eceba", 2
-
-print(Solution().lengthOfLongestSubstringKDistinct(s2, k2))
+for direct in directions:
+    new_i = i + direct[0]
+    new_j = j + direct[1]
+    print(new_i, new_j)
