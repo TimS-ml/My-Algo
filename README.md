@@ -42,7 +42,7 @@ https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=521825
 刷題多少不是重點，重點是：
 
 - 1 - presentation。特別是在phonein時，要講得讓interviewer明白
-- 2 - 要能在不用editor/compilor幫助下，写(尽量)bug-free的code。因為不論是whiteboard還是phonein用google doc/livecode/coderpad，你不會有editor/compiler幫助，interviwer也不會幫你debug**
+- 2 - 要能在不用editor/compilor幫助下，写(尽量)bug-free的code。因為不論是whiteboard還是phonein用google doc/livecode/coderpad，你不會有editor/compiler幫助，interviwer也不會幫你debug
 
 所以現在，每題我也像考speaking般:
 
@@ -232,9 +232,9 @@ M402
 
 # Day 19
 
-452
+M452
 
-714
+M714
 
 
 
@@ -266,22 +266,22 @@ E110
 
 # Day 24
 
-M114
-
 M109
+
+M114
 
 
 
 # Day 25 - Sep. 23
 
-M257
+E257
 
 M547
 
 
 
-# Day 26 - 28 pass
+# Day 26 - 29 pass
 
 
 
-# Day 29
+# Day 30  - Sep. 28
