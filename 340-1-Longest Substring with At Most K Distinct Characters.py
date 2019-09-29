@@ -16,7 +16,7 @@ class Solution:
                 dic[s[i]] = 1
             else:
                 dic[s[i]] += 1
-
+            
             while len(dic) > 2:
                 temp = s[start]
                 if dic[temp] > 1:
