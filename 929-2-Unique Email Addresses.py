@@ -8,11 +8,11 @@ class Solution:
             local, domain = email.split('@')
             if '+' in local:
                 local = local[:local.index('+')]
-            ans.add(local.replace('.','') + '@' + domain)
+            ans.add(local.replace('.', '') + '@' + domain)
         return len(ans)
 
 
-emails = ["test.email+alex@leetcode.com", 
-        "test.e.mail+bob.cathy@leetcode.com", 
-        "testemail+david@lee.tcode.com"]
+emails = ["test.email+alex@leetcode.com",
+          "test.e.mail+bob.cathy@leetcode.com",
+          "testemail+david@lee.tcode.com"]
 print(Solution().numUniqueEmails(emails))

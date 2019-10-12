@@ -1,6 +1,7 @@
 # https://leetcode-cn.com/problems/design-compressed-string-iterator/
 # redundancy version
 
+
 class StringIterator:
     def __init__(self, compressedString: str):
         self.string = compressedString

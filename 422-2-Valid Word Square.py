@@ -7,9 +7,9 @@
 class Solution:
     def validWordSquare(self, words):
         for i in range(0, len(words)):
-          for j in range(0, len(words[i])):
-            if j >= len(words) or i >= len(words[j]) or words[j][i] != words[i][j]:
-              return False
+            for j in range(0, len(words[i])):
+                if j >= len(words) or i >= len(words[j]) or words[j][i] != words[i][j]:
+                    return False
         return True
 
 

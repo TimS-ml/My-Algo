@@ -9,7 +9,7 @@ class Solution(object):
         :rtype: void Do not return anything, modify nums in-place instead.
         """
         self.quickSort(nums, 0, len(nums)-1)
-        #print nums
+        # print nums
 
     def quickSort(self, nums, left, right):
         if left > right:

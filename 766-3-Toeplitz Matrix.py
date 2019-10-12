@@ -1,6 +1,7 @@
 # https://leetcode-cn.com/problems/toeplitz-matrix/
 # same as solution 2
 
+
 class Solution:
     def isToeplitzMatrix(self, matrix):
         tmp = []
@@ -18,12 +19,12 @@ class Solution:
 
 
 matrix1 = [
-    [1,2,3,4], 
-    [5,1,2,3], 
-    [9,5,1,2],
+    [1, 2, 3, 4],
+    [5, 1, 2, 3],
+    [9, 5, 1, 2],
 ]
 matrix2 = [
-  [1,2],
-  [2,2],
+    [1, 2],
+    [2, 2],
 ]
 print(Solution().isToeplitzMatrix(matrix2))

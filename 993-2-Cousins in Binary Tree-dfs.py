@@ -18,13 +18,13 @@ class Tree(object):
 
     def add(self, val):
         node = TreeNode(val)
-        
+
         # 如果树是空的，则对根节点赋值
         if self.root.val == -1:
             self.root = node
             self.myQueue.append(self.root)
             print(self.myQueue, self.root.val, 'top')
-        
+
         # 如果有根节点
         else:
             treeNode = self.myQueue[0]  # 检查myQueue[0]的子树
@@ -57,6 +57,7 @@ class Solution:
     def isCousins(self, root, x, y):
         parent = {}
         depth = {}
+
         def dfs(node, par=None):  # par => parent
             if node:
                 depth[node.val] = 1 + depth[par.val] if par else 0

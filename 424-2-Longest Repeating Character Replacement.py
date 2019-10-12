@@ -22,7 +22,6 @@ class Solution:
                 char_dict[s[l]] -= 1
                 l += 1
         return res
-        
 
 
 s1, k1 = "ABAB", 2

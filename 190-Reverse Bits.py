@@ -19,4 +19,3 @@ class Solution:
 
 n = 4294967293
 print(Solution().reverseBits(n))
-

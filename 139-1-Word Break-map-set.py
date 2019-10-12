@@ -26,4 +26,3 @@ s = "applepenapple"
 wordDict1 = ["apple", "pen"]
 wordDict2 = ["apple", "penapple"]
 print(Solution().wordBreak(s, wordDict2))
-

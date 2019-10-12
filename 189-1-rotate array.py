@@ -13,14 +13,14 @@ class Solution:
                 start += 1
                 end -= 1
 
-        n = len(nums) - 1 # 末尾元素的序号
-        k = k % len(nums) # 如果k比len(nums)大，就跳过重复循环
+        n = len(nums) - 1  # 末尾元素的序号
+        k = k % len(nums)  # 如果k比len(nums)大，就跳过重复循环
         # [4, 3, 2, 1, 5, 6, 7]
         # [4, 3, 2, 1, 7, 6, 5]
         # [5, 6, 7, 1, 2, 3, 4]
-        reverse(0, n - k, nums) # 翻转前面
-        reverse(n - k + 1, n, nums) # 翻转后面
-        reverse(0, n, nums) # 全翻转
+        reverse(0, n - k, nums)  # 翻转前面
+        reverse(n - k + 1, n, nums)  # 翻转后面
+        reverse(0, n, nums)  # 全翻转
         print(nums)
 
 

@@ -22,7 +22,8 @@ class Solution:
                         elif i < j and k == j:
                             ret += count[k] * (count[k] - 1) / 2 * count[i]
                         elif i == k and k == j:
-                            ret += count[i] * (count[i] - 1) * (count[i] - 2) / 6
+                            ret += count[i] * (count[i] - 1) * \
+                                (count[i] - 2) / 6
         return (int(ret) % (10 ** 9 + 7))
 
 

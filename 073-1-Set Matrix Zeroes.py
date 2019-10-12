@@ -19,8 +19,8 @@ class Solution:
                     front_row = True
                 if i > 0 and j > 0 and matrix[i][j] == 0:
                     matrix[0][j] = 0
-                    matrix[i][0] = 0        
-        
+                    matrix[i][0] = 0
+
         for i in range(len_col):
             print(matrix[i])
 
@@ -32,7 +32,7 @@ class Solution:
             for j in range(len_row):
                 if matrix[0][j] == 0:
                     matrix[i][j] = 0
-        
+
         if front_col == True:
             for i in range(len_col):
                 matrix[i][0] = 0
@@ -40,7 +40,6 @@ class Solution:
             matrix[0] = [0] * len_row
         for i in range(len_col):
             print(matrix[i])
-
 
 
 matrix1 = [

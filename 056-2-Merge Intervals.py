@@ -12,5 +12,6 @@ class Solution:
                 ans.append(i)
         return ans
 
+
 intervals = [[1, 3], [2, 6], [15, 18], [8, 10]]
 print(Solution().merge(intervals))

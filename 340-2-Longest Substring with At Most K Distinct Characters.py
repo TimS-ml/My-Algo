@@ -8,11 +8,11 @@ class Solution:
     def lengthOfLongestSubstringKDistinct(self, s: str, k: int) -> int:
         if k == 0 or len(s) == 0:
             return 0
-        
+
         dic = {}
         start, end = 0, 0
         res = 0
-        
+
         while end < len(s):
             # move end pointer
             dic[s[end]] = end

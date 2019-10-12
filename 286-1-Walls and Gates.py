@@ -14,12 +14,11 @@ class Solution:
         for i in range(m):
             for j in range(n):
                 # start
-                if rooms[i][j]==0:
+                if rooms[i][j] == 0:
                     self.dfs(i, j, rooms, 0)
 
-
     def dfs(self, r, c, rooms, d):
-        if r<0 or c<0 or r>=len(rooms) or c>=len(rooms[0]) or rooms[r][c]<d:
+        if r < 0 or c < 0 or r >= len(rooms) or c >= len(rooms[0]) or rooms[r][c] < d:
             return
         # mark as 0 and then other path + 1
         rooms[r][c] = d
@@ -30,10 +29,10 @@ class Solution:
 
 
 rooms = [
-    [2147483647,-1,0,2147483647],
-    [2147483647,2147483647,2147483647,-1],
-    [2147483647,-1,2147483647,-1],
-    [0,-1,2147483647,2147483647]]
+    [2147483647, -1, 0, 2147483647],
+    [2147483647, 2147483647, 2147483647, -1],
+    [2147483647, -1, 2147483647, -1],
+    [0, -1, 2147483647, 2147483647]]
 
 Solution().wallsAndGates(rooms)
 print(rooms)

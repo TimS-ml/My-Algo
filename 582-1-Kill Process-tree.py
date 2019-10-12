@@ -19,13 +19,13 @@ class Tree(object):
 
     def add(self, val):
         node = TreeNode(val)
-        
+
         # 如果树是空的，则对根节点赋值
         if self.root.val == -1:
             self.root = node
             self.myQueue.append(self.root)
             print(self.myQueue, self.root.val, 'top')
-        
+
         # 如果有根节点
         else:
             treeNode = self.myQueue[0]  # 检查myQueue[0]的子树
@@ -58,7 +58,8 @@ class Solution:
     def killProcess(self, pid, ppid, kill):
         return
 
-pid =  [1, 3, 10, 5]
+
+pid = [1, 3, 10, 5]
 ppid = [3, 0, 5, 3]
 kill = 5
 # print(Solution().killProcess(pid, ppid, kill))

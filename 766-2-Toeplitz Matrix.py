@@ -12,12 +12,12 @@ class Solution:
 
 
 matrix1 = [
-    [1,2,3,4], 
-    [5,1,2,3], 
-    [9,5,1,2],
+    [1, 2, 3, 4],
+    [5, 1, 2, 3],
+    [9, 5, 1, 2],
 ]
 matrix2 = [
-  [1,2],
-  [2,2],
+    [1, 2],
+    [2, 2],
 ]
 print(Solution().isToeplitzMatrix(matrix2))

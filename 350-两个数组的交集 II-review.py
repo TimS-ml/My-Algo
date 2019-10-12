@@ -21,8 +21,8 @@ class Solution:
 
 nums1 = [1, 2, 2, 1]
 nums2 = [2, 2]
-nums3 = [4,9,5]
-nums4 = [9,4,9,8,4]
+nums3 = [4, 9, 5]
+nums4 = [9, 4, 9, 8, 4]
 
 print(Solution().intersect(nums1, nums2))
 print(Solution().intersect(nums3, nums4))

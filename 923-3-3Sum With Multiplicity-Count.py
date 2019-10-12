@@ -12,7 +12,7 @@ class Solution:
         # Counter({1: 3, 5: 3, 3: 2, 4: 1})
         print(count)
         # print('count[6]', count[6])  # 输出是0不是key error，很有意思
-        
+
         for i in count.keys():
             for j in count.keys():
                 k = target - (i + j)  # 也不用考虑k是不是再count里，元组

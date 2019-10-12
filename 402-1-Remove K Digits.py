@@ -5,13 +5,13 @@ class Solution:
     def removeKdigits(self, num: str, k: int) -> str:
         stack = []
         for c in num:
-            while k>0 and stack and stack[-1]>c:
+            while k > 0 and stack and stack[-1] > c:
                 stack.pop()
                 print("pop", stack)
                 k -= 1
             stack.append(c)
             print("append", stack)
-        if k>0:
+        if k > 0:
             stack = stack[:-k]
         return "".join(stack).lstrip("0") or "0"
 

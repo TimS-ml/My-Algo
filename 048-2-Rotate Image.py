@@ -22,7 +22,7 @@ class Solution(object):
             print('exchange_range', exchange_range)
             for j in range(0, exchange_range):
                 matrix[a1][b1], matrix[a2][b2], matrix[a3][b3], matrix[a4][b4] = matrix[a4][b4], matrix[a1][b1], \
-                                                                                 matrix[a2][b2], matrix[a3][b3]
+                    matrix[a2][b2], matrix[a3][b3]
                 # print(matrix[a1][b1], matrix[a2][b2], matrix[a3][b3], matrix[a4][b4])
                 b1 += 1
                 a2 += 1

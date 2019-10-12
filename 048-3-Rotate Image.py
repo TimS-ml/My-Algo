@@ -17,7 +17,8 @@ class Solution(object):
         for i in range(0, exchange):
             print('exchange_range', exchange_range)
             for j in range(0, exchange_range):
-                matrix[start][x], matrix[x][end], matrix[end][y], matrix[y][start] = matrix[y][start], matrix[start][x], matrix[x][end], matrix[end][y]
+                matrix[start][x], matrix[x][end], matrix[end][y], matrix[y][start] = matrix[
+                    y][start], matrix[start][x], matrix[x][end], matrix[end][y]
                 x += 1
                 y -= 1
 

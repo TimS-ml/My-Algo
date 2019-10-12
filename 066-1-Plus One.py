@@ -8,7 +8,7 @@ class Solution:
         :rtype: List[int]
         """
         carry = 1
-        
+
         for i in reversed(range(0, len(digits))):  # 倒着遍历
             # 进位之后可能会出现digit < digits[i]，十位、百位等等可能都需要进位
             digit = (digits[i] + carry) % 10  # 考虑进位，比如digits[i] = 9

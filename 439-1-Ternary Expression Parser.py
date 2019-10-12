@@ -19,5 +19,6 @@ class Solution:
             i -= 1
         return stack[0]
 
+
 expression = "T?2:3"
 print(Solution().parseTernary(expression))
