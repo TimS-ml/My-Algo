@@ -27,6 +27,7 @@ def addNode(val, root, myQueue):
         # print(myQueue, 'right')
         myQueue.pop(0)
 
+
 def level_queue(root):
     if root == None:
         return

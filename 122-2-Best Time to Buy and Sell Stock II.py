@@ -18,7 +18,8 @@ class Solution:
             if prices[i] >= prices[i + 1]:
                 valley = prices[i + 1]
             if prices[i] < prices[i + 1]:
-                if i < len(prices) - 2 and prices[i + 1] >= prices[i + 2]:  # 要用>=以包括price4里那种连续两个6的peak情况
+                # 要用>=以包括price4里那种连续两个6的peak情况
+                if i < len(prices) - 2 and prices[i + 1] >= prices[i + 2]:
                     peak = prices[i + 1]
                     maxprofit += (peak - valley)
                 if i >= len(prices) - 2:  # 如过i是倒数1、2个数的话

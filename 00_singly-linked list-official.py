@@ -4,8 +4,10 @@
 #         self.val = x
 #         self.next = None
 
+
 def stringToIntegerList(input):
     return json.loads(input)
+
 
 def stringToListNode(input):
     # Generate list from the input
@@ -21,6 +23,7 @@ def stringToListNode(input):
     ptr = dummyRoot.next
     return ptr
 
+
 def prettyPrintLinkedList(node):
     while node and node.next:
         print(str(node.val) + "->", end='')
@@ -30,6 +33,7 @@ def prettyPrintLinkedList(node):
         print(node.val)
     else:
         print("Empty LinkedList")
+
 
 def main():
     import sys

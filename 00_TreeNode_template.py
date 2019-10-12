@@ -2,6 +2,8 @@
 # for python2
 
 # Definition for a binary tree node.
+
+
 class TreeNode:
     def __init__(self, x):
         self.val = x
@@ -60,7 +62,6 @@ vals.pop(0)
 
 for i in range(len(vals)):
     add_node(vals[i], root, queue)
-
 
 
 ans = Solution().sortedArrayToBST(vals)

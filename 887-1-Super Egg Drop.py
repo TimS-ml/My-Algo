@@ -17,7 +17,8 @@ class Solution:
                 # 输出的minimum number of moves是任意F的
                 # F取特定值的时候恰巧可以少一两步推算出来，要舍弃，所以tMin取max
                 # print(i, minimun, 'recursive(%d, %d), recursive(%d, %d)' %(K-1, i-1, K, N-1))
-                tMin = max(recursive(K - 1, i - 1), recursive(K, N - i))  # 每次比较都要重新算一遍
+                tMin = max(recursive(K - 1, i - 1),
+                           recursive(K, N - i))  # 每次比较都要重新算一遍
                 minimun = min(minimun, 1 + tMin)
                 i += 1
                 # print('====')

@@ -8,11 +8,11 @@ class Solution:
             punctuate1 = emails[i].find('+')
             punctuate2 = emails[i].find('@')
             emails[i] = emails[i][0:punctuate1] + emails[i][punctuate2:]
-            
+
             count = 0
             punctuate2 = emails[i].find('@')
             for j in range(len(emails[i])):
-                if (emails[i][j]=='.') and (j<emails[i].find('@')):
+                if (emails[i][j] == '.') and (j < emails[i].find('@')):
                     count += 1
             emails[i] = emails[i].replace('.', '', count)
 
@@ -21,7 +21,7 @@ class Solution:
         return len(emails)
 
 
-emails = ["test.email+alex@leetcode.com", 
-        "test.e.mail+bob.cathy@leetcode.com", 
-        "testemail+david@lee.tcode.com"]
+emails = ["test.email+alex@leetcode.com",
+          "test.e.mail+bob.cathy@leetcode.com",
+          "testemail+david@lee.tcode.com"]
 print(Solution().numUniqueEmails(emails))

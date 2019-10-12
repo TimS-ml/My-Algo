@@ -1,6 +1,7 @@
 # https://leetcode-cn.com/problems/kill-process/
 # Hash + DFS
 
+
 class Solution:
     def killProcess(self, pid, ppid, kill):
         n = len(pid)
@@ -28,7 +29,7 @@ class Solution:
         return res
 
 
-pid =  [1, 3, 10, 5]
+pid = [1, 3, 10, 5]
 ppid = [3, 0, 5, 3]
 kill = 5
 print(Solution().killProcess(pid, ppid, kill))

@@ -18,4 +18,3 @@ class Solution:
 
 input_nums = [3, 2, 2, 2, 3, 3, 3]
 print(Solution().majorityElement(input_nums))
-

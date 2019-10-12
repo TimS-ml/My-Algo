@@ -1,5 +1,5 @@
 # https://leetcode-cn.com/problems/hamming-distance/
-# The Hamming distance between two integers 
+# The Hamming distance between two integers
 # is the number of positions at which the corresponding bits are different.
 
 
@@ -18,4 +18,3 @@ class Solution:
 x = 1
 y = 4
 print(Solution().hammingDistance(x, y))
-

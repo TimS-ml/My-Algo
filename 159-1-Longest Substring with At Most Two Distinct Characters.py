@@ -17,4 +17,3 @@ class Solution:
                 start = temp + 1  # move start pointer of the slidewindow
             res = max(res, i-start+1)
         return res
-        

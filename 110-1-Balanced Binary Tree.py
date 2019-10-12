@@ -18,13 +18,13 @@ class Tree(object):
 
     def add(self, val):
         node = TreeNode(val)
-        
+
         # 如果树是空的，则对根节点赋值
         if self.root.val == -1:
             self.root = node
             self.myQueue.append(self.root)
             print(self.myQueue, self.root.val, 'top')
-        
+
         # 如果有根节点
         else:
             treeNode = self.myQueue[0]  # 检查myQueue[0]的子树
@@ -60,13 +60,13 @@ class Solution:
                 return 0
             left = dfs(p.left)
             right = dfs(p.right)
-            if left==-1 or right==-1:
+            if left == -1 or right == -1:
                 return -1
-            if abs(left-right)>1:
+            if abs(left-right) > 1:
                 return -1
-            return 1+max(left,right)
+            return 1+max(left, right)
 
-        if dfs(root)==-1:
+        if dfs(root) == -1:
             return False
         return True
 

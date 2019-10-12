@@ -17,7 +17,7 @@ class Solution:
             # print(head)
             x, y = hx, hy
 
-            while y<len_y-1 and x<len_x-1:
+            while y < len_y-1 and x < len_x-1:
                 x += 1
                 y += 1
                 if matrix[y][x] != head:
@@ -31,12 +31,12 @@ class Solution:
 
 
 matrix1 = [
-    [1,2,3,4], 
-    [5,1,2,3], 
-    [9,5,1,2],
+    [1, 2, 3, 4],
+    [5, 1, 2, 3],
+    [9, 5, 1, 2],
 ]
 matrix2 = [
-  [1,2],
-  [2,2],
+    [1, 2],
+    [2, 2],
 ]
 print(Solution().isToeplitzMatrix(matrix2))

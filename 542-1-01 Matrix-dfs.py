@@ -15,11 +15,11 @@ class Solution:
         for i in range(m):
             for j in range(n):
                 if matrix[i][j] == 0:
-                    self.dfs(i, j, matrix,0)
+                    self.dfs(i, j, matrix, 0)
         return matrix
-    
+
     def dfs(self, i, j, matrix, d):
-        if i<0 or j<0 or i>=len(matrix) or j>=len(matrix[0]) or matrix[i][j]<d:
+        if i < 0 or j < 0 or i >= len(matrix) or j >= len(matrix[0]) or matrix[i][j] < d:
             return
         matrix[i][j] = d
         self.dfs(i+1, j, matrix, d+1)
@@ -29,13 +29,13 @@ class Solution:
 
 
 matrix1 = [
-    [0,0,0],
-    [0,1,0],
-    [1,1,1]]
+    [0, 0, 0],
+    [0, 1, 0],
+    [1, 1, 1]]
 
 matrix2 = [
-    [0,0,0],
-    [0,2,0],
-    [1,4,1]]
+    [0, 0, 0],
+    [0, 2, 0],
+    [1, 4, 1]]
 
 print(Solution().updateMatrix(matrix2))

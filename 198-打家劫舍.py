@@ -5,6 +5,7 @@
 # 如果不偷，收益为dp[2]-前3屋的收益
 # 逐步求最大值即可
 
+
 class Solution:
     def rob(self, nums) -> int:
         if len(nums) == 0:

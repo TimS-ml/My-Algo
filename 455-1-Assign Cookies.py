@@ -14,5 +14,5 @@ class Solution:
         return i
 
 
-g, s = [1,2], [1,2,3]
+g, s = [1, 2], [1, 2, 3]
 print(Solution().findContentChildren(g, s))

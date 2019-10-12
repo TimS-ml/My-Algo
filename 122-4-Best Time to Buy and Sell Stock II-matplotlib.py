@@ -25,7 +25,8 @@ class Solution:
                 if prices[start] < prices[i]:  # 一旦存在第s天之后的某天价格更高，就更新profit
                     # 比如len(prices) = 12，s = 3，5-12天范围内除了第6、7天之外都价格更高
                     # 那也就是分别尝试profit = (6-12天里的最大收益) + (第5天的时候买入的收益)，同理后面的几天
-                    profit = Solution().calculate(prices, i + 1) + prices[i] - prices[start]
+                    profit = Solution().calculate(prices, i + 1) + \
+                        prices[i] - prices[start]
                     if profit > maxprofit:  # 更新这个range里的最大收益
                         maxprofit = profit
                 if maxprofit > max:  # 更新全局最大收益

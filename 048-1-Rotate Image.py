@@ -26,16 +26,17 @@ class Solution(object):
         for i in range(0, h):
             for j in range(0, w-1-i):
                 print(matrix[i][j], matrix[w-1-j][h-1-i], 'w-1-i =', w-1-i)
-                matrix[i][j], matrix[w-1-j][h-1-i] = matrix[w-1-j][h-1-i], matrix[i][j]
-        
+                matrix[i][j], matrix[w-1-j][h-1 -
+                                            i] = matrix[w-1-j][h-1-i], matrix[i][j]
+
         # for i in range(len(matrix)):
         #     print(matrix[i])
 
 
 matrix = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
 ]
 
 # step1

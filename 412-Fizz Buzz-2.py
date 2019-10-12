@@ -1,6 +1,7 @@
 # https://leetcode-cn.com/problems/fizz-buzz/
 # 这样速度会快
 
+
 class Solution:
     def fizzBuzz(self, n):
         ans = []

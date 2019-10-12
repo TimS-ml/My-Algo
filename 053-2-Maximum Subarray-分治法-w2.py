@@ -14,7 +14,7 @@ class Solution:
         else:
             self.maxSubArray(nums[0: len(nums)//2])
             self.maxSubArray(nums[len(nums)//2: len(nums)])
-        
+
         leftMax = nums[len(nums)//2-1]
         tmp = 0
         # for i in range(len(nums)//2-1, -1, -1):

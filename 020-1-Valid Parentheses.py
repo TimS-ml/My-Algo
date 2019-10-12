@@ -25,6 +25,7 @@ class Solution:
         # The stack won't be empty for cases like ((() !!! 这算是另一种特殊情况
         return not stack
 
+
 s1 = "{[]}"
 s2 = "([)]"
 s3 = "(((())))"

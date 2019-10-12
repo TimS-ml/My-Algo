@@ -9,7 +9,7 @@ class Solution:
         # int[][] dp = new int[K + 1][N + 1];
         # 这里的dp[i][j]是i个蛋，j步，能预测多少层
         dp = [[0 for col in range(N+1)] for row in range(K+1)]
-        
+
         for j in range(1, N+1):  # number of move(s)
             dp[0][j] = 0  # zero egg
             for i in range(1, K+1):  # number of egg(s)

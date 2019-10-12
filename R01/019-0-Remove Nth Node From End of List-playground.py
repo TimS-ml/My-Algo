@@ -4,6 +4,7 @@ class ListNode:
         self.val = x
         self.next = None
 
+
 class Solution:
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
         dummy = ListNode(-1)  # 哑结点，在头部，以应对极端情况
@@ -12,7 +13,7 @@ class Solution:
         lenth = 0
 
         # 计算ListNode的长度
-        while tmp:  
+        while tmp:
             tmp = tmp.next
             lenth += 1
         # print('lenth', lenth)
@@ -30,9 +31,12 @@ class Solution:
         tmp.next = tmp.next.next
         return dummy.next
 
-## input是存储在json里的
+# input是存储在json里的
+
+
 def stringToIntegerList(input):
     return json.loads(input)
+
 
 def stringToListNode(input):
     # Generate list from the input
@@ -48,6 +52,7 @@ def stringToListNode(input):
     ptr = dummyRoot.next
     return ptr
 
+
 def listNodeToString(node):
     if not node:
         return "[]"
@@ -58,9 +63,11 @@ def listNodeToString(node):
         node = node.next
     return "[" + result[:-2] + "]"
 
+
 def main():
     import sys
     import io
+
     def readlines():
         for line in io.TextIOWrapper(sys.stdin.buffer, encoding='utf-8'):
             yield line.strip('\n')
@@ -69,16 +76,17 @@ def main():
     while True:
         try:
             line = next(lines)
-            head = stringToListNode(line);
+            head = stringToListNode(line)
             line = next(lines)
-            n = int(line);
-            
+            n = int(line)
+
             ret = Solution().removeNthFromEnd(head, n)
 
-            out = listNodeToString(ret);
+            out = listNodeToString(ret)
             print(out)
         except StopIteration:
             break
+
 
 if __name__ == '__main__':
     main()

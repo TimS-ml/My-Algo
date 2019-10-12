@@ -2,6 +2,7 @@
 # http://jalan.space/leetcode-notebook/#/algorithm/sort/quick/?id=_75-sort-colors
 # str.index(str, beg=0, end=len(string))
 
+
 class Solution(object):
     def sortColors(self, nums):
         for i in range(len(nums)-1):  # i是有序区和无序区的分界

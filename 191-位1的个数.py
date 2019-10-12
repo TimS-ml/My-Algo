@@ -1,5 +1,6 @@
 # https://leetcode-cn.com/problems/number-of-1-bits/
 
+
 class Solution(object):
     def hammingWeight(self, n):
         """

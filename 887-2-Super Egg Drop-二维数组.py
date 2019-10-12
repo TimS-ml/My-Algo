@@ -10,7 +10,7 @@ class Solution:
         # int[][] midResults = new int[K + 1][N + 1];
         # 这里的midResults[i][j]是i个蛋，j层，需要多少步
         midResults = [[0 for col in range(N+1)] for row in range(K+1)]
-        
+
         for i in range(1, K+1):
             midResults[i][0] = 0  # zero floor
 
@@ -27,7 +27,7 @@ class Solution:
                     tMin = max(midResults[k-1][x-1], midResults[k][j-x])
                     minimun = min(minimun, 1 + tMin)
                 midResults[k][j] = minimun
-        
+
         print(midResults)
         return midResults[K][N]
 

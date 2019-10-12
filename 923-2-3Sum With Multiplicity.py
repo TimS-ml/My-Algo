@@ -13,7 +13,8 @@ class Solution:
         for i in count:
             for j in count:
                 k = target - i - j
-                if i <= j and k in count:  # 不然会出key error, collections.Counter(A)不会
+                # 不然会出key error, collections.Counter(A)不会
+                if i <= j and k in count:
                     if i == j == k:
                         ret += (count[i] * (count[i]-1) * (count[i]-2) // 6)
                     elif i == j != k:

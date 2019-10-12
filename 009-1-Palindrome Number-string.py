@@ -11,5 +11,6 @@ class Solution:
                 return False
         return False
 
+
 x = 10
 print(Solution().isPalindrome(x))

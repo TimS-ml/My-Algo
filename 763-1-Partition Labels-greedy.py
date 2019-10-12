@@ -11,9 +11,9 @@ class Solution:
         print(dic, cur)
 
         for i, letter in enumerate(S):
-            if dic[letter] > cur :
+            if dic[letter] > cur:
                 cur = dic[letter]  # update paragraph
-            if i == cur :
+            if i == cur:
                 res.append(cur+1-sum(res))
         return res
 

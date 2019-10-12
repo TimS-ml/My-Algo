@@ -11,7 +11,8 @@ class Solution:
             return 1
         if memo[i] > 0:
             return memo[i]
-        memo[i] = Solution().climb(i+1, n, memo) + Solution().climb(i+2, n, memo)
+        memo[i] = Solution().climb(i+1, n, memo) + \
+            Solution().climb(i+2, n, memo)
         print(i, n, memo)
         return memo[i]
 

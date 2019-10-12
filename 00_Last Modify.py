@@ -1,4 +1,5 @@
-import os, datetime
+import os
+import datetime
 import matplotlib.pyplot as plt
 
 base_dir = 'D:\\Python\\LeetCode_python'
@@ -18,10 +19,10 @@ for i in range(0, len(file_list)):
 
     date_m = datetime.datetime.fromtimestamp(timestamp1)
     # date_c = datetime.datetime.fromtimestamp(timestamp2)
-    
+
     # print(file_list[i], '修改时间:', date_m.strftime('%Y-%m-%d %H:%M:%S'))
     # print(file_list[i], '修改时间:', date_m.strftime('%Y-%m-%d'))
-    
+
     n = date_m.strftime('%m-%d')
 
     if n in date_m_list:
@@ -29,8 +30,8 @@ for i in range(0, len(file_list)):
     else:
         date_m_list[n] = 1
 
-for i in sorted (date_m_list) : 
-    # print((i, date_m_list[i]), end =" ") 
+for i in sorted(date_m_list):
+    # print((i, date_m_list[i]), end =" ")
     x.append(i)
     y.append(date_m_list[i])
 
@@ -38,5 +39,5 @@ for i in sorted (date_m_list) :
 print(x, y)
 
 plt.bar(x, y)
-plt.xticks(rotation = 45)
+plt.xticks(rotation=45)
 plt.show()

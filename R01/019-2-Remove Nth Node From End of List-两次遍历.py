@@ -6,6 +6,7 @@ class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
+
     def __repr__(self):
         return str(self.val)
 
@@ -18,7 +19,7 @@ class Solution:
         lenth = 0
 
         # 计算ListNode的长度
-        while tmp:  
+        while tmp:
             tmp = tmp.next
             lenth += 1
         # print('lenth', lenth)

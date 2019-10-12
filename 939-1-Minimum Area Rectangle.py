@@ -31,13 +31,13 @@ class Solution:
                 for i in range(j):
                     y1 = column[i]
                     if (y1, y2) in last_x:
-                        ans = min(ans, (x-last_x[y1,y2])*(y2-y1))
+                        ans = min(ans, (x-last_x[y1, y2])*(y2-y1))
                     last_x[y1, y2] = x
         return ans if ans < float('inf') else 0
 
 
-points1 = [[1,1],[1,3],[3,1],[3,3],[4,1],[4,3]]
-points2 = [[1,1],[1,3],[3,1],[3,3],[2,2]]
+points1 = [[1, 1], [1, 3], [3, 1], [3, 3], [4, 1], [4, 3]]
+points2 = [[1, 1], [1, 3], [3, 1], [3, 3], [2, 2]]
 
 # x, y = [], []
 # for i in range(len(points1)):

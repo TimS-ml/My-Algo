@@ -14,7 +14,7 @@ class Solution:
 
         once = False
         for i in calc.values():
-            if i%2 == 1:
+            if i % 2 == 1:
                 if once:
                     return False
                 once = True

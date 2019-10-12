@@ -7,7 +7,8 @@ class Solution:
     def longestSubstring(self, s: str, k: int) -> int:
         if len(s) < k:
             return 0
-        c = min(set(s), key=s.count)  ## 按照count排序 Note: c = min(s, key=s.count) can be very slow
+        # 按照count排序 Note: c = min(s, key=s.count) can be very slow
+        c = min(set(s), key=s.count)
         print('c:', c)
         if s.count(c) >= k:
             print('>=', c, s.count(c))

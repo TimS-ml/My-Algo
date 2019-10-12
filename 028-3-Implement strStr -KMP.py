@@ -4,7 +4,8 @@
 
 class Solution:
     def strStr(self, haystack, needle) -> int:
-        if not needle : return 0
+        if not needle:
+            return 0
         _next = [0] * len(needle)
 
         # 生成next数组

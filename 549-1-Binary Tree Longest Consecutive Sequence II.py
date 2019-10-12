@@ -1,7 +1,6 @@
 # https://leetcode-cn.com/problems/binary-tree-longest-consecutive-sequence-ii/
 
 
-
 class Solution(object):
     def longestConsecutive(self, root):
         def dfs(root):

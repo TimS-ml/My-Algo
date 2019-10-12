@@ -17,4 +17,3 @@ nums = [11, 2, 15, 7]
 target = 19
 
 print(Solution().twoSum(nums, target))
-

@@ -8,7 +8,6 @@ class Solution:
     # 表示相对于当前位置的4个方向的偏移量，这是一个常见的技巧
     directions = [(-1, 0), (0, -1), (1, 0), (0, 1)]
 
-
     def numIslands(self, grid) -> int:
         m = len(grid)
         if m == 0:
@@ -27,7 +26,6 @@ class Solution:
                     count += 1
                     self.dfs(grid, i, j, m, n, marked)
         return count
-
 
     def dfs(self, grid, i, j, m, n, marked):
         marked[i][j] = True
