@@ -4,7 +4,7 @@
 
 import os
 import pandas as pd
-import pprint
+# import pprint
 
 
 # open file README.md
@@ -21,7 +21,7 @@ for pyfile in os.listdir(PATH):
 # print(finish)
 
 # buile data frame
-question = pd.DataFrame(columns = ["Day", "Question", "Difficulty", "Status"])
+question = pd.DataFrame(columns = ["Day", "Q", "D", "St"])
 for line in file:
     if 'Day' in line:
         Day = line.split(' ')[2]
@@ -44,11 +44,15 @@ for line in file:
 
     question = question.append({
         'Day': Day, 
-        'Question': Q, 
-        'Difficulty': D,
-        'Status': S}, ignore_index=True)
+        'Q': Q, 
+        'D': D,
+        'St': S}, ignore_index=True)
 # print(question.describe())
 
-print(question['Status'].value_counts())
-print(question.loc[question.Status == 'N'])
-# print(question.loc[question.Status == 'P'])
+print(question['St'].value_counts())
+print(question.loc[question.St == 'N'])
+# print(question.loc[question.St == 'P'])
+
+df = question.loc[question.St == 'N']
+df.to_csv('000_Undo.txt', index=None, sep=' ', mode='a')
+print('Done!')
