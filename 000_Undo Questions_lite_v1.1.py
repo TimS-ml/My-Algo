@@ -10,7 +10,7 @@ finish = []
 unfinish = []
 
 for line in file:
-    if 'pending' in line:
+    if ' = ' in line:
         question['P'].append(line.split(' ')[0][1:])
     elif line[0] == 'E':
         question['E'].append(line.split('\n')[0][1:])
@@ -24,7 +24,6 @@ for line in file:
 for pyfile in os.listdir("../LC-py"):
     if pyfile.split('-')[0] not in finish and 2 < len(pyfile.split('-')[0]) < 5 and pyfile.split('.')[-1] == 'py':
         finish.append(pyfile.split('-')[0])
-# print(finish)
 
 # find undo questions
 for key, q_list in question.items():

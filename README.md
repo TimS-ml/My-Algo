@@ -41,15 +41,15 @@ https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=521825
 
 刷題多少不是重點，重點是：
 
-- 1 - presentation。特別是在phonein時，要講得讓interviewer明白
-- 2 - 要能在不用editor/compilor幫助下，写(尽量)bug-free的code。因為不論是whiteboard還是phonein用google doc/livecode/coderpad，你不會有editor/compiler幫助，interviwer也不會幫你debug
+[1] presentation。特別是在phonein時，要講得讓interviewer明白
+[2] 要能在不用editor/compilor幫助下，写(尽量)bug-free的code。因為不論是whiteboard還是phonein用google doc/livecode/coderpad，你不會有editor/compiler幫助，interviwer也不會幫你debug
 
 所以現在，每題我也像考speaking般:
 
-- 1 - 先說thought prcoess
-- 2 - 後說testcases
-  - 說的時候我會在紙上寫code
-  - 說完之後直接寫到刷題網站submit
+[1] 先說thought prcoess
+[2] 後說testcases
+  -> 說的時候我會在紙上寫code
+  -> 說完之後直接寫到刷題網站submit
 
 P.S.1 現在一天：兩條新題，6-8條舊題。我共刷了500左右，不過我覺得常見的只有100-200條
 P.S.1 除了刷題網，我最近玩google code jam(今天5pm round 1C)及google kick start當練習。這些比難度大約medium->hard，而且time limit 3小時3-4題，十分適合當mock interview
@@ -78,9 +78,7 @@ M422
 
 M766
 
-M1057 - pending
-
-Add:
+M1057 = pend
 
 E266
 
@@ -102,7 +100,7 @@ E993
 
 M939
 
-H749 - pending
+H749 = pend
 
 
 
@@ -118,7 +116,7 @@ M570
 
 E604
 
-E800 - pending
+E800 = pend
 
 M549
 
@@ -148,11 +146,9 @@ E204
 
 M022
 
-Review:
+E929 = rev
 
-E929
-
-M200
+M200 = rev
 
 
 
@@ -162,11 +158,7 @@ M003
 
 M078
 
-Review:
-
-M222
-
-Add:
+M222 = rev
 
 H340
 
@@ -176,13 +168,9 @@ H340
 
 H159
 
-Review:
+M422 = rev
 
-M422
-
-M766
-
-Add:
+M766 = rev
 
 M395
 
@@ -192,13 +180,9 @@ M395
 
 H076
 
-Review:
+M422 = rev
 
-M422
-
-M766
-
-Add:
+M766 = rev
 
 M424
 
@@ -292,9 +276,7 @@ M547
 
 ## Day 30  - Sep. 28
 
-Review:
-
-M424
+M424 = rev
 
 
 
@@ -308,9 +290,7 @@ M207
 
 ## Day 32
 
-Review:
-
-M200
+M200 = rev
 
 
 
@@ -382,15 +362,11 @@ E070
 
 ## Day 43
 
-Add:
-
 E892
 
-Review:
+M542 = rev
 
-M542
-
-H329
+H329 = rev
 
 
 
@@ -476,17 +452,13 @@ M239
 
 ## Day 56
 
-Review:
-
-H076
+H076 = mark+rev
 
 
 
 ## Day 57
 
-Review:
-
-M424
+M424 = rev
 
 
 
@@ -512,9 +484,7 @@ M1130
 
 ## Day 62
 
-Review:
-
-M003
+M003 = rev
 
 
 
@@ -542,9 +512,7 @@ M064
 
 ## Day 66
 
-Review:
-
-H076
+H076 = rev
 
 
 
