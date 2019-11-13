@@ -51,11 +51,17 @@ for line in file:
 # print(question.describe())
 
 print(question['St'].value_counts())
-print(question.loc[question.St == 'N'])
+# print(question.loc[question.St == 'N'])
 # print(question[(question.St!="Y")&(question.St!="N")])
 
 
 # output to txt
-# df = question.loc[question.St == 'N']
-# df.to_csv('000_Undo.txt', index=None, sep=' ', mode='a')
-# print('Done!')
+def output_txt(question, out):
+    if out == -1:
+        return
+    df = question.loc[question.St == 'N']
+    df.to_csv('000_Undo.txt', index=None, sep=' ', mode='a')
+    print('Done!')
+
+out = -1
+output_txt(question, out)
