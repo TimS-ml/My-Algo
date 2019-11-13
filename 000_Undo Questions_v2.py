@@ -53,6 +53,6 @@ print(question['St'].value_counts())
 print(question.loc[question.St == 'N'])
 # print(question.loc[question.St == 'P'])
 
-df = question.loc[question.St == 'N']
-df.to_csv('000_Undo.txt', index=None, sep=' ', mode='a')
-print('Done!')
+# df = question.loc[question.St == 'N']
+# df.to_csv('000_Undo.txt', index=None, sep=' ', mode='a')
+# print('Done!')
