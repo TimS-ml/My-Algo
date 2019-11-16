@@ -28,7 +28,9 @@ for line in file:
     if ' = ' in line:
         Q = line.split(' ')[0][1:]
         D = line[0]
-        S = line.split(' = ')[1]  # the question should be finish or pending
+        # the question should be finish or pending if has '='
+        # one question may show up multiple times when rev
+        S = line.split(' = ')[1]
         S = S.split('\n')[0]
 
     elif line[0] == 'E' or line[0] == 'M' or line[0] == 'H':
