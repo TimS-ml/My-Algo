@@ -1,5 +1,5 @@
 # https://leetcode-cn.com/problems/longest-repeating-character-replacement/
-# 需要替换的字符数目＝窗口字符数目－数量最多的字符数目
+# k ＝ window size － 数量最多的字符数目
 
 
 class Solution:
@@ -22,4 +22,5 @@ class Solution:
 
 
 s, k = "ABAB", 2
-print(Solution().characterReplacement(s, k))
+s2, k2 = "AAABACA", 1
+print(Solution().characterReplacement(s2, k2))
