@@ -1,5 +1,4 @@
 # https://leetcode-cn.com/problems/reverse-linked-list/
-# 没仔细看，感觉是原地算法
 
 
 # Definition for singly-linked list.
