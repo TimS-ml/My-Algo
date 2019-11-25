@@ -6,15 +6,17 @@ class Solution:
         # the last time each letters show up
         last = {c: i for i, c in enumerate(S)}
         print(last)
-        j = anchor = 0
+
         ans = []
+        cur = anchor = 0
+
         for i, c in enumerate(S):
-            # update j like a sliding window
-            j = max(j, last[c])
-            if i == j:
-                ans.append(i - anchor + 1)
+            # update cur like a sliding window
+            cur = max(cur, last[c])
+            if i == cur:
+                ans.append(i + 1 - anchor)
                 anchor = i + 1
-            print(i, c, j, ans)
+            print(i, c, cur, ans)
         return ans
 
 

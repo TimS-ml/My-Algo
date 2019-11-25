@@ -3,19 +3,23 @@
 
 class Solution:
     def partitionLabels(self, S: str):
-        dic = {}
+        # the last time each letters show up
+        last = {}
         for i, letter in enumerate(S):
-            dic[letter] = i
-        res = []
-        cur = dic[S[0]]
-        print(dic, cur)
+            last[letter] = i
+        print(last)
+        
+        ans = []
+        cur = last[S[0]]
 
-        for i, letter in enumerate(S):
-            if dic[letter] > cur:
-                cur = dic[letter]  # update paragraph
+        for i, c in enumerate(S):
+            # update cur like a sliding window
+            if last[c] > cur:
+                cur = last[c]
             if i == cur:
-                res.append(cur+1-sum(res))
-        return res
+                ans.append(cur + 1 - sum(ans))
+            print(i, c, cur, ans)
+        return ans
 
 
 S = "ababcbacadefegdehijhklij"
