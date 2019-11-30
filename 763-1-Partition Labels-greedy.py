@@ -8,7 +8,7 @@ class Solution:
         for i, letter in enumerate(S):
             last[letter] = i
         print(last)
-        
+
         ans = []
         cur = last[S[0]]
 

@@ -20,13 +20,11 @@ class NumArray(object):
         :rtype: int
         """
         return self.dp[j + 1] - self.dp[i]
-        
 
 
 # Your NumArray object will be instantiated and called as such:
 # obj = NumArray(nums)
 # param_1 = obj.sumRange(i,j)
-
 nums = [-2, 0, 3, -5, 2, -1]
 # sumRange(0, 2)  # -> 1
 # sumRange(2, 5)  # -> -1

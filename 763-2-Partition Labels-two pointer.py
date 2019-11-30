@@ -22,4 +22,3 @@ class Solution:
 
 S = "ababcbacadefegdehijhklij"
 print(Solution().partitionLabels(S))
-

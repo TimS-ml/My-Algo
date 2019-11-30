@@ -19,7 +19,7 @@ for pyfile in os.listdir(PATH):
 # print(finish)
 
 # buile data frame
-question = pd.DataFrame(columns = ["Day", "Q", "Dif", "St"])
+question = pd.DataFrame(columns=["Day", "Q", "Dif", "St"])
 for line in file:
     if 'Day' in line:
         Day = line.split(' ')[2]
@@ -46,8 +46,8 @@ for line in file:
         S = 'N'
 
     question = question.append({
-        'Day': Day, 
-        'Q': Q, 
+        'Day': Day,
+        'Q': Q,
         'Dif': D,
         'St': S}, ignore_index=True)
 # print(question.describe())
@@ -64,6 +64,7 @@ def output_txt(question, out):
     df = question.loc[question.St == 'N']
     df.to_csv('000_Undo.txt', index=None, sep=' ', mode='a')
     print('Done!')
+
 
 out = -1
 output_txt(question, out)

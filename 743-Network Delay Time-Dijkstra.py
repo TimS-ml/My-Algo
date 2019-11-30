@@ -38,7 +38,7 @@ class Solution(object):
         return max(dic.values()) if len(dic) == N else -1
 
 
-times = [[2,1,1],[2,3,1],[3,4,1]]
+times = [[2, 1, 1], [2, 3, 1], [3, 4, 1]]
 N = 4
 K = 2  # start point
 print(Solution().networkDelayTime(times, N, K))

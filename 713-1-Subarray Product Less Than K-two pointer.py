@@ -3,7 +3,8 @@
 
 class Solution:
     def numSubarrayProductLessThanK(self, nums, k):
-        if k <= 1: return 0
+        if k <= 1:
+            return 0
         prod = 1
         ans = left = 0
         for right, val in enumerate(nums):
@@ -25,4 +26,3 @@ nums = [10, 5, 2, 6]
 nums2 = [10, 5, 100, 6]
 k = 100
 print(Solution().numSubarrayProductLessThanK(nums2, k))
-
