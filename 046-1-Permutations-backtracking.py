@@ -21,5 +21,6 @@ class Solution:
             # print('depth', len(temp))
             temp.pop()
 
+
 nums = [1, 2, 3]
 print(Solution().permute(nums))
