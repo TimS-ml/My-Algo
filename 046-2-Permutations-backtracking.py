@@ -11,7 +11,7 @@ class Solution:
                 # place i-th integer first 
                 # in the current permutation
                 nums[first], nums[i] = nums[i], nums[first]
-                # use next integers to complete the permutations
+                # print(first)
                 backtrack(first + 1)
                 # backtrack
                 nums[first], nums[i] = nums[i], nums[first]
