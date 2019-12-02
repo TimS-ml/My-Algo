@@ -50,6 +50,6 @@ for line in file:
 
     question = np.append(question, np.array([[Day, Q, D, S]]), axis=0)
 
-# print(question)
 
 print(question[np.where(question[:, -1] == 'N')])
+# print(np.setdiff1d(finish, question[:, 1]))
