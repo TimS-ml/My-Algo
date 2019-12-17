@@ -4,8 +4,8 @@
 
 class Solution:
     def permute(self, nums):
-        def backtrack(first = 0):
-            if first == n:  
+        def backtrack(first=0):
+            if first == n:
                 ans.append(nums[:])
             for i in range(first, n):
                 # place i-th integer first
@@ -14,7 +14,7 @@ class Solution:
                 backtrack(first + 1)
                 nums[first], nums[i] = nums[i], nums[first]
                 print('after', nums, first, i)
-        
+
         n = len(nums)
         ans = []
         backtrack()
