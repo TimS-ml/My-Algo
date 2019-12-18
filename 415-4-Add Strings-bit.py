@@ -21,7 +21,7 @@ class Solution:
         if carry == 1:
             ans += '1'
 
-        return ans [::-1]
+        return ans[::-1]
 
 
 # num1 = '12345'

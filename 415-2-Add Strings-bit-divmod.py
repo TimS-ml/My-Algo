@@ -10,12 +10,14 @@ class Solution:
 
         while nums1 or nums2:
             n1 = n2 = 0
-            if nums1: n1 = ord(nums1.pop()) - ord('0')
-            if nums2: n2 = ord(nums2.pop()) - ord('0')
-            
+            if nums1:
+                n1 = ord(nums1.pop()) - ord('0')
+            if nums2:
+                n2 = ord(nums2.pop()) - ord('0')
+
             carry, remain = divmod(n1 + n2 + carry, 10)
             ans.append(remain)
-        
+
         if carry:
             ans.append(carry)
         return ''.join(str(d) for d in ans)[::-1]
