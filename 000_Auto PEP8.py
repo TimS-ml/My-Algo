@@ -11,3 +11,5 @@ print(PATH, cmdCommand)
 
 process = subprocess.Popen(cmdCommand.split(), stdout=subprocess.PIPE)
 output, error = process.communicate()
+
+print('Done!')
