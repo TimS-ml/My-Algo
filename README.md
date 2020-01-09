@@ -276,7 +276,27 @@ M547
 
 
 
-## Day 26 - 29 pass
+## Day 26
+E001 = late+cpp
+
+
+
+## Day 27
+
+E001 = late+rev
+
+
+
+## Day 28
+
+E892 = late+rev
+
+
+
+
+## Day 29
+
+E892 = late+cpp
 
 
 
@@ -476,9 +496,13 @@ M424 = rev
 
 ## Day 58
 
+E1114 = late+rev
+
 
 
 ## Day 59
+
+E1114 = late+cpp
 
 
 

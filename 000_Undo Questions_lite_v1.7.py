@@ -12,6 +12,7 @@ file = open('README.md', mode='r', encoding='utf-8')
 # columns = ["Day", "Q", "Dif", "St"]
 question = np.empty((0, 4))  # 0 => len(row)=0
 finish = np.empty(0)
+q_count = np.empty((0, 2))  # Day count, days without leetcode
 
 # py file in dir
 for pyfile in os.listdir("../LC-py"):
@@ -21,24 +22,34 @@ for pyfile in os.listdir("../LC-py"):
         finish = np.append(finish, np.array([pyfile.split('-')[0]]), axis=0)
 # print(finish)
 
+temp = '00'
+Day = '00'
+count = 0
 for line in file:
     if 'Day' in line:
         Day = line.split(' ')[2]
         Day = Day.split('\n')[0]
 
+    if temp != Day:
+        q_count = np.append(q_count, np.array([[temp, count]]), axis=0)
+        temp = Day
+        count = 0
+
     if ' = ' in line:
-        Q = line.split(' ')[0][1:]
-        D = line[0]
+        Q = line.split(' ')[0][1:]  # Question
+        D = line[0]  # Difficulty
         # the question should be finish or pending if has '='
         # one question may show up multiple times when rev
-        S = line.split(' = ')[1]
+        S = line.split(' = ')[1]  # state
         S = S.split('\n')[0]
+        count += 1
 
     elif line[0] == 'E' or line[0] == 'M' or line[0] == 'H':
         Q = line.split(' ')[0][1:]
         Q = Q.split('\n')[0]
         D = line[0]
         S = 'Y'
+        count += 1
 
     else:
         continue
@@ -51,5 +62,8 @@ for line in file:
     question = np.append(question, np.array([[Day, Q, D, S]]), axis=0)
 
 
-print(question[np.where(question[:, -1] == 'N')])
+undo = q_count[np.where(q_count[:, -1] == '0')]
+print(undo)
+print(undo.shape)
+# print(question[np.where(question[:, -1] == 'N')])
 # print(np.setdiff1d(finish, question[:, 1]))
