@@ -1,4 +1,5 @@
 import os
+# import pandas as pd
 # import numpy as np
 # import warnings
 # warnings.simplefilter(action='ignore', category=FutureWarning)
@@ -12,10 +13,10 @@ import os
 # open file README.md
 PATH = os.path.abspath(os.path.join(os.path.dirname(__file__)))
 os.chdir(PATH)
-file = open('Date.md', mode='w', encoding='utf-8')
+file = open('README.md', mode='a', encoding='utf-8')
 
-startdate = 97
-for i in range(30):
+startdate = 127
+for i in range(60):
     content = '## Day ' + str(startdate) + '\n\n\n\n'
     file.write(content)
     startdate += 1
