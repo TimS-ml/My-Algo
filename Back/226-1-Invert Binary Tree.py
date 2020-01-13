@@ -1,4 +1,4 @@
-# Version 1
+# https://leetcode-cn.com/problems/invert-binary-tree/
 
 
 class TreeNode:
@@ -67,7 +67,6 @@ def treeNodeToString(root):
     return "[" + output[:-2] + "]"
 
 
-# line = [4,2,7,1,3,6,9]
 line = [3, 9, 20, None, None, 15, 7]
 root = listToTreeNode(line)
 ans = Solution().invertTree(root)
