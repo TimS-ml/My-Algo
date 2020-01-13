@@ -508,6 +508,8 @@ E1114 = late+cpp
 
 ## Day 60
 
+E206 = late+rev
+
 
 
 ## Day 61
@@ -608,9 +610,12 @@ E086
 
 ## Day 75
 
+E206 = late+cpp
+
 
 
 ## Day 76
+E206 = late+rev
 
 
 
