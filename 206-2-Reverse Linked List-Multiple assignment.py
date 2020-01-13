@@ -1,7 +1,7 @@
 # https://leetcode-cn.com/problems/reverse-linked-list/
 # This is slower than solution 1
 # Multivariate assignment
-# the value on the right will not change
+
 # When left rev changed to 1, right rev still unchange
 # rev, rev.next, p = p, rev, p.next
 
