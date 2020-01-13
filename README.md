@@ -620,10 +620,12 @@ E206 = late+rev
 
 
 ## Day 77
+E226
 
 
 
 ## Day 78
+E226 = rev
 
 
 
