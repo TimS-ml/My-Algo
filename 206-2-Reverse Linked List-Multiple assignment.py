@@ -31,6 +31,7 @@ def listToListNode(input):
     ptr = dummyRoot.next
     return ptr
 
+
 def listNodeToString(node):
     if not node:
         return "[]"

@@ -10,8 +10,9 @@ class Solution(object):
             for col in range(N):
                 if grid[row][col]:
                     ans += 2  # top and bottom
-                    dirs = ((row-1, col), (row+1, col), (row, col-1), (row, col+1))
-                    for nrow, ncol in dirs: 
+                    dirs = ((row-1, col), (row+1, col),
+                            (row, col-1), (row, col+1))
+                    for nrow, ncol in dirs:
                         if 0 <= nrow < N and 0 <= ncol < N:
                             value = grid[nrow][ncol]
                         else:

@@ -18,6 +18,6 @@ class Solution:
             fast = self.bitSquareSum(fast)
         return slow == 1
 
+
 n = 19
 print(Solution().isHappy(n))
-

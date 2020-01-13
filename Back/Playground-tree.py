@@ -5,8 +5,10 @@
 #         self.left = None
 #         self.right = None
 
+
 class Solution:
     def isSymmetric(self, root: TreeNode) -> bool:
+
 
 def stringToTreeNode(input):
     input = input.strip()
@@ -41,9 +43,11 @@ def stringToTreeNode(input):
             nodeQueue.append(node.right)
     return root
 
+
 def main():
     import sys
     import io
+
     def readlines():
         for line in io.TextIOWrapper(sys.stdin.buffer, encoding='utf-8'):
             yield line.strip('\n')
@@ -52,14 +56,15 @@ def main():
     while True:
         try:
             line = next(lines)
-            root = stringToTreeNode(line);
-            
+            root = stringToTreeNode(line)
+
             ret = Solution().isSymmetric(root)
 
-            out = (ret);
+            out = (ret)
             print(out)
         except StopIteration:
             break
+
 
 if __name__ == '__main__':
     main()

@@ -9,7 +9,7 @@ import itertools
 class Solution:
     def addBoldTag(self, s, dict) -> str:
         mark = [0] * len(s)
-        _trie = lambda: collections.defaultdict(_trie)
+        def _trie(): return collections.defaultdict(_trie)
         trie = _trie()
         for i, word in enumerate(words):
             functools.reduce(dict.__getitem__, word, trie).setdefault("_end")
