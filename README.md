@@ -630,10 +630,12 @@ E226 = rev
 
 
 ## Day 79
+E226 = late+cpp
 
 
 
 ## Day 80
+E226 = late+cpp
 
 
 
