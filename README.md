@@ -84,16 +84,16 @@ In `repo`:
 
 
 
-In Linux or Win WSL, you can type:
+In Linux or Win WSL, you can type(in you current dir):
 
 ```bash
 find . -name 076\*
 ```
 
-or if you use ranger:
+or if you use ranger(which support vim key binding):
 
 ```
-\076
+/076
 ```
 
 
