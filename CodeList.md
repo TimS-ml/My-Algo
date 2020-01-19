@@ -6,6 +6,28 @@
 ```
 
 
+
+My Plain
+
+```
+每个类型 10 - 20 题
+200 - 300 题 Total
+
+R01 - 5 min of thinking
+R02 - code < 60 min
+R03 - code < 20 min
+
+Read code from other person
+>= 3 solutions
+analyze pro and con
+
+有意义的变量名
+```
+
+
+
+
+
 # Aug - 02/31
 
 ## Day 01 - Aug. 30
@@ -606,6 +628,8 @@ M076 = late+rev
 
 
 ## Day 85
+
+E157
 
 
 
