@@ -15,6 +15,17 @@ public:
     for (int i = 0; i < s.size(); i++) {
       if (m.find(s[i]) != m.end() && lastRepeatPos < m[s[i]])
         lastRepeatPos = m[s[i]];
+      if (i - lastRepeatPos > maxLen)
+        maxLen = i - lastRepeatPos;
+      m[s[i]] = i;
     }
+    return maxLen;
   }
 };
+
+int main() {
+  string s = "pwwkew";
+  int ans = Solution().lengthOfLongestSubstring(s);
+  cout << ans << endl;
+  return 0;
+}
