@@ -1,4 +1,8 @@
 # https://leetcode-cn.com/problems/read-n-characters-given-read4/
+# By using the read4 method, 
+# implement the method read that reads n characters from the file 
+# and store it in the buffer array buf. 
+# Consider that you cannot manipulate the file directly
 
 
 """
