@@ -3,44 +3,39 @@
 
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
-        # sliding window
         if not s or not t:
             return ""
-        res = ""
+        ans = ""
         dic = dict()
 
-        # init
+        # hash init
         for char in t:
             dic[char] = dic.get(char, 0) + 1
-        l, r = 0, 0
+        print("dic:{}".format(dic))
+        # in 076-1 we use deq[0] and deq[-1], start and end
+        start, end = 0, 0
         minLength = len(s)
-        size = len(t)
+        score = 0
 
-        while r < len(s):
+        while end < len(s):
             # duplicate
-            if s[r] in dic:
-                # dic may < 0 ?
-                if dic[s[r]] > 0:
-                    size -= 1
-
-                dic[s[r]] -= 1
-
-            # windows
-            r += 1
-
-            while size == 0:
-                if minLength >= r - l:
-                    minLength = r - l
-                    res = s[l:r]
-
+            if s[end] in dic:
+                # dic may == 0
+                if dic[s[end]] > 0:
+                    score += 1
+                dic[s[end]] -= 1
+            end += 1
+            while score == len(t):
+                if minLength >= end - start:
+                    minLength = end - start
+                    ans = s[start:end]
                 # left
-                if s[l] in dic:
-                    dic[s[l]] += 1
-                    if dic[s[l]] > 0:
-                        size += 1
-                l += 1
-
-        return res
+                if s[start] in dic:
+                    dic[s[start]] += 1
+                    if dic[s[start]] > 0:
+                        score -= 1
+                start += 1
+        return ans
 
 
 s = "ADOBECODEBANC"

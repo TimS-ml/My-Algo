@@ -1,7 +1,7 @@
 # https://leetcode-cn.com/problems/read-n-characters-given-read4/
-# By using the read4 method, 
-# implement the method read that reads n characters from the file 
-# and store it in the buffer array buf. 
+# By using the read4 method,
+# implement the method read that reads n characters from the file
+# and store it in the buffer array buf.
 # Consider that you cannot manipulate the file directly
 
 
@@ -19,6 +19,7 @@ read4(buf) # read4 returns 4. Now buf = ['a','b','c','d'], fp points to 'e'
 read4(buf) # read4 returns 4. Now buf = ['e','f','g','h'], fp points to 'i'
 read4(buf) # read4 returns 3. Now buf = ['i','j','k',...], fp points to end of file
 """
+
 
 class Solution:
     def read(self, buf, n):
