@@ -653,13 +653,19 @@ H076 = late+cpp
 
 ## Day 89
 
+E1228 = rev
+
 
 
 ## Day 90
 
+E784
+
 
 
 ## Day 91
+
+E509
 
 
 
