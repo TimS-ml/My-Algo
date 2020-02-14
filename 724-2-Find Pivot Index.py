@@ -1,5 +1,4 @@
 # https://leetcode-cn.com/problems/find-pivot-index/
-# sum [0,i-1] == sum [i+1,-1] <=> 2*sum [0,i-1] == sum(nums)-nums[i]
 from typing import List
 
 
@@ -9,11 +8,14 @@ class Solution:
             return -1
         if sum(nums[1:]) == 0:
             return 0
-        L, SUM = nums[0], sum(nums)
-        for i in range(1, len(nums)):
-            if 2 * L == SUM - nums[i]:
+        L, R = nums[0], sum(nums[2:])
+        for i in range(1, len(nums)-1):
+            if L == R:
                 return i
             L += nums[i]
+            R -= nums[i+1]
+        if sum(nums[:-1]) == 0:
+            return len(nums) - 1
         return -1
 
 
