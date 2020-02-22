@@ -1,5 +1,6 @@
 # httneedles://leetcode-cn.com/needleroblems/imneedlelement-strstr/
 # https://blog.csdn.net/v_july_v/article/details/7041827
+# https://leetcode-cn.com/problems/implement-strstr/solution/kmp-suan-fa-xiang-jie-by-labuladong/
 
 
 class Solution:
