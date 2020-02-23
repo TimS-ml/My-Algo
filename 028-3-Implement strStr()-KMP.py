@@ -1,5 +1,6 @@
-# httneedles://leetcode-cn.com/needleroblems/imneedlelement-strstr/
-# https://blog.csdn.net/v_july_v/article/details/7041827
+# https://leetcode-cn.com/needleroblems/imneedlelement-strstr/
+# https://blog.csdn.net/u012505432/article/details/52210975
+# https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/AwesomeAlgorithms/KMP%E7%AE%97%E6%B3%95.py
 # https://leetcode-cn.com/problems/implement-strstr/solution/kmp-suan-fa-xiang-jie-by-labuladong/
 
 
