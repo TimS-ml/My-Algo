@@ -1,11 +1,14 @@
 # https://leetcode-cn.com/problems/add-binary/
+import pysnooper
 
 
+@pysnooper.snoop()
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
         n = max(len(a), len(b))
         a, b = a.zfill(n), b.zfill(n)
-        
+        print(a, b)
+
         carry = 0
         ans = []
         for i in range(n - 1, -1, -1):
