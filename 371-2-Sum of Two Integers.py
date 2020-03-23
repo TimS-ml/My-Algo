@@ -1,6 +1,5 @@
 # https://leetcode-cn.com/problems/sum-of-two-integers/
-# https://leetcode.com/problems/sum-of-two-integers/discuss/84278/A-summary%3A-how-to-use-bit-manipulation-to-solve-problems-easily-and-efficiently
-# https://leetcode.com/problems/sum-of-two-integers/discuss/167931/Solution-with-ACTUAL-explanation-(how-you-would-work-this-out)
+# https://leetcode.com/problems/sum-of-two-integers/discuss/84410/Python-Solution
 
 
 class Solution:
