@@ -16,17 +16,17 @@ class Solution:
                 carry += 1
             if b[i] == '1':
                 carry += 1
-                
+
             if carry % 2 == 1:
                 ans.append('1')
             else:
                 ans.append('0')
             carry //= 2
-        
+
         if carry == 1:
             ans.append('1')
         ans.reverse()
-        
+
         return ''.join(ans)
 
 

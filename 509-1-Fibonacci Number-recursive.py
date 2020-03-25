@@ -1,5 +1,6 @@
 # 0, 1, 1, 2
 
+
 class Solution:
     def fib(self, N: int) -> int:
         if N <= 1:

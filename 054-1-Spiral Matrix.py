@@ -14,7 +14,10 @@ class Solution:
             ans.extend(matrix[i][r] for i in range(u, d))
             ans.extend(matrix[d][j] for j in range(r, l, -1))
             ans.extend(matrix[i][l] for i in range(d, u, -1))
-            u += 1; d -= 1; r -= 1; l += 1
+            u += 1
+            d -= 1
+            r -= 1
+            l += 1
         if l == r:
             ans.extend(matrix[i][r] for i in range(u, d + 1))
         elif u == d:
@@ -23,8 +26,8 @@ class Solution:
 
 
 matrix = [
-  [1, 2, 3, 4],
-  [5, 6, 7, 8],
-  [9,10,11,12]
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12]
 ]
 print(Solution().spiralOrder(matrix))

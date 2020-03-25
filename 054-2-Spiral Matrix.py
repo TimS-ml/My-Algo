@@ -7,7 +7,7 @@ class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
         if not matrix or not matrix[0]:
             return []
-        
+
         X, Y = len(matrix[0]), len(matrix)
         seen = [[False] * X for i in matrix]
         ans = []
@@ -30,8 +30,8 @@ class Solution:
 
 
 matrix = [
-  [1, 2, 3, 4],
-  [5, 6, 7, 8],
-  [9,10,11,12]
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12]
 ]
 print(Solution().spiralOrder(matrix))

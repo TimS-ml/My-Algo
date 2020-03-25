@@ -4,7 +4,7 @@
 
 class Solution:
     def strStr(self, haystack, needle) -> int:
-        lenH = len(haystack) 
+        lenH = len(haystack)
         lenN = len(needle)
         if lenH == lenN:
             if haystack == needle:

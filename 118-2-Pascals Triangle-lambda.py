@@ -1,5 +1,5 @@
 # https://leetcode-cn.com/problems/pascals-triangle/
-#    1 3 3 1 0 
+#    1 3 3 1 0
 # +  0 1 3 3 1
 # =  1 4 6 4 1
 

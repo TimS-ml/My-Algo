@@ -7,7 +7,7 @@ class Solution:
         :type digits: List[int]
         :rtype: List[int]
         """
-        sdigits = sum(d*(10**i) for i, d in enumerate(digits[::-1])) 
+        sdigits = sum(d*(10**i) for i, d in enumerate(digits[::-1]))
         # print(sdigits)
         sdigits = int(sdigits) + 1
         ans = list(str(sdigits))

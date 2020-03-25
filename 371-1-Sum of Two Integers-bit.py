@@ -54,4 +54,3 @@ class Solution:
 a = 1
 b = 2
 print(Solution().getSum(a, b))
-

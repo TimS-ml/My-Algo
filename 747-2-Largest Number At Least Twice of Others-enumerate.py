@@ -4,13 +4,14 @@ from typing import List
 
 class Solution:
     def dominantIndex(self, nums: List[int]) -> int:
-        if len(nums) == 0: return -1
+        if len(nums) == 0:
+            return -1
 
         m = -1
         m2 = -1
         mIndex = 0
-        
-        for i,n in enumerate(nums):
+
+        for i, n in enumerate(nums):
             if n >= m:
                 m2 = m
                 m = n
@@ -20,7 +21,7 @@ class Solution:
 
         if m < m2*2:
             mIndex = -1
-        
+
         return mIndex
 
 

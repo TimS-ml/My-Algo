@@ -6,7 +6,7 @@ class Solution:
     def findDiagonalOrder(self, matrix: List[List[int]]) -> List[int]:
         if not matrix or not matrix[0]:
             return []
-        
+
         Y, X = len(matrix), len(matrix[0])
         ans, temp = [], []
 
@@ -27,17 +27,17 @@ class Solution:
                 r += 1
                 c -= 1
             print(temp)
-        
+
             if i % 2 == 0:
                 ans.extend(temp[::-1])  # reverse
             else:
                 ans.extend(temp)
-        return ans   
+        return ans
 
 
 matrix = [
- [ 1, 2, 3 ],
- [ 4, 5, 6 ],
- [ 7, 8, 9 ]
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
 ]
 print(Solution().findDiagonalOrder(matrix))

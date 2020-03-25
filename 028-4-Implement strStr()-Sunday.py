@@ -5,7 +5,7 @@
 
 
 class Solution:
-    def getRight(self,str):
+    def getRight(self, str):
         n = len(str)
         if n <= 0:
             return []
