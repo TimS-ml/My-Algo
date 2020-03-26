@@ -14,7 +14,7 @@ class Solution:
                     if i == j or i == k or j == k:
                         continue
                     hour, minute = str(a) + str(b), str(c) + \
-                        str(A[6 - i - j - k])
+                            str(A[6 - i - j - k])  # sum of index: 0 + ... + 3 = 6
                     if hour < '24' and minute < '60':
                         ans = max(ans, hour + ':' + minute)
         return ans
