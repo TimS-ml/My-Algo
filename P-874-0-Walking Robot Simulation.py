@@ -1,6 +1,8 @@
 # https://leetcode-cn.com/problems/walking-robot-simulation/
 # [1] the movement: list of dir
-# [2] obstacles: if else
+# [2] obstacles: 
+#   how to find
+#   stop location (right of obstacle point for example)
 
 from typing import List
 
@@ -16,6 +18,9 @@ class Solution:
                 mov = (mov + 1) % 4  # take remainder
             elif commands[i] == -1:
                 mov = (mov - 1) % 4
+            elif :
+                # coord[0] += commands[i] * dir[mov][0]
+                # coord[1] += commands[i] * dir[mov][1]
             else:
                 coord[0] += commands[i] * dir[mov][0]
                 coord[1] += commands[i] * dir[mov][1]
@@ -25,7 +30,7 @@ class Solution:
 commands1 = [4, -1, 3]
 obstacles1 = []
 
-commands = [4, -1, 4, -2, 4]
-obstacles = [[2, 4]]
-print(Solution().robotSim(commands1, obstacles1))
+commands2 = [4, -1, 4, -2, 4]
+obstacles2 = [[2, 4]]
+print(Solution().robotSim(commands2, obstacles2))
 
