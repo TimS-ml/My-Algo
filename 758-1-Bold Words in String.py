@@ -18,4 +18,12 @@ class Solution:
             ans.append(S[i])
             if mark[i] and (i == len(S)-1 or not mark[i+1]):
                 ans.append("</b>")
-        return "".join(ans), mark
+        return "".join(ans)
+
+
+# words, S
+IN = [(["ab","bc"], "aabcd")]
+useSet = 0
+print(IN[useSet][0], IN[useSet][1])
+print(Solution().boldWords(IN[useSet][0], IN[useSet][1]))
+
