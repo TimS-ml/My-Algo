@@ -1,13 +1,21 @@
 # https://leetcode-cn.com/problems/bold-words-in-string/
+# httos://www.programiz.com/python-programming/methods/string/find
 # [1] string searching
-# [2] deal with overlap: 
+# [2] deal with overlap
 # add start point and end point
+# a mark string => what if mark overlap? like ab, cd in aabcdd case?
 # s A s B e C e => s ABC e
 
 
 class Solution:
     def boldWords(self, words, S: str) -> str:
-        for i in range(S):
+        mark = [0] * len(S)
+        for d in words:
+            loc = S.find(d)
+            # print(loc)
+            mark[loc] = 1
+        return mark            
+
 
 # words, S
 IN = [(["ab","bc"], "aabcd")]
