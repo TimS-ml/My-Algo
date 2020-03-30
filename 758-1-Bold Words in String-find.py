@@ -8,7 +8,7 @@ class Solution:
         for d in words:
             pos = S.find(d)
             while pos != -1:  # .find return -1 when not find
-                mark[pos:pos+len(d)] = [1] * len(d)
+                mark[pos: pos+len(d)] = [1] * len(d)
                 pos = S.find(d, pos + 1)  # s.find(value, start, end)
 
         ans = []
