@@ -26,7 +26,8 @@ class Solution:
         return not stack
 
 
-s1 = "{[]}"
-s2 = "([)]"
-s3 = "(((())))"
-print(Solution().isValid(s3))
+IN = [("{[]}"), ("([)]"), ("(((())))")]
+useSet = 0
+print(IN[useSet])
+print(Solution().isValid(IN[useSet]))
+
