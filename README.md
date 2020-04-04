@@ -9,7 +9,7 @@
 
 Normal: 001
 Linked List: 021 
-Tree: 
+Tree: 226 
 SQL:
 Shell:
 Debug: 949
