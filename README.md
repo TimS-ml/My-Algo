@@ -38,6 +38,15 @@ Here I write some code to make my life easier (you can find in this repo):
 
 ​	Python Formatting based on autopep8
 
+[4] C++ format
+```
+clang-format -i -style=LLVM *.cpp
+
+clang-format -i path/to/electron/file.cpp -style=LLVM
+
+clang-format -i main.cpp -style=LLVM
+```
+
 
 
 # How to Practice
