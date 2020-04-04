@@ -10,24 +10,11 @@ class ListNode:
 
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
-        if None in (l1, l2):
-            return l1 or l2
-        ans = ListNode(0)
-        cur = ans
-        ans.next = l1  # l1 in-place
-        while l1 and l2:
-            if l1.val < l2.val:
-                l1 = l1.next  # no need to modify
-            else:
-                next = cur.next
-                cur.next = l2
-                temp = l2.next
-                l2.next = next
-                l2 = temp
-            cur = cur.next
-        cur.next = l1 or l2
-        return ans.next
-
+        if not l1 or l2 and l1.val > l2.val:
+            l1, l2 = l2, l1
+        if l1:
+            l1.next = self.mergeTwoLists(l1.next, l2)
+        return l1
 
 def listToListNode(input):
     # Now convert that list into linked list

@@ -5,6 +5,15 @@
 \___/_/\_,_/_//_/ /___/ /____/\__/\__/\__/\___/\___/\_,_/\__/
 ```
 
+# Template
+
+Normal: 001
+Linked List: 021 
+Tree: 
+SQL:
+Shell:
+Debug: 949
+
 
 
 # Helpful Links

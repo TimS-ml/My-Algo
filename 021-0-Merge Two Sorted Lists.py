@@ -1,5 +1,6 @@
 # https://leetcode-cn.com/problems/merge-two-sorted-lists/
-# in-place, and faster (because in-place will jump over some node)
+# [1] Valuse comparison
+# [2] What if two Linked list have different length?
 
 
 class ListNode:
@@ -10,22 +11,17 @@ class ListNode:
 
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
-        if None in (l1, l2):
-            return l1 or l2
         ans = ListNode(0)
         cur = ans
-        ans.next = l1  # l1 in-place
         while l1 and l2:
             if l1.val < l2.val:
-                l1 = l1.next  # no need to modify
+                cur.next = l1
+                l1 = l1.next
             else:
-                next = cur.next
                 cur.next = l2
-                temp = l2.next
-                l2.next = next
-                l2 = temp
+                l2 = l2.next
             cur = cur.next
-        cur.next = l1 or l2
+        cur.next = l1 or l2  # place largest or longest element to the end
         return ans.next
 
 
