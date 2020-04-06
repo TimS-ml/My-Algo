@@ -1,4 +1,5 @@
 # https://leetcode-cn.com/problems/invert-binary-tree/
+# Tree traversal in this case: pre-order 前序
 
 
 class TreeNode:
@@ -10,11 +11,13 @@ class TreeNode:
 
 class Solution:
     def invertTree(self, root: TreeNode) -> TreeNode:
-        if not root:
-            return
-        root.left, root.right = root.right, root.left
-        self.invertTree(root.left)
-        self.invertTree(root.right)
+        stack = [root]
+        while stack:
+            node = stack.pop()
+            if node:
+                # print(node.val)
+                node.left, node.right = node.right, node.left
+                stack += node.left, node.right
         return root
 
 
@@ -67,8 +70,11 @@ def treeNodeToString(root):
     return "[" + output[:-2] + "]"
 
 
-line = [3, 9, 20, None, None, 15, 7]
-root = listToTreeNode(line)
+
+IN = [([4, 2, 7, 1, 3, 6, 9]), ([3, 9, 20, None, None, 15, 7])]
+useSet = 1
+line = root = listToTreeNode(IN[useSet])
 ans = Solution().invertTree(root)
 out = treeNodeToString(ans)
 print(out)
+
