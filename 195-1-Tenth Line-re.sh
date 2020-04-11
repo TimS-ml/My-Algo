@@ -1,5 +1,6 @@
 # https://leetcode-cn.com/problems/tenth-line/
 
+
 # Solution 1
 cnt = 0
 while read line && [ $cnt -le 10 ]; do
