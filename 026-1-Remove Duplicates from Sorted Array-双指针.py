@@ -18,5 +18,6 @@ class Solution(object):
         return slow + 1
 
 
-nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
-print(Solution().removeDuplicates(nums))
+IN = [([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]), ([1, 1, 2]), ([])]
+useSet = 2
+print(Solution().removeDuplicates(IN[useSet]))
