@@ -1,5 +1,4 @@
 # https://leetcode-cn.com/problems/rotate-array/
-# 逐个向左移动
 
 
 class Solution:
@@ -11,8 +10,9 @@ class Solution:
             return
 
         end = len(nums) - 1
-        k = k % len(nums)  # 如果k比len(nums)大，就跳过重复循环
-
+        k = k % len(nums)
+        
+        # just like pop and append, nothing special
         for i in range(0, k):
             temp = nums[end]
             for j in range(0, end):
