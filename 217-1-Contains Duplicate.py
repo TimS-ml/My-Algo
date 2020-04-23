@@ -1,3 +1,6 @@
+# https://leetcode-cn.com/problems/contains-duplicate/
+
+
 class Solution:
     def containsDuplicate(self, nums) -> bool:
         if len(nums) == 0 or len(nums) == 1:
