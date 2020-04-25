@@ -1,9 +1,14 @@
 # https://leetcode-cn.com/problems/rotate-image/
+# 2020 0425
 
 
 class Solution(object):
     def rotate(self, matrix):
-        return
+        ans = []
+        for i in range(len(matrix)):
+            ans.append([row[i] for row in matrix])
+        for i in range(len(ans)):
+            matrix[i] = ans[i][::-1]
 
 
 matrix = [
@@ -12,19 +17,5 @@ matrix = [
     [7, 8, 9],
 ]
 
-# step1
-# [3, 2, 1]
-# [6, 5, 4]
-# [9, 8, 7]
+print(Solution().rotate(matrix))
 
-# step2
-# 3 7 w-1-i = 2
-# 2 4 w-1-i = 2
-# 6 8 w-1-i = 1
-
-# out
-# [7, 4, 1]
-# [8, 5, 2]
-# [9, 6, 3]
-
-Solution().rotate(matrix)

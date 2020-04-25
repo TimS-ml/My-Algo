@@ -1,5 +1,7 @@
 # https://leetcode-cn.com/problems/single-number/
 # https://www.geeksforgeeks.org/reduce-in-python/
+# reduce only return a single number accumulated
+# so this not gonna work if return 2 or more numbers
 
 import functiontools
 
