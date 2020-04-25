@@ -10,21 +10,40 @@ class Solution:
         :type board: List[List[str]]
         :rtype: bool
         """
+        box1 = []
+        box2 = []
+        box3 = []
         for i in range(len(board)):
-            # row and col
             row = [int(j) for j in board[i] if j != "."]
             col = [int(row[i]) for row in board if row[i] != "."]
-            print(row, col)
             if len(set(row)) != len(row) or len(set(col)) != len(col):
                 return False
-            # sub-box
-            if i % 3 == 0:
-                col = [[], [], []]
-
+            box1.extend([int(j) for j in board[i][0:3] if j != "."])
+            box2.extend([int(j) for j in board[i][3:6] if j != "."])
+            box3.extend([int(j) for j in board[i][6:9] if j != "."])
+            if (i + 1) % 3 == 0:
+                if len(set(box1)) != len(box1) or len(set(box2)) != len(box2) or len(set(box3)) != len(box3):
+                    return False
+                box1 = []
+                box2 = []
+                box3 = []
         return True
 
 
 board_1 = [
+    [".", ".", ".", ".", ".", ".", "5", ".", "."], 
+    [".", ".", ".", ".", ".", ".", ".", ".", "."], 
+    [".", ".", ".", ".", ".", ".", ".", ".", "."], 
+    ["9", "3", ".", ".", "2", ".", "4", ".", "."], 
+    [".", ".", "7", ".", ".", ".", "3", ".", "."], 
+    [".", ".", ".", ".", ".", ".", ".", ".", "."], 
+    [".", ".", ".", "3", "4", ".", ".", ".", "."], 
+    [".", ".", ".", ".", ".", "3", ".", ".", "."], 
+    [".", ".", ".", ".", ".", "5", "2", ".", "."]
+]
+
+
+board_2 = [
     ["5", "3", ".", ".", "7", ".", ".", ".", "."],
     ["6", ".", ".", "1", "9", "5", ".", ".", "."],
     [".", "9", "8", ".", ".", ".", ".", "6", "."],
@@ -36,7 +55,7 @@ board_1 = [
     [".", ".", ".", ".", "8", ".", ".", "7", "9"]
 ]
 
-board_2 = [
+board_3 = [
     ["3", "8", ".", ".", "7", ".", ".", ".", "."],
     ["6", ".", ".", "1", "9", "5", ".", ".", "."],
     [".", "9", "8", ".", ".", ".", ".", "6", "."],
