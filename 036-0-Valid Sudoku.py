@@ -1,4 +1,5 @@
 # https://leetcode-cn.com/problems/valid-sudoku/
+# 2020 0425
 # how to convert to list
 # how to find dupl
 
@@ -10,7 +11,15 @@ class Solution:
         :rtype: bool
         """
         for i in range(len(board)):
-            pass
+            # row and col
+            row = [int(j) for j in board[i] if j != "."]
+            col = [int(row[i]) for row in board if row[i] != "."]
+            print(row, col)
+            if len(set(row)) != len(row) or len(set(col)) != len(col):
+                return False
+            # sub-box
+            if i % 3 == 0:
+                col = [[], [], []]
 
         return True
 
@@ -39,5 +48,5 @@ board_2 = [
     [".", ".", ".", ".", "8", ".", ".", "7", "9"]
 ]
 
-# print(Solution().isValidSudoku(board_1))
-print(Solution().isValidSudoku(board_2))
+print(Solution().isValidSudoku(board_1))
+# print(Solution().isValidSudoku(board_2))
