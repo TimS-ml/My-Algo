@@ -13,7 +13,7 @@ class Solution:
         nums2.sort()
         i = j = 0
         while i < len(nums1) and j < len(nums2):
-            if nums1[i] < nums2[j]:  # 绕不开判断大小的问题，不然可能错过相等元素
+            if nums1[i] < nums2[j]:
                 i += 1
             elif nums1[i] > nums2[j]:
                 j += 1

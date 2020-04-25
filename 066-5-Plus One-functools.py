@@ -11,11 +11,10 @@ class Solution:
         :type digits: List[int]
         :rtype: List[int]
         """
-        sdigits = functools.reduce(lambda total, d: 10 * total + d, digits, 0)
-        # print(sdigits)
-        sdigits = int(sdigits) + 1
-        ans = list(str(sdigits))
-        return ans
+        str_dig = functools.reduce(lambda total, d: 10 * total + d, digits)
+        str_dig = int(str_dig) + 1
+        ans = list(str(str_dig))
+        return [int(i) for i in ans]
 
 
 # digits = [1, 2, 3]

@@ -7,10 +7,10 @@ class Solution:
         :type digits: List[int]
         :rtype: List[int]
         """
-        num = 0
-        for i in range(len(digits)):
-            num += digits[i] * pow(10, (len(digits) - 1 - i))
-        return [int(i) for i in str(num + 1)]
+        str_dig = ''.join(str(i) for i in digits)
+        str_dig = int(str_dig) + 1
+        ans = list(str(str_dig))
+        return [int(i) for i in ans]
 
 
 # digits = [1, 2, 3]

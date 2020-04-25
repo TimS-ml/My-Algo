@@ -1,4 +1,5 @@
 # https://leetcode-cn.com/problems/move-zeroes/
+# do [len(nums) - number of 0] times operation
 
 
 class Solution:
@@ -8,7 +9,7 @@ class Solution:
         :rtype: void Do not return anything, modify nums in-place instead.
         """
         num_in = 0
-        for i in range(0, len(nums)):
+        for i in range(len(nums)):
             if nums[i] != 0:
                 nums.insert(num_in, nums.pop(i))
                 num_in += 1
