@@ -1,8 +1,4 @@
 # https://leetcode-cn.com/problems/string-to-integer-atoi/
-# 代码中经常会有变量是否为None的判断，有三种主要的写法：
-# if x is None
-# if not x
-# if not x is None 或 if not (x is None)
 
 
 class Solution:

@@ -1,4 +1,7 @@
 # https://leetcode-cn.com/problems/string-to-integer-atoi/
+# https://leetcode-cn.com/problems/string-to-integer-atoi/solution/python-1xing-zheng-ze-biao-da-shi-by-knifezhu/
+# max(min(number, 2**31 - 1), -2**31)
+
 import re
 
 

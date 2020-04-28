@@ -1,6 +1,4 @@
 # https://leetcode-cn.com/problems/string-to-integer-atoi/
-# 不能判断带小数点的情况们
-# if str.count('.') == 1:  # 小数有且仅有一个小数点
 
 
 class Solution:
