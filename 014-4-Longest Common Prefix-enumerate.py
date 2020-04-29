@@ -3,16 +3,14 @@
 
 class Solution:
     def longestCommonPrefix(self, strs) -> str:
-        if len(strs) == 0:
+        if not strs:
             return ""
-        zipped = zip(*strs)
-        ans = 0
-        for i in zipped:
-            print(i)
-            if len(set(i)) != 1:
-                return strs[0][:ans]
-            ans += 1
-        return strs[0][:ans]
+        shortest = min(strs, key=len)
+        for i, ch in enumerate(shortest):
+            for other in strs:
+                if other[i] != ch:
+                    return shortest[:i]
+        return shortest 
 
 
 strs = ["cc", "c"]

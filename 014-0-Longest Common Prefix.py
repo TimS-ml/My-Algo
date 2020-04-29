@@ -3,8 +3,6 @@
 
 class Solution:
     def longestCommonPrefix(self, strs) -> str:
-        if len(strs) == 0:
-            return ""
         zipped = zip(*strs)
         ans = 0
         for i in zipped:
