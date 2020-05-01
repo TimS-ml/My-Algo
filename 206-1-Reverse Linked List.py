@@ -1,5 +1,8 @@
 # https://leetcode-cn.com/problems/reverse-linked-list/
-# in java, we can simply write prev = ListNode(null)
+# Multivariate assignment
+
+# When left rev changed to 1, right rev still unchange
+# rev, rev.next, p = p, rev, p.next
 
 
 class ListNode:
@@ -10,14 +13,11 @@ class ListNode:
 
 class Solution:
     def reverseList(self, head) -> ListNode:
-        prev = None
-        curr = head
-        while curr:
-            nextTemp = curr.next  # save pointer ->
-            curr.next = prev  # change to <-
-            prev = curr  # prev move to next
-            curr = nextTemp  # curr move to next
-        return prev
+        p, rev = head, None
+        while p:
+            # multivariate assignment
+            rev, rev.next, p = p, rev, p.next
+        return rev
 
 
 def listToListNode(input):

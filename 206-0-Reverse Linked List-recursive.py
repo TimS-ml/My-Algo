@@ -1,9 +1,7 @@
 # https://leetcode-cn.com/problems/reverse-linked-list/
-# This is slower than solution 1
-# Multivariate assignment
-
-# When left rev changed to 1, right rev still unchange
-# rev, rev.next, p = p, rev, p.next
+# in java, we can simply write prev = ListNode(null)
+# check animation
+# https://leetcode-cn.com/problems/reverse-linked-list/solution/fan-zhuan-lian-biao-shuang-zhi-zhen-di-gui-yao-mo-/
 
 
 class ListNode:
@@ -14,11 +12,12 @@ class ListNode:
 
 class Solution:
     def reverseList(self, head) -> ListNode:
-        p, rev = head, None
-        while p:
-            # multivariate assignment
-            rev, rev.next, p = p, rev, p.next
-        return rev
+        if not head or not head.next:
+            return head
+        ans = self.reverseList(head.next)
+        head.next.next = head  # i <- i+1
+        head.next = None
+        return ans
 
 
 def listToListNode(input):
@@ -49,3 +48,4 @@ ans = Solution().reverseList(head)
 
 out = listNodeToString(ans)
 print(out)
+
