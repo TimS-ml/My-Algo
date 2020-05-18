@@ -3,13 +3,16 @@
 #   if push 1, 2, then pop -> return 2
 # queues: first in - first out，FIFO
 
+from collections import deque
+
 
 class MyStack:
     def __init__(self):
         """
         Initialize your data structure here.
         """
-        self.queue = []
+        self.queue = deque()
+        self.help = deque()
 
     def push(self, x: int) -> None:
         """
@@ -21,14 +24,22 @@ class MyStack:
         """
         Removes the element on top of the stack and returns that element.
         """
-        return self.queue.pop()
+        while len(self.queue) > 1:
+            self.help.append(self.queue.popleft())
+        tmp = self.queue.popleft()
+        self.help, self.queue = self.queue, self.help
+        return tmp
 
     def top(self) -> int:
         """
         Get the top element.
         """
-        return self.queue[-1]
-
+        while len(self.queue) != 1:
+            self.help.append(self.queue.popleft())
+        tmp = self.queue.popleft()
+        self.help.append(tmp)
+        self.help, self.queue = self.queue, self.help
+        return tmp
 
     def empty(self) -> bool:
         """

@@ -2,6 +2,7 @@
 # stack:  last in - first out， LIFO
 #   if push 1, 2, then pop -> return 2
 # queues: first in - first out，FIFO
+# this is non-queues approach, don't do that...
 
 
 class MyStack:

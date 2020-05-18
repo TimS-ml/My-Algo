@@ -16,25 +16,28 @@ class MyStack:
         Push element x onto stack.
         """
         self.queue.append(x)
+        size = len(self.queue)
+        while size > 1:
+            self.queue.append(self.queue.pop(0))
+            size -= 1  
 
     def pop(self) -> int:
         """
         Removes the element on top of the stack and returns that element.
         """
-        return self.queue.pop()
+        return self.queue.pop(0)
 
     def top(self) -> int:
         """
         Get the top element.
         """
-        return self.queue[-1]
-
+        return self.queue[0]
 
     def empty(self) -> bool:
         """
         Returns whether the stack is empty.
         """
-        return not bool(self.queue)
+        return len(self.queue) == 0
 
 
 stack = MyStack()
