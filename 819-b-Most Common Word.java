@@ -1,4 +1,5 @@
 // https://leetcode-cn.com/problems/most-common-word/
+// https://leetcode.com/problems/most-common-word/discuss/123854/C%2B%2BJavaPython-Easy-Solution-with-Explanation
 
 import java.util.*;
 
