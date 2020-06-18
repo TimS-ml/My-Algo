@@ -30,7 +30,6 @@ class MyStack:
         """
         return self.queue[-1]
 
-
     def empty(self) -> bool:
         """
         Returns whether the stack is empty.
@@ -40,9 +39,8 @@ class MyStack:
 
 stack = MyStack()
 print(stack.push(1))
-print(stack.push(2)) 
-print(stack.push(3)) 
+print(stack.push(2))
+print(stack.push(3))
 print(stack.top())
 print(stack.pop())
 print(stack.empty())
-

@@ -7,8 +7,8 @@
 
 class Solution:
     def check(self, matrix, n):
-        j = n+1
-        for i in range(n+1, len(matrix)):
+        j = n + 1
+        for i in range(n + 1, len(matrix)):
             print(matrix[i][n], matrix[n][j])
             if matrix[i][n] != matrix[n][j]:
                 return False
@@ -17,7 +17,7 @@ class Solution:
 
     def validWordSquare(self, words):
         for i in range(len(words)):
-            if i == len(words[i])-1:
+            if i == len(words[i]) - 1:
                 break
             if self.check(words, i) == False:
                 return False

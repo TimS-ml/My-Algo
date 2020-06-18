@@ -5,7 +5,7 @@
 class Solution:
     def majorityElement(self, nums) -> int:
         # 取sorted的list的中间
-        return sorted(nums)[int(len(nums)/2)]
+        return sorted(nums)[int(len(nums) / 2)]
 
 
 input_nums = [3, 2, 3]

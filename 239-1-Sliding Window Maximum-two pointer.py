@@ -1,6 +1,5 @@
 # https://leetcode-cn.com/problems/sliding-window-maximum/
 
-
 from collections import deque
 
 

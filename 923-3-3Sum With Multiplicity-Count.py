@@ -1,7 +1,6 @@
 # https://leetcode-cn.com/problems/3sum-with-multiplicity/
 # https://www.cnblogs.com/stuqx/p/7291948.html
 
-
 import collections
 
 
@@ -19,11 +18,11 @@ class Solution:
                 print(k)
                 if i == j == k:
                     print(i, j, k, 'i == j == k')
-                    ret += (count[i] * (count[i]-1) * (count[i]-2) // 6)
+                    ret += (count[i] * (count[i] - 1) * (count[i] - 2) // 6)
                     print('ret', ret, '\n')
                 elif i == j != k:
                     print(i, j, k, 'i == j != k')
-                    ret += (count[i] * (count[i]-1) * count[k] // 2)
+                    ret += (count[i] * (count[i] - 1) * count[k] // 2)
                     print('ret', ret, '\n')
                 elif i < j < k:
                     print(i, j, k, 'i < j < k')

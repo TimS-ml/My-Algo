@@ -16,6 +16,7 @@ class Solution:
                 backtracking(temp, ans)
                 # print('depth', len(temp))
                 temp.pop()
+
         ans = []
         temp = []
         backtracking(temp, ans)

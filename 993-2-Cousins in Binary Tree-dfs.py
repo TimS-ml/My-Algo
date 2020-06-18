@@ -77,7 +77,6 @@ list2 = [1, 2, 3, None, 4, None, 5]
 x2 = 5
 y2 = 4
 
-
 tree = Tree()
 for i in range(len(list1)):
     tree.add(list1[i])

@@ -11,7 +11,7 @@ class Solution:
 
         end = len(nums) - 1
         k = k % len(nums)
-        
+
         # just like pop and append, nothing special
         for i in range(0, k):
             temp = nums[end]

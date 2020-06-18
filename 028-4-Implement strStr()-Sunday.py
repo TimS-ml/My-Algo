@@ -20,13 +20,13 @@ class Solution:
         lenN = len(needle)
         lenH = len(haystack)
         i = 0  # start pointer
-        while i <= lenH-lenN:
+        while i <= lenH - lenN:
             j = lenN - 1
             while j >= 0:  # loop inside needle
-                if haystack[i+j] != needle[j]:
-                    if i+lenN < lenH:
+                if haystack[i + j] != needle[j]:
+                    if i + lenN < lenH:
                         # calculate how many steps can skip
-                        skip = lenN - right[ord(haystack[i+lenN])]
+                        skip = lenN - right[ord(haystack[i + lenN])]
                     else:
                         return -1
                     break

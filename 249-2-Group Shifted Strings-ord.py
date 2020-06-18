@@ -27,4 +27,3 @@ class Solution:
 # [["ayz"],["abc","bcd"]]
 strings = ["abc", "bcd", "ayz"]
 print(Solution().groupStrings(strings))
-

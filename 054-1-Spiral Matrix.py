@@ -8,7 +8,7 @@ class Solution:
             return []
         ans = []
         X, Y = len(matrix[0]), len(matrix)
-        u, d, r, l = 0, Y-1, X-1, 0
+        u, d, r, l = 0, Y - 1, X - 1, 0
         while d > u and r > l:
             ans.extend(matrix[u][j] for j in range(l, r))
             ans.extend(matrix[i][r] for i in range(u, d))
@@ -25,9 +25,5 @@ class Solution:
         return ans
 
 
-matrix = [
-    [1, 2, 3, 4],
-    [5, 6, 7, 8],
-    [9, 10, 11, 12]
-]
+matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
 print(Solution().spiralOrder(matrix))

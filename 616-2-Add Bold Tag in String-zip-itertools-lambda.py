@@ -3,7 +3,6 @@
 # [k for k, g in groupby('AAAABBBCCDAABBB')] --> A B C D A B
 # [list(g) for k, g in groupby('AAAABBBCCD')] --> AAAA BBB CC D
 
-
 import itertools
 
 
@@ -20,7 +19,7 @@ class Solution:
         for d in dict:
             pos = s.find(d)
             while pos != -1:
-                mark[pos:pos+len(d)] = [1] * len(d)
+                mark[pos:pos + len(d)] = [1] * len(d)
                 pos = s.find(d, pos + 1)
 
         ans = []

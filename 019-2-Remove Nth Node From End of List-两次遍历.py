@@ -40,8 +40,8 @@ class Solution:
 
 head1_list = [1, 2, 3, 4, 5]
 head1 = tmp = ListNode(head1_list[0])  # 设定tmp是为了不改变head1
-for i in range(len(head1_list)-1):
-    tmp.next = ListNode(head1_list[i+1])
+for i in range(len(head1_list) - 1):
+    tmp.next = ListNode(head1_list[i + 1])
     tmp = tmp.next
 # while head1:
 #     print(head1.val)

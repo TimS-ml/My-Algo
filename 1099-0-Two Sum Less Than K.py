@@ -11,9 +11,9 @@ class Solution:
 
         ans = 1
         for i in range(L):
-            for j in range(i+1, L):
+            for j in range(i + 1, L):
                 if A[i] + A[j] < K:
-                   ans = max(A[i] + A[j], ans) 
+                    ans = max(A[i] + A[j], ans)
         return -1 if ans == 1 else ans
 
 
@@ -21,4 +21,3 @@ class Solution:
 IN = [([34, 23, 1, 24, 75, 33, 54, 8], 60), ([10, 20, 30], 15), ([3, 2, 4], 6)]
 useSet = 0
 print(Solution().twoSumLessThanK(IN[useSet][0], IN[useSet][1]))
-

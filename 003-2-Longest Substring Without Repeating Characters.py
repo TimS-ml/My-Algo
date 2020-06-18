@@ -14,7 +14,7 @@ class Solution:
             dic[s[i]] = i
 
         for i in range(len(s)):
-            res = max(res, i-start+1)
+            res = max(res, i - start + 1)
         return res
 
 

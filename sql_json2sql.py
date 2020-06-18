@@ -12,7 +12,7 @@ def get_mysql_sql_from_leetcodejson(json_str):
         for x in jo['rows'][db_name]:
             tos = ['NULL' if y is None else '\'%s\'' % (y) for y in x]
             values.append('(%s)' % (', '.join(tos)))
-        sql += ', '.join(values)+';'
+        sql += ', '.join(values) + ';'
         res.append(sql)
     return res
 

@@ -22,8 +22,8 @@ class Solution(object):
 
         while head and head.next:
             # Nodes to be swapped
-            first_node = head;
-            second_node = head.next;
+            first_node = head
+            second_node = head.next
 
             # Swapping
             prev_node.next = second_node
@@ -48,6 +48,7 @@ def listToListNode(input):
     ptr = dummyRoot.next
     return ptr
 
+
 def listNodeToString(node):
     if not node:
         return "[]"
@@ -63,4 +64,3 @@ head = listToListNode(line)
 ans = Solution().swapPairs(head)
 out = listNodeToString(ans)
 print(out)
-

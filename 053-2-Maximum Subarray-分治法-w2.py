@@ -12,23 +12,23 @@ class Solution:
         if len(nums) == 1:
             return nums[0]
         else:
-            self.maxSubArray(nums[0: len(nums)//2])
-            self.maxSubArray(nums[len(nums)//2: len(nums)])
+            self.maxSubArray(nums[0:len(nums) // 2])
+            self.maxSubArray(nums[len(nums) // 2:len(nums)])
 
-        leftMax = nums[len(nums)//2-1]
+        leftMax = nums[len(nums) // 2 - 1]
         tmp = 0
         # for i in range(len(nums)//2-1, -1, -1):
-        for i in range(0, len(nums)//2):
+        for i in range(0, len(nums) // 2):
             tmp += nums[i]
             leftMax = max(tmp, leftMax)
 
-        rightMax = nums[len(nums)//2]
+        rightMax = nums[len(nums) // 2]
         tmp = 0
-        for i in range(len(nums)//2, len(nums)):
+        for i in range(len(nums) // 2, len(nums)):
             tmp += nums[i]
             rightMax = max(tmp, rightMax)
 
-        return max(rightMax, leftMax, leftMax+rightMax)
+        return max(rightMax, leftMax, leftMax + rightMax)
 
 
 nums1 = [-2, 1, -3, 4, -1, 2, 1, -5, 4]

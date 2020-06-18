@@ -5,7 +5,7 @@ class Solution(object):
     def longestConsecutive(self, root):
         def dfs(root):
             if not root:
-                return None, 0, 0, 0    # increasing length, decreasing length, global max length
+                return None, 0, 0, 0  # increasing length, decreasing length, global max length
             inc = dec = 1
             left, leftInc, leftDec, leftMax = dfs(root.left)
             right, rightInc, rightDec, rightMax = dfs(root.right)
@@ -17,6 +17,7 @@ class Solution(object):
                 inc = max(rightInc + 1, inc)
             if root.val - 1 == right:
                 dec = max(rightDec + 1, dec)
-            return root.val, inc, dec, max(inc + dec - 1, leftMax, rightMax, inc, dec)
+            return root.val, inc, dec, max(inc + dec - 1, leftMax, rightMax,
+                                           inc, dec)
 
         return dfs(root)[3]

@@ -3,7 +3,6 @@
 # and then replace it with nums[i] and discard the list in the same length
 # which is implemented by 'tail[idx] = i'
 
-
 import bisect
 
 

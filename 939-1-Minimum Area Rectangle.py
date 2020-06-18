@@ -2,7 +2,6 @@
 # sides parallel to the x and y axes
 # 这个code表达很乱
 
-
 import matplotlib.pyplot as plt
 from collections import defaultdict
 
@@ -31,7 +30,7 @@ class Solution:
                 for i in range(j):
                     y1 = column[i]
                     if (y1, y2) in last_x:
-                        ans = min(ans, (x-last_x[y1, y2])*(y2-y1))
+                        ans = min(ans, (x - last_x[y1, y2]) * (y2 - y1))
                     last_x[y1, y2] = x
         return ans if ans < float('inf') else 0
 

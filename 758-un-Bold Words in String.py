@@ -9,16 +9,17 @@
 # if point: [ A [[ B ] C ]] => [ ABC ]
 # if point: [ A ][ B  C ] => [ ABC ]
 
+
 class Solution:
     def boldWords(self, words, S: str) -> str:
-        mark = {'start':[], 'end':[]}
+        mark = {'start': [], 'end': []}
         for d in words:
             loc = S.find(d)
             # print(loc)
             if loc != -1:
                 mark['start'].append(loc)
                 mark['end'].append(loc + len(d))
-        
+
         stack = 0
         for i in range(len(S)):
             if i in mark['start']:
@@ -30,8 +31,7 @@ class Solution:
 
 
 # words, S
-IN = [(["ab","bc"], "aabcd"), ([], "aabcd"), (["ab","c"], "aabcd")]
+IN = [(["ab", "bc"], "aabcd"), ([], "aabcd"), (["ab", "c"], "aabcd")]
 useSet = 2
 print(IN[useSet][0], IN[useSet][1])
 print(Solution().boldWords(IN[useSet][0], IN[useSet][1]))
-

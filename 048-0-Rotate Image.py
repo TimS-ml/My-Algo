@@ -18,4 +18,3 @@ matrix = [
 ]
 
 print(Solution().rotate(matrix))
-

@@ -1,7 +1,6 @@
 # https://leetcode-cn.com/problems/number-of-islands/
 # https://leetcode-cn.com/problems/number-of-islands/solution/dfs-bfs-bing-cha-ji-python-dai-ma-java-dai-ma-by-l/
 
-
 from collections import deque
 
 
@@ -32,15 +31,14 @@ class Solution:
                             new_i = cur_x + direct[0]
                             new_j = cur_y + direct[1]
                             # same as dfs solution
-                            if 0 <= new_i < m and 0 <= new_j < n and not marked[new_i][new_j] and grid[new_i][new_j] == '1':
+                            if 0 <= new_i < m and 0 <= new_j < n and not marked[
+                                    new_i][new_j] and grid[new_i][new_j] == '1':
                                 queue.append((new_i, new_j))
                                 # 如果是出队列的时候再标记，会造成很多重复的结点进入队列，会严重超时
                                 marked[new_i][new_j] = True
         return count
 
 
-grid = [['1', '1', '1', '1', '0'],
-        ['1', '1', '0', '1', '0'],
-        ['1', '1', '0', '0', '0'],
-        ['0', '0', '0', '0', '0']]
+grid = [['1', '1', '1', '1', '0'], ['1', '1', '0', '1', '0'],
+        ['1', '1', '0', '0', '0'], ['0', '0', '0', '0', '0']]
 print(Solution().numIslands(grid))

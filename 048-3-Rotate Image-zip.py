@@ -1,5 +1,5 @@
 # https://leetcode-cn.com/problems/rotate-image/
-# using [::-1] to flip the matrix upside down 
+# using [::-1] to flip the matrix upside down
 # and then zip to transpose it
 
 
@@ -18,4 +18,3 @@ matrix = [
 ]
 
 print(Solution().rotate(matrix))
-

@@ -11,7 +11,7 @@ class Solution:
                 else:
                     q.append((i, j))
         for i, j in q:
-            for r, c in ((i, 1+j), (i, j-1), (i+1, j), (i-1, j)):
+            for r, c in ((i, 1 + j), (i, j - 1), (i + 1, j), (i - 1, j)):
                 z = matrix[i][j] + 1
                 if 0 <= r <= m and 0 <= c <= n and matrix[r][c] > z:
                     matrix[r][c] = z
@@ -19,14 +19,8 @@ class Solution:
         return matrix
 
 
-matrix1 = [
-    [0, 0, 0],
-    [0, 1, 0],
-    [1, 1, 1]]
+matrix1 = [[0, 0, 0], [0, 1, 0], [1, 1, 1]]
 
-matrix2 = [
-    [0, 0, 0],
-    [0, 2, 0],
-    [1, 4, 1]]
+matrix2 = [[0, 0, 0], [0, 2, 0], [1, 4, 1]]
 
 print(Solution().updateMatrix(matrix2))

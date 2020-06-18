@@ -22,9 +22,9 @@ class Solution:
                 if dic[temp] > 1:
                     dic[temp] -= 1
                 else:
-                    del(dic[temp])  # delete the leftmost character
+                    del (dic[temp])  # delete the leftmost character
                 start += 1
-            res = max(res, i-start+1)
+            res = max(res, i - start + 1)
         return res
 
 

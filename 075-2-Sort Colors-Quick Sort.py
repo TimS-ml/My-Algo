@@ -8,7 +8,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: void Do not return anything, modify nums in-place instead.
         """
-        self.quickSort(nums, 0, len(nums)-1)
+        self.quickSort(nums, 0, len(nums) - 1)
         # print nums
 
     def quickSort(self, nums, left, right):
@@ -29,8 +29,8 @@ class Solution(object):
         # 交换基准数
         nums[left] = nums[i]
         nums[i] = tmp
-        self.quickSort(nums, left, i-1)
-        self.quickSort(nums, i+1, right)
+        self.quickSort(nums, left, i - 1)
+        self.quickSort(nums, i + 1, right)
 
 
 nums = [2, 0, 2, 1, 1, 0]

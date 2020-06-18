@@ -10,7 +10,8 @@ class Solution:
         L = len(s)
         if L < 2:
             return s
-        return self.reverseString(s[int(L / 2):]) + self.reverseString(s[:int(L / 2)])
+        return self.reverseString(s[int(L / 2):]) + self.reverseString(
+            s[:int(L / 2)])
 
 
 s = ["h", "e", "l", "l", "o"]

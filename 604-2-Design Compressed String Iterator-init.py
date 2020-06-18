@@ -19,7 +19,7 @@ class StringIterator:
             self.isfirst = True
         if self.isfirst == True:
             self.letter = self.string[self.i]
-            self.number = self.string[self.i+1]
+            self.number = self.string[self.i + 1]
             self.count = int(self.number)
             self.isfirst = False
             self.i += 2
@@ -42,7 +42,7 @@ class StringIterator:
 compressedString = "L1e2t1C1o1d1e1"
 compressedString2 = "L10e2t1C1o1d1e11"
 obj = StringIterator(compressedString2)
-for i in range(int(len(compressedString2)/2)+5):
+for i in range(int(len(compressedString2) / 2) + 5):
     print(obj.next())
     print(obj.hasNext())
 

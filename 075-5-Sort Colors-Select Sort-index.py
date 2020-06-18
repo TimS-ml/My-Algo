@@ -5,7 +5,7 @@
 
 class Solution(object):
     def sortColors(self, nums):
-        for i in range(len(nums)-1):  # i是有序区和无序区的分界
+        for i in range(len(nums) - 1):  # i是有序区和无序区的分界
             if nums[i] > min(nums[i:]):
                 min_index = nums.index(min(nums[i:]), i)
                 nums[i], nums[min_index] = nums[min_index], nums[i]

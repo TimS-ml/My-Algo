@@ -7,11 +7,11 @@ class Solution:
         length = len(S)
         dic = []
         for c, x in sorted((S.count(x), x) for x in set(S)):
-            if c > (length+1)/2:
+            if c > (length + 1) / 2:
                 return ""
-            dic.extend(c*x)
+            dic.extend(c * x)
         ans = [None] * length
-        ans[::2], ans[1::2] = dic[int(length/2):], dic[:int(length/2)]
+        ans[::2], ans[1::2] = dic[int(length / 2):], dic[:int(length / 2)]
         return "".join(ans)
 
 

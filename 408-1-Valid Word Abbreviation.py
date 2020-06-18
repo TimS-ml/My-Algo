@@ -23,7 +23,7 @@ class Solution:
                 j += 1
             if i == len(abbr) - 1:
                 if digit:
-                    jump = int(abbr[start:i+1])
+                    jump = int(abbr[start:i + 1])
                     digit = False
                     j += jump
                     if j != len(word):

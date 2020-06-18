@@ -20,4 +20,3 @@ class Solution:
 IN = [([1, 2, 3, 4, 5, 6, 7], 3)]
 useSet = 0
 print(Solution().rotate(IN[useSet][0], IN[useSet][1]))
-

@@ -11,11 +11,11 @@ class Solution:
                 tmp = matrix[i][:-1]
                 tmp2 = matrix[i][:-1]
             else:
-                tmp = matrix[i-1][:-1]
+                tmp = matrix[i - 1][:-1]
                 tmp2 = matrix[i][1:]
             if tmp != tmp2:
-                return(False)
-        return(True)
+                return (False)
+        return (True)
 
 
 matrix1 = [

@@ -4,8 +4,8 @@
 
 class Solution:
     def Manhattan(self, l1_x, l1_y, l2_x, l2_y):
-        x = abs(l1_x-l2_x)
-        y = abs(l1_y-l2_y)
+        x = abs(l1_x - l2_x)
+        y = abs(l1_y - l2_y)
         # print(x+y)
         return x + y
 
@@ -17,8 +17,9 @@ class Solution:
         # while bikes:
         for i in range(len(workers)):
             for j in range(len(bikes)):
-                distance = self.Manhattan(
-                    workers[i][0], workers[i][1], bikes[bike_num][0], bikes[bike_num][1])
+                distance = self.Manhattan(workers[i][0], workers[i][1],
+                                          bikes[bike_num][0],
+                                          bikes[bike_num][1])
                 if distance < min_distance:
                     min_distance = distance
 

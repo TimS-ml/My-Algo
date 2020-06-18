@@ -31,6 +31,7 @@ class Solution:
         tmp.next = tmp.next.next
         return dummy.next
 
+
 # input是存储在json里的
 
 

@@ -10,9 +10,11 @@ class Solution:
             if start >= end:
                 return li
             li[start], li[end] = li[end], li[start]
-            return rever(start+1, end-1, li)
-        rever(0, len(s)-1, s)
+            return rever(start + 1, end - 1, li)
+
+        rever(0, len(s) - 1, s)
         print(s)
+
 
 s = ["h", "e", "l", "l", "o"]
 # s = []

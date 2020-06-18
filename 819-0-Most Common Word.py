@@ -10,7 +10,11 @@ class Solution:
         dic = {}
         for n in paragraph.split(' '):
             dic[n] = dic.get(n, 0) + 1
-        dic = {k: v for k, v in sorted(dic.items(), key=lambda item: item[1], reverse=True)}
+        dic = {
+            k: v
+            for k, v in sorted(
+                dic.items(), key=lambda item: item[1], reverse=True)
+        }
         print(dic)
         for i in dic:
             if i not in banned and i != '':
@@ -26,4 +30,3 @@ class Solution:
 p = "Bob. hIt, baLl"
 b = ["bob", "hit"]
 print(Solution().mostCommonWord(p, b))
-

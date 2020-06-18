@@ -17,7 +17,7 @@ class Solution:
             # print(head)
             x, y = hx, hy
 
-            while y < len_y-1 and x < len_x-1:
+            while y < len_y - 1 and x < len_x - 1:
                 x += 1
                 y += 1
                 if matrix[y][x] != head:
@@ -25,7 +25,7 @@ class Solution:
 
             if hy > 0:
                 hy -= 1
-            elif hx < len_x-2:
+            elif hx < len_x - 2:
                 hx += 1
         return True
 

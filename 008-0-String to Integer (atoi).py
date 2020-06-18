@@ -8,18 +8,19 @@ class Solution:
         for i in range(L):
             if str[i] == ' ':
                 continue
-            elif (i != L-1 and str[i+1].isnumeric() and (str[i] == '+' or str[i] == '-')) or str[i].isnumeric():
+            elif (i != L - 1 and str[i + 1].isnumeric() and
+                  (str[i] == '+' or str[i] == '-')) or str[i].isnumeric():
                 ans = str[i]
-                for j in range(i+1, L):
+                for j in range(i + 1, L):
                     if str[j].isnumeric():
                         ans += str[j]
                     else:
                         break
                 ans = int(ans)
-                if -2**31 < ans < 2**31-1:
+                if -2**31 < ans < 2**31 - 1:
                     return ans
                 elif ans > 0:
-                    return 2**31-1
+                    return 2**31 - 1
                 else:
                     return -2**31
             else:

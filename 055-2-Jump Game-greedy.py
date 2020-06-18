@@ -8,7 +8,7 @@ class Solution:
         start = n - 2
         end = n - 1
         while start >= 0:
-            if start+nums[start] >= end:
+            if start + nums[start] >= end:
                 end = start
             start -= 1
         return end <= 0

@@ -16,12 +16,13 @@ class Solution:
                 # 不然会出key error, collections.Counter(A)不会
                 if i <= j and k in count:
                     if i == j == k:
-                        ret += (count[i] * (count[i]-1) * (count[i]-2) // 6)
+                        ret += (count[i] * (count[i] - 1) * (count[i] - 2) //
+                                6)
                     elif i == j != k:
-                        ret += (count[i] * (count[i]-1) * count[k] // 2)
+                        ret += (count[i] * (count[i] - 1) * count[k] // 2)
                     elif i < j < k:
                         ret += count[i] * count[j] * count[k]
-        return (int(ret) % (10 ** 9 + 7))
+        return (int(ret) % (10**9 + 7))
 
 
 A = [1, 1, 1, 3, 3, 4, 5, 5, 5]

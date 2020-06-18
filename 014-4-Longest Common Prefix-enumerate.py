@@ -10,7 +10,7 @@ class Solution:
             for other in strs:
                 if other[i] != ch:
                     return shortest[:i]
-        return shortest 
+        return shortest
 
 
 strs = ["cc", "c"]

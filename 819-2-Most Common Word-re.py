@@ -12,7 +12,8 @@ class Solution:
         # words = re.sub(r'[^a-zA-Z]', ' ', paragraph).lower().split()
         words = re.findall(r'\w+', paragraph.lower())
         print(words)
-        return collections.Counter(w for w in words if w not in ban).most_common(1)[0][0]
+        return collections.Counter(w for w in words
+                                   if w not in ban).most_common(1)[0][0]
 
 
 # p = "Bob hit a ball, the hit BALL flew far after it was hit."
@@ -24,4 +25,3 @@ class Solution:
 p = "Bob. hIt, baLl"
 b = ["bob", "hit"]
 print(Solution().mostCommonWord(p, b))
-

@@ -6,7 +6,7 @@ class Solution:
         lo = 0
         hi = len(nums)
         while lo < hi:
-            mid = int(lo + (hi-lo)/2)
+            mid = int(lo + (hi - lo) / 2)
             if nums[mid] > target:
                 hi = mid
             elif nums[mid] < target:

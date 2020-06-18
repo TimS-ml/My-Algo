@@ -1,6 +1,5 @@
 # https://leetcode-cn.com/problems/network-delay-time/
 
-
 import heapq
 import collections
 

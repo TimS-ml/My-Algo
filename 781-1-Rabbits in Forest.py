@@ -2,7 +2,6 @@
 # https://leetcode.com/problems/rabbits-in-forest/discuss/114721/C%2B%2BJavaPython-Easy-and-Concise-Solution
 # Count the res as we loop on the answers.
 
-
 import collections
 
 

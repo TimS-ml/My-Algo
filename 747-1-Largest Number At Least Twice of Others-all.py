@@ -8,7 +8,7 @@ class Solution:
         m = max(nums)
         # print([m >= 2*x for x in nums if x != m])
         # print([m >= 2*x for x in nums])  # False when nums.index, so will return False in all(xxx) function
-        if all(m >= 2*x for x in nums if x != m):
+        if all(m >= 2 * x for x in nums if x != m):
             return nums.index(m)
         return -1
 

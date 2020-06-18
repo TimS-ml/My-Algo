@@ -1,6 +1,5 @@
 # https://leetcode-cn.com/problems/the-maze-ii/
 
-
 import heapq
 
 
@@ -38,17 +37,17 @@ class Solution(object):
                 col -= y
                 local -= 1
                 if maze[row][col] == 0 and [row, col] not in queue:
-                    heapq.heappush(pq, (count+local, row, col))
+                    heapq.heappush(pq, (count + local, row, col))
         return -1
 
 
-maze1 = [[0, 0, 1, 0, 0], [0, 0, 0, 0, 0], [
-    0, 0, 0, 1, 0], [1, 1, 0, 1, 1], [0, 0, 0, 0, 0]]
+maze1 = [[0, 0, 1, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 1, 0], [1, 1, 0, 1, 1],
+         [0, 0, 0, 0, 0]]
 start1 = [0, 4]
 destination1 = [4, 4]
 
-maze2 = [[0, 0, 1, 0, 0], [0, 0, 0, 0, 0], [
-    0, 0, 0, 1, 0], [1, 1, 0, 1, 1], [0, 0, 0, 0, 0]]
+maze2 = [[0, 0, 1, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 1, 0], [1, 1, 0, 1, 1],
+         [0, 0, 0, 0, 0]]
 start2 = [0, 4]
 destination2 = [3, 2]
 print(Solution().shortestDistance(maze2, start2, destination2))

@@ -25,4 +25,3 @@ class Solution:
 IN = [([34, 23, 1, 24, 75, 33, 54, 8], 60), ([10, 20, 30], 15), ([3, 2, 4], 6)]
 useSet = 0
 print(Solution().twoSumLessThanK(IN[useSet][0], IN[useSet][1]))
-

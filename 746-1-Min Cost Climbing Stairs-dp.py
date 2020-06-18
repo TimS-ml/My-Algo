@@ -1,6 +1,5 @@
 # https://leetcode-cn.com/problems/min-cost-climbing-stairs/
 
-
 from typing import List
 
 

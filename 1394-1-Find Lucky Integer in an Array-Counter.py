@@ -10,11 +10,10 @@ class Solution:
         dic = Counter(arr)
         for i in dic:
             if dic[i] == i:
-               ans = max(ans, i) 
+                ans = max(ans, i)
         return ans
 
 
 arr = [2, 2, 3, 4]
 # arr = [1, 2, 2, 3, 3, 3]
 print(Solution().findLucky(arr))
-

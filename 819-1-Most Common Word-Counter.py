@@ -10,7 +10,8 @@ class Solution:
         for c in "!?',;.":
             paragraph = paragraph.replace(c, " ")
         paragraph = paragraph.lower()
-        count = collections.Counter(word for word in paragraph.lower().split()).most_common()
+        count = collections.Counter(
+            word for word in paragraph.lower().split()).most_common()
         for i in count:
             if i[0] not in banned:
                 return i[0]
@@ -25,4 +26,3 @@ class Solution:
 p = "Bob. hIt, baLl"
 b = ["bob", "hit"]
 print(Solution().mostCommonWord(p, b))
-

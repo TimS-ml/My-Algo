@@ -1,5 +1,6 @@
 # https://leetcode-cn.com/problems/find-the-duplicate-number/
 
+
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
         slow = fast = finder = 0
@@ -15,4 +16,3 @@ class Solution:
 
 nums = [1, 2, 2, 3, 4]
 print(Solution().findDuplicate(nums))
-

@@ -17,8 +17,8 @@ class Solution:
                 if str[i].isdigit():
                     ans = int(str[i])
                     # print(ans)
-                    if ans > 2**31-1:
-                        return 2**31-1
+                    if ans > 2**31 - 1:
+                        return 2**31 - 1
                     return ans
                 else:
                     return 0

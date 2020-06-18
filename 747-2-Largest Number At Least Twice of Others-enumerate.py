@@ -19,7 +19,7 @@ class Solution:
             elif n > m2:
                 m2 = n
 
-        if m < m2*2:
+        if m < m2 * 2:
             mIndex = -1
 
         return mIndex

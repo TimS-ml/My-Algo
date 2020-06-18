@@ -17,12 +17,15 @@ class Solution:
             #     the digit-logs remain in the same order
             # [3] id_ and None The letter-logs are sorted lexicographically by contend(id_),
             #     the digit-logs remain in the same order (identifier used in case of ties)
-            return (0, rest, id_) if rest[0].isalpha() else (1,)
-        return sorted(logs, key = f)
+            return (0, rest, id_) if rest[0].isalpha() else (1, )
+
+        return sorted(logs, key=f)
 
 
 # logs = ["dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"]
-logs = ["a1 9 2 3 1","g1 act car","zo4 4 7","ab1 off key dog","a8 act zoo","a2 act car"]  # tie
+logs = [
+    "a1 9 2 3 1", "g1 act car", "zo4 4 7", "ab1 off key dog", "a8 act zoo",
+    "a2 act car"
+]  # tie
 
 print(Solution().reorderLogFiles(logs))
-

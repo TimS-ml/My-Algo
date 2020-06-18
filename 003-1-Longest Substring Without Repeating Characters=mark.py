@@ -1,7 +1,6 @@
 # https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
 # combine hash and compare in one loop
 
-
 # Initialize Hash dict
 
 # [1] return a set
@@ -26,7 +25,7 @@ class Solution:
             if s[i] in dic and start <= dic[s[i]]:  # show up second time
                 start = dic[s[i]] + 1
             else:
-                res = max(res, i-start+1)
+                res = max(res, i - start + 1)
             dic[s[i]] = i  # initialize
         return res
 

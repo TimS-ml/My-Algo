@@ -18,4 +18,3 @@ class Solution:
 nums1 = [2, 2, 1]
 nums2 = [4, 1, 2, 1, 2]
 print(Solution().singleNumber(nums2))
-

@@ -8,10 +8,10 @@ class Solution:
         # 这里面有3个指针，i start end
         # nums[start] + nums[end] = target = 0 - nums[i]
         for i in range(0, len(nums)):
-            if i > 0 and nums[i] == nums[i-1]:  # 避免重复计算
+            if i > 0 and nums[i] == nums[i - 1]:  # 避免重复计算
                 continue
             target = 0 - nums[i]
-            start, end = i+1, len(nums)-1
+            start, end = i + 1, len(nums) - 1
             while start < end:
                 # 从两侧逼近
                 if nums[start] + nums[end] > target:
@@ -23,9 +23,9 @@ class Solution:
                     res.append((nums[i], nums[start], nums[end]))
                     end -= 1
                     start += 1
-                    while start < end and nums[end] == nums[end+1]:
+                    while start < end and nums[end] == nums[end + 1]:
                         end -= 1
-                    while start < end and nums[start] == nums[start-1]:
+                    while start < end and nums[start] == nums[start - 1]:
                         start += 1
         return res
 

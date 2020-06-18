@@ -3,7 +3,6 @@
 # https://docs.python.org/3.8/library/collections.html#collections.deque
 # http://book.pythontips.com/en/latest/enumerate.html
 
-
 import collections
 
 
@@ -43,11 +42,11 @@ class Solution:
 
                 # so in which case score != len(t) ???
                 if score == len(t) and deq[-1] - deq[0] < end - start:
-                    print(
-                        "=> ANS: {}-{} < {}-{}".format(deq[-1], deq[0], end, start))
+                    print("=> ANS: {}-{} < {}-{}".format(
+                        deq[-1], deq[0], end, start))
                     start, end = deq[0], deq[-1]
 
-        return s[start: end + 1]
+        return s[start:end + 1]
 
 
 # Output: "BANC"

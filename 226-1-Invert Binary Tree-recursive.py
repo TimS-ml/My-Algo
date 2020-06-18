@@ -67,11 +67,9 @@ def treeNodeToString(root):
     return "[" + output[:-2] + "]"
 
 
-
 IN = [([4, 2, 7, 1, 3, 6, 9]), ([3, 9, 20, None, None, 15, 7])]
 useSet = 1
 line = root = listToTreeNode(IN[useSet])
 ans = Solution().invertTree(root)
 out = treeNodeToString(ans)
 print(out)
-

@@ -65,5 +65,4 @@ tree = Tree()
 for i in range(len(vals)):
     tree.add(vals[i])
 
-
 print(Solution().diameterOfBinaryTree(tree.root))

@@ -15,7 +15,7 @@ class Solution:
             r += 1
             # when sum(res) in window >= s
             while res >= s:
-                ans = min(ans, r-l)
+                ans = min(ans, r - l)
                 res -= nums[l]
                 l += 1  # left side move right
         return 0 if ans == len(nums) + 1 else ans

@@ -23,7 +23,7 @@ class Solution:
                 temp = min(dic.values())  # delete the leftmost character
                 del dic[s[temp]]
                 start = temp + 1  # move start pointer of the slidewindow
-            res = max(res, end-start)
+            res = max(res, end - start)
         return res
 
 

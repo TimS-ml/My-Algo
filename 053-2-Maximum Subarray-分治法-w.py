@@ -9,7 +9,7 @@
 
 class Solution:
     def maxSubArray(self, nums) -> int:
-        return Solution().recursion(nums, len(nums)//2, 0, len(nums)-1)
+        return Solution().recursion(nums, len(nums) // 2, 0, len(nums) - 1)
 
     def recursion(self, nums, base, leftLimit, rightLimit):
         # 设定边界
@@ -17,23 +17,25 @@ class Solution:
         rightMax = nums[rightLimit]
         maxSum = base
 
-        if (base-leftLimit <= 1) and (rightLimit-base <= 1):
+        if (base - leftLimit <= 1) and (rightLimit - base <= 1):
             maxSum = max(maxSum, leftMax, rightMax)
             return maxSum
 
         leftSum = 0
-        for i in range(leftLimit, base+1, -1):
+        for i in range(leftLimit, base + 1, -1):
             leftSum += nums[i]
             leftMax = max(leftMax, leftSum)
 
         rightSum = 0
-        for i in range(base, rightLimit+1):
+        for i in range(base, rightLimit + 1):
             rightSum += nums[i]
             rightMax = max(rightMax, rightSum)
 
         maxSum = leftMax + rightMax - nums[base]
-        searchLeft = Solution().recursion(nums, (leftLimit+base)//2, leftLimit, base-1)
-        searchRight = Solution().recursion(nums, (rightLimit+base)//2, base+1, rightLimit)
+        searchLeft = Solution().recursion(nums, (leftLimit + base) // 2,
+                                          leftLimit, base - 1)
+        searchRight = Solution().recursion(nums, (rightLimit + base) // 2,
+                                           base + 1, rightLimit)
         maxSum = max(searchLeft, searchRight, maxSum)
 
         return maxSum

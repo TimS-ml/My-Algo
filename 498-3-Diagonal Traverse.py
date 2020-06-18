@@ -17,18 +17,14 @@ class Solution:
             c = i if i < Y else Y - 1
 
             if i % 2 == 1:
-                for j in range(r, c+1):
-                    ans.append(matrix[j][i-j])  # reverse
+                for j in range(r, c + 1):
+                    ans.append(matrix[j][i - j])  # reverse
             else:
-                for j in range(c, r-1, -1):
-                    ans.append(matrix[j][i-j])
+                for j in range(c, r - 1, -1):
+                    ans.append(matrix[j][i - j])
         return ans
 
 
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 matrix2 = [[2, 3]]
 print(Solution().findDiagonalOrder(matrix2))

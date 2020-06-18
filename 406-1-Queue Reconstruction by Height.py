@@ -4,7 +4,9 @@
 class Solution:
     def reconstructQueue(self, people):
         queue = []
-        for p in sorted(people, key=lambda x: (x[0], x[1] and -x[1]), reverse=True):
+        for p in sorted(people,
+                        key=lambda x: (x[0], x[1] and -x[1]),
+                        reverse=True):
             # for p in sorted(people, key=lambda (h,k): (-h,k)):  # don't work
             queue.insert(p[1], p)
         return queue

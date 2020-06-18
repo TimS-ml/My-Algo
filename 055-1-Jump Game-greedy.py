@@ -6,10 +6,10 @@ class Solution:
     def canJump(self, nums) -> bool:
         start = 0
         end = 0
-        while start <= end and end < len(nums)-1:
-            end = max(end, nums[start]+start)
+        while start <= end and end < len(nums) - 1:
+            end = max(end, nums[start] + start)
             start += 1
-        return end >= len(nums)-1
+        return end >= len(nums) - 1
 
 
 nums1 = [2, 3, 1, 1, 4]

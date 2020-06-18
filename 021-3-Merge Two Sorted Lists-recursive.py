@@ -27,6 +27,7 @@ def listToListNode(input):
     ptr = dummyRoot.next
     return ptr
 
+
 def listNodeToString(node):
     if not node:
         return "[]"
@@ -47,4 +48,3 @@ h2 = listToListNode(l2)
 ans = Solution().mergeTwoLists(h1, h2)
 out = listNodeToString(ans)
 print(out)
-

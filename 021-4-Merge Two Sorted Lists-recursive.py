@@ -10,8 +10,10 @@ class ListNode:
 
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
-        if not l1:  return l2
-        if not l2:  return l1
+        if not l1:
+            return l2
+        if not l2:
+            return l1
         if l1.val <= l2.val:
             l1.next = self.mergeTwoLists(l1.next, l2)
             return l1
@@ -29,6 +31,7 @@ def listToListNode(input):
         ptr = ptr.next
     ptr = dummyRoot.next
     return ptr
+
 
 def listNodeToString(node):
     if not node:
@@ -50,4 +53,3 @@ h2 = listToListNode(l2)
 ans = Solution().mergeTwoLists(h1, h2)
 out = listNodeToString(ans)
 print(out)
-

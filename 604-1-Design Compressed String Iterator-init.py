@@ -16,7 +16,7 @@ class StringIterator:
             while end < len(self.data) and self.data[end].isdigit():
                 end += 1
             # print(end)
-            self.num = int(self.data[self.idx+1:end])
+            self.num = int(self.data[self.idx + 1:end])
             self.idx = end - 1
 
     def next(self):
@@ -35,6 +35,6 @@ class StringIterator:
 compressedString1 = "L1e2t1C1o1d1e1"
 compressedString2 = "L10e2t1C1o1d1e11"
 obj = StringIterator(compressedString1)
-for i in range(int(len(compressedString1)/2)+5):
+for i in range(int(len(compressedString1) / 2) + 5):
     print(obj.next())
     # print(obj.hasNext())

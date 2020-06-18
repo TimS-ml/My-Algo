@@ -4,7 +4,7 @@
 class Solution:
     def firstUniqChar(self, s) -> int:
         for i, ch in enumerate(s):
-            if ch not in s[:i]+s[i+1:]:
+            if ch not in s[:i] + s[i + 1:]:
                 return i
         return -1
 

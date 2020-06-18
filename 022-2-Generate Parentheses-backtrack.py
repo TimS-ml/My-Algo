@@ -10,9 +10,9 @@ class Solution:
                 ans.append(S)
                 return
             if left < n:
-                backtrack(S+'(', left+1, right)
+                backtrack(S + '(', left + 1, right)
             if right < left:
-                backtrack(S+')', left, right+1)
+                backtrack(S + ')', left, right + 1)
 
         backtrack()
         return ans

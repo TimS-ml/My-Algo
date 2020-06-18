@@ -21,7 +21,8 @@ class Solution:
         return len(emails)
 
 
-emails = ["test.email+alex@leetcode.com",
-          "test.e.mail+bob.cathy@leetcode.com",
-          "testemail+david@lee.tcode.com"]
+emails = [
+    "test.email+alex@leetcode.com", "test.e.mail+bob.cathy@leetcode.com",
+    "testemail+david@lee.tcode.com"
+]
 print(Solution().numUniqueEmails(emails))

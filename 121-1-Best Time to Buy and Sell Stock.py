@@ -4,7 +4,7 @@
 class Solution:
     def maxProfit(self, prices) -> int:
         ans = 0
-        for i in range(0, len(prices)-1):
+        for i in range(0, len(prices) - 1):
             for j in range(i, len(prices)):
                 tmp = prices[j] - prices[i]
                 if tmp > ans:

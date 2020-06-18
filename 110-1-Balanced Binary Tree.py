@@ -62,9 +62,9 @@ class Solution:
             right = dfs(p.right)
             if left == -1 or right == -1:
                 return -1
-            if abs(left-right) > 1:
+            if abs(left - right) > 1:
                 return -1
-            return 1+max(left, right)
+            return 1 + max(left, right)
 
         if dfs(root) == -1:
             return False

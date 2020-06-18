@@ -18,7 +18,7 @@ class Solution:
         for i in range(Y):
             for j in range(X):
                 # Elements in the first row and the last column are the respective heads.
-                dic[i+j+1].append(matrix[i][j])
+                dic[i + j + 1].append(matrix[i][j])
             print(dic)
 
         for i in sorted(dic.keys()):
@@ -28,9 +28,5 @@ class Solution:
         return ans
 
 
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 print(Solution().findDiagonalOrder(matrix))

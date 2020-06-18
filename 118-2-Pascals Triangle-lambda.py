@@ -8,7 +8,9 @@ class Solution(object):
     def generate(self, numRows):
         ans = [[1]]
         for i in range(1, numRows):
-            ans += [list(map(lambda x, y: x+y, ans[-1]+[0], [0]+ans[-1]))]
+            ans += [
+                list(map(lambda x, y: x + y, ans[-1] + [0], [0] + ans[-1]))
+            ]
         return ans[:numRows]
 
 

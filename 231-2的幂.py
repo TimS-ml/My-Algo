@@ -4,7 +4,7 @@
 class Solution:
     def isPowerOfTwo(self, n) -> bool:
         while n > 1:
-            n = n/2
+            n = n / 2
 
         if n == 1:
             return True

@@ -4,7 +4,7 @@
 
 class Solution:
     def reverse(self, x):
-        max_int = pow(2, 31)-1
+        max_int = pow(2, 31) - 1
         min_int = pow(-2, 31)
 
         str_x = str(abs(x))

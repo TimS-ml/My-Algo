@@ -23,4 +23,3 @@ IN = [("{[]}"), ("([)]"), ("(((())))")]
 useSet = 0
 print(IN[useSet])
 print(Solution().isValid(IN[useSet]))
-

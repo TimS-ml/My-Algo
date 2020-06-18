@@ -23,12 +23,12 @@ class Solution(object):
             # left and right
 
             self.dfs(i, 0, p_visited, m, n, matrix)
-            self.dfs(i, n-1, a_visited, m, n, matrix)
+            self.dfs(i, n - 1, a_visited, m, n, matrix)
 
         for j in range(n):
             # up and down
             self.dfs(0, j, p_visited, m, n, matrix)
-            self.dfs(m-1, j, a_visited, m, n, matrix)
+            self.dfs(m - 1, j, a_visited, m, n, matrix)
         # print p_visited, a_visited
         for i in range(m):
             for j in range(n):
@@ -41,6 +41,7 @@ class Solution(object):
         direction = [(0, 1), (0, -1), (1, 0), (-1, 0)]
         for dire in direction:
             x, y = i + dire[0], j + dire[1]
-            if x < 0 or y < 0 or x >= m or y >= n or visited[x][y] or matrix[i][j] > matrix[x][y]:
+            if x < 0 or y < 0 or x >= m or y >= n or visited[x][
+                    y] or matrix[i][j] > matrix[x][y]:
                 continue
             self.dfs(x, y, visited, m, n, matrix)

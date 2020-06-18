@@ -7,10 +7,10 @@ class Solution:
         primes = [1] * n  # 0-(n-1)
         primes[0] = 0
         primes[1] = 0
-        for i in range(2, int(n**0.5)+1):
+        for i in range(2, int(n**0.5) + 1):
             if primes[i] == 1:  # 加了if就缩短了一半的时间
                 # print('i', i)
-                j = i ** 2
+                j = i**2
                 if j >= n:  # 加了if就缩短了1/3的时间
                     return primes
                 while j < n:

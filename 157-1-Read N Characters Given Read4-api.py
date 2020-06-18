@@ -3,8 +3,6 @@
 # implement the method read that reads n characters from the file
 # and store it in the buffer array buf.
 # Consider that you cannot manipulate the file directly
-
-
 """
 The read4 API is already defined for you.
 

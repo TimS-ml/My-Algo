@@ -3,7 +3,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-
 # 准备试试暴力算法，官网解答里面用了一种递归一样的方法实现的
 # 20190201 - 我自己是想不出用递归来解决问题的……
 # 顺便一说，range(s, len(prices))是不包括右边界的，也就是range(s, 12)是从s开始到11结束
@@ -39,7 +38,6 @@ class Solution:
 # 最终价格应该是12
 prices = [7, 1, 5, 3, 6, 4, 2, 1, 5, 5, 6, 4]
 print(Solution().maxProfit(prices))
-
 
 # df = pd.DataFrame({"prices": [7, 1, 5, 3, 6, 4, 2, 1, 5, 5, 6, 4],
 #                    "date": pd.date_range('20190201', periods=12)},

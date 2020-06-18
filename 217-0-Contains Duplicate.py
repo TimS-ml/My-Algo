@@ -7,10 +7,10 @@ class Solution:
         #     if nums.index(nums[i]) != i:
         #         return True
         # return False
-        
+
         if len(nums) == 0 or len(nums) == 1:
             return False
-        
+
         for i in range(len(nums) - 1, 0, -1):
             if nums.index(nums[i]) != i:
                 return True

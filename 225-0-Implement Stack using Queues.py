@@ -19,7 +19,7 @@ class MyStack:
         size = len(self.queue)
         while size > 1:
             self.queue.append(self.queue.pop(0))
-            size -= 1  
+            size -= 1
 
     def pop(self) -> int:
         """
@@ -42,9 +42,8 @@ class MyStack:
 
 stack = MyStack()
 print(stack.push(1))
-print(stack.push(2)) 
-print(stack.push(3)) 
+print(stack.push(2))
+print(stack.push(3))
 print(stack.top())
 print(stack.pop())
 print(stack.empty())
-

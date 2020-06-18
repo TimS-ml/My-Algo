@@ -12,15 +12,20 @@ class Solution(object):
         h = w = len(matrix)  # h是纵列
         # 沿中轴线翻转
         for i in range(0, h):
-            for j in range(int(w/2)):  # 3*3数组：int(w/2)=1，相当只进行了j=0这一组
+            for j in range(int(w / 2)):  # 3*3数组：int(w/2)=1，相当只进行了j=0这一组
                 # print(matrix[i][j], matrix[i][w-j-1])  # w = 3, j in ranger(2), w-j-1 = 1 and 2
-                matrix[i][j], matrix[i][w-j-1] = matrix[i][w-j-1], matrix[i][j]
+                matrix[i][j], matrix[i][w - j - 1] = matrix[i][w - j -
+                                                               1], matrix[i][j]
 
         # 沿左下-右上的对角线翻转
         for i in range(h):
-            for j in range(w-1-i):
-                print(matrix[i][j], matrix[w-1-j][h-1-i], 'w-1-i =', w-1-i)
-                matrix[i][j], matrix[w-1-j][h-1-i] = matrix[w-1-j][h-1-i], matrix[i][j]
+            for j in range(w - 1 - i):
+                print(matrix[i][j], matrix[w - 1 - j][h - 1 - i], 'w-1-i =',
+                      w - 1 - i)
+                matrix[i][j], matrix[w - 1 - j][h - 1 -
+                                                i] = matrix[w - 1 -
+                                                            j][h - 1 -
+                                                               i], matrix[i][j]
 
 
 matrix = [

@@ -18,7 +18,7 @@ class Solution:
         for value, index in char_dict.items():
             char_dict[value] += 1
             res = max(res, char_dict[value])
-            if res+k <= index-l:
+            if res + k <= index - l:
                 char_dict[s[l]] -= 1
                 l += 1
         return res

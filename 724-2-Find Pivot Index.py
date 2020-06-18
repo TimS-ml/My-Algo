@@ -9,11 +9,11 @@ class Solution:
         if sum(nums[1:]) == 0:
             return 0
         L, R = nums[0], sum(nums[2:])
-        for i in range(1, len(nums)-1):
+        for i in range(1, len(nums) - 1):
             if L == R:
                 return i
             L += nums[i]
-            R -= nums[i+1]
+            R -= nums[i + 1]
         if sum(nums[:-1]) == 0:
             return len(nums) - 1
         return -1

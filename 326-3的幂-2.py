@@ -8,7 +8,7 @@ class Solution:
         import math
         if n == 0:
             return False
-        x = math.pow(n, 1/3)
+        x = math.pow(n, 1 / 3)
         print(x)
         return isinstance(x, int)
 

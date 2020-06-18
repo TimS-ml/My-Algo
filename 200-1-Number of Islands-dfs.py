@@ -32,16 +32,14 @@ class Solution:
         for direct in self.directions:
             new_i = i + direct[0]
             new_j = j + direct[1]
-            if 0 <= new_i < m and 0 <= new_j < n and not marked[new_i][new_j] and grid[new_i][new_j] == '1':
+            if 0 <= new_i < m and 0 <= new_j < n and not marked[new_i][
+                    new_j] and grid[new_i][new_j] == '1':
                 self.dfs(grid, new_i, new_j, m, n, marked)
 
 
-grid = [['1', '1', '1', '1', '0'],
-        ['1', '1', '0', '1', '0'],
-        ['1', '1', '0', '0', '0'],
-        ['0', '0', '0', '0', '0']]
+grid = [['1', '1', '1', '1', '0'], ['1', '1', '0', '1', '0'],
+        ['1', '1', '0', '0', '0'], ['0', '0', '0', '0', '0']]
 print(Solution().numIslands(grid))
-
 
 # 相当于往4个方向试探着走
 # directions = [(-1, 0), (0, -1), (1, 0), (0, 1)]

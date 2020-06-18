@@ -8,7 +8,8 @@ class Solution(object):
         temp = [1]
         for i in range(numRows):
             ans.append(temp)
-            temp = [1] + [temp[i]+temp[i+1] for i in range(len(temp)-1)] + [1]
+            temp = [1] + [temp[i] + temp[i + 1]
+                          for i in range(len(temp) - 1)] + [1]
         return ans
 
 

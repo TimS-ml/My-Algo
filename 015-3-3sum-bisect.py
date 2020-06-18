@@ -33,15 +33,15 @@ class Solution:
         # a只需取<0的数
         for i in range(begin, end):
             a = keys[i]
-            if count[a] >= 2 and -2*a in count:
-                result.append([a, a, -2*a])
+            if count[a] >= 2 and -2 * a in count:
+                result.append([a, a, -2 * a])
 
             # 每个i分别计算b的范围以减小循环长度
             # a < b < c
             max_b = 0 - a // 2  # max_b可取a绝对值的一半（取整）
             min_b = 0 - a - keys[-1]  # min_b可取小于0的数or零
             # print(max_b, min_b)
-            b_begin = max(i+1, bisect_left(keys, min_b))
+            b_begin = max(i + 1, bisect_left(keys, min_b))
             b_end = bisect_right(keys, max_b)
 
             for j in range(b_begin, b_end):

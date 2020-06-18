@@ -15,11 +15,12 @@ class Solution(object):
         """
         def swap(node):
             if not node or not node.next:
-                return node 
+                return node
             B = node.next
             node.next = swap(B.next)
             B.next = node
             return B
+
         return swap(head)
 
 
@@ -32,6 +33,7 @@ def listToListNode(input):
         ptr = ptr.next
     ptr = dummyRoot.next
     return ptr
+
 
 def listNodeToString(node):
     if not node:
@@ -48,4 +50,3 @@ head = listToListNode(line)
 ans = Solution().swapPairs(head)
 out = listNodeToString(ans)
 print(out)
-

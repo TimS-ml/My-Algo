@@ -48,4 +48,3 @@ ans = Solution().reverseList(head)
 
 out = listNodeToString(ans)
 print(out)
-

@@ -12,8 +12,10 @@ class Solution:
         mov, ans, x, y = 0, 0, 0, 0
         obsSet = set(map(tuple, obstacles))
         for i in range(len(commands)):
-            if commands[i] == -2: mov = (mov + 1) % 4
-            elif commands[i] == -1: mov = (mov - 1) % 4
+            if commands[i] == -2:
+                mov = (mov + 1) % 4
+            elif commands[i] == -1:
+                mov = (mov - 1) % 4
             else:
                 movx, movy = dir[mov]
                 while commands[i] and (x + movx, y + movy) not in obsSet:
@@ -28,4 +30,3 @@ class Solution:
 IN = [([4, -1, 3], []), ([4, -1, 4, -2, 4], [[2, 4]])]
 useSet = 1
 print(Solution().robotSim(IN[useSet][0], IN[useSet][1]))
-

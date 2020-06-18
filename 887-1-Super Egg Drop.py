@@ -7,7 +7,7 @@
 class Solution:
     def superEggDrop(self, K, N):
         def recursive(K, N):
-            if(K == 1 or N == 0 or N == 1):
+            if (K == 1 or N == 0 or N == 1):
                 return N
 
             minimun = N

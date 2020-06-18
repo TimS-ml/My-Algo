@@ -24,8 +24,9 @@ class Solution:
             return cache[i][j]
         direction = [(0, 1), (0, -1), (1, 0), (-1, 0)]
         for dire in direction:
-            x, y = i+dire[0], j+dire[1]
-            if x < 0 or y < 0 or x >= len(matrix) or y >= len(matrix[0]) or matrix[i][j] >= matrix[x][y]:
+            x, y = i + dire[0], j + dire[1]
+            if x < 0 or y < 0 or x >= len(matrix) or y >= len(
+                    matrix[0]) or matrix[i][j] >= matrix[x][y]:
                 continue
             cache[i][j] = max(cache[i][j], self.dfs(x, y, cache, matrix))
         # self (i,j) + 1

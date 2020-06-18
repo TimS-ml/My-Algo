@@ -24,7 +24,7 @@ class Solution:
                         elif i == k and k == j:
                             ret += count[i] * (count[i] - 1) * \
                                 (count[i] - 2) / 6
-        return (int(ret) % (10 ** 9 + 7))
+        return (int(ret) % (10**9 + 7))
 
 
 A = [1, 1, 1, 3, 3, 4, 5, 5, 5]
