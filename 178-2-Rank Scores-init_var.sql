@@ -3,7 +3,8 @@
 -- one for the current rank and one for the previous score
 -- (@prev <> (@prev := Score) makesure they are not equal
 
-select Score, @rank := @rank + (@prev <> (@prev := Score)) Rank
-from Scores,
-  (select @rank := 0, @prev := -1) init
-order by Score desc
+SELECT score, @rank := @rank + (@prev <> (@prev := score)) rank
+FROM scores,
+
+  (SELECT @rank := 0, @prev := -1) init
+ORDER BY score DESC

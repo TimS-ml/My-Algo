@@ -1,6 +1,5 @@
 -- https://leetcode-cn.com/problems/reformat-department-table/
-
-/*
+ /*
 Create table If Not Exists Department (id int, revenue int, month varchar(5));
 
 insert into Department (id, revenue, month) values ('1', '8000', 'Jan');
@@ -9,23 +8,58 @@ insert into Department (id, revenue, month) values ('3', '10000', 'Feb');
 insert into Department (id, revenue, month) values ('1', '7000', 'Feb');
 insert into Department (id, revenue, month) values ('1', '6000', 'Mar');
 */
-
-select id, 
-	sum(case when month = 'jan' then revenue else null end) as Jan_Revenue,
-	sum(case when month = 'feb' then revenue else null end) as Feb_Revenue,
-	sum(case when month = 'mar' then revenue else null end) as Mar_Revenue,
-	sum(case when month = 'apr' then revenue else null end) as Apr_Revenue,
-	sum(case when month = 'may' then revenue else null end) as May_Revenue,
-	sum(case when month = 'jun' then revenue else null end) as Jun_Revenue,
-	sum(case when month = 'jul' then revenue else null end) as Jul_Revenue,
-	sum(case when month = 'aug' then revenue else null end) as Aug_Revenue,
-	sum(case when month = 'sep' then revenue else null end) as Sep_Revenue,
-	sum(case when month = 'oct' then revenue else null end) as Oct_Revenue,
-	sum(case when month = 'nov' then revenue else null end) as Nov_Revenue,
-	sum(case when month = 'dec' then revenue else null end) as Dec_Revenue
-from Department
-group by id
-order by id;
+SELECT id,
+       sum(CASE
+               WHEN MONTH = 'jan' THEN revenue
+               ELSE NULL
+           END) AS jan_revenue,
+       sum(CASE
+               WHEN MONTH = 'feb' THEN revenue
+               ELSE NULL
+           END) AS feb_revenue,
+       sum(CASE
+               WHEN MONTH = 'mar' THEN revenue
+               ELSE NULL
+           END) AS mar_revenue,
+       sum(CASE
+               WHEN MONTH = 'apr' THEN revenue
+               ELSE NULL
+           END) AS apr_revenue,
+       sum(CASE
+               WHEN MONTH = 'may' THEN revenue
+               ELSE NULL
+           END) AS may_revenue,
+       sum(CASE
+               WHEN MONTH = 'jun' THEN revenue
+               ELSE NULL
+           END) AS jun_revenue,
+       sum(CASE
+               WHEN MONTH = 'jul' THEN revenue
+               ELSE NULL
+           END) AS jul_revenue,
+       sum(CASE
+               WHEN MONTH = 'aug' THEN revenue
+               ELSE NULL
+           END) AS aug_revenue,
+       sum(CASE
+               WHEN MONTH = 'sep' THEN revenue
+               ELSE NULL
+           END) AS sep_revenue,
+       sum(CASE
+               WHEN MONTH = 'oct' THEN revenue
+               ELSE NULL
+           END) AS oct_revenue,
+       sum(CASE
+               WHEN MONTH = 'nov' THEN revenue
+               ELSE NULL
+           END) AS nov_revenue,
+       sum(CASE
+               WHEN MONTH = 'dec' THEN revenue
+               ELSE NULL
+           END) AS dec_revenue
+FROM department
+GROUP BY id
+ORDER BY id;
 
 /* or (this is faster)
     max(if(month = 'Jan', revenue, null)) AS Jan_Revenue,

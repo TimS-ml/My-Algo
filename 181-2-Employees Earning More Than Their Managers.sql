@@ -1,6 +1,6 @@
 -- https://leetcode-cn.com/problems/employees-earning-more-than-their-managers/
 
-select e1.Name as 'Employee'
-from  Employee e1
-join Employee e2 on (e1.ManagerId = e2.Id)
-where e1.Salary > e2.Salary;
+SELECT e1.name AS 'Employee'
+FROM employee e1
+JOIN employee e2 ON (e1.managerid = e2.id)
+WHERE e1.salary > e2.salary;

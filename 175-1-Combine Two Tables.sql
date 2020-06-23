@@ -1,28 +1,47 @@
 -- https://leetcode-cn.com/problems/combine-two-tables/
 
-/* Create Table
-Create table Person (PersonId int, FirstName varchar(255), LastName varchar(255));
-Create table Address (AddressId int, PersonId int, City varchar(255), State varchar(255));
-
-insert into Person (PersonId, LastName, FirstName) values ('1', 'Wang', 'Allen');
-insert into Address (AddressId, PersonId, City, State) values ('1', '2', 'New York City', 'New York');
-*/
-
-/* Test Case
-Truncate table Person;
-Truncate table Address;
-insert into Person (PersonId,LastName,FirstName) values('1','Wang','Allen');
-insert into Address (AddressId,PersonId,City,State) values('1','2','New York City','New York');
-*/
+CREATE TABLE
+CREATE TABLE person (personid int, firstname varchar(255),
+                                             lastname varchar(255));
 
 
-select FirstName, LastName, City, State
-from Person left join Address 
-on Person.PersonId = Address.PersonId;
+CREATE TABLE address (addressid int, personid int, city varchar(255),
+                                                        state varchar(255));
 
-/* or
-select FirstName, LastName, City, State
-from Person left join Address 
-using(PersonId);
-*/
+
+INSERT INTO person (personid, lastname, firstname)
+VALUES ('1', 'Wang', 'Allen');
+
+
+INSERT INTO address (addressid, personid, city, state)
+VALUES ('1', '2', 'New York City', 'New York');
+
+test CASE TRUNCATE TABLE person;
+
+TRUNCATE TABLE address;
+
+
+INSERT INTO person (personid, lastname, firstname)
+VALUES('1','Wang','Allen');
+
+
+INSERT INTO address (addressid, personid, city, state)
+VALUES('1','2','New York City','New York');
+
+
+SELECT firstname,
+       lastname,
+       city,
+       state
+FROM person
+LEFT JOIN address ON person.personid = address.personid;
+
+--  or
+
+SELECT firstname,
+       lastname,
+       city,
+       state
+FROM person
+LEFT JOIN address USING(personid);
 

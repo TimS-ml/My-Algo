@@ -1,9 +1,6 @@
 -- https://leetcode-cn.com/problems/rising-temperature/
 
-select w1.Id
-from Weather w1
-inner join Weather w2
-on TO_DAYS(w1.RecordDate) = TO_DAYS(w2.RecordDate) + 1
-where w1.Temperature > w2.Temperature
-
--- or: TO_DAYS(w1.RecordDate)-TO_DAYS(w2.RecordDate) = 1
+SELECT w1.id
+FROM weather w1
+INNER JOIN weather w2 ON to_days(w1.recorddate) = to_days(w2.recorddate) + 1
+WHERE w1.temperature > w2.temperature -- or: TO_DAYS(w1.RecordDate)-TO_DAYS(w2.RecordDate) = 1

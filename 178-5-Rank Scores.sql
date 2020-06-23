@@ -1,8 +1,8 @@
 -- https://leetcode-cn.com/problems/rank-scores/
 
-select s.Score,
-       count(distinct t.score) Rank
-from Scores s
-join Scores t on s.Score <= t.score
-group by s.Id
-order by s.Score desc
+SELECT s.score,
+       count(DISTINCT t.score) rank
+FROM scores s
+JOIN scores t ON s.score <= t.score
+GROUP BY s.id
+ORDER BY s.score DESC
