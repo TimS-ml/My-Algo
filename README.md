@@ -5,57 +5,8 @@
 \___/_/\_,_/_//_/ /___/ /____/\__/\__/\__/\___/\___/\_,_/\__/
 ```
 
-# Template
-
-Normal: 001
-Linked List: 021 
-Tree: 226 
-SQL:
-Shell:
-Debug: 949
-
-
-
-# Helpful Links
-
-https://wisdompeak.github.io/lc-score-board/
-
-
-
-# Useful Tools
-
-Here I write some code to make my life easier (you can find in this repo):
-
-[1] A_Undo Questions_lite.py
-
-​	Numpy based, help me find out unfinish code in `CodeList.md`
-
-[2] A_Add Date.py
-
-​	Add Date in `CodeList.md`
-
-[3] A_Auto PEP8.py
-
-​	Python Formatting based on autopep8
-
-[4] C++ format
-```
-clang-format -i -style=LLVM *.cpp
-
-clang-format -i path/to/electron/file.cpp -style=LLVM
-
-clang-format -i main.cpp -style=LLVM
-```
-
-
 
 # How to Practice
-
-```
-https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/
-```
-
-
 
 ```
 https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=521825
@@ -86,38 +37,18 @@ P.S.1 除了刷題網，我最近玩google code jam(今天5pm round 1C)及google
 
 
 
-# More
-
-I developed a name system that easier for querying (I guess...)
-
-Take LeetCode NO.76 [Minimum Window Substring](https://leetcode-cn.com/problems/minimum-window-substring/) as an example:
-
-
-
-In `repo`:
-
-​	076-1-Minimum Window Substring.py
-
-​	076-2-Minimum Window Substring-two pointer.py
-
-
-
-In Linux or Win WSL, you can type(in you current dir):
-
-```bash
-find . -name 076\*
-```
-
-or if you use ranger(which support vim key binding):
-
-```
-/076
-```
-
-
-
+# Formating 
+[0] Code name
 In `CodeList.md`:
 
-​	H076 = mark+rev means this is a hard question, tag = mark and review
+H076 = mark+rev means this is a hard question, tag = mark and review
 
 
+[1] C++ format
+```
+clang-format -i -style=LLVM *.cpp
+
+clang-format -i path/to/electron/file.cpp -style=LLVM
+
+clang-format -i main.cpp -style=LLVM
+```

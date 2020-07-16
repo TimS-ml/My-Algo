@@ -1,6 +1,11 @@
-# https://leetcode-cn.com/problems/reverse-linked-list/
-# in java, we can simply write prev = ListNode(null)
+'''
+# Code Explain:
+- Time complexity: O()
+- Space complexity: O()
 
+# Notation:
+
+'''
 
 class ListNode:
     def __init__(self, x):
@@ -9,15 +14,9 @@ class ListNode:
 
 
 class Solution:
-    def reverseList(self, head) -> ListNode:
-        prev = None
-        curr = head
-        while curr:
-            nextTemp = curr.next  # save pointer ->
-            curr.next = prev  # change to <-
-            prev = curr  # prev move to next
-            curr = nextTemp  # curr move to next
-        return prev
+    def xxx(self, head) -> ListNode:
+        if not head or not head.next:
+            return head
 
 
 def listToListNode(input):
@@ -43,8 +42,6 @@ def listNodeToString(node):
 
 line = [1, 2, 3, 4, 5]
 head = listToListNode(line)
-
-ans = Solution().reverseList(head)
-
+ans = Solution().xxx(head)
 out = listNodeToString(ans)
 print(out)
