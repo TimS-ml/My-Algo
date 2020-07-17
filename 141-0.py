@@ -21,8 +21,26 @@ class ListNode:
 
 class Solution:
     def hasCycle(self, head: ListNode) -> bool:
+        fast = slow = head
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+            if slow == fast:
+                return True
+        return False
+
+
+    def hasCycle_2(self, head: ListNode) -> bool:
         if not head or not head.next:
-            return head
+            return False
+        fast = head.next
+        slow = head
+        while slow != fast:
+            if not fast or not fast.next:
+                return False
+            fast = fast.next.next
+            slow = slow.next
+        return True
 
 
 def listToListNode(input):

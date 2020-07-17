@@ -41,7 +41,6 @@ class Solution:
         return prev  # you can return temp as well 
         
 
-class Solution:
     def reverseList_2(self, head: ListNode) -> ListNode:
         prev = None
         while head:
