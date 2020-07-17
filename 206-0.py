@@ -1,7 +1,22 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(n)
+- Space complexity: O(1)
+
+Reverse the pointers of Linked List
+Since pointer only goes in one way, we need to write a loop until element.next = None
+    [1] change the direction of pointers of each node, 
+    [2] need to create a temp element
+
+Empty Linked List:
+    return head
+Start of Linked List:
+    we initialized prev to None
+
+# Pros and Cons:
+## Pros:
+
+## Cons:
 
 # Notation:
 
@@ -14,9 +29,27 @@ class ListNode:
 
 
 class Solution:
-    def xxx(self, head) -> ListNode:
-        if not head or not head.next:
-            return head
+    def reverseList(self, head: ListNode) -> ListNode:
+        # if not head or not head.next:
+        #     return head
+        prev = None
+        while head:
+            temp = head
+            head = head.next  # move to next, step ahead than temp
+            temp.next = prev  # change the pointer
+            prev = temp  # update prev
+        return prev  # you can return temp as well 
+        
+
+class Solution:
+    def reverseList_2(self, head: ListNode) -> ListNode:
+        prev = None
+        while head:
+            temp = head.next  # move to next, step ahead than temp
+            head.next = prev  # change the pointer
+            prev = head  # update prev
+            head = temp
+        return prev  # you can return temp as well 
 
 
 def listToListNode(input):
