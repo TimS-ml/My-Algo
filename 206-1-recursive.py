@@ -1,7 +1,8 @@
 '''
 # Code Explain:
 - Time complexity: O(n)
-- Space complexity: O(1)
+- Space complexity: O(n)
+    - The extra space comes from implicit stack space due to recursion, up to n levels deep
 
 In a recursive, we need:
     [1] a simple base case(s)

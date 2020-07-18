@@ -1,19 +1,18 @@
 '''
 # Code Explain:
 - Time complexity: O(n)
-    - Or O(n+k) depends on the cyclic length
-- Space complexity: O(1)
+- Space complexity: O(n)
+Key point is, how to mark nodes
 
 # Pros and Cons:
 ## Pros:
-- O(1) Space complexity
-- The best case is, no loop, O(n)
-    worse case is k = n
-
+- O(n) time complexity, since we only need to go through each nodes once
 ## Cons:
+- O(n) space complexity
 
 # Notation:
-The solution 2 is not that elegant
+[1]
+-1
 '''
 
 
@@ -25,26 +24,14 @@ class ListNode:
 
 class Solution:
     def hasCycle(self, head: ListNode) -> bool:
-        fast = slow = head
-        while fast and fast.next:
-            fast = fast.next.next
-            slow = slow.next
-            if slow == fast:
+        dic = {}
+        while head:
+            if head in dic:
                 return True
+            else:
+                dic[head] = 1  # mark
+            head = head.next
         return False
-
-
-    def hasCycle_2(self, head: ListNode) -> bool:
-        if not head or not head.next:
-            return False
-        fast = head.next
-        slow = head
-        while slow != fast:
-            if not fast or not fast.next:
-                return False
-            fast = fast.next.next
-            slow = slow.next
-        return True
 
 
 def listToListNode(input):
