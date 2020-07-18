@@ -6,10 +6,10 @@
 
 In a recursive, we need:
     [1] a simple base case(s), not a terminating senario
-        - head.next.next = head  # add pointer: i <- i+1
-        - head.next = None  # remove current pointer
+        - swap 2 nodes
+        - return the head of this case (2nd node)
     [2] a set of rules: recurrence relation
-        - self.reverseList(head.next)
+        - func(2nd node.next)
     [3] terminating senario
         - end of linked list or only one node left
 
@@ -22,6 +22,7 @@ In a recursive, we need:
 
 '''
 
+
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -29,13 +30,14 @@ class ListNode:
 
 
 class Solution:
-    def reverseList(self, head: ListNode) -> ListNode:
+    def swapPairs(self, head: ListNode) -> ListNode:
         if not head or not head.next:
             return head
-        ans = self.reverseList(head.next)
-        head.next.next = head  # add pointer: i <- i+1
-        head.next = None  # remove pointer: i -> i+1
-        return ans
+        first = head
+        second = head.next
+        first.next = self.swapPairs(second.next)  # third
+        second.next = first
+        return second
 
 
 def listToListNode(input):

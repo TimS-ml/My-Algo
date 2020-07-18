@@ -36,20 +36,19 @@ class ListNode:
 
 
 class Solution:
-    def reverseList(self, head: ListNode) -> ListNode:
+    def swapPairs(self, head: ListNode) -> ListNode:
         dummy = ListNode(-1)
         dummy.next = head
         prev = dummy
 
         while head and head.next:
-            # init
             first = head
             second = head.next
-            # swap
+
             prev.next = second
             first.next = second.next
             second.next = first
-            # update
+
             prev = first
             head = first.next
         return dummy.next
