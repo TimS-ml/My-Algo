@@ -25,6 +25,33 @@ Reverse part of the list and then connect the pieces together
 ## Cons:
 
 # Notation:
+- [1] Pay attention to the boundaries
+    For example: 
+        before reverse: m>1; after: n=0
+
+- [2] Connection
+    - If len = n
+        - curr = None, so this is not a special case
+        - tail.next = curr
+    - If m = 1
+        - con = None, we need to update head
+
+ None -> 1 <- 2 <- 3 <- 4 -> 5
+  |      |              |    |
+ con    tail          prev  curr
+        head ---------->|
+
+         4 -> 3 -> 2 -> 1 -> 5
+
+    - If m = n
+        - this is not a special case
+        - reverse on pointer first, then turn back by 
+            tail.next = curr
+
+- [3] How many positions do we need to save
+
+- [4] Other special cases
+    Empty list
 
 '''
 
@@ -33,19 +60,20 @@ class ListNode:
         self.val = x
         self.next = None
 
+
 class Solution:
     def reverseBetween(self, head: ListNode, m: int, n: int) -> ListNode:
         if not head:
             return None
 
         curr, prev = head, None
-
         while m > 1:
             prev = curr
             curr = curr.next
             m, n = m - 1, n - 1
 
         tail, con = curr, prev
+        # same as lc 206
         while n:
             temp = curr.next
             curr.next = prev
@@ -61,6 +89,35 @@ class Solution:
         tail.next = curr
 
         return head
+
+
+    # This not gonna work, somehow we can't update head
+    # We need a variable 'curr'
+    def reverseBetween_2(self, head: ListNode, m: int, n: int) -> ListNode:
+        if not head:
+            return None
+
+        ans, prev = head, None
+        while m > 1:
+            prev = head
+            head = head.next
+            m, n = m - 1, n - 1
+
+        tail, con = head, prev
+        while n:
+            temp = head
+            head = head.next  # move to next, step ahead than temp
+            temp.next = prev  # change the pointer
+            prev = temp  # update prev
+
+        if con:
+            con.next = prev
+        else:
+            ans = prev
+
+        tail.next = head
+
+        return ans 
 
 
 def listToListNode(input):
@@ -86,6 +143,6 @@ def listNodeToString(node):
 
 line = [1, 2, 3, 4, 5]
 head = listToListNode(line)
-ans = Solution().xxx(head)
+ans = Solution().reverseBetween(head, 2 , 4)
 out = listNodeToString(ans)
 print(out)
