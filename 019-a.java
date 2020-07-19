@@ -1,22 +1,12 @@
-/* -----------------------------------
- *  WARNING:
- * -----------------------------------
- *  Your code may fail to compile
- *  because it contains public class
- *  declarations.
- *  To fix this, please remove the
- *  "public" keyword from your class
- *  declarations.
- */
+import java.util.*;
 
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
- */
+
+// Definition for singly-linked list.
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode(int x) { val = x; }
+}
 
 class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
@@ -38,7 +28,7 @@ class Solution {
     }
 }
 
-public class MainClass {
+class MainClass {
     public static int[] stringToIntegerArray(String input) {
         input = input.trim();
         input = input.substring(1, input.length() - 1);
