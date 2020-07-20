@@ -5,7 +5,11 @@
 
 Reverse the pointers of Linked List
 Same like lc 206
-Reverse part of the list and then connect the pieces together
+    - We need a temp pointer that will help us continue the link reversal process
+
+Essentially, starting from the node at position m and all the way up to n, we reverse the next pointers for all the nodes in between. 
+
+And then connect the pieces together
     - We need to process 2 connections
 
   m = 2, n = 4
@@ -21,6 +25,7 @@ Reverse part of the list and then connect the pieces together
 
 # Pros and Cons:
 ## Pros:
+- Don't need to change the data in the node
 
 ## Cons:
 
