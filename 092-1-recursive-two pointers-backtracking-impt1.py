@@ -64,13 +64,16 @@ class Solution:
             recurse_and_reverse(r, m-1, n-1)
 
             # Part 2
-            if l == r of l = r.next:
+            if l == r or l == r.next:
                 stop = True
 
             if not stop:
                 l.val, r.val = r.val, l.val
                 # r moves one step back via backtracking
-                l = l.next  # pay attention on that
+                l = l.next
+
+        recurse_and_reverse(r, m, n)
+        return head
 
 
 def listToListNode(input):

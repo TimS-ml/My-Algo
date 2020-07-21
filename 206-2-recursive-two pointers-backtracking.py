@@ -4,6 +4,8 @@
 - Space complexity: O(n)
     - The extra space comes from implicit stack space due to recursion, up to n levels deep
 
+This is inspired by lc 92
+
 In a recursive, we need:
     [1] a simple base case(s), not a terminating senario
         - head.next.next = head  # add pointer: i <- i+1
@@ -17,6 +19,7 @@ In a recursive, we need:
 ## Pros:
 
 ## Cons:
+- We need to change the value of Linked List
 
 # Notation:
 
@@ -32,10 +35,39 @@ class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
         if not head or not head.next:
             return head
-        ans = self.reverseList(head.next)
-        head.next.next = head  # add pointer: i <- i+1
-        head.next = None  # remove pointer: i -> i+1
-        return ans
+        
+        temp = head
+        n = 0
+        while temp:
+            temp = temp.next
+            n += 1
+
+        l, r = head, head
+        stop = False
+        def recurse_and_reverse(r, n):
+            nonlocal l, stop
+            
+            # Part 1
+            # base case
+            if n == 1:
+                return
+            
+            # move to the proper node
+            r = r.next
+
+            recurse_and_reverse(r, n-1)
+
+            # Part 2
+            if l == r or l == r.next:
+                stop = True
+
+            if not stop:
+                l.val, r.val = r.val, l.val
+                # r moves one step back via backtracking
+                l = l.next
+
+        recurse_and_reverse(r, n)
+        return head
 
 
 def listToListNode(input):
