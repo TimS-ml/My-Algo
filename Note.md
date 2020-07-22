@@ -1,3 +1,8 @@
+# Python Time Complexity
+https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt
+https://wiki.python.org/moin/TimeComplexity
+
+
 # Linked List
 
 Pointer of Linked List in python is implemented by value pair:
