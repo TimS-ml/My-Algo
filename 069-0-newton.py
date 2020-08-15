@@ -1,7 +1,7 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(1)
+- Space complexity: O(log N)
 
 # Pros and Cons:
 ## Pros:
@@ -16,7 +16,7 @@ class Solution:
     # Newton
     def mySqrt(self, x: int) -> int:
         ans = x
-        while ans**2 > x:
+        while ans ** 2 > x:
             ans = int((ans + x/ans) / 2)  # If there is no int(), it will enter an infinite loop
         return ans
 
@@ -33,6 +33,22 @@ class Solution:
                 return i
             elif i ** 2 > x:
                 return i-1
+
+
+    # Small improvement (binary search)
+    # Space: O(1)
+    # Time: O(log x)
+    def mySqrt_2(self, x: int) -> int:
+        l, r = 0, x
+        while l <= r:
+            mid = l + (r-l) // 2
+            if mid ** 2 > x:
+                r = mid - 1
+            elif mid ** 2 < x:
+                l = mid + 1
+            else:
+                return mid
+        return r
 
 
 # inputs
