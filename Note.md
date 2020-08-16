@@ -3,6 +3,12 @@ https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt
 https://wiki.python.org/moin/TimeComplexity
 
 
+
+# and or
+1 and None => None; 9 or 0 => 9; None or 0 => 0
+
+
+
 # Linked List
 
 Pointer of Linked List in python is implemented by value pair:

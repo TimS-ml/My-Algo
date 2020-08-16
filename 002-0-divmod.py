@@ -30,6 +30,8 @@ class Solution:
         while l1 and l2:
             curr.next = ListNode((l1.val + l2.val + carry) % 10)  # reminder
             carry = (l1.val + l2.val + carry) // 10  # divide exactly
+            # carry, val = divmod(l1.val + l2.val + carry, 10)
+            # curr.next = ListNode(val)
             l1 = l1.next
             l2 = l2.next
             curr = curr.next
@@ -49,7 +51,20 @@ class Solution:
 
     # a shorter version
     def addTwoNumbers_2(self, l1: ListNode, l2: ListNode) -> ListNode:
-        return
+        curr = ans = ListNode(0)
+        carry = 0
+        while l1 or l2:
+            val = (l1.val if l1 else 0) + (l2.val if l2 else 0) + carry
+            carry, reminder = divmod(val, 10)
+            curr.next = ListNode(reminder)
+            l1 = l1 and l1.next  # 1 and None => None
+            l2 = l2 and l2.next
+            curr = curr.next
+        # We can remove this "if" by changing the "while loop" to the following:
+        # while l1 or l2 or carry
+        if carry != 0:
+            curr.next = ListNode(1)
+        return ans.next
 
 
 def listToListNode(input):
