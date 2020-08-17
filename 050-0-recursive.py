@@ -1,4 +1,16 @@
-# https://leetcode-cn.com/problems/powx-n/
+'''
+# Code Explain:
+- Time complexity: O(logN)
+- Space complexity: O(logN)
+
+# Pros and Cons:
+## Pros:
+
+## Cons:
+
+# Notation:
+n and x can be both positive and negative
+'''
 
 
 class Solution:
@@ -13,6 +25,7 @@ class Solution:
             else:
                 ans = Pow(x, int(i / 2)) * Pow(x, i - int(i / 2))
             cache[i] = ans
+
             return ans
 
         return Pow(x, n)
