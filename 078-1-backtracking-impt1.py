@@ -1,7 +1,7 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(N*2^N)
+- Space complexity: O(N*2^N)
 
 Power set is all possible combinations of all possible lengths, from 0 to n
 
@@ -14,16 +14,19 @@ If the solution candidate turns to be not a solution (or at least not the last o
 ## Cons:
 
 # Notation:
-
 '''
+
+from typing import List
+
 
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
-        def backtrack(ans, nums, index, curr):
+        def backtrack(ans, nums, start, curr):
             # if the combination is done
+            # curr[:] create a shallow copy of the list
             if len(curr) == k:  
                 ans.append(curr[:])
-            for i in range(index, len(nums)):
+            for i in range(start, len(nums)):
                 # add nums[i] into the current combination
                 curr.append(nums[i])
                 # use next integers to complete the combination
@@ -38,11 +41,11 @@ class Solution:
 
 
     def subsets_2(self, nums):
-        def backtrack(ans, nums, index, curr):
+        def backtrack(ans, nums, start, curr):
             ans.append(curr)
             [
                 backtrack(ans, nums, i+1, curr+[nums[i]])
-                for i in range(index, len(nums))
+                for i in range(start, len(nums))
             ]
 
         ans = []
