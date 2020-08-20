@@ -2,6 +2,11 @@
 https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt
 https://wiki.python.org/moin/TimeComplexity
 
+## sort
+list.sort() is your friend
+time complexity for num.sort(): O(NlogN)
+time complexity for Binary Search: O(logN)
+  => worse case is logN
 
 # Grammar
 ## and or
@@ -59,21 +64,16 @@ def oddEvenList(self, head: ListNode) -> ListNode:
 even head is a variable at the beginning position
 
 
-# Math
-list.sort() is your friend
-time complexity for num.sort(): O(NlogN)
-time complexity for Binary Search: O(logN)
-  => worse case is logN
-
-
 # Two pointers
 If we find that as the first element increases, the second element decreases, then we can use the two pointers to reduce the time complexity (from N^2 to N for example, it will be one loop less)
 
 
 # Recursion
-https://www.geeksforgeeks.org/recursion/
-https://www.geeksforgeeks.org/recursive-functions/
-https://www.geeksforgeeks.org/recursive-bubble-sort/
+## Normal Recursion
+    https://en.wikipedia.org/wiki/Recursion_(computer_science)/
+    https://www.geeksforgeeks.org/recursion/
+    https://www.geeksforgeeks.org/recursive-functions/
+    https://www.geeksforgeeks.org/recursive-bubble-sort/
 
 In a recursive, we need:
     [1] a simple base case(s), not a terminating senario
