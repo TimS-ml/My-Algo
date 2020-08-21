@@ -8,9 +8,13 @@ time complexity for num.sort(): O(NlogN)
 time complexity for Binary Search: O(logN)
   => worse case is logN
 
+
 # Grammar
 ## and or
 1 and None => None; 9 or 0 => 9; None or 0 => 0
+
+## carry and reminder (divmod)
+carry, reminder = divmod(val, 10)
 
 
 # Data Structure
@@ -126,6 +130,11 @@ void print(int n)
     https://en.wikipedia.org/wiki/Backtracking/
     https://en.wikipedia.org/wiki/Eight_queens_puzzle/
     https://www.geeksforgeeks.org/backtracking-introduction/
+
+There are three types of problems in backtracking 
+- Decision Problem – In this, we search for a feasible solution.
+- Optimization Problem – In this, we search for the best solution.
+- Enumeration Problem – In this, we find all feasible solutions.
 
 凡是含有duplicate的都需要之前sorted，才能保证没有结果中没有重复
 
