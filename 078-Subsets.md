@@ -15,5 +15,7 @@ https://medium.com/leetcode-patterns/leetcode-pattern-3-backtracking-5d9e5a03dc2
 https://medium.com/@qklu/leetcode-78-subsets-5a79d7c271cb
 https://www.youtube.com/watch?v=LdtQAYdYLcE
 
+https://leetcode-cn.com/problems/subsets/solution/hui-su-suan-fa-by-powcai-5/
+
 # Test Cases
 
