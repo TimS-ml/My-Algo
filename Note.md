@@ -83,7 +83,6 @@ In a recursive, we need:
     [1] a simple base case(s), not a terminating senario
     [2] a set of rules: recurrence relation
     [3] terminating senario
-        if not (l1 or l2) (both empty)
 
 [1] direct recursion
 ```cpp
@@ -130,6 +129,14 @@ void print(int n)
     https://en.wikipedia.org/wiki/Backtracking/
     https://en.wikipedia.org/wiki/Eight_queens_puzzle/
     https://www.geeksforgeeks.org/backtracking-introduction/
+
+Backtracking is an algorithm for finding *all solutions* by exploring all potential candidates (sudoku)
+If the solution candidate turns to be not a solution (or at least not the last one), backtracking algorithm discards it by making some changes on the previous step, i.e. backtracks and then try again
+
+In a backtracking, we need:
+    [1] a simple base case(s) for recursion, not a terminating senario
+    [2] a set of rules for backtrack ()
+    [3] loop over remaining pieces, need a pointer to track the position
 
 There are three types of problems in backtracking 
 - Decision Problem – In this, we search for a feasible solution.
