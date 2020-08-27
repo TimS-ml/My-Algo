@@ -1,6 +1,16 @@
-# https://leetcode-cn.com/problems/permutations/
-# a faster version, combine nums and temp in ans1
+'''
+# Code Explain:
+- Time complexity: O()
+- Space complexity: O()
 
+# Pros and Cons:
+## Pros:
+
+## Cons:
+
+# Notation:
+
+'''
 
 class Solution:
     def permute(self, nums):

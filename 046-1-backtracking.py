@@ -1,11 +1,20 @@
-# https://leetcode-cn.com/problems/permutations/
-# https://medium.com/algorithms-and-leetcode/backtracking-e001561b9f28
-# modify of ans1, this does has faster speed and low mem useage
+'''
+# Code Explain:
+- Time complexity: O()
+- Space complexity: O()
 
+# Pros and Cons:
+## Pros:
+
+## Cons:
+
+# Notation:
+
+'''
 
 class Solution:
     def permute(self, nums):
-        def backtracking(temp, ans):
+        def backtrack(temp, ans):
             print(temp)
             if len(nums) == len(temp):
                 ans.append(list(temp))
@@ -13,15 +22,16 @@ class Solution:
                 if nums[i] in temp:
                     continue
                 temp.append(nums[i])
-                backtracking(temp, ans)
+                backtrack(temp, ans)
                 # print('depth', len(temp))
                 temp.pop()
 
         ans = []
         temp = []
-        backtracking(temp, ans)
+        backtrack(temp, ans)
         return ans
 
 
 nums = [1, 2, 3]
 print(Solution().permute(nums))
+
