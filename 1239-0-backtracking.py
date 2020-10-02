@@ -42,7 +42,7 @@ class Solution:
 
     # tamplate
     def maxLength3(self, arr: List[str]) -> int:
-        def backtrack(start, subset): 
+        def backtrack(start, subset):
             substr = ''.join(subset)
             if len(substr) == len(set(substr)):
                 self.ans = max(len(substr), self.ans)
