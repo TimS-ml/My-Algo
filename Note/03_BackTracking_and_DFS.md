@@ -19,6 +19,9 @@ There are three types of problems in backtracking
 
 All items with duplicates need to be sorted before to ensure that there are no duplicates in the results
 
+## Tamplate
+LC077
+
 Pseudo Code for Backtracking
 [1] Recursive backtracking solution
 ```cpp
