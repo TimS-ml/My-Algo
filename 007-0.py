@@ -20,6 +20,7 @@ We can use:
 Instead of -2**31 and 2**31-1
 '''
 
+
 class Solution:
     def reverse(self, x):
         if x >= 0:
@@ -30,10 +31,6 @@ class Solution:
 
 
 # nums, target
-IN = [
-    (123), 
-    (-120)
-]
+IN = [(123), (-120)]
 useSet = 1
 print(Solution().reverse(IN[useSet]))
-

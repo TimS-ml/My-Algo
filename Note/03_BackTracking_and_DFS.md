@@ -61,7 +61,12 @@ Usually, a depth-first-search is a way of iterating through an actual graph/tree
 
 ## Backtracking vs DP:
     https://www.quora.com/q/loveforprogramming/Backtracking-Memoization-Dynamic-Programming
-
 Dynamic programming is a method of solving complex problems by breaking them down into simpler steps. It is applicable to problems that exhibit the properties of 
   1) overlapping subproblems which are only slightly smaller
   2) optimal substructure
+
+## Time Complexity
+Hamiltonian cycle : O(N!) in the worst case  => factorial
+WordBreak and StringSegment : O(2^N)  => exponential
+NQueens : O(N!)
+

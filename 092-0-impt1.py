@@ -60,6 +60,7 @@ And then connect the pieces together
 
 '''
 
+
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -95,7 +96,6 @@ class Solution:
 
         return head
 
-
     # This not gonna work, somehow we can't update head
     # We need a variable 'curr'
     def reverseBetween_2(self, head: ListNode, m: int, n: int) -> ListNode:
@@ -122,7 +122,7 @@ class Solution:
 
         tail.next = head
 
-        return ans 
+        return ans
 
 
 def listToListNode(input):
@@ -148,6 +148,6 @@ def listNodeToString(node):
 
 line = [1, 2, 3, 4, 5]
 head = listToListNode(line)
-ans = Solution().reverseBetween(head, 2 , 4)
+ans = Solution().reverseBetween(head, 2, 4)
 out = listNodeToString(ans)
 print(out)

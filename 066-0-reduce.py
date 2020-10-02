@@ -20,6 +20,7 @@ We need to return a int list, not a str list
 
 '''
 
+
 class Solution:
     def plusOne(self, digits):
         """
@@ -44,10 +45,6 @@ class Solution:
 
 
 # digits
-IN = [
-    ([1, 2, 5, 7]), 
-    ([9, 9, 9])
-]
+IN = [([1, 2, 5, 7]), ([9, 9, 9])]
 useSet = 1
 print(Solution().plusOne(IN[useSet]))
-

@@ -38,7 +38,6 @@ class Solution:
         odd.next = even_head
         return head
 
-    
     # Just a readable version
     def oddEvenList_2(self, head: ListNode) -> ListNode:
         dummy1 = odd = ListNode(0)
@@ -79,4 +78,3 @@ head = listToListNode(line)
 ans = Solution().xxx(head)
 out = listNodeToString(ans)
 print(out)
-

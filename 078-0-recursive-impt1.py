@@ -43,10 +43,6 @@ class Solution:
 
 
 # inputs
-IN = [
-    ([1, 2, 3]), 
-    ([1, 2, 3, 4])
-]
+IN = [([1, 2, 3]), ([1, 2, 3, 4])]
 useSet = 1
 print(Solution().subsets(IN[useSet]))
-

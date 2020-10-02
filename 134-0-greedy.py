@@ -14,13 +14,14 @@ if brute force, O(N^2)
 
 '''
 
+
 class Solution:
     def canCompleteCircuit(self, gas: List[int], cost: List[int]) -> int:
-        if sum(gas) < sum(cost): 
+        if sum(gas) < sum(cost):
             return -1
         start, agg = 0, 0
         for i in range(len(gas)):
             agg += gas[i] - cost[i]
             if agg < 0:
-                start, agg = i+1, 0
+                start, agg = i + 1, 0
         return start

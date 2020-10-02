@@ -15,6 +15,7 @@ https://brilliant.org/wiki/digital-root/
 
 '''
 
+
 class Solution:
     def addDigits(self, num):
         """
@@ -29,15 +30,14 @@ class Solution:
 
         return 1 + (num - 1) % 9 if num else 0
 
-
     def addDigits_2(self, num):
         """
         :type num: int
         :rtype: int
         """
-        while(num >= 10):
+        while (num >= 10):
             temp = 0
-            while(num > 0):
+            while (num > 0):
                 temp += num % 10
                 num /= 10
             num = temp
@@ -45,10 +45,6 @@ class Solution:
 
 
 # inputs
-IN = [
-    (38), 
-    (128)
-]
+IN = [(38), (128)]
 useSet = 1
 print(Solution().addDigits(IN[useSet]))
-

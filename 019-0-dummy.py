@@ -49,7 +49,6 @@ class Solution:
         temp.next = temp.next.next
         return dummy.next
 
-
     # two pointers
     def removeNthFromEnd_2(self, head, n) -> ListNode:
         dummy = ListNode(0)
@@ -65,7 +64,6 @@ class Solution:
 
         slow.next = slow.next.next
         return dummy.next
-
 
     # two pointers, no dummy version
     def removeNthFromEnd_3(self, head, n) -> ListNode:

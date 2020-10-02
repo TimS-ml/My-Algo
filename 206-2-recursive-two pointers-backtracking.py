@@ -25,6 +25,7 @@ In a recursive, we need:
 
 '''
 
+
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -35,7 +36,7 @@ class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
         if not head or not head.next:
             return head
-        
+
         temp = head
         n = 0
         while temp:
@@ -44,18 +45,19 @@ class Solution:
 
         l, r = head, head
         stop = False
+
         def recurse_and_reverse(r, n):
             nonlocal l, stop
-            
+
             # Part 1
             # base case
             if n == 1:
                 return
-            
+
             # move to the proper node
             r = r.next
 
-            recurse_and_reverse(r, n-1)
+            recurse_and_reverse(r, n - 1)
 
             # Part 2
             if l == r or l == r.next:

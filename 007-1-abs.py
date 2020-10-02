@@ -15,6 +15,7 @@ No overflow needed to be check in python
 
 '''
 
+
 class Solution:
     def reverse(self, x):
         # sign = cmp(x, 0)  # only in python 2.x
@@ -27,14 +28,10 @@ class Solution:
             ans = ans * 10 + x % 10
             x //= 10
 
-        return ans*sign if -2**31 < ans*sign < 2**31 - 1 else 0
+        return ans * sign if -2**31 < ans * sign < 2**31 - 1 else 0
 
 
 # nums, target
-IN = [
-    (123), 
-    (-120)
-]
+IN = [(123), (-120)]
 useSet = 1
 print(Solution().reverse(IN[useSet]))
-

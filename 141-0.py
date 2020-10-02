@@ -33,7 +33,6 @@ class Solution:
                 return True
         return False
 
-
     def hasCycle_2(self, head: ListNode) -> bool:
         if not head or not head.next:
             return False

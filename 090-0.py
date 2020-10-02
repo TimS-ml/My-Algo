@@ -24,8 +24,9 @@ class Solution:
             if subset not in ans:
                 ans.append(subset)
             for i in range(start, len(nums)):
-                backtrack(i+1, subset+[nums[i]])
+                backtrack(i + 1, subset + [nums[i]])
                 print('After:', subset)
+
         nums.sort()
         ans = []
         backtrack(0, [])
@@ -35,9 +36,9 @@ class Solution:
         def backtrack2(start, subset):
             ans.append(subset)
             for i in range(start, len(nums)):
-                if i > start and nums[i] == nums [i-1]:
+                if i > start and nums[i] == nums[i - 1]:
                     continue
-                backtrack2(i+1, subset+[nums[i]])
+                backtrack2(i + 1, subset + [nums[i]])
 
         nums.sort()
         ans = []
@@ -46,10 +47,6 @@ class Solution:
 
 
 # inputs
-IN = [
-    (38), 
-    (128)
-]
+IN = [(38), (128)]
 useSet = 1
 print(Solution().subsetsWithDup(IN[useSet]))
-

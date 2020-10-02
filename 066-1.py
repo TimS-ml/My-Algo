@@ -16,6 +16,7 @@ We need to storage the carry
 
 '''
 
+
 class Solution:
     def plusOne(self, digits):
         """

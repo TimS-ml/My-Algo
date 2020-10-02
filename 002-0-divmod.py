@@ -17,6 +17,7 @@ Take care of the situations like 999 + 1
 
 '''
 
+
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -47,7 +48,6 @@ class Solution:
             curr.next = ListNode(1)
 
         return ans.next
-
 
     # a shorter version
     def addTwoNumbers_2(self, l1: ListNode, l2: ListNode) -> ListNode:

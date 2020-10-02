@@ -12,6 +12,7 @@
 
 '''
 
+
 class Solution:
     def permute(self, nums):
         def backtrack(temp, ans):
@@ -34,4 +35,3 @@ class Solution:
 
 nums = [1, 2, 3]
 print(Solution().permute(nums))
-

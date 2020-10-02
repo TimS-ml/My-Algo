@@ -14,6 +14,7 @@ The most intuitive way for me is do this recursively
 
 '''
 
+
 class Solution:
     def addDigits(self, num: int) -> int:
         if num // 10 == 0:
@@ -26,11 +27,6 @@ class Solution:
 
 
 # nums, target
-IN = [
-    (38), 
-    (128), 
-    (5)
-]
+IN = [(38), (128), (5)]
 useSet = 1
 print(Solution().addDigits(IN[useSet]))
-

@@ -42,21 +42,22 @@ class Solution:
         nums.sort()
         ans = []
         for i in range(len(nums)):
-            for j in range(i+1, len(nums)):
-                for k in range(j+1, len(nums)):
-                    if nums[i] + nums[j] + nums[k] == 0 and [nums[i], nums[j], nums[k]] not in ans:
+            for j in range(i + 1, len(nums)):
+                for k in range(j + 1, len(nums)):
+                    if nums[i] + nums[j] + nums[k] == 0 and [
+                            nums[i], nums[j], nums[k]
+                    ] not in ans:
                         ans.append([nums[i], nums[j], nums[k]])
         return ans
-
 
     def threeSum_2(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
         ans = []
-        for i in range(len(nums)-2):
-            if i > 0 and nums[i] == nums[i-1]:
+        for i in range(len(nums) - 2):
+            if i > 0 and nums[i] == nums[i - 1]:
                 continue
             target = 0 - nums[i]
-            start, end = i+1, len(nums)-1
+            start, end = i + 1, len(nums) - 1
             # aggregate two pointers in one loop
             while start < end:
                 if nums[start] + nums[end] > target:
@@ -75,10 +76,6 @@ class Solution:
 
 
 # inputs
-IN = [
-    ([-1, 0, 1, 2, -1, -4]), 
-    ([-2, 0, 1, 1, 2])
-]
+IN = [([-1, 0, 1, 2, -1, -4]), ([-2, 0, 1, 1, 2])]
 useSet = 0
 print(Solution().threeSum_2(IN[useSet]))
-

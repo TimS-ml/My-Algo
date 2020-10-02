@@ -18,6 +18,7 @@ sol3 is a in-place solution
 
 '''
 
+
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -40,7 +41,6 @@ class Solution:
         curr.next = l1 or l2  # place largest or longest element to the end
         return ans.next
 
-
     # If you prefer not create an empty linked list
     def mergeTwoLists_2(self, l1: ListNode, l2: ListNode) -> ListNode:
         head = ListNode(0)
@@ -58,7 +58,6 @@ class Solution:
         elif l2 == None:
             head.next = l1
         return first.next
-
 
     # This is a in-place version
     # In-place will be slightly faster

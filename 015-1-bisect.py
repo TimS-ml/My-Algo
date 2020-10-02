@@ -69,10 +69,6 @@ class Solution:
 
 
 # inputs
-IN = [
-    ([-1, 0, 1, 2, -1, -4]), 
-    ([1, 2])
-]
+IN = [([-1, 0, 1, 2, -1, -4]), ([1, 2])]
 useSet = 1
 print(Solution().addDigits(IN[useSet]))
-

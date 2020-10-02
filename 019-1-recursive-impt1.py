@@ -29,13 +29,13 @@ class Solution:
             if not head:
                 return 0, head
             i, head.next = remove(head.next)
-            return i+1, (head, head.next)[i+1 == n]
-        return remove(head)[1]
+            return i + 1, (head, head.next)[i + 1 == n]
 
+        return remove(head)[1]
 
     # a easier version
     def removeNthFromEnd_2(self, head, n):
-        def remove(n, head):            
+        def remove(n, head):
             if not head:
                 return 0, head
             i, node = remove(n, head.next)
@@ -45,6 +45,7 @@ class Solution:
             if i == n:
                 head = head.next
             return i, head
+
         return remove(n, head)[1]
 
 
@@ -74,4 +75,3 @@ head = listToListNode(line)
 ans = Solution().removeNthFromEnd_2(head, 2)
 out = listNodeToString(ans)
 print(out)
-

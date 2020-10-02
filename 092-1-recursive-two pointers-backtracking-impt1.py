@@ -34,6 +34,7 @@ Steps:
 - recurse_and_reverse(r, m-1, n-1) separate the function into two parts
 '''
 
+
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -47,21 +48,21 @@ class Solution:
 
         l, r = head, head
         stop = False
-        
+
         def recurse_and_reverse(r, m, n):
             nonlocal l, stop
-            
+
             # Part 1
             # base case
             if n == 1:
                 return
-            
+
             # move to the proper node
             r = r.next
             if m > 1:
                 l = l.next
 
-            recurse_and_reverse(r, m-1, n-1)
+            recurse_and_reverse(r, m - 1, n - 1)
 
             # Part 2
             if l == r or l == r.next:

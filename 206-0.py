@@ -22,6 +22,7 @@ Start of Linked List:
 
 '''
 
+
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -38,8 +39,7 @@ class Solution:
             head = head.next  # move to next, step ahead than temp
             temp.next = prev  # change the pointer
             prev = temp  # update prev
-        return prev  # you can return temp as well 
-        
+        return prev  # you can return temp as well
 
     def reverseList_2(self, head: ListNode) -> ListNode:
         prev = None
@@ -48,7 +48,7 @@ class Solution:
             head.next = prev  # change the pointer
             prev = head  # update prev
             head = temp
-        return prev  # you can return temp as well 
+        return prev  # you can return temp as well
 
 
 def listToListNode(input):

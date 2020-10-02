@@ -22,6 +22,7 @@ both empty doesn't mean "if not a or not b"
     since the latter case only requires one Linked List to be empty
 '''
 
+
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -33,13 +34,14 @@ class Solution:
         def add(a, b, carry):
             if not (a or b):
                 return ListNode(1) if carry else None
-            
+
             a = a if a else ListNode(0)
             b = b if b else ListNode(0)
-            
+
             carry, a.val = divmod(a.val + b.val + carry, 10)
             a.next = add(a.next, b.next, carry)
             return a
+
         return add(l1, l2, 0)
 
 

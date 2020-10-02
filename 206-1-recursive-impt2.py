@@ -22,6 +22,7 @@ In a recursive, we need:
 
 '''
 
+
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -37,7 +38,6 @@ class Solution:
         head.next = None  # remove pointer: i -> i+1
         return ans
 
-
     def reverseList_2(self, head: ListNode) -> ListNode:
         def reverse(head):
             if head == None or head.next == None:
@@ -46,6 +46,7 @@ class Solution:
             last.next = head
             head.next = None
             return pre, head
+
         ans, _ = reverse(head)
         return ans
 

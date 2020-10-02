@@ -12,6 +12,7 @@
 
 '''
 
+
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -25,7 +26,6 @@ class Solution:
         if l1:
             l1.next = self.mergeTwoLists(l1.next, l2)
         return l1
-
 
     def mergeTwoLists_2(self, l1: ListNode, l2: ListNode) -> ListNode:
         if not l1:

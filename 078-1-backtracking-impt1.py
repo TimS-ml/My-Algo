@@ -54,11 +54,11 @@ class Solution:
                 subset.append(nums[i])
                 # use next integers to complete the combination
                 # print('Before:', subset, k)
-                backtrack(i+1, subset)
+                backtrack(i + 1, subset)
                 # print('Before:', subset, k)
                 # backtrack
                 subset.pop()
-        
+
         ans = []
         for k in range(len(nums) + 1):
             backtrack(0, [])
@@ -71,7 +71,7 @@ class Solution:
             print('Before:', subset)
             ans.append(subset)
             for i in range(start, len(nums)):
-                backtrack(i+1, subset+[nums[i]])
+                backtrack(i + 1, subset + [nums[i]])
                 print('After:', subset)
 
         ans = []
@@ -80,10 +80,6 @@ class Solution:
 
 
 # inputs
-IN = [
-    ([1, 2, 3]), 
-    ([1, 2, 3, 4])
-]
+IN = [([1, 2, 3]), ([1, 2, 3, 4])]
 useSet = 0
 print(Solution().subsets_2(IN[useSet]))
-
