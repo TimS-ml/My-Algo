@@ -26,50 +26,29 @@ from typing import List
 
 
 class Solution:
+    # This is not a good example:
+    # loop outside backtrack
+    # `k` is unnecessary
     def subsets(self, nums: List[int]) -> List[List[int]]:
-        # [[], [1], [2], [3], [1, 2], [1, 3], [2, 3], [1, 2, 3]]
-        '''
-        Before: [1] 0
-        Before: [1, 2] 0
-        Before: [1, 2, 3] 0
-        After: [1, 2, 3] 0
-        After: [1, 2] 0
-        Before: [1, 3] 0
-        After: [1, 3] 0
-        After: [1] 0
-        Before: [2] 0
-        Before: [2, 3] 0
-        After: [2, 3] 0
-        After: [2] 0
-        Before: [3] 0
-        After: [3] 0
-        '''
         def backtrack(start, subset):
-            # if the combination is done
             # subset[:] create a shallow copy of the list
             if len(subset) == k:
                 ans.append(subset[:])
             for i in range(start, len(nums)):
-                # add nums[i] into the subsetent combination
                 subset.append(nums[i])
-                # use next integers to complete the combination
-                # print('Before:', subset, k)
                 backtrack(i + 1, subset)
-                # print('Before:', subset, k)
-                # backtrack
+                # print('After:', subset)
                 subset.pop()
+                # print(subset.pop())
 
         ans = []
         for k in range(len(nums) + 1):
             backtrack(0, [])
         return ans
 
-    # since we need to find all subsets, the length is unnecessary
-    # also, 'backtrack' is unnecessary (all subsets meets the requirement)
-    def subsets_2(self, nums):
+    def subsets2(self, nums):
         def backtrack(start, subset):
-            print('Before:', subset)
-            ans.append(subset)
+            ans.append(subset[:])
             for i in range(start, len(nums)):
                 backtrack(i + 1, subset + [nums[i]])
                 print('After:', subset)
@@ -82,4 +61,4 @@ class Solution:
 # inputs
 IN = [([1, 2, 3]), ([1, 2, 3, 4])]
 useSet = 0
-print(Solution().subsets_2(IN[useSet]))
+print(Solution().subsets(IN[useSet]))

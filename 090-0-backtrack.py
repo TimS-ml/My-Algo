@@ -11,6 +11,7 @@ Same like lc 78
 ## Cons:
 
 # Notation:
+LC078 with duplicate
 Pay attention on the case like [4,4,4,1,4]
 '''
 
@@ -32,13 +33,14 @@ class Solution:
         backtrack(0, [])
         return ans
 
-    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
-        def backtrack2(start, subset):
+    # right way to remove duplicate
+    def subsetsWithDup2(self, nums: List[int]) -> List[List[int]]:
+        def backtrack(start, subset):
             ans.append(subset)
             for i in range(start, len(nums)):
                 if i > start and nums[i] == nums[i - 1]:
                     continue
-                backtrack2(i + 1, subset + [nums[i]])
+                backtrack(i + 1, subset + [nums[i]])
 
         nums.sort()
         ans = []
