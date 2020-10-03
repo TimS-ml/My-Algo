@@ -1,7 +1,7 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(N * N!)
+- Space complexity: O(N)
 
 # Pros and Cons:
 ## Pros:
@@ -14,40 +14,53 @@ LC077 / 078
 
 
 class Solution:
+    # this is not universal solution
     def permute(self, nums):
-        def backtrack(first=0):
-            if first == n:
+        def backtrack(start):
+            if start == n:
                 ans.append(nums[:])
-            for i in range(first, n):
-                # place i-th integer first
-                nums[first], nums[i] = nums[i], nums[first]
-                print('before', nums, first, i)
-                backtrack(first + 1)
-                nums[first], nums[i] = nums[i], nums[first]
-                print('after', nums, first, i)
+            for i in range(start, n):
+                # place i-th integer start
+                nums[start], nums[i] = nums[i], nums[start]
+                backtrack(start + 1)
+                nums[start], nums[i] = nums[i], nums[start]
 
         n = len(nums)
         ans = []
-        backtrack()
+        backtrack(0)
         return ans
 
-    def permute(self, nums):
-        def backtrack(temp, ans):
-            print(temp)
-            if len(nums) == len(temp):
-                ans.append(list(temp))
+    def permute2(self, nums):
+        def backtrack(subset):
+            if len(nums) == len(subset):
+                ans.append(subset[:])
+                return
             for i in range(len(nums)):
-                if nums[i] in temp:
+                if nums[i] in subset:
                     continue
-                temp.append(nums[i])
-                backtrack(temp, ans)
-                # print('depth', len(temp))
-                temp.pop()
+                subset.append(nums[i])
+                backtrack(subset)
+                subset.pop()
 
         ans = []
-        temp = []
-        backtrack(temp, ans)
+        backtrack([])
+        return ans
+
+    # yet another way to avoid duplicate
+    def permute3(self, nums):
+        def backtrack(subset, nums):
+            if not nums:
+                ans.append(subset[:])
+                return
+            for i in range(len(nums)):
+                subset.append(nums[i])
+                print(nums[:i], nums[i+1:])
+                backtrack(subset, nums[:i] + nums[i+1:])
+                subset.pop()
+
+        ans = []
+        backtrack([], nums)
         return ans
 
 nums = [1, 2, 3]
-print(Solution().permute(nums))
+print(Solution().permute3(nums))
