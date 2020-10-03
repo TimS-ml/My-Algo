@@ -3,6 +3,27 @@
 - Time complexity: O(N * N!)
 - Space complexity: O(N)
 
+nums[:i] + nums[i+1:] will give us
+- a list without nums[i]
+- avoid generate temp variable
+
+Also, check `046.png`
+sub:[] [2, 3], nums:[1, 2, 3], i:0
+sub:[] [3], nums:[2, 3], i:0
+sub:[] [], nums:[3], i:0
+sub:[2] [], nums:[2, 3], i:1
+sub:[] [], nums:[2], i:0
+sub:[1] [3], nums:[1, 2, 3], i:1
+sub:[] [3], nums:[1, 3], i:0
+sub:[] [], nums:[3], i:0
+sub:[1] [], nums:[1, 3], i:1
+sub:[] [], nums:[1], i:0
+sub:[1, 2] [], nums:[1, 2, 3], i:2
+sub:[] [2], nums:[1, 2], i:0
+sub:[] [], nums:[2], i:0
+sub:[1] [], nums:[1, 2], i:1
+sub:[] [], nums:[1], i:0
+
 # Pros and Cons:
 ## Pros:
 
@@ -30,6 +51,7 @@ class Solution:
         backtrack(0)
         return ans
 
+    # not useful in LC047 (duplication)
     def permute2(self, nums):
         def backtrack(subset):
             if len(nums) == len(subset):
@@ -54,7 +76,7 @@ class Solution:
                 return
             for i in range(len(nums)):
                 subset.append(nums[i])
-                print(nums[:i], nums[i+1:])
+                print('sub:{} {}, nums:{}, i:{}'.format(nums[:i], nums[i+1:], nums, i))
                 backtrack(subset, nums[:i] + nums[i+1:])
                 subset.pop()
 
