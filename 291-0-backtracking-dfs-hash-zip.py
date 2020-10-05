@@ -24,12 +24,22 @@ r e d | b | l u e r e d
 basically we extend backtracking function, now we have p and s in that function
 for 'aba', len(set(s_path)) = 2
 
+in sol1, we pass 2 path (list)
+in sol2, we pass 2 hashmap (dict)
+
 special case:
 p = 'aba'
 s = 'abablueaba'
 
 p = 'twt'
 s = 'ttwtt'
+
+sol2:
+use recursion to try all the possibilites when we slice the remaining pattern and the remaining string
+Look at the corner case 'twt' and 'ttwtt':
+- Be careful that for the last p = "" and s = "t", we cannot just backtrack directly 
+- because t:tt was also mapped earlier in the beginning
+Therefore, we need to check if a mapping was made earlier before we backtrack
 
 # Pros and Cons:
 ## Pros:
@@ -39,9 +49,12 @@ s = 'ttwtt'
 # Notation:
 - similar to lc139, 140, 472
 
-in sol2, we pass 2 hashmap
 '''
 
+import pysnooper
+
+
+@pysnooper.snoop()
 class Solution:
     def wordPatternMatch(self, pattern: str, str: str) -> bool:
         def dfs(p, s, p_path, s_path):
@@ -60,60 +73,50 @@ class Solution:
             return False
         return dfs(pattern, str, [], [])
 
-"""
-    - use 2 hashtables to save the exact mapping of each of the pattern charactors : portion of string
-    - use recursion to try all the possibilites when we slice the remaining pattern and the remaining string
-    Look at the corner case:
-    p = twt
-    s = ttwtt
-    Be careful that for the last p = "" and s = "t", we cannot just backtrack directly 
-    because t:tt was also mapped earlier in the beginning
-    Therefore, we need to check if a mapping was made earlier before we backtrack
-    Time    O(?) <- it is hard to determine
-    Space   O(P+S)
-"""
 
-    def wordPatternMatch2(self, pattern: str, sentence: str) -> bool:
+    def wordPatternMatch2(self, pattern: str, str: str) -> bool:
         def backtracking(p, s, forward, backward):
             if len(s) == 0 and len(p) == 0:
                 return True
             if len(s) == 0 or len(p) == 0:
                 return False
-    
-            p = p[0]
+
+            p_pat = p[0]
             for i in range(len(s)):
-                cand = s[:i+1]
+                c_pat = s[:i+1]
                 
                 # check forward mapping and backward mapping
-                if p in forward and forward[p] != cand:
+                if p_pat in forward and forward[p_pat] != c_pat:
                     continue
-                if cand in backward and backward[cand] != p:
+                if c_pat in backward and backward[c_pat] != p_pat:
                     continue
                 
                 # set mappings
                 # but if that mappings existed before, rmb not to backtrack after exploration
-                wasMapped = False
-                if p not in forward and cand not in backward:
-                    forward[p] = cand
-                    backward[cand] = p
+                mapped = False
+                if p_pat not in forward and c_pat not in backward:
+                    forward[p_pat] = c_pat
+                    backward[c_pat] = p_pat
                 else:
-                    wasMapped = True
-    
-                # explore the rest of the p and sentence
+                    mapped = True
+
+                # explore the rest of the pattern and sentence
                 if backtracking(p[1:], s[i+1:], forward, backward):
                     return True
-    
-                if not wasMapped:
-                    del forward[p]
-                    del backward[cand]
+                
+                # after backtracking return False
+                # if was mapped, then not del
+                if not mapped:
+                    del forward[p_pat]
+                    del backward[c_pat]
             return False
 
         forward = {} # p -> sub
         backward = {} # sub -> p
-        ans = backtracking(p, sentence, forward, backward)
+        ans = backtracking(pattern, str, forward, backward)
         return ans
 
 
 p = "abab"
 s = "redblueredblue"
-print(Solution().wordPatternMatch(p, s))
+print(Solution().wordPatternMatch2(p, s))
