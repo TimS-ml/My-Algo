@@ -76,13 +76,15 @@ class Solution:
                 return
             for i in range(len(nums)):
                 subset.append(nums[i])
-                print('sub:{} {}, nums:{}, i:{}'.format(nums[:i], nums[i+1:], nums, i))
-                backtrack(subset, nums[:i] + nums[i+1:])
+                print('sub:{} {}, nums:{}, i:{}'.format(
+                    nums[:i], nums[i + 1:], nums, i))
+                backtrack(subset, nums[:i] + nums[i + 1:])
                 subset.pop()
 
         ans = []
         backtrack([], nums)
         return ans
+
 
 nums = [1, 2, 3]
 print(Solution().permute3(nums))

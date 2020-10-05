@@ -27,16 +27,18 @@ shallow copy:
 
 from typing import List
 
+
 class Solution:
     def combine(self, n: int, k: int) -> List[List[int]]:
         nums = [i for i in range(1, n + 1)]
+
         def backtrack(start, subset):
             if len(subset) == k:
                 ans.append(subset[:])
                 return
             for i in range(start, n):
                 subset.append(nums[i])
-                backtrack(i+1, subset)
+                backtrack(i + 1, subset)
                 subset.pop()
 
         ans = []
@@ -45,7 +47,6 @@ class Solution:
 
 
 # inputs
-n = 4 
+n = 4
 k = 2
 print(Solution().combine(n, k))
-

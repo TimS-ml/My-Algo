@@ -28,9 +28,12 @@ shallow copy:
 
 from typing import List
 
+
 class Solution:
-    def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
+    def combinationSum2(self, candidates: List[int],
+                        target: int) -> List[List[int]]:
         candidates.sort()
+
         def backtrack(start, subset):
             if sum(subset) == target:
                 if subset not in ans:
@@ -41,7 +44,7 @@ class Solution:
             for i in range(start, len(candidates)):
                 subset.append(candidates[i])
                 # print(subset)
-                backtrack(i+1, subset)
+                backtrack(i + 1, subset)
                 subset.pop()
 
         ans = []
@@ -49,8 +52,10 @@ class Solution:
         return ans
 
     # avoid using sum, it will be faster
-    def combinationSum22(self, candidates: List[int], target: int) -> List[List[int]]:
+    def combinationSum22(self, candidates: List[int],
+                         target: int) -> List[List[int]]:
         candidates.sort()
+
         def backtrack(start, subset, remain):
             for i in range(start, len(candidates)):
                 if candidates[i] == remain:
@@ -60,15 +65,18 @@ class Solution:
                 elif candidates[i] > remain:
                     return
                 else:
-                    backtrack(i+1, subset + [candidates[i]], remain - candidates[i])
+                    backtrack(i + 1, subset + [candidates[i]],
+                              remain - candidates[i])
 
         ans = []
         backtrack(0, [], target)
         return ans
 
     # avoid duplicate
-    def combinationSum23(self, candidates: List[int], target: int) -> List[List[int]]:
+    def combinationSum23(self, candidates: List[int],
+                         target: int) -> List[List[int]]:
         candidates.sort()
+
         def backtrack(start, subset, remain):
             for i in range(start, len(candidates)):
                 if candidates[i] == remain:
@@ -77,17 +85,18 @@ class Solution:
                 elif candidates[i] > remain:
                     return
                 # skip the >2nd duplicate element
-                elif i > start and candidates[i-1] == candidates[i]:
+                elif i > start and candidates[i - 1] == candidates[i]:
                     continue
                 else:
-                    backtrack(i+1, subset + [candidates[i]], remain - candidates[i])
+                    backtrack(i + 1, subset + [candidates[i]],
+                              remain - candidates[i])
 
         ans = []
         backtrack(0, [], target)
         return ans
 
+
 # inputs
-c = [10,1,2,7,6,1,5]
+c = [10, 1, 2, 7, 6, 1, 5]
 t = 8
 print(Solution().combinationSum23(c, t))
-

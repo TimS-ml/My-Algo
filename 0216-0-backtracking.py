@@ -30,11 +30,13 @@ Check LC040
 
 from typing import List
 
+
 class Solution:
     # avoid using sum, it will be faster
     # avoid duplicate
     def combinationSum3(self, k: int, n: int) -> List[List[int]]:
-        arr = [i+1 for i in range(9)]
+        arr = [i + 1 for i in range(9)]
+
         def backtrack(start, subset, remain):
             for i in range(start, len(arr)):
                 if arr[i] == remain and len(subset) == k - 1:
@@ -43,14 +45,15 @@ class Solution:
                 elif arr[i] > remain or len(subset) == k:
                     return
                 else:
-                    backtrack(i+1, subset + [arr[i]], remain - arr[i])  # i+1: only appear once
+                    backtrack(i + 1, subset + [arr[i]],
+                              remain - arr[i])  # i+1: only appear once
 
         ans = []
         backtrack(0, [], n)
         return ans
 
+
 # inputs
 k = 3
 n = 7
 print(Solution().combinationSum3(k, n))
-

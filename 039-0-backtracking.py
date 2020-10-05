@@ -30,9 +30,12 @@ shallow copy:
 
 from typing import List
 
+
 class Solution:
-    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+    def combinationSum(self, candidates: List[int],
+                       target: int) -> List[List[int]]:
         candidates.sort()
+
         def backtrack(start, subset):
             if sum(subset) == target:
                 ans.append(subset[:])
@@ -50,8 +53,10 @@ class Solution:
         return ans
 
     # avoid using sum, it will be faster
-    def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
+    def combinationSum2(self, candidates: List[int],
+                        target: int) -> List[List[int]]:
         candidates.sort()
+
         def backtrack(start, subset, remain):
             for i in range(start, len(candidates)):
                 if candidates[i] == remain:
@@ -60,7 +65,8 @@ class Solution:
                 elif candidates[i] > remain:
                     return
                 else:
-                    backtrack(i, subset + [candidates[i]], remain - candidates[i])  # not i+1
+                    backtrack(i, subset + [candidates[i]],
+                              remain - candidates[i])  # not i+1
 
         ans = []
         backtrack(0, [], target)
@@ -68,7 +74,6 @@ class Solution:
 
 
 # inputs
-c = [2,3,6,7]
+c = [2, 3, 6, 7]
 t = 7
 print(Solution().combinationSum2(c, t))
-
