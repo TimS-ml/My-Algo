@@ -38,6 +38,8 @@ s = 'ttwtt'
 
 # Notation:
 - similar to lc139, 140, 472
+
+in sol2, we pass 2 hashmap
 '''
 
 class Solution:
@@ -107,7 +109,7 @@ class Solution:
             return False
 
         forward = {} # p -> sub
-        backward = {} # sub ->
+        backward = {} # sub -> p
         ans = backtracking(p, sentence, forward, backward)
         return ans
 
