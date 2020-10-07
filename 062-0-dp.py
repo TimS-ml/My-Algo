@@ -23,7 +23,9 @@
 ## Cons:
 
 # Notation:
-
+sol3 compression:
+- inner layer
+- dp[j] corresponding to dp[-1][j] in sol1
 '''
 
 
@@ -53,9 +55,11 @@ class Solution:
         dp = [1] * n
         for i in range(1, m):
             for j in range(1, n):
+                # notice that this repeat m-1 times for same j
                 dp[j] = dp[j] + dp[j - 1]
+        # [1, 3, 6, 10, 15, 21, 28]
         return dp[-1]
 
 
 m, n = 3, 7
-print(Solution().uniquePaths(m, n))
+print(Solution().uniquePaths3(m, n))
