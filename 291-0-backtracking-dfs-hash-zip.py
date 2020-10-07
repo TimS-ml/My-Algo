@@ -65,14 +65,15 @@ class Solution:
             for i in range(len(s)):
                 p_path.append(p[0])
                 s_path.append(s[:i + 1])
-                if len(p_path) == len(s_path) and len(set(s_path)) == len(set(p_path)) == len(set(zip(s_path, p_path))):
+                if len(p_path) == len(s_path) and len(set(s_path)) == len(
+                        set(p_path)) == len(set(zip(s_path, p_path))):
                     if dfs(p[1:], s[i + 1:], p_path, s_path):
                         return True
                 p_path.pop()
                 s_path.pop()
             return False
-        return dfs(pattern, str, [], [])
 
+        return dfs(pattern, str, [], [])
 
     def wordPatternMatch2(self, pattern: str, str: str) -> bool:
         def backtracking(p, s, forward, backward):
@@ -83,14 +84,14 @@ class Solution:
 
             p_pat = p[0]
             for i in range(len(s)):
-                c_pat = s[:i+1]
-                
+                c_pat = s[:i + 1]
+
                 # check forward mapping and backward mapping
                 if p_pat in forward and forward[p_pat] != c_pat:
                     continue
                 if c_pat in backward and backward[c_pat] != p_pat:
                     continue
-                
+
                 # set mappings
                 # but if that mappings existed before, rmb not to backtrack after exploration
                 mapped = False
@@ -101,9 +102,9 @@ class Solution:
                     mapped = True
 
                 # explore the rest of the pattern and sentence
-                if backtracking(p[1:], s[i+1:], forward, backward):
+                if backtracking(p[1:], s[i + 1:], forward, backward):
                     return True
-                
+
                 # after backtracking return False
                 # if was mapped, then not del
                 if not mapped:
@@ -111,8 +112,8 @@ class Solution:
                     del backward[c_pat]
             return False
 
-        forward = {} # p -> sub
-        backward = {} # sub -> p
+        forward = {}  # p -> sub
+        backward = {}  # sub -> p
         ans = backtracking(pattern, str, forward, backward)
         return ans
 

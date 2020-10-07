@@ -6,7 +6,8 @@
 [1] Base State
 [2] State Transfer Equation
 [3] Initialize Conditions
-[4] Return
+[4] State Compression (optional)
+[5] Terminate Conditions
 
 # Pros and Cons:
 ## Pros:
@@ -25,12 +26,12 @@ class Solution:
     def climbStairs(self, n) -> int:
         if n == 1 or n == 2:
             return 1
-        return climbStairs(n-1) + climbStairs(n-2)
-
+        return climbStairs(n - 1) + climbStairs(n - 2)
 
     # Momoization
     def climbStairs2(self, n) -> int:
         cache = {}
+
         def climb(i, n):
             if i in cache:
                 return cache[i]
@@ -42,8 +43,8 @@ class Solution:
                 ans = climb(i + 1, n) + climb(i + 2, n)
             cache[i] = ans
             return ans
-        return climb(0, n)
 
+        return climb(0, n)
 
     def climbStairs3(self, n) -> int:
         if n == 1:
@@ -54,7 +55,6 @@ class Solution:
         for i in range(3, n + 1):
             dp[i] = dp[i - 1] + dp[i - 2]
         return dp[n]
-
 
     # Scrolling to reduce space complexity
     def climbStairs4(self, n) -> int:
@@ -70,4 +70,3 @@ class Solution:
 
 
 print(Solution().climbStairs(5))
-
