@@ -3,6 +3,12 @@
 - Time complexity: O(mn)
 - Space complexity: O(mn)
 
+[1] Base State
+[2] State Transfer Equation
+[3] Initialize Conditions
+[4] State Compression (optional)
+[5] Terminate Conditions
+
 # Pros and Cons:
 ## Pros:
 
@@ -37,9 +43,10 @@ class Solution:
         return dp[-1][-1]
 
     # compress
+    # compress makes init process easier
     def uniquePathsWithObstacles2(self, obstacleGrid: List[List[int]]) -> int:
         m, n = len(obstacleGrid), len(obstacleGrid[0])
-        dp = [1] + [0] * n
+        dp = [1] + [0] * n  # len = n+1
         for i in range(0, m):
             for j in range(0, n):
                 dp[j] = 0 if obstacleGrid[i][j] else dp[j] + dp[j - 1]
