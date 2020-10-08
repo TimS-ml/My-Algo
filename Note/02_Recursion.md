@@ -10,6 +10,12 @@ In a recursive, we need:
     [2] a set of rules: recurrence relation
     [3] terminating senario
 
+** Draw Recursice calls as a tree **
+Recursive algorithms can be very space inefficient.
+Each recursive call adds a new layer to the stack, which means that if your algorithm recurses to a depth of n, it uses at least O (n) memory.
+All recursive algorithms can be implemented iteratively, sometimes the code to do so is much more complex.
+
+## Types
 [1] direct recursion
 ```cpp
 int fact(int n)
