@@ -30,7 +30,9 @@ sol3 compression:
 
 
 class Solution:
+    # bottom-up
     def uniquePaths(self, m: int, n: int) -> int:
+        # init conditions: set edge to 1 (bottom)
         dp = [[1] * n for row in range(m)]
         for i in range(1, m):
             for j in range(1, n):
@@ -60,6 +62,21 @@ class Solution:
         # [1, 3, 6, 10, 15, 21, 28]
         return dp[-1]
 
+    # top-down (recursion + cache)
+    def uniquePaths4(self, m: int, n: int) -> int:
+        cache = [[None for _ in range(m)] for _ in range(n)]
 
-m, n = 3, 7
-print(Solution().uniquePaths3(m, n))
+        def helper(i, j):
+            if i == 0 or j == 0:
+                return 1
+            if cache[j][i]:
+                return cache[j][i]
+            else:
+                cache[j][i] = helper(i - 1, j) + helper(i, j - 1)
+            return cache[j][i]
+
+        return helper(m - 1, n - 1)
+
+
+m, n = 3, 7  # 28
+print(Solution().uniquePaths4(m, n))

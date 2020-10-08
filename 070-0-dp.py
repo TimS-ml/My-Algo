@@ -33,14 +33,31 @@ class Solution:
     # top-down
     def climbStairs(self, n) -> int:
         if n == 1 or n == 2:
-            return 1
-        return climbStairs(n - 1) + climbStairs(n - 2)
+            return n
+        return self.climbStairs(n - 1) + self.climbStairs(n - 2)
 
+    # recursion + cache
     # top-down
     def climbStairs2(self, n) -> int:
+        cache = [None for _ in range(n)]
+
+        def climb(i):
+            # we assume stair # start with 0, not 1
+            if i == 0 or i == 1:
+                return i + 1
+            if cache[i]:
+                return cache[i]
+            else:
+                cache[i] = climb(i - 1) + climb(i - 2)
+            # print(cache)
+            return cache[i]
+
+        return climb(n - 1)
+
+    def climbStairs2_(self, n) -> int:
         cache = {}
 
-        def climb(i, n):
+        def climb(i):
             if i in cache:
                 return cache[i]
             if i > n:
@@ -48,10 +65,10 @@ class Solution:
             if i == n:
                 return 1
             else:
-                ans = climb(i + 1, n) + climb(i + 2, n)
-            cache[i] = ans
-            return ans
-        return climb(0, n)
+                cache[i] = climb(i + 1) + climb(i + 2)
+            return cache[i]
+
+        return climb(0)
 
     # Momoization
     # bottom-up
@@ -79,4 +96,4 @@ class Solution:
         return second
 
 
-print(Solution().climbStairs(5))
+print(Solution().climbStairs2(5))

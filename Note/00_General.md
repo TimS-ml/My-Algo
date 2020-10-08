@@ -75,3 +75,8 @@ def oddEvenList(self, head: ListNode) -> ListNode:
 ```
 even head is a variable at the beginning position
 
+
+# Other
+## lru cache
+Check backtracking Note
+

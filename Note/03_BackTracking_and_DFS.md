@@ -68,8 +68,14 @@ Dynamic programming is a method of solving complex problems by breaking them dow
   1) overlapping subproblems which are only slightly smaller
   2) optimal substructure
 
+
 ## Time Complexity
 Hamiltonian cycle : O(N!) in the worst case  => factorial
 WordBreak and StringSegment : O(2^N)  => exponential
 NQueens : O(N!)
 
+
+# lru_cache() [least recently used cache]
+https://docs.python.org/3/library/functools.html
+https://leetcode.com/problems/stone-game-ii/discuss/345230/Python-DP-Solution
+An LRU (least recently used) cache works best when the most recent calls are the best predictors of upcoming calls

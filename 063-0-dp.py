@@ -22,6 +22,7 @@ from typing import List
 
 
 class Solution:
+    # bottom-up
     def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
         if (obstacleGrid[0][0] == 1 or obstacleGrid[-1][-1] == 1):
             return 0
@@ -52,16 +53,29 @@ class Solution:
                 dp[j] = 0 if obstacleGrid[i][j] else dp[j] + dp[j - 1]
         return dp[-2]
 
+    # top-down
+    def uniquePathsWithObstacles3(self, obstacleGrid: List[List[int]]) -> int:
+        if not obstacleGrid or not obstacleGrid[0]: return 0
+        m, n = len(obstacleGrid), len(obstacleGrid[0])
+
+        @lru_cache()
+        def dfs(i, j):
+            if not (0 <= i < m and 0 <= j < n):
+                return 0
+            if obstacleGrid[i][j]:
+                return 0
+            if i == 0 and j == 0:
+                return 1
+            return dfs(i - 1, j) + dfs(i, j - 1)
+
+        return dfs(m - 1, n - 1)
+
 
 # o = [[1]]
-o = [[1, 0]]
+# o = [[1, 0]]
 # o = [
 #     [0,0],
 #     [1,0]
 # ]
-# o = [
-#   [0,0,0],
-#   [0,1,0],
-#   [0,0,0]
-# ]
-print(Solution().uniquePathsWithObstacles(o))
+o = [[0, 0, 0], [0, 1, 0], [0, 0, 0]]
+print(Solution().uniquePathsWithObstacles3(o))
