@@ -12,12 +12,15 @@ In a backtracking, we need:
     [2] a set of rules for backtrack ()
     [3] loop over remaining pieces, need a pointer to track the position
 
+
+## usage
 There are three types of problems in backtracking 
 - Decision Problem – In this, we search for a feasible solution.
 - Optimization Problem – In this, we search for the best solution.
 - Enumeration Problem – In this, we find all feasible solutions.
 
 All items with duplicates need to be sorted before to ensure that there are no duplicates in the results
+
 
 ## Tamplate
 LC077
