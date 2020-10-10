@@ -43,4 +43,3 @@ s = "applepenapple"
 w = ["apple", "pen"]
 
 print(Solution().wordBreak(s, w))
-

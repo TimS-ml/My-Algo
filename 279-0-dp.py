@@ -1,6 +1,6 @@
 '''
 # Code Explain:
-- Time complexity: O(n * n**(1/2))
+- Time complexity: O(n * n**0.5)
     - double loop
 - Space complexity: O(n)
 
@@ -34,15 +34,12 @@ class Solution:
         return dp[n]
 
     def numSquares2(self, n: int) -> int:
-        dp = [0] * (n + 1)
+        dp = [0] + [4] * n  # 4 sqr theorem
         for i in range(1, n + 1):
-            num = 5
             j = 1
             while j**2 <= i:
-                if dp[i - j * j] + 1 < num:
-                    num = dp[i - j * j] + 1
+                dp[i] = min(dp[i - j**2] + 1, dp[i])
                 j += 1
-            dp[i] = num
         return dp[n]
 
 

@@ -65,7 +65,6 @@ class Solution:
         return ans
 
 
-
 n1 = 12
 n2 = 4
 print(Solution().numSquares(n2))
