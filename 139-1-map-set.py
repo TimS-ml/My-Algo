@@ -1,4 +1,16 @@
-# https://leetcode-cn.com/problems/word-break/
+'''
+# Code Explain:
+- Time complexity: O()
+- Space complexity: O()
+
+# Pros and Cons:
+## Pros:
+
+## Cons:
+
+# Notation:
+
+'''
 
 
 class Solution:
@@ -22,7 +34,13 @@ class Solution:
         return False
 
 
+# False
+s = "catsandog"
+w = ["cats", "dog", "sand", "and", "cat"]
+
+# True
 s = "applepenapple"
-wordDict1 = ["apple", "pen"]
-wordDict2 = ["apple", "penapple"]
-print(Solution().wordBreak(s, wordDict2))
+w = ["apple", "pen"]
+
+print(Solution().wordBreak(s, w))
+
