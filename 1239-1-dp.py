@@ -3,6 +3,23 @@
 - Time complexity: O()
 - Space complexity: O()
 
+[1] Base State
+dp[substr] = len of substr
+
+[2] State Transfer Equation
+dp[word + v] = max(dp[word + v], len(word + v))
+this is defaultdict, so dp[sth new] = 0
+
+[3] Initialize Conditions
+dp[''] = 0
+
+[4] State Compression (optional)
+no
+
+[5] Terminate Conditions
+for each word in arr, go through all dict
+    create word + dict combinations
+
 # Pros and Cons:
 ## Pros:
 
@@ -22,6 +39,7 @@ class Solution:
         dp[''] = 0
         for word in arr:
             for v in list(dp.keys()):
+                # if not valid element in arr
                 if len(word) != len(set(word)):
                     break
                 if len(word + v) == len(set(word + v)):
@@ -30,8 +48,8 @@ class Solution:
 
 
 # inputs
-# arr = ["un","iq","ue"]
-# arr = ["cha","r","act","ers"]
+# arr = ["un", "iq", "ue"]
+# arr = ["cha", "r", "act", "ers"]
 arr = [
     "abcdefghijklm", "bcdefghijklmn", "cdefghijklmno", "defghijklmnop",
     "efghijklmnopq", "fghijklmnopqr", "ghijklmnopqrs", "hijklmnopqrst",
