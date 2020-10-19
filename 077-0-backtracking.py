@@ -7,12 +7,12 @@ For the case [1, 2, 3, 4], k = 2
 after [1, 2] (len = k)
 need to pop 2, then visit [1, 3]
 
-    [1] a simple base case(s) for recursion, not a terminating senario
-    - append
-    [2] a set of rules for backtrack ()
-    - Terminate scenario: len(curr) == k
-    - Backtrack senario: len(curr) < k
-    [3] loop over remaining pieces, need a pointer to track the position
+[1] a simple base case(s) for recursion, not a terminating senario
+- append
+[2] a set of rules for backtrack ()
+- Terminate scenario: len(curr) == k
+- Backtrack senario: len(curr) < k
+[3] loop over remaining pieces, need a pointer to track the position
 
 
 # Pros and Cons:

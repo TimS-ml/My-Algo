@@ -12,6 +12,17 @@ In a backtracking, we need:
     [2] a set of rules for backtrack ()
     [3] loop over remaining pieces, need a pointer to track the position
 
+i.e.
+[1] Base State
+
+[2] State Transfer Equation
+
+[3] Backtrack senario
+
+[4] Initialize Conditions
+
+[5] Terminate Conditions
+
 
 ## usage
 There are three types of problems in backtracking 
