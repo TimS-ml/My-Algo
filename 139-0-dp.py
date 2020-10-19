@@ -36,7 +36,7 @@ class Solution:
             for w in wordDict:
                 # [1] i == len(w) or [2] dp[j] == True
                 j = i - len(w)
-                if w == s[j+1: i+1] and (dp[j] or j==-1):
+                if w == s[j + 1:i + 1] and (dp[j] or j == -1):
                     dp[i] = True
         return dp[-1]
 
