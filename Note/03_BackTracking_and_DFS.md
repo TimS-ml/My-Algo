@@ -14,13 +14,9 @@ In a backtracking, we need:
 
 i.e.
 [1] Base State
-
 [2] State Transfer Equation
-
 [3] Backtrack senario
-
 [4] Initialize Conditions
-
 [5] Terminate Conditions
 
 

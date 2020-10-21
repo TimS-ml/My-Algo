@@ -78,26 +78,33 @@ class Solution:
     def wordBreak3(self, s: str, wordDict: List[str]) -> bool:
         @functools.lru_cache(None)
         def backtrack(substr):
-            if(not substr):
+            if (not substr):
                 return True
-            res=False
-            for i in range(1,len(substr)+1):
-                if(substr[:i] in wordDict):
-                    res=backtrack(substr[i:]) or res
+            res = False
+            for i in range(1, len(substr) + 1):
+                if (substr[:i] in wordDict):
+                    print(res, substr[:i])
+                    # once we found res=True, then other False will not affect result
+                    res = backtrack(substr[i:]) or res
             return res
+
         return backtrack(s)
 
 
-# # False
-# s = "catsandog"
-# w = ["cats", "dog", "sand", "and", "cat"]
+# False
+s = "catsandog"
+w = ["cats", "dog", "sand", "and", "cat"]
+
+# True
+s = "catsandog"
+w = ["cats", "og", "sand", "and", "cat"]
 
 # # True
 # s = "applepenapple"
 # w = ["apple", "pen"]
 
-# True
-s = "appenapp"
-w = ["ap", "pen", "app"]
+# # True
+# s = "appenapp"
+# w = ["ap", "pen", "app"]
 
-print(Solution().wordBreak(s, w))
+print(Solution().wordBreak3(s, w))
