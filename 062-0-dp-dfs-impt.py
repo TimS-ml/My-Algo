@@ -62,20 +62,39 @@ class Solution:
         # [1, 3, 6, 10, 15, 21, 28]
         return dp[-1]
 
-    # top-down (recursion + cache)
+    # top-down (recursion)
     def uniquePaths4(self, m: int, n: int) -> int:
+        # not 0, for a m*n matrix index either be:
+        # 0~m-1 (return m-1) or 1~m (return m)
+        if m == 1 or n == 1:
+            return 1
+        return self.uniquePaths4(m - 1, n) + self.uniquePaths4(m, n - 1)
+
+    # top-down (recursion + cache)
+    def uniquePaths5(self, m: int, n: int) -> int:
         cache = [[None for _ in range(m)] for _ in range(n)]
 
-        def helper(i, j):
+        def dfs(i, j):
             if i == 0 or j == 0:
                 return 1
             if cache[j][i]:
                 return cache[j][i]
             else:
-                cache[j][i] = helper(i - 1, j) + helper(i, j - 1)
+                cache[j][i] = dfs(i - 1, j) + dfs(i, j - 1)
             return cache[j][i]
 
-        return helper(m - 1, n - 1)
+        return dfs(m - 1, n - 1)
+
+    # same speed as sol 5
+    # brute force + lru
+    def uniquePaths6(self, m: int, n: int) -> int:
+        @lru_cache()
+        def dfs(i, j):
+            if i == 0 or j == 0:
+                return 1
+            return dfs(i - 1, j) + dfs(i, j - 1)
+
+        return dfs(m - 1, n - 1)
 
 
 m, n = 3, 7  # 28

@@ -23,13 +23,15 @@ from typing import List
 
 class Solution:
     # bottom-up
+    # almost 70% of initialization...
     def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
+        # special cases
         if (obstacleGrid[0][0] == 1 or obstacleGrid[-1][-1] == 1):
             return 0
         m, n = len(obstacleGrid), len(obstacleGrid[0])
-        dp = [[0] * n for row in range(m)]
-        dp[0][0] = 1
-        # pay attention on init
+        dp = [[0] * n for row in range(m)]  # shape = m*n
+        dp[0][0] = 1  # init
+        # init edges
         for i in range(1, n):
             if (obstacleGrid[0][i] != 1):
                 dp[0][i] = dp[0][i - 1]
@@ -45,13 +47,17 @@ class Solution:
 
     # compress
     # compress makes init process easier
+    # this is based on start and end on the diagonal 
     def uniquePathsWithObstacles2(self, obstacleGrid: List[List[int]]) -> int:
         m, n = len(obstacleGrid), len(obstacleGrid[0])
-        dp = [1] + [0] * n  # len = n+1
-        for i in range(0, m):
+        # j=0, dp[0] = dp[0] + dp[-1]
+        dp = [1] + [0] * n  # len = n+1 
+        for i in range(0, m):  # start at 0, not 1
             for j in range(0, n):
+                # repeat m*n times
                 dp[j] = 0 if obstacleGrid[i][j] else dp[j] + dp[j - 1]
-        return dp[-2]
+        print(dp)
+        return dp[-2]  # 0 ~ n-1
 
     # top-down
     def uniquePathsWithObstacles3(self, obstacleGrid: List[List[int]]) -> int:
@@ -78,4 +84,4 @@ class Solution:
 #     [1,0]
 # ]
 o = [[0, 0, 0], [0, 1, 0], [0, 0, 0]]
-print(Solution().uniquePathsWithObstacles3(o))
+print(Solution().uniquePathsWithObstacles2(o))

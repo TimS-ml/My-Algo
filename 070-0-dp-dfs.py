@@ -30,6 +30,7 @@ If the current state is only related to the previous one, we can all simplify th
 
 class Solution:
     # simple recursion
+    # brute force
     # top-down
     def climbStairs(self, n) -> int:
         if n == 1 or n == 2:
