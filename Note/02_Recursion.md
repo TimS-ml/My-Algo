@@ -5,12 +5,21 @@
     https://www.geeksforgeeks.org/recursive-functions/
     https://www.geeksforgeeks.org/recursive-bubble-sort/
 
-In a recursive, we need:
-    [1] a simple base case(s), not a terminating senario
-    [2] a set of rules: recurrence relation
-    [3] terminating senario
+## Process
+Example: 486-0
+
+[1] a simple base case(s), not a terminating senario
+[2] a set of rules: recurrence relation
+[3] terminating senario
+
+i.e.
+[1] Base State
+[2] State Transfer Equation
+[3] Initialize Conditions
+[4] Terminate Conditions
 
 ** Draw Recursice calls as a tree **
+Think `top to bottom` when consider base state and state transfer
 Recursive algorithms can be very space inefficient.
 Each recursive call adds a new layer to the stack, which means that if your algorithm recurses to a depth of n, it uses at least O (n) memory.
 All recursive algorithms can be implemented iteratively, sometimes the code to do so is much more complex.

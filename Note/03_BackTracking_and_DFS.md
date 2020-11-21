@@ -7,10 +7,11 @@ Backtracking is an algorithm for finding *all solutions* by exploring all potent
 If the solution candidate turns to be not a solution (or at least not the last one), backtracking algorithm discards it by making some changes on the previous step, i.e. backtracks and then try again
 Backtracking is an approach to solving constraint-satisfaction problems *without* trying all possibilities
 
+## Process
 In a backtracking, we need:
-    [1] a simple base case(s) for recursion, not a terminating senario
-    [2] a set of rules for backtrack ()
-    [3] loop over remaining pieces, need a pointer to track the position
+[1] a simple base case(s) for recursion, not a terminating senario
+[2] a set of rules for backtrack ()
+[3] loop over remaining pieces, need a pointer to track the position
 
 i.e.
 [1] Base State
@@ -19,6 +20,7 @@ i.e.
 [4] Initialize Conditions
 [5] Terminate Conditions
 
+Think `top to bottom` when consider base state and state transfer
 
 ## usage
 There are three types of problems in backtracking 
