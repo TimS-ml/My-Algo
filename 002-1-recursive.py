@@ -45,7 +45,7 @@ class Solution:
         return add(l1, l2, 0)
 
 
-def 2ln(input):
+def listToListNote(input):
     # Now convert that list into linked list
     dummyRoot = ListNode(0)
     ptr = dummyRoot
@@ -68,8 +68,8 @@ def listNodeToString(node):
 
 l1_li = [1, 2, 3, 4, 5]
 l2_li = [1, 2, 3, 4, 5]
-l1 = 2ln(l1_li)
-l2 = 2ln(l2_li)
+l1 = listToListNote(l1_li)
+l2 = listToListNote(l2_li)
 ans = Solution().addTwoNumbers(l1, l2)
 out = listNodeToString(ans)
 print(out)
