@@ -16,8 +16,10 @@ Take care of the situations like 999 + 1
 # Notation:
 
 '''
+import pysnooper
 
 
+@pysnooper.snoop()
 class ListNode:
     def __init__(self, x):
         self.val = x

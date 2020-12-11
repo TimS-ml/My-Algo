@@ -25,6 +25,7 @@ class Solution:
         ans = 0
 
         while x != 0:
+            # print(x, ans)
             ans = ans * 10 + x % 10
             x //= 10
 
@@ -33,5 +34,5 @@ class Solution:
 
 # nums, target
 IN = [(123), (-120)]
-useSet = 1
+useSet = 0
 print(Solution().reverse(IN[useSet]))
