@@ -16,6 +16,8 @@ d88' d88'  88b`?88P'?8b     `?88P'`88b  88b`?88P'`88b`?8888P'
 # Source
 - Leetcode CN (Leetcode-cn.com premium price is 33% of Leecode.com if you are student)
 - Educative
+- HackerRank
+
 
 
 # How to Practice
@@ -42,17 +44,15 @@ d88' d88'  88b`?88P'?8b     `?88P'`88b  88b`?88P'`88b`?8888P'
 
 
 # Formating 
-[0] Code name
-In `CodeList.md`:
-
-H076 = mark+rev means this is a hard question, tag = mark and review
-
+[0] For HackerRank
+```bash
+python3 D01_Weighted_Mean.py < in_d01.txt
+python3 D01_Weighted_Mean.py < in_d01.txt > out_d01.txt
+```
 
 [1] C++ format
 ```
 clang-format -i -style=LLVM *.cpp
-
 clang-format -i path/to/electron/file.cpp -style=LLVM
-
 clang-format -i main.cpp -style=LLVM
 ```
