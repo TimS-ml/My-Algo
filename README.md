@@ -46,8 +46,8 @@ d88' d88'  88b`?88P'?8b     `?88P'`88b  88b`?88P'`88b`?8888P'
 # Formating 
 [0] For HackerRank
 ```bash
-python3 D01_Weighted_Mean.py < in_d01.txt
-python3 D01_Weighted_Mean.py < in_d01.txt > out_d01.txt
+python3 D01_Weighted_Mean.py < in01.txt
+python3 D01_Weighted_Mean.py < in01.txt > out01.txt
 ```
 
 [1] C++ format
