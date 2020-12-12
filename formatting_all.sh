@@ -25,9 +25,12 @@ then
         done
     elif [ $2 == 'hack' ]
     then
-        # find ./HackerRank -name '*.py' -print0 | xargs -0 yapf -i
-        for pycode in "`find ./HackerRank -type f -name '*.py'`"; do
-        # for pycode in ./Educative/**/*.py; do
+        # # find ./HackerRank -name '*.py' -print0 | xargs -0 yapf -i
+        # for pycode in "`find ./HackerRank -type f -name '*.py'`"; do
+        #     echo "$pycode"
+        #     yapf -i -r "$pycode"
+        # done
+        for pycode in ./HackerRank/Statistics/*.py; do
             echo "$pycode"
             yapf -i -r "$pycode"
         done
