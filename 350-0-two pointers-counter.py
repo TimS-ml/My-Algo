@@ -15,6 +15,7 @@
 import collections
 from typing import List
 
+
 class Solution:
     def intersect(self, nums1, nums2):
         """
@@ -57,7 +58,6 @@ class Solution:
                 ans.append(n)
                 dic[n] -= 1
         return ans
-
 
     def intersect3(self, nums1, nums2):
         dic = collections.Counter(nums1)

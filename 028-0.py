@@ -1,5 +1,6 @@
 # Brute Force
 
+
 class Solution:
     def strStr(self, haystack, needle) -> int:
         for i in range(len(haystack) - len(needle) + 1):
@@ -38,7 +39,6 @@ class Solution:
             if j == lenN:
                 return i
         return -1 if needle else 0
-
 
 
 haystack = "hello"

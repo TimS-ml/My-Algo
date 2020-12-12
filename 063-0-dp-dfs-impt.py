@@ -47,11 +47,11 @@ class Solution:
 
     # compress
     # compress makes init process easier
-    # this is based on start and end on the diagonal 
+    # this is based on start and end on the diagonal
     def uniquePathsWithObstacles2(self, obstacleGrid: List[List[int]]) -> int:
         m, n = len(obstacleGrid), len(obstacleGrid[0])
         # j=0, dp[0] = dp[0] + dp[-1]
-        dp = [1] + [0] * n  # len = n+1 
+        dp = [1] + [0] * n  # len = n+1
         for i in range(0, m):  # start at 0, not 1
             for j in range(0, n):
                 # repeat m*n times

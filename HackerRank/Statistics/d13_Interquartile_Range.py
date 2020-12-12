@@ -13,13 +13,12 @@ for i in range(n):
 N = sum(freq)
 s.sort()
 
-if n%2 != 0:
-    q1 = st.median(s[:N//2])
-    q3 = st.median(s[N//2+1:])
+if n % 2 != 0:
+    q1 = st.median(s[:N // 2])
+    q3 = st.median(s[N // 2 + 1:])
 else:
-    q1 = st.median(s[:N//2])
-    q3 = st.median(s[N//2:])
+    q1 = st.median(s[:N // 2])
+    q3 = st.median(s[N // 2:])
 
-ir = round(float(q3-q1), 1)
+ir = round(float(q3 - q1), 1)
 print(ir)
-

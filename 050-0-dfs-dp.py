@@ -33,9 +33,9 @@ class Solution:
     # dp
     # bottom up
     def myPow2(self, x: float, n: int) -> float:
-        dp = [1] + [x] + [None] * (n -1)
-        for i in range(1, n+1):
-            dp[i] = dp[int(i/2)] * dp[i - int(i/2)]
+        dp = [1] + [x] + [None] * (n - 1)
+        for i in range(1, n + 1):
+            dp[i] = dp[int(i / 2)] * dp[i - int(i / 2)]
         return dp[n]
 
 

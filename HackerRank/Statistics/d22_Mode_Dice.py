@@ -11,6 +11,5 @@ for _ in range(1000):
     if d1 != d2:
         sums.append(d1 + d2)
 
-prob = sum(i == 6 for i in sums)  / 1000
+prob = sum(i == 6 for i in sums) / 1000
 print(prob)
-

@@ -14,5 +14,5 @@ for _ in range(1000):
     sums.append(d1 + d2)
 
 # prob = sum(i <= 9 for i in sums)  / len(sums)
-prob = reduce(lambda s, j: s  + (1 if j <= 9 else 0), sums, 0) / len(sums)
+prob = reduce(lambda s, j: s + (1 if j <= 9 else 0), sums, 0) / len(sums)
 print(prob)

@@ -15,10 +15,10 @@
 import collections
 from typing import List
 
+
 class Solution:
     def totalFruit(self, tree: List[int]) -> int:
-        blocks = [(k, len(list(v)))
-                  for k, v in itertools.groupby(tree)]
+        blocks = [(k, len(list(v))) for k, v in itertools.groupby(tree)]
 
         ans = i = 0
         while i < len(blocks):
@@ -36,7 +36,7 @@ class Solution:
 
                 # If we have 3 types, this is not a legal subarray
                 if len(types) >= 3:
-                    i = j-1
+                    i = j - 1
                     break
 
                 ans = max(ans, weight)
@@ -46,7 +46,6 @@ class Solution:
                 break
 
         return ans
-
 
     def totalFruit2(self, tree: List[int]) -> int:
         ans = i = 0
@@ -60,4 +59,3 @@ class Solution:
                 i += 1
             ans = max(ans, j - i + 1)
         return ans
-

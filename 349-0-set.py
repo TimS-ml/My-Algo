@@ -19,10 +19,10 @@ class Solution:
         set2 = set(nums2)
         return list(set2 & set1)
 
-
     def intersection2(self, nums1, nums2):
         def set_intersection(self, set1, set2):
             return [x for x in set1 if x in set2]
+
         set1 = set(nums1)
         set2 = set(nums2)
 

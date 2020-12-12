@@ -22,7 +22,7 @@ def merge(intervals):
     start = intervals[0].start
     end = intervals[0].end
     for i in range(1, len(intervals)):
-        interv= intervals[i]
+        interv = intervals[i]
         if interv.start <= end:  # overlapping intervals, adjust the 'end'
             end = max(interv.end, end)
         else:  # non-overlapping interval, add the previous internval and reset

@@ -77,7 +77,6 @@ class Solution:
         return ans[::-1]
 
 
-
 # 10101
 a1 = '1010'
 b1 = '1011'

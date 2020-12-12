@@ -26,7 +26,6 @@ class Solution(object):
         return j + 1
 
 
-
 IN = [([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]), ([1, 1, 2]), ([])]
 useSet = 2
 print(Solution().removeDuplicates(IN[useSet]))
