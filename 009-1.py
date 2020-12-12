@@ -1,4 +1,16 @@
-# https://leetcode-cn.com/problems/palindrome-number/
+'''
+# Code Explain:
+- Time complexity: O()
+- Space complexity: O()
+
+# Pros and Cons:
+## Pros:
+
+## Cons:
+
+# Notation:
+
+'''
 
 
 class Solution:
