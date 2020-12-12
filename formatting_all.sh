@@ -27,7 +27,7 @@ then
     then
         # find ./HackerRank -name '*.py' -print0 | xargs -0 yapf -i
         for pycode in "`find ./HackerRank -type f -name '*.py'`"; do
-        # for pycode in ./Educative/*/*.py; do
+        # for pycode in ./Educative/**/*.py; do
             echo "$pycode"
             yapf -i -r "$pycode"
         done
@@ -40,9 +40,16 @@ then
             echo "$javacode"
             google-java-format -r "$javacode"
         done
-    elif [ $2 == 'all' ]
+    elif [ $2 == 'lc' ]
     then
-        for javacode in ./*.java; do
+        for javacode in ./Casual_Java/*.java; do
+            echo "$javacode"
+            google-java-format -r "$javacode"
+        done
+    elif [ $2 == 'edu' ]
+    then
+        # for pycode in "`find . -type f -name '*.py'`"; do
+        for javacode in ./Educative/*.java; do
             echo "$javacode"
             google-java-format -r "$javacode"
         done
