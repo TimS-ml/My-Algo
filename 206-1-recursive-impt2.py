@@ -38,15 +38,27 @@ class Solution:
         head.next = None  # remove pointer: i -> i+1
         return ans
 
+    # 1 -> 2 -> 3 <- 4 <- 5
+    #      |    |
+    #     head prev
     def reverseList_2(self, head: ListNode) -> ListNode:
         def reverse(head):
-            if head == None or head.next == None:
-                return head, head
-            pre, last = reverse(head.next)
-            last.next = head
-            head.next = None
-            return pre, head
+            if not head or not head.next:
+                return head
+            prev = reverse(head.next)
+            head.next.next = head  # add pointer: i <- i+1
+            head.next = None  # remove pointer: i -> i+1
+            return prev
+        return reverse(head)
 
+    def reverseList_3(self, head: ListNode) -> ListNode:
+        def reverse(head):
+            if not head or not head.next:
+                return head, head
+            prev, curr = reverse(head.next)
+            curr.next = head
+            head.next = None
+            return prev, head
         ans, _ = reverse(head)
         return ans
 
@@ -74,6 +86,6 @@ def listNodeToString(node):
 
 line = [1, 2, 3, 4, 5]
 head = listToListNode(line)
-ans = Solution().reverseList_2(head)
+ans = Solution().reverseList_3(head)
 out = listNodeToString(ans)
 print(out)
