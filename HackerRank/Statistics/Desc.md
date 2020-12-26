@@ -17,3 +17,6 @@ https://www.hackerrank.com/challenges/s10-geometric-distribution-1/tutorial
 https://www.hackerrank.com/challenges/s10-poisson-distribution-1/tutorial
 https://en.wikipedia.org/wiki/Poisson_distribution
 
+
+# Normal
+https://www.hackerrank.com/challenges/s10-normal-distribution-1/tutorial
