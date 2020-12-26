@@ -1,4 +1,5 @@
 # https://www.hackerrank.com/challenges/s10-geometric-distribution-1/problem
+# https://www.hackerrank.com/challenges/s10-geometric-distribution-1/tutorial
 # https://en.wikipedia.org/wiki/Geometric_distribution
 # https://en.wikipedia.org/wiki/Bernoulli_trial
 # https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.geom.html
