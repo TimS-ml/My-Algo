@@ -1,14 +1,6 @@
 # https://www.hackerrank.com/challenges/s10-binomial-distribution-2/problem
 
-import math
-
-# def fact(n):
-#     return 1 if n == 0 else n*fact(n-1)
-
-
-def comb(n, x):
-    return math.factorial(n) / (math.factorial(x) * math.factorial(n - x))
-
+from scipy.special import comb
 
 def b(x, n, p):
     return comb(n, x) * p**x * (1 - p)**(n - x)
