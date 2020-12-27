@@ -14,10 +14,10 @@ d88' d88'  88b`?88P'?8b     `?88P'`88b  88b`?88P'`88b`?8888P'
 ```
 
 # Source
-- Leetcode CN (Leetcode-cn.com premium price is 33% of Leecode.com if you are student)
+- Leetcode CN (it's cheaper...)
 - Educative
 - HackerRank
-
+- Codingame
 
 
 # How to Practice
@@ -43,15 +43,21 @@ d88' d88'  88b`?88P'?8b     `?88P'`88b  88b`?88P'`88b`?8888P'
 
 
 
-# Formating 
+# Other
 [0] For HackerRank
 ```bash
 python3 D01_Weighted_Mean.py < in01.txt
 python3 D01_Weighted_Mean.py < in01.txt > out01.txt
 ```
 
-[1] C++ format
+[1] Formatting
+My script
+```bash
+sh formatting_all.sh py lc
 ```
+
+C++
+```bash
 clang-format -i -style=LLVM *.cpp
 clang-format -i path/to/electron/file.cpp -style=LLVM
 clang-format -i main.cpp -style=LLVM

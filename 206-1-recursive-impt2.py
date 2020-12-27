@@ -49,6 +49,7 @@ class Solution:
             head.next.next = head  # add pointer: i <- i+1
             head.next = None  # remove pointer: i -> i+1
             return prev
+
         return reverse(head)
 
     def reverseList_3(self, head: ListNode) -> ListNode:
@@ -59,6 +60,7 @@ class Solution:
             curr.next = head
             head.next = None
             return prev, head
+
         ans, _ = reverse(head)
         return ans
 
