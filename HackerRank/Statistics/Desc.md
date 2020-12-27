@@ -20,3 +20,4 @@ https://en.wikipedia.org/wiki/Poisson_distribution
 
 # Normal
 https://www.hackerrank.com/challenges/s10-normal-distribution-1/tutorial
+https://en.wikipedia.org/wiki/Normal_distribution
