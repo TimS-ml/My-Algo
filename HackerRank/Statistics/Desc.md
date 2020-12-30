@@ -2,6 +2,7 @@
 https://github.com/graykode/distribution-is-all-you-need/
 https://www.hackerrank.com/domains/tutorials/10-days-of-statistics
 https://github.com/JNYH/HackerRank_solutions
+https://github.com/RodneyShag/HackerRank_solutions
 
 
 # Binomial
@@ -50,3 +51,10 @@ https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient
 SST / SSR / SSE
 https://www.hackerrank.com/challenges/s10-least-square-regression-line/tutorial
 https://en.wikipedia.org/wiki/Least_squares
+
+
+# Multiple Linear Regression
+https://www.hackerrank.com/challenges/s10-multiple-linear-regression/tutorial
+https://www.quora.com/What-is-the-difference-between-a-multiple-linear-regression-and-a-multivariate-regression
+The case of one explanatory variable is called simple linear regression; for more than one, the process is called multiple linear regression.
+This term is distinct from multivariate linear regression, where multiple correlated dependent variables are predicted, rather than a single scalar variable.

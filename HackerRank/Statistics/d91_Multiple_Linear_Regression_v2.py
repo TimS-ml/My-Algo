@@ -8,34 +8,21 @@
 # But it's okay for X and Y to be centered in case the problem of scale,
 # while you don't need to add constant column to X.
 
-
 import numpy as np
 
 [m, n] = list(map(int, input().split()))
 
-x, y = [], []
-for _ in range(n):
-    data = input().strip().split(' ')
-    x.append(data[0:m])
-    y.append(data[-1])
+data = np.empty((n, m + 2))
+data[:, 0] = 1
+data[:, 1:] = [list(map(float, input().split())) for _ in range(n)]
+X = data[:, :-1]
+y = data[:, -1]
 
-X = np.array(x, float)
-y = np.array(y, float)
+q = int(input())
+X_query = np.empty((q, m + 1))
+X_query[:, 0] = 1
+X_query[:, 1:] = [list(map(float, input().split())) for _ in range(q)]
 
-q = int(input().strip())
-X_query = []
-for _ in range(q):
-    X_query.append(input().strip().split(' '))
-X_query = np.array(X_query, float)
+beta = np.dot(np.linalg.inv(np.dot(X.T, X)), np.dot(X.T, y))
 
-X_R = X - np.mean(X, axis=0)
-y_R = y - np.mean(y)
-
-beta = np.dot(np.linalg.inv(np.dot(X_R.T, X_R)), np.dot(X_R.T, y_R))
-
-X_query_R = X_query - np.mean(X, axis=0)
-y_query_R = np.dot(X_query_R, beta)
-y_query = y_query_R + np.mean(y)
-
-for i in y_query:
-    print(round(float(i), 2))
+print('\n'.join(map(str, np.round(np.dot(X_query, beta), 2))))

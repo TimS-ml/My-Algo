@@ -1,4 +1,8 @@
 # https://www.hackerrank.com/challenges/s10-least-square-regression-line/problem
+# Calculate the standard deviation from an entire population:
+# https://docs.python.org/3.7/library/statistics.html#statistics.pstdev
+# https://docs.python.org/3.7/library/statistics.html#statistics.pvariance
+# https://stackoverflow.com/questions/54877855/python-statistics-module-returns-different-standard-deviation-than-calculated
 
 from statistics import mean, pstdev
 
