@@ -9,7 +9,7 @@
 # x = number of successful outcome
 # P(X < x) = 0.5 + 0.5*math.erf((x-miu)/(stdev * 2**0.5))
 # Note: P(X < x) = P(X <= x) because P(X = x) = 0 for continuous probability distribution function
-# P( a < X < b ) = P(X < b) - P(X < a)
+# P(a < X < b) = P(X < b) - P(X < a)
 
 import math
 
