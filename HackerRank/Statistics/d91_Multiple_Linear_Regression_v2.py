@@ -25,4 +25,7 @@ X_query[:, 1:] = [list(map(float, input().split())) for _ in range(q)]
 
 beta = np.dot(np.linalg.inv(np.dot(X.T, X)), np.dot(X.T, y))
 
-print('\n'.join(map(str, np.round(np.dot(X_query, beta), 2))))
+# print('\n'.join(map(str, np.round(np.dot(X_query, beta), 2))))
+y_query = np.dot(X_query, beta)
+for i in y_query:
+    print(round(float(i), 2))
