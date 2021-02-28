@@ -45,17 +45,25 @@ class Solution:
             prev = curr
         return ans
 
-    # This is faster
-    def romanToInt2(self, s: str) -> int:
+    # This (seems) faster
+    def romanToInt_2(self, s: str) -> int:
         dic = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
         ans = 0
+        
+        # Or return ans if you choose this
+        # for i, n in enumerate(s):
+        #     if i < len(s)-1 and dic[s[i]] < dic[s[i+1]]:
+        #         ans -= dic[s[i]]
+        #     else:
+        #         ans += dic[s[i]]
 
-        for i, n in enumerate(s):
-            if i < len(s)-1 and dic[s[i]] < dic[s[i+1]]:
-                ans -= dic[s[i]]  
-            else: 
+        for i in range(len(s) - 1):
+            if dic[s[i]] < dic[s[i+1]]:
+                ans -= dic[s[i]]
+            else:
                 ans += dic[s[i]]
-        return ans
+
+        return ans + dic[s[-1]]
 
 
 s = "MCMXCI"  # 1994.M+CM+XC+IV = +1000 (-100 +1000) (-10 +100) (-1 +5)

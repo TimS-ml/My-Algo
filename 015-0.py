@@ -11,6 +11,7 @@ brute force:
 - need 3 pointers to do that
 
 sol2
+- Time complexity: O(n^2)
 Creating a loop to iterate over x, then reduce to two sum with y + z = target = -x
 Use 3 pointers more cleverly: i, start, end
 - i < start < end
@@ -31,7 +32,7 @@ time complexity for num.sort(): O(N longN)
 
 
 # Notation:
-
+0 <= nums.length <= 3000
 '''
 
 from typing import List
@@ -53,6 +54,10 @@ class Solution:
     def threeSum_2(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
         ans = []
+
+        if len(nums) < 3:
+            return ans
+
         for i in range(len(nums) - 2):
             if i > 0 and nums[i] == nums[i - 1]:
                 continue
@@ -66,6 +71,8 @@ class Solution:
                     start += 1
                 else:
                     ans.append([nums[i], nums[start], nums[end]])
+                    # move 2 pointers to avoid duplicate ans
+                    # think about case: [-1, 0, 0, 0 , 1, 1]
                     end -= 1
                     start += 1
                     while start < end and nums[end] == nums[end + 1]:
@@ -76,6 +83,7 @@ class Solution:
 
 
 # inputs
-IN = [([-1, 0, 1, 2, -1, -4]), ([-2, 0, 1, 1, 2])]
-useSet = 0
-print(Solution().threeSum_2(IN[useSet]))
+# nums = [-1, 0, 1, 2, -1, -4]
+# nums = [-2, 0, 1, 1, 2]
+nums = [-1, 0, 0, 0, 1, 1]
+print(Solution().threeSum_2(nums))
