@@ -1,3 +1,4 @@
+*.vim
 *.un~
 *.swp
 *.out
