@@ -3,20 +3,16 @@
 - Time complexity: O()
 - Space complexity: O()
 
-combine hash and compare in one loop
-
-Initialize Hash dict
-
-[1] return a set
-dic = {s[i] for i in range(len(s))}
-
-[2] return a dict
-dic = {}
-start = 0
-for i in range(len(s)):
-    if s[i] in dic:
-        start = dic[s[i]] + 1
-    dic[s[i]] = i
+case: 'abcabcbb'
+       |
+     start = 0
+[1]   s[i] = 'a' and dic = {'a': 0}, update ans = 1
+[2-3] i -> c, updated dic = {'a': 0, 'b': 1, 'c': 2}, update ans = 3
+[4]   s[i] = 'a' and dic = {'a': 3, 'b': 1, 'c': 2}, update ans
+[5]   'abcabcbb'
+        |  
+     new start = old start + 1
+               = 0 + 1
 
 # Pros and Cons:
 ## Pros:
@@ -27,8 +23,10 @@ for i in range(len(s)):
 
 '''
 import collections
+# import pysnooper
 
 
+# @pysnooper.snoop()
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         dic = {}
@@ -36,52 +34,48 @@ class Solution:
         start = 0
 
         for i in range(len(s)):
-            if s[i] in dic and start <= dic[s[i]]:  # show up second time
+            # update start point if duplicate
+            # why don't remove start <= dic[s[i]] ?
+            # case: "tmmzuxt"
+            #          |   |
+            #       start [t in dic]
+            # in this case, if we update start, it will go backwords
+            if s[i] in dic and start <= dic[s[i]]:
                 start = dic[s[i]] + 1
             else:
                 ans = max(ans, i - start + 1)
-            dic[s[i]] = i  # initialize
+            dic[s[i]] = i  # save the position to dict
         return ans
 
-    # same as sol 1
     def lengthOfLongestSubstring_2(self, s: str) -> int:
         dic = {}
-        ans = 0
         start = 0
-
-        for i in range(len(s)):
-            if s[i] in dic:
-                start = dic[s[i]] + 1
-            dic[s[i]] = i
-
-        for i in range(len(s)):
+        ans = 0
+        for i, c in enumerate(s):
+            if c in dic:
+                start = max(start, dic[c] + 1)
+            # don't ans = max() in else! or you will miss
+            # s[i] in dic and start > dic[s[i]] case
             ans = max(ans, i - start + 1)
+            dic[c] = i
         return ans
 
     def lengthOfLongestSubstring_3(self, s: str) -> int:
-        d = collections.defaultdict(int)
-        start = ans = 0
-        for i, c in enumerate(s):
-            while start > 0 and d[c] > 0:
-                d[s[i - start]] -= 1
-                start -= 1
-            d[c] += 1
-            start += 1
-            ans = max(ans, start)
-        return ans
-
-    def lengthOfLongestSubstring_4(self, s: str) -> int:
-        d = {}
-        start = 0
+        dic = collections.defaultdict(int)
         ans = 0
+        length = 0
+        
         for i, c in enumerate(s):
-            if c in d:
-                start = max(start, d[c] + 1)
-            d[c] = i
-            ans = max(ans, i - start + 1)
+            while length > 0 and dic[c] > 0:
+                dic[s[i - length]] -= 1
+                length -= 1
+            dic[c] += 1
+            length += 1
+            ans = max(ans, length)
         return ans
 
 
 s1 = "abcabc"
 s2 = "pwwkew"  # wke
-print(Solution().lengthOfLongestSubstring(s2))
+s3 = "abcabcbb"
+print(Solution().lengthOfLongestSubstring_2(s3))
