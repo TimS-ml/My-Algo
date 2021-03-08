@@ -8,7 +8,8 @@ class Interval {
     this.start = start;
     this.end = end;
   }
-};
+}
+;
 
 class MergeIntervals {
 
