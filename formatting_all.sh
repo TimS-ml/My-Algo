@@ -6,7 +6,7 @@ if [ $1 == 'py' ]
 then
     if [ $2 == 'all' ]
     then
-        for pycode in "`find . -type f -name '*.py'`"; do
+        for pycode in $(find . -type f -name '*.py'); do
             echo "$pycode"
             yapf -i -r "$pycode"
         done
@@ -39,7 +39,7 @@ elif [ $1 == 'java' ]
 then
     if [ $2 == 'all' ]
     then
-        for javacode in "`find . -type f -name '*.java'`"; do
+        for javacode in $(find . -type f -name '*.java'); do
             echo "$javacode"
             google-java-format -r "$javacode"
         done
