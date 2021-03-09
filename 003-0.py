@@ -8,7 +8,7 @@ case: 'abcabcbb'
      start = 0
 [1]   s[i] = 'a' and dic = {'a': 0}, update ans = 1
 [2-3] i -> c, updated dic = {'a': 0, 'b': 1, 'c': 2}, update ans = 3
-[4]   s[i] = 'a' and dic = {'a': 3, 'b': 1, 'c': 2}, update ans
+[4]   s[i] = 'a' and dic = {'a': 3, 'b': 1, 'c': 2}, update ans still = 3
 [5]   'abcabcbb'
         |  
      new start = old start + 1
@@ -49,8 +49,9 @@ class Solution:
 
     def lengthOfLongestSubstring_2(self, s: str) -> int:
         dic = {}
-        start = 0
         ans = 0
+        start = 0
+        
         for i, c in enumerate(s):
             if c in dic:
                 start = max(start, dic[c] + 1)
