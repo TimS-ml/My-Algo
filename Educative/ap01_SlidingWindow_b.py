@@ -1,6 +1,6 @@
 # optimized
 # 2 pointers with fixed gap
-
+# The time complexity of the above algorithm will be O(N)O(N)
 
 # for the fixed gap
 def my(K, arr):

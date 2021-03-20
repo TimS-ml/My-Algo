@@ -1,6 +1,6 @@
 # time: O(N)
 # space: O(1)
-
+# same as ap04, k=2 case
 
 # we need hash dict + left / right char
 # arr of characters, k=2
@@ -29,22 +29,25 @@ def my(arr):
 def fruits_into_baskets(fruits):
     window_start = 0
     max_length = 0
-    fruit_frequency = {}
+    dic = {}
 
-    # try to extend the range [window_start, window_end]
+    # in the following loop we'll try to extend the range [window_start, window_end]
+    # use r_char and l_char just to make the code cleaner
     for window_end in range(len(fruits)):
         right_fruit = fruits[window_end]
-        if right_fruit not in fruit_frequency:
-            fruit_frequency[right_fruit] = 0
-        fruit_frequency[right_fruit] += 1
+        #  if right_fruit not in dic:
+        #      dic[right_fruit] = 0
+        #  dic[right_fruit] += 1
+        dic[right_fruit] = dic.get(right_fruit, 0) + 1
 
         # shrink the sliding window, until we are left with '2' fruits in the fruit frequency dictionary
-        while len(fruit_frequency) > 2:
+        while len(dic) > 2:
             left_fruit = fruits[window_start]
-            fruit_frequency[left_fruit] -= 1
-            if fruit_frequency[left_fruit] == 0:
-                del fruit_frequency[left_fruit]
+            dic[left_fruit] -= 1
+            if dic[left_fruit] == 0:
+                del dic[left_fruit]
             window_start += 1  # shrink the window
+        # remember update the maximum length so far
         max_length = max(max_length, window_end - window_start + 1)
     return max_length
 

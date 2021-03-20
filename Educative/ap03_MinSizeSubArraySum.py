@@ -1,6 +1,16 @@
 # https://www.educative.io/courses/grokking-the-coding-interview/7XMlMEQPnnQ
 # Given an array of positive numbers and a positive number ‘S’, find the length of the smallest contiguous subarray whose sum is greater than or equal to ‘S’. Return 0, if no such subarray exists.
 
+# case: 7, [2, 1, 5, 2, 3, 2]
+# [1] start = end, at arr[0]
+# [2] start at arr[0] not move, end at arr[2], sum > 7
+# [3] start at arr[1], end at arr[2] not move, sum < 7
+# [4] start at arr[1] not move, end at arr[3], sum > 7
+# ...
+
+# time: O(N)
+# The outer for loop runs for all elements, and the inner while loop processes each element only once
+
 # 2 pointers with un-fixed gap
 
 import math
@@ -38,23 +48,25 @@ def my2(S, arr):
                 minium = end - start + 1
                 ansarr = subarr
             s -= arr[start]
-            subarr.popleft()
+            subarr.popleft()  # yep, that's why I use deque
             start += 1
     return minium, ansarr
 
 
 def smallest_subarray_with_given_sum(s, arr):
     window_sum = 0
-    min_length = math.inf
+    # min_length = math.inf
+    min_length = len(arr) + 1  # I believe this is better
     window_start = 0
 
-    for window_end in range(0, len(arr)):
+    for window_end in range(len(arr)):
         window_sum += arr[window_end]  # add the next element
         # shrink the window as small as possible until the 'window_sum' is smaller than 's'
         while window_sum >= s:
             min_length = min(min_length, window_end - window_start + 1)
             window_sum -= arr[window_start]
             window_start += 1
+
     if min_length == math.inf:
         return 0
     return min_length
