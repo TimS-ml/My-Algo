@@ -1,5 +1,9 @@
 Only the python solution contains the time complexity stuffs
-For problem set, write down thought process first
+For problem set:
+- write down thought process first
+  - update which part stacked
+- this problem is similar to which example problems
+
 
 # Patterns: Sliding Window
 2 pointers, fixed / unfixed gap
@@ -21,3 +25,6 @@ fixed size or dynamic size ?
 define of start and end ?
 freq dict or index dict ?
 
+
+
+# two pointers
