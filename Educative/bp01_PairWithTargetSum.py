@@ -3,7 +3,7 @@
 
 # time: O(n)
 # space: O(1)
-
+# sorted, 2 pointers from left and right move to middle
 
 def pair_with_targetsum(arr, target_sum):
     left, right = 0, len(arr) - 1
@@ -22,6 +22,7 @@ def pair_with_targetsum(arr, target_sum):
 # time: O(n)
 # space: O(n)
 # this is more flexible approach, the array no need to be sorted
+
 def pair_with_targetsum_2(arr, target_sum):
     nums = {}  # to store numbers and their indices
     for i, num in enumerate(arr):
