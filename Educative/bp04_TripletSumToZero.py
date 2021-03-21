@@ -19,7 +19,7 @@
 def search_triplets(arr):
     arr.sort()
     triplets = []
-    for i in range(len(arr)):
+    for i in range(len(arr) - 2):  # -2 is not necessary but good to have
         # skip same element to avoid duplicate triplets
         if i > 0 and arr[i] == arr[i - 1]:
             continue
