@@ -7,7 +7,8 @@
 # keep track of the count of the __maximum repeating letter__ in any window (let’s call it maxRepeatLetterCount).
 # - we can have a window which has one letter repeating maxRepeatLetterCount times
 # - this means we should try to replace the remaining letters.
-# - If we have more than ‘k’ remaining letters, we should shrink the window as we are not allowed to replace more than ‘k’ letters
+# - If we have more than ‘k’ remaining letters
+#   - __shrink the window__ as we are not allowed to replace more than ‘k’ letters
 
 
 def length_of_longest_substring(str1, k):
@@ -17,9 +18,10 @@ def length_of_longest_substring(str1, k):
     # Try to extend the range [window_start, window_end]
     for window_end in range(len(str1)):
         right_char = str1[window_end]
-        if right_char not in dic:
-            dic[right_char] = 0
-        dic[right_char] += 1
+        # if right_char not in dic:
+        #     dic[right_char] = 0
+        # dic[right_char] += 1
+        dic[right_char] = dic.get(right_char, 0) + 1
         max_repeat_letter_count = max(max_repeat_letter_count,
                                       dic[right_char])
 

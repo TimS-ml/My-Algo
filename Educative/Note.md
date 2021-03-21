@@ -11,3 +11,12 @@ fix size, find max sum sub arr
 fix sum, find shortest size sub arr
 fix `<= k` distinct character, find longest size sub arr
 fix distinct character, no repeat, find longest size sub arr
+
+
+## Key
+fixed size or dynamic size ?
+  - relationship to the parameters ? How to def start and end ?
+  - if dynamic, when to shrink ? when to stop shrink ?
+define of start and end ?
+freq dict or index dict ?
+
