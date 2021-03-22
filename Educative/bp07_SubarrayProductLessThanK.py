@@ -3,6 +3,7 @@
 
 # same as bp06
 # this time we are calc sub arr product instead of sum
+# contiguous subarrays
 
 from collections import deque
 

@@ -6,6 +6,7 @@
 # we need to define a similar var: target_diff
 # in bp04, we need to skip dulicate elements
 # case: [-1, -1, -1, 2], 1
+# since we care about 'most' xxx, thus duplicate check is optional (but nice to have)
 
 import math
 
@@ -37,7 +38,6 @@ def triplet_sum_close_to_target(arr, target_sum):
 
 def triplet_sum_close_to_target_v2(arr, target_sum):
     arr.sort()
-    # triplets = []  # we don't need to save this
     smallest_difference = math.inf
     for i in range(len(arr) - 2):
         if i > 0 and arr[i] == arr[i - 1]:
