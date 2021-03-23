@@ -5,7 +5,7 @@ For problem set:
 - this problem is similar to which example problems
 
 
-# Patterns: Sliding Window
+# Sliding Window
 2 pointers, fixed / unfixed gap
 
 state related: hash dict
@@ -27,4 +27,7 @@ freq dict or index dict ?
 
 
 
-# two pointers
+# Two Pointers
+
+# Fast & Slow Pointers
+

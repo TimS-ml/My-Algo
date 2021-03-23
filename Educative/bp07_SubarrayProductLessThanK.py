@@ -1,4 +1,5 @@
 # time: O(n^3)  # why?
+# they believe substr generation will cause n^2
 # space: O(n^3)
 
 # same as bp06
