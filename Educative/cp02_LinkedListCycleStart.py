@@ -1,5 +1,5 @@
-# time:
-# space:
+# time: O(n)
+# space: O(1)
 
 # using the code from cp01, we can find the length of loop L_loop
 # assuming the length of linked list is L_all

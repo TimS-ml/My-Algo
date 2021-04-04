@@ -1,3 +1,14 @@
+# time:  O(n * logn)  # we need to sort
+# space: O(n)
+
+# Sort the intervals on the start time to ensure a.start <= b.start
+# If ‘a’ overlaps ‘b’ (i.e. b.start <= a.end), 
+# we need to merge them into a new interval ‘c’ such that:
+#     c.start = a.start
+#     c.end = max(a.end, b.end)
+# We will keep repeating the above two steps to merge ‘c’ 
+# with the next interval if it overlaps with ‘c’.
+
 from __future__ import print_function
 
 
@@ -23,11 +34,13 @@ def merge(intervals):
     end = intervals[0].end
     for i in range(1, len(intervals)):
         interv = intervals[i]
-        if interv.start <= end:  # overlapping intervals, adjust the 'end'
+        # overlapping intervals, adjust the 'end'
+        if interv.start <= end:
             end = max(interv.end, end)
-        else:  # non-overlapping interval, add the previous internval and reset
+        # non-overlapping interval, add the previous internval and reset
+        else:
             mergedIntervals.append(Interval(start, end))
-            # update comparison standard
+            # !!! update comparison standard
             start = interv.start
             end = interv.end
 

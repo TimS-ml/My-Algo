@@ -5,7 +5,7 @@
 
 def make_squares(arr):
     n = len(arr)
-    squares = [0 for x in range(n)]
+    squares = [0 for _ in range(n)]
     highestSquareIdx = n - 1
     left, right = 0, n - 1
     while left <= right:

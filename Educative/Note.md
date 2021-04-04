@@ -26,8 +26,24 @@ define of start and end ?
 freq dict or index dict ?
 
 
-
 # Two Pointers
+- should you sort list at first?
+  - sorting the array will take O(n * logn)
+- fast + slow or same speed
+- start point:
+  - bp03 starts at middle
+- we curious at pointers'
+  - value
+    - swap or sum
+  - position
+
 
 # Fast & Slow Pointers
+- linked list can be used at a looped chain scenario
+- something related to: loop, middle (or 1/3, 1/4 etc.)
 
+the time complexity of cp03 is very interesting
+
+
+# Merge Intervals
+4 merging scenarios
