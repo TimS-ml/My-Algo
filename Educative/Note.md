@@ -51,10 +51,14 @@ the time complexity of cp03 is very interesting
 
 # [d] Merge Intervals
 4 merging scenarios
+check ./Note-d-merge.png
 
 
 # [e] Cyclic Sort
-
+https://blog.csdn.net/weixin_43989102/article/details/111397072
+Problems involving arrays containing numbers in a given range
+Key point: connection between value and index
+LC 268
 
 # [f] In-place Reversal of a LinkedList
 
@@ -66,6 +70,21 @@ the time complexity of cp03 is very interesting
 
 
 # [i] Two Heaps
+https://docs.python.org/3/library/heapq.html
+A heap is a specialized tree-based data structure which is essentially an almost complete[1] tree that satisfies the heap property
+
+In many problems, where we are given a set of elements such that we can divide them into two parts. To solve the problem, we are interested in knowing the smallest element in one part and the biggest element in the other part. 
+
+```python
+import heapq
+
+def heapsort(iterable):
+    h = []
+    for value in iterable:
+        heapq.heappush(h, value)
+    # heappop: Pop and return the smallest item from the heap,
+    return [heapq.heappop(h) for i in range(len(h))]
+```
 
 
 # [j] Subsets
