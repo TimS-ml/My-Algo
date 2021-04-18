@@ -1,3 +1,6 @@
+# time : O(n)
+# space: O(1)
+
 def cyclic_sort(nums):
     i = 0
     while i < len(nums):
