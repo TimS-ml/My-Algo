@@ -16,10 +16,10 @@ Take care of the situations like 999 + 1
 # Notation:
 
 '''
-import pysnooper
+# import pysnooper
 
 
-@pysnooper.snoop()
+# @pysnooper.snoop()
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -90,10 +90,12 @@ def listNodeToString(node):
     return "[" + result[:-2] + "]"
 
 
-l1_li = [1, 2, 3, 4, 5]
-l2_li = [1, 2, 3, 4, 5]
+# l1_li = [1, 2, 3, 4, 5]
+# l2_li = [1, 2, 3, 4, 5]
+l1_li = [2, 4, 3]
+l2_li = [5, 6, 4, 1]
 l1 = listToListNode(l1_li)
 l2 = listToListNode(l2_li)
-ans = Solution().addTwoNumbers(l1, l2)
+ans = Solution().addTwoNumbers_2(l1, l2)
 out = listNodeToString(ans)
 print(out)
