@@ -11,10 +11,12 @@ from heapq import heapify, heappop, heappush
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         freq_dict = Counter(nums)
+        
+        # basically is sort by dic value, check 347-1
         heap = []
         heapify(heap)
         for key in freq_dict:
-            heappush(heap, [freq_dict[key], key])
+            heappush(heap, [freq_dict[key], key])  # freq, char
             if len(heap) > k:
                 heappop(heap)
         return [j for i, j in heap]
@@ -24,7 +26,7 @@ class Solution:
         buckets = [[] for i in range(len(nums) + 1)]
         for key, freq in counter_obj.items():
             buckets[freq].append(key)
-        result = list(chain(*buckets))
+        result = list(chain(*buckets))  # interesting...
         return result[::-1][:k]
 
 
