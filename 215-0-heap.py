@@ -1,8 +1,12 @@
 '''
 # Thought process
 [1] sort the list
+  - easy way: nums.sort(reverse=True), time: O(N * log(N))
+  - heapq in python: O(N * log(2N))
+    - in python, heappop will pop minimum value
+  - Merge Sort or Quick Sort: O(N * log(N))
 [2] located the kth number
-  - 1st largest number is at sorted[0]
+  - k start at 1
 
 # Test cases
 3,2,3,1,2,4,5,5,6
