@@ -1,6 +1,17 @@
+'''
+https://www.educative.io/courses/grokking-the-coding-interview/7D5NNZWQ8Wr
+
+# Code Explain:
+- Time complexity: O(N)
+- Space complexity: O()
+
+# Pros and Cons and Notation:
+
+'''
+
 # optimized
 # 2 pointers with fixed gap
-# The time complexity of the above algorithm will be O(N)O(N)
+# The time complexity of the above algorithm will be O(N)
 
 # for the fixed gap
 def my(K, arr):
@@ -16,7 +27,7 @@ def my(K, arr):
     return ans
 
 
-# for un-fixed gap
+# for un-fixed gap, more general approach
 # we are not gonna to use K (i.e. the gap) to simplified our code
 def my2(K, arr):
     ans = []

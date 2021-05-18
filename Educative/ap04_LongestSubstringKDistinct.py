@@ -1,3 +1,12 @@
+'''
+# Code Explain:
+- Time complexity: O()
+- Space complexity: O()
+
+# Pros and Cons and Notation:
+
+'''
+
 # The outer for loop runs for all characters, 
 #   and the inner while loop processes each character only once
 # same as ap03: dynamic window size

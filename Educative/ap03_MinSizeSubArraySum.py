@@ -1,22 +1,29 @@
-# https://www.educative.io/courses/grokking-the-coding-interview/7XMlMEQPnnQ
-# Given an array of positive numbers and a positive number ‘S’, find the length of the smallest contiguous subarray whose sum is greater than or equal to ‘S’. Return 0, if no such subarray exists.
+'''
+https://www.educative.io/courses/grokking-the-coding-interview/7XMlMEQPnnQ
 
-# case: 7, [2, 1, 5, 2, 3, 2]
-# [1] start = end, at arr[0]
-# [2] start at arr[0] not move, end at arr[2], sum > 7
-# [3] start at arr[1], end at arr[2] not move, sum < 7
-# [4] start at arr[1] not move, end at arr[3], sum > 7
-# ...
+# Code Explain:
+- Time complexity: O(N)
+- Space complexity: O()
 
-# time: O(N)
-# The outer for loop runs for all elements, and the inner while loop processes each element only once
+The outer for loop runs for all elements, and the inner while loop processes each element only once
 
-# 2 pointers with un-fixed gap
+# Pros and Cons and Notation:
+
+Find the length of the smallest(len) contiguous subarray whose sum is greater than or equal to ‘S’
+case: 7, [2, 1, 5, 2, 3, 2]
+[1] start = end, at arr[0]
+[2] start at arr[0] not move, end at arr[2], sum > 7
+[3] start at arr[1], end at arr[2] not move, sum < 7
+[4] start at arr[1] not move, end at arr[3], sum > 7
+...
+'''
+
 
 import math
 from collections import deque
 
 
+# 2 pointers with un-fixed gap
 # modifications:
 # return subarr, not number
 # gap is calculated based on S
@@ -39,7 +46,7 @@ def my2(S, arr):
     start = 0
     minium = len(arr) + 1
     s = 0
-    subarr = deque()
+    ansarr = subarr = deque()
     for end in range(len(arr)):
         s += arr[end]
         subarr.append(arr[end])

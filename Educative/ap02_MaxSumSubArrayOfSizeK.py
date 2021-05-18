@@ -1,6 +1,14 @@
-# two pointers: start, end
-# t O(N)
-# s O(1)
+'''
+https://www.educative.io/courses/grokking-the-coding-interview/JPKr0kqLGNP
+
+# Code Explain:
+- Time complexity: O(N)
+- Space complexity: O(1)
+
+# Pros and Cons and Notation:
+
+two pointers: start, end
+'''
 
 
 # 2 pointers with fixed gap
@@ -16,12 +24,13 @@ def my(K, arr):
         start += 1
     return max(ans)
 
+
 # O(N*K), where 'N' is the total number of elements in the given array
 def brute_max_sub_array_of_size_k(k, arr):
     max_sum, window_sum = 0, 0
-    
+
     for i in range(len(arr) - k + 1):
-        window_sum = sum([i:i+k])
+        window_sum = sum(arr[i:i + k])
         #  window_sum = 0
         #  for j in range(i, i + k):
         #      window_sum += arr[j]
