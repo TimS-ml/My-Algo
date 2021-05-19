@@ -1,17 +1,13 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(N)
+- Space complexity: O(1)
 
 # Pros and Cons and Notation:
-
+The outer for loop runs for all characters, 
+  and the inner while loop processes each character only once
+same as ap03: dynamic window size
 '''
-
-# The outer for loop runs for all characters, 
-#   and the inner while loop processes each character only once
-# same as ap03: dynamic window size
-# time: O(N)
-# space: O(1)
 
 
 # we need hash dict + left / right char
@@ -30,7 +26,7 @@ def my(arr, k):
             lchar = arr[start]
             dic[lchar] -= 1
             if dic[lchar] == 0:
-                del dic[lchar]
+                del dic[lchar]  # yep do remember that
             start += 1
 
         ans = max(ans, end - start + 1)

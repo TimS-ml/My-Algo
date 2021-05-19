@@ -1,5 +1,11 @@
-# time: O(N)
-# space: O(1)
+'''
+# Code Explain:
+- Time complexity: O(N)
+- Space complexity: O(1)
+
+# Pros and Cons and Notation:
+
+'''
 # same as ap04, k=2 case
 
 # we need hash dict + left / right char
@@ -19,7 +25,7 @@ def my(arr):
             lchar = arr[start]
             dic[lchar] -= 1
             if dic[lchar] == 0:
-                del dic[lchar]
+                del dic[lchar]  # same as ap04
             start += 1
 
         ans = max(ans, end - start + 1)

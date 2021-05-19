@@ -1,15 +1,21 @@
-# time: O(N)
-# space: O(1)
-# same as ap04
-# but ap04, ap05 dic is frequency dict
-# if dic[left_fruit] == 0:
-#     del dic[left_fruit]
-# use len(dic) to check how many chars  
+'''
+# Code Explain:
+- Time complexity: O(N)
+- Space complexity: O(1)
 
-# in ap06, dic is index dict
-# if char in dic, means char appears twice
-# the index helps to determine the boundary of window
-#   i.e. locate faster
+# Pros and Cons and Notation:
+same as ap04
+but ap04, ap05 dic is frequency dict
+if dic[left_fruit] == 0:
+    del dic[left_fruit]
+use len(dic) to check how many chars  
+
+in ap06, dic is index dict
+if char in dic, means char appears twice
+the index helps to determine the boundary of window
+  i.e. locate faster
+'''
+
 
 # we need hash dict + left / right char
 # use dic to track location
@@ -24,10 +30,13 @@ def my(arr):
         if rchar in dic:
             # update start
             # in what cases start will bigger than dic[rchar] + 1 ???
+            # case: aabccbb, the 2nd b
+            # since current dic[rchat] is not update, and start will not change
             start = max(start, dic[rchar] + 1)
-        # add char location
+        # add/update char location
         dic[rchar] = end
-
+        
+        # update answer for each `end` index
         ans = max(ans, end - start + 1)
     return ans
 
@@ -55,9 +64,9 @@ def non_repeat_substring(str1):
             # [4, 4, 3]
             # [5, 4, 2]
             if window_start > dic[right_char] + 1:
-                print(f'{right_char} in dic, smaller than window_start')
+                print(f'{right_char} in dic, smaller than window_start', window_start, dic[right_char] + 1)
             else:
-                print(f'{right_char} in dic')
+                print(f'{right_char} in dic', window_start, dic[right_char] + 1)
             window_start = max(window_start, dic[right_char] + 1)
         # insert the 'right_char' into the map
         dic[right_char] = window_end  # update index of `right_char`
