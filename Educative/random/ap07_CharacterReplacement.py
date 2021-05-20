@@ -1,19 +1,14 @@
-'''
-# Code Explain:
-- Time complexity: O(N)
-- Space complexity: O(1)
+# time: O(N)
+# space: O(1)
+# same as ap04
+# ap04, ap05 dic is frequency dict
 
-# Pros and Cons and Notation:
-same as ap04
-ap04, ap05 dic is frequency dict
-
-key point:
-keep track of the count of the __maximum repeating letter__ in any window (let’s call it maxRepeatLetterCount).
-- we can have a window which has one letter repeating maxRepeatLetterCount times
-- this means we should try to replace the remaining letters.
-- If we have more than ‘k’ remaining letters
-  - __shrink the window__ as we are not allowed to replace more than ‘k’ letters
-'''
+# key point:
+# keep track of the count of the __maximum repeating letter__ in any window (let’s call it maxRepeatLetterCount).
+# - we can have a window which has one letter repeating maxRepeatLetterCount times
+# - this means we should try to replace the remaining letters.
+# - If we have more than ‘k’ remaining letters
+#   - __shrink the window__ as we are not allowed to replace more than ‘k’ letters
 
 
 def length_of_longest_substring(str1, k):
