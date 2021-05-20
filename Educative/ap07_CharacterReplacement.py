@@ -4,6 +4,7 @@
 - Space complexity: O(1)
 
 # Pros and Cons and Notation:
+longest substring with same letter after k letters replacement
 same as ap04
 ap04, ap05 dic is frequency dict
 
@@ -28,14 +29,14 @@ def length_of_longest_substring(str1, k):
         # dic[right_char] += 1
         dic[right_char] = dic.get(right_char, 0) + 1
         max_repeat_letter_count = max(max_repeat_letter_count,
-                                      dic[right_char])
-
+                                      dic[right_char])  # [1] this is interesting, since new char comes in right side
+                                                        # and thus we can get correct max_repeat_letter_count in window
         # Current window size is from window_start to window_end, overall we have a letter which is
         # repeating 'max_repeat_letter_count' times, this means we can have a window which has one letter
         # repeating 'max_repeat_letter_count' times and the remaining letters we should replace.
         # if the remaining letters are more than 'k', it is the time to shrink the window as we
         # are not allowed to replace more than 'k' letters
-        if (window_end - window_start + 1 - max_repeat_letter_count) > k:
+        if (window_end - window_start + 1 - max_repeat_letter_count) > k:  # [2] that's how you shrink boundary, one char a time
             left_char = str1[window_start]
             dic[left_char] -= 1
             window_start += 1
@@ -45,9 +46,10 @@ def length_of_longest_substring(str1, k):
 
 
 def main():
-    print(length_of_longest_substring("aabccbb", 2))
-    print(length_of_longest_substring("abbcb", 1))
-    print(length_of_longest_substring("abccde", 1))
+    print(length_of_longest_substring("aabaabbcc", 2))
+    # print(length_of_longest_substring("aabccbb", 2))
+    # print(length_of_longest_substring("abbcb", 1))
+    # print(length_of_longest_substring("abccde", 1))
 
 
 main()
