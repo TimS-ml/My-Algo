@@ -1,12 +1,18 @@
-# time: O(N)
-# space: O(1)
-# same as ap07
-# number of char = 2
-# we don't need freq dict in this case since we only allowed to replace 0 to 1
-# and thus, no need to update max_repeat_letter_count, 
-#   since dic[right_char] and max_repeat_letter_count are the same 
-# max_repeat_letter_count = max(max_repeat_letter_count,
-#                           dic[right_char])
+'''
+# Code Explain:
+- Time complexity: O(N)
+- Space complexity: O(1)
+
+# Pros and Cons and Notation:
+
+same as ap07
+number of char = 2
+we don't need freq dict in this case since we only allowed to replace 0 to 1
+and thus, no need to update max_repeat_letter_count, 
+  since dic[right_char] and max_repeat_letter_count are the same 
+max_repeat_letter_count = max(max_repeat_letter_count,
+                          dic[right_char])
+'''
 
 
 def length_of_longest_substring(arr, k):
