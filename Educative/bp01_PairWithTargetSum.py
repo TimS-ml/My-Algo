@@ -1,9 +1,18 @@
-# brute force
-# time: O(n * log(n))
+'''
+# Code Explain:
+Brute force
+- Time complexity: O(n * log(n))
 
-# time: O(n)
-# space: O(1)
-# sorted, 2 pointers from left and right move to middle
+sol1:
+- Time complexity: O(n)
+- Space complexity: O(1)
+sorted, 2 pointers from left and right move to middle
+
+sol2:
+- Time complexity: O(n)
+- Space complexity: O(n)
+this is more flexible approach, the array no need to be sorted
+'''
 
 def pair_with_targetsum(arr, target_sum):
     left, right = 0, len(arr) - 1
@@ -19,17 +28,13 @@ def pair_with_targetsum(arr, target_sum):
     return [-1, -1]
 
 
-# time: O(n)
-# space: O(n)
-# this is more flexible approach, the array no need to be sorted
-
 def pair_with_targetsum_2(arr, target_sum):
-    nums = {}  # to store numbers and their indices
+    dic = {}  # to store numbers and their indices
     for i, num in enumerate(arr):
-        if target_sum - num in nums:
-            return [nums[target_sum - num], i]
+        if target_sum - num in dic:
+            return [dic[target_sum - num], i]
         else:
-            nums[arr[i]] = i
+            dic[arr[i]] = i
     return [-1, -1]
 
 
