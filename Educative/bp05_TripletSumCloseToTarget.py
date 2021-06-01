@@ -80,9 +80,9 @@ def search_pair(arr, target_sum, left, smallest_diff):
 
 def main():
     print(triplet_sum_close_to_target([-2, 0, 1, 2], 2))
-    print(triplet_sum_close_to_target_v2([-2, 0, 1, 2], 2))
+    # print(triplet_sum_close_to_target_v2([-2, 0, 1, 2], 2))
     print(triplet_sum_close_to_target([-3, -1, 1, 2], 1))
-    print(triplet_sum_close_to_target_v2([-3, -1, 1, 2], 1))
+    # print(triplet_sum_close_to_target_v2([-3, -1, 1, 2], 1))
     # print(triplet_sum_close_to_target([1, 0, 1, 1], 100))
 
 
