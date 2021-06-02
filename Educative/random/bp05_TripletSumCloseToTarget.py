@@ -5,6 +5,11 @@
 
 # Pros and Cons and Notation:
 
+what we need to find is the "sum of closest pair", not the diff
+so case [-3, -1, 1, 2], target=1
+out: sum([-3, 1, 2])=0, not sum([-1, 1, 2])=2, through the gap is the same
+i.e.: If there are more than one such triplet, return the sum of the triplet with the smallest sum
+
 same as bp04
 - target_sum is given
 - we need to define a variable to describe `difference`: target_diff
@@ -51,7 +56,7 @@ def triplet_sum_close_to_target(arr, target_sum):
             continue
         smallest_diff = find_diff(target_sum - arr[i], arr[i+1:], smallest_diff)
 
-    return target_sum - smallest_diff
+    return target_sum - smallest_diff  # target_sum - (target_sum - sum)
 
 
 def main():

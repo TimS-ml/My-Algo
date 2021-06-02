@@ -1,4 +1,6 @@
 '''
+If there are more than one such triplet, return the sum of the triplet with the smallest sum
+
 # Code Explain:
 - Time complexity: O(n^2)
 - Space complexity: O(n)

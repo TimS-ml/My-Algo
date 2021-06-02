@@ -1,10 +1,22 @@
-# time: O(n^3)  # why?
-# they believe substr generation will cause n^2
-# space: O(n^3)
+'''
+Find all of its contiguous subarrays whose product is less than the target number
 
-# same as bp06
-# this time we are calc sub arr product instead of sum
-# **contiguous** subarrays, so don't sort arr
+# Code Explain:
+- Time complexity: O(n^3)
+they believe substr generation will cause n^2
+- Space complexity: O(n^3)
+
+# Pros and Cons and Notation:
+same as bp06
+- this time we are calc sub arr product instead of sum
+    - unfix length
+    - not include duplicate
+- **contiguous** subarrays, so don't sort arr
+
+same as bp06, fix one boundary and move another
+if arr[l] * ... * arr[r] < target, then all sub arrays in middle < target
+'''
+
 
 from collections import deque
 
@@ -16,13 +28,13 @@ def find_subarrays(arr, target):
     # at start, left and right are all 0
     for right in range(len(arr)):
         product *= arr[right]
-        # why while loop ?
-        # because l is `global`
+        # move left to correct position
         # in [2, 2, 5, 3, 10] case, when r at 10, l still at 5
         while (product >= target and left < len(arr)):
             # print(left, right, product)
             product /= arr[left]
             left += 1
+
         # since the product of all numbers from left to right is less than the target therefore,
         # all subarrays from left to right will have a product less than the target too; to avoid
         # duplicates, we will start with a subarray containing only arr[right] and then extend it
