@@ -26,6 +26,7 @@ def find_subarrays(arr, target):
     product = 1  # can target=0 ? yes
     left = 0
     # at start, left and right are all 0
+    # update ans every time after move 'right'
     for right in range(len(arr)):
         product *= arr[right]
         # move left to correct position
@@ -72,7 +73,7 @@ def find_subarrays_v2(arr, target):
 
 def main():
     print(find_subarrays([2, 2, 5, 3, 10], 30))
-    # print(find_subarrays_v2([2, 2, 5, 3, 10], 30))
+    print(find_subarrays_v2([2, 2, 5, 3, 10], 30))
     # print(find_subarrays([2, 2, 5, 3, 10], 0))
     # print(find_subarrays_v2([2, 2, 5, 3, 10], 0))
     # print(find_subarrays([8, 2, 6, 5], 50))
