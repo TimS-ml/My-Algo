@@ -1,13 +1,20 @@
-# time:  O(n * logn)  # we need to sort
-# space: O(n)
+'''
+# Code Explain:
+- Time complexity: O(N * logN)
+include sort
+- Space complexity: O(N)
 
-# Sort the intervals on the start time to ensure a.start <= b.start
-# If `a` overlaps `b` (i.e. b.start <= a.end), 
-# we need to merge them into a new interval `c` such that:
-#     c.start = a.start
-#     c.end = max(a.end, b.end)
-# We will keep repeating the above two steps to merge `c` 
-# with the next interval if it overlaps with `c`.
+# Pros and Cons and Notation:
+
+Sort the intervals on the start time to ensure a.start <= b.start
+If `a` overlaps `b` (i.e. b.start <= a.end), 
+we need to merge them into a new interval `c` such that:
+    c.start = a.start
+    c.end = max(a.end, b.end)
+We will keep repeating the above two steps to merge `c` 
+with the next interval if it overlaps with `c`.
+'''
+
 
 from __future__ import print_function
 
@@ -29,9 +36,10 @@ def merge(intervals):
     intervals.sort(key=lambda x: x.start)
 
     mergedIntervals = []
-    # init with 0
     start = intervals[0].start
     end = intervals[0].end
+
+    # start with 1st element
     for i in range(1, len(intervals)):
         interv = intervals[i]
         # overlapping intervals, adjust the 'end'
