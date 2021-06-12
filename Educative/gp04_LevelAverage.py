@@ -16,8 +16,8 @@ class TreeNode:
         self.left, self.right = None, None
 
 
-def traverse(root):
-    result = deque()
+def find_level_averages(root):
+    result = []
     if root is None:
         return result
 
@@ -25,18 +25,19 @@ def traverse(root):
     queue.append(root)
     while queue:
         levelSize = len(queue)
-        currentLevel = []
+        levelSum = 0.0
         for _ in range(levelSize):
             currentNode = queue.popleft()
-            # add the node to the current level
-            currentLevel.append(currentNode.val)
-            # insert the children of current node in the queue
+            # add the node's value to the running sum
+            levelSum += currentNode.val
+            # insert the children of current node to the queue
             if currentNode.left:
                 queue.append(currentNode.left)
             if currentNode.right:
                 queue.append(currentNode.right)
 
-        result.appendleft(currentLevel)  # lol
+        # append the current level's average to the result array
+        result.append(levelSum / levelSize)
 
     return result
 
@@ -46,9 +47,10 @@ def main():
     root.left = TreeNode(7)
     root.right = TreeNode(1)
     root.left.left = TreeNode(9)
+    root.left.right = TreeNode(2)
     root.right.left = TreeNode(10)
     root.right.right = TreeNode(5)
-    print("Reverse level order traversal: " + str(traverse(root)))
+    print("Level averages are: " + str(find_level_averages(root)))
 
 
 main()
