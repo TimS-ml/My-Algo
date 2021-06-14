@@ -1,17 +1,26 @@
-# Bottom-up Dynamic Programming
-# In Bottom-to-top Dynamic Programming the approach is also based on *storing sub-solutions* in memory,
-# but they are solved in a different order (*from smaller to bigger*),
-# and the resultant general structure of the algorithm is not recursive. LCS algorithm is a classic Bottom-to-top DP example.
+'''
+# Code Explain:
+- Time complexity: O(N*C) 
+where ‘N’ is the number of items and ‘C’ is the knapsack capacity
+- Space complexity: O(N*C)
 
-# [1] Base State
-# [2] State Transfer Equation
-# [3] Initialize Conditions
-# [4] State Compression (optional)
-# [5] Terminate Conditions
+# Pros and Cons and Notation:
 
-# time : O(N*C) (where ‘N’ is the number of items and ‘C’ is the knapsack capacity)
-# space: O(N*C)
+Bottom-up Dynamic Programming
+In Bottom-to-top Dynamic Programming the approach is also based on *storing sub-solutions* in memory,
+but they are solved in a different order (*from smaller to bigger*),
+and the resultant general structure of the algorithm is not recursive. LCS algorithm is a classic Bottom-to-top DP example.
 
+[1] Base State
+[2] State Transfer Equation => idx from idx-1 (bottom up)
+[3] Initialize Conditions
+[4] State Compression (optional)
+[5] Terminate Conditions
+
+=> state: maximum profit for capacity 'c' and first 'i' items (dp[i][c])
+what we want: ans = dp[len(profits)-1][capacity]: all items + input capacity
+    and this depends on dp
+'''
 
 def solve_knapsack(profits, weights, capacity):
     # basic checks
@@ -22,12 +31,12 @@ def solve_knapsack(profits, weights, capacity):
     dp = [[0 for x in range(capacity + 1)] for y in range(n)]
 
     # populate the capacity = 0 columns, with '0' capacity we have '0' profit
-    for i in range(0, n):
-        dp[i][0] = 0
+    # for i in range(n):
+    #     dp[i][0] = 0
 
     # [3] Initialize Conditions
     # if we have only one weight, we will take it if it is not more than the capacity
-    for c in range(0, capacity + 1):
+    for c in range(capacity + 1):
         if weights[0] <= c:
             dp[0][c] = profits[0]
 
@@ -44,8 +53,11 @@ def solve_knapsack(profits, weights, capacity):
             dp[i][c] = max(profit1, profit2)
     
     # call our print function
-    print_selected_elements(dp, weights, profits, capacity)
+    # print_selected_elements(dp, weights, profits, capacity)
     # maximum profit will be at the bottom-right corner.
+    
+    for index in range(len(dp)):
+        print(dp[index])
     return dp[n - 1][capacity]
 
 

@@ -1,15 +1,20 @@
-# Top-down Dynamic Programming with Memoization
-# Top-to-bottom Dynamic Programming is nothing else than ordinary recursion, enhanced with *memorizing the solutions for intermediate sub-problems*.
+'''
+# Code Explain:
+- Time complexity: O(N*C) 
+where ‘N’ is the number of items and ‘C’ is the knapsack capacity
+- Space complexity: O(N*C + N)
 
-# [1] Base State
-# [2] State Transfer Equation
-# [3] Initialize Conditions
-# [4] State Compression (optional)
-# [5] Terminate Conditions
+# Pros and Cons and Notation:
 
-# time : O(N*C) (where ‘N’ is the number of items and ‘C’ is the knapsack capacity)
-# space: O(N*C + N)
+Top-down Dynamic Programming with Memoization
+Top-to-bottom Dynamic Programming is nothing else than ordinary recursion, enhanced with *memorizing the solutions for intermediate sub-problems*.
 
+[1] Base State
+[2] State Transfer Equation => idx from idx+1 (top down)
+[3] Initialize Conditions
+[4] State Compression (optional)
+[5] Terminate Conditions
+'''
 
 def solve_knapsack(profits, weights, capacity):
     # [3] Initialize Conditions
@@ -49,8 +54,9 @@ def knapsack_recursive(dp, profits, weights, capacity, currentIndex):
 
 
 def main():
-    print(solve_knapsack([1, 6, 10, 16], [1, 2, 3, 5], 7))
+    print(solve_knapsack([1, 6, 10, 16], [1, 2, 3, 5], 5))
     print(solve_knapsack([1, 6, 10, 16], [1, 2, 3, 5], 6))
+    print(solve_knapsack([1, 6, 10, 16], [1, 2, 3, 5], 7))
 
 
 main()

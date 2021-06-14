@@ -1,9 +1,14 @@
-# time: O(n)
-# space: O(1)
+'''
+Given the head of a Singly LinkedList that contains a cycle, write a function to find the starting node of the cycle.
 
-# using the code from cp01, we can find the length of loop L_loop
-# assuming the length of linked list is L_all
-# index of pointer at time t is: 
+# Code Explain:
+- Time complexity: O(N)
+- Space complexity: O(1)
+
+# Pros and Cons and Notation:
+
+using the code from cp01, we can find the length of loop L_loop
+'''
 
 from __future__ import print_function
 

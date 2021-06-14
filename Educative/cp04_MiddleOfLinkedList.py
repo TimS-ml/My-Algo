@@ -1,5 +1,11 @@
-# time: O(n)
-# space: O(1)
+'''
+# Code Explain:
+- Time complexity: O(N)
+- Space complexity: O(1)
+
+# Pros and Cons and Notation:
+
+'''
 
 
 class Node:

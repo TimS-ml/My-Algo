@@ -1,10 +1,15 @@
-# time: O(n)
-# space: O(1)
+'''
+# Code Explain:
+- Time complexity: O(N)
+- Space complexity: O(1)
 
-# Once the fast and slow pointers meet: 
-# - save the slow pointer
-# - iterate the whole cycle with another pointer until we see the slow pointer again
-#   - for the d(move) = 1
+# Pros and Cons and Notation:
+
+Once the fast and slow pointers meet: 
+- save the slow pointer
+- iterate the whole cycle with another pointer until we see the slow pointer again
+  - for the d(move) = 1
+'''
 
 class Node:
     def __init__(self, value, next=None):
