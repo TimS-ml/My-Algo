@@ -2,12 +2,12 @@
 Given a directed graph(a graph with unidirectional edges), find the topological ordering of its vertices.
 
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(V + E)
+- Space complexity: O(V + E)
 
 # Pros and Cons and Notation:
 
-The basic idea behind the topological sort is to provide a partial ordering among the vertices(顶点) of the graph 
+The basic idea behind the topological sort is to provide a partial ordering among the vertices (顶点) of the graph 
 such that if there is an edge from U to V then U≤V i.e., U comes before V in the ordering:
     Source: Any node that has no incoming edge and has only outgoing edges is called a source.
     Sink (汇点): Any node that has only incoming edges and no outgoing edge is called a sink.
@@ -47,6 +47,12 @@ For each source, do the following things:
 Repeat until the source Queue is empty.
 '''
 
+'''
+Similar Problems: Find if a given Directed Graph has a cycle in it or not.
+
+Solution: If we can’t determine the topological ordering of all the vertices of a directed graph, the graph has a cycle in it. This was also referred to in the above code:
+'''
+
 from collections import deque
 
 
@@ -64,8 +70,12 @@ def topological_sort(vertices, edges):
         parent, child = edge[0], edge[1]
         graph[parent].append(child)  # put the child into it's parent's list
         inDegree[child] += 1  # increment child's inDegree
+    # {0: 2, 1: 1, 2: 1, 3: 0}
+    # {0: [], 1: [], 2: [0, 1], 3: [2, 0]}
+    print(inDegree)
+    print(graph)
 
-    # c. Find all sources i.e., all vertices with 0 in-degrees
+    # c. Find all sources i.e., all vertices with 0 in-degrees (head / source)
     sources = deque()
     for key in inDegree:
         if inDegree[key] == 0:
@@ -74,15 +84,15 @@ def topological_sort(vertices, edges):
     # d. For each source, add it to the sortedOrder and subtract one from all of its children's in-degrees
     # if a child's in-degree becomes zero, add it to the sources queue
     while sources:
-        vertex = sources.popleft()
+        vertex = sources.popleft()  # single node
         sortedOrder.append(vertex)
-        for child in graph[
-                vertex]:  # get the node's children to decrement their in-degrees
+        # get the node's children to decrement (递减) their in-degrees
+        for child in graph[vertex]:
             inDegree[child] -= 1
             if inDegree[child] == 0:
                 sources.append(child)
 
-    # topological sort is not possible as the graph has a cycle
+    # !!! topological sort is not possible as the graph has a cycle
     if len(sortedOrder) != vertices:
         return []
 

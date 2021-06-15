@@ -55,8 +55,9 @@ def knapsack_recursive(profits, weights, capacity, currentIndex):
 
 def main():
     # profits, weights, capacity
-    print(solve_knapsack([1, 6, 10, 16], [1, 2, 3, 5], 7))
+    print(solve_knapsack([1, 6, 10, 16], [1, 2, 3, 5], 5))
     print(solve_knapsack([1, 6, 10, 16], [1, 2, 3, 5], 6))
+    print(solve_knapsack([1, 6, 10, 16], [1, 2, 3, 5], 7))
 
 
 main()
