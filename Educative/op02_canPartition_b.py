@@ -18,11 +18,8 @@ def can_partition(num):
         return False
 
     # initialize the 'dp' array, -1 for default, 1 for true and 0 for false
-    dp = [[-1 for x in range(int(s / 2) + 1)] for y in range(len(num))]
-    return True if can_partition_recursive(dp, 
-                                           num, 
-                                           int(s / 2), 
-                                           0) == 1 \
+    dp = [[-1 for _ in range(int(s / 2) + 1)] for _ in range(len(num))]
+    return True if can_partition_recursive(dp, num, int(s / 2), 0) == 1 \
                 else False
 
 
@@ -54,9 +51,9 @@ def can_partition_recursive(dp, num, sum, currentIndex):
 
 
 def main():
-    print("Can partition: " + str(can_partition([1, 2, 3, 4])))
-    print("Can partition: " + str(can_partition([1, 1, 3, 4, 7])))
-    print("Can partition: " + str(can_partition([2, 3, 4, 6])))
+    print(str(can_partition([1, 2, 3, 4])))
+    print(str(can_partition([1, 1, 3, 4, 7])))  # [1,3,4] and [1,7]
+    print(str(can_partition([2, 3, 4, 6])))
 
 
 main()

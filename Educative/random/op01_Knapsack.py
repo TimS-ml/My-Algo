@@ -15,6 +15,8 @@ Top down
 [3] Initialize Conditions
 [4] State Compression (optional)
 [5] Terminate Conditions
+
+cache is 2-dim list of profits and capacity (sum of the weight of choose)
 '''
 
 

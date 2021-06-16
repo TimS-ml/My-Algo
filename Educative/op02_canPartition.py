@@ -63,9 +63,9 @@ def can_partition_recursive(num, sum, currentIndex):
 
 
 def main():
-    print("Can partition: " + str(can_partition([1, 2, 3, 4])))
-    print("Can partition: " + str(can_partition([1, 1, 3, 4, 7])))  # [1,3,4] and [1,7]
-    print("Can partition: " + str(can_partition([2, 3, 4, 6])))
+    print(str(can_partition([1, 2, 3, 4])))
+    print(str(can_partition([1, 1, 3, 4, 7])))  # [1,3,4] and [1,7]
+    print(str(can_partition([2, 3, 4, 6])))
 
 
 main()
