@@ -85,7 +85,7 @@ def can_partition_2(num):
     if s % 2 != 0:
         return False
 
-    cache = [[-1 for _ in range(s + 1)] for _ in range(len(num))]
+    cache = [[-1 for _ in range(int(s / 2) + 1)] for _ in range(len(num))]
 
     # init edge: curr_sum==0
     # as we can always for '0' sum with an empty set
@@ -96,7 +96,7 @@ def can_partition_2(num):
     # when idx > 0, it will include selection options
     # with only one number,
     # we can form a subset only when the required sum is equal to its value
-    for curr_sum in range(1, s + 1):
+    for curr_sum in range(1, int(s / 2) + 1):
         if num[0] == curr_sum:
             cache[0][curr_sum] = 1
         else:
@@ -104,17 +104,17 @@ def can_partition_2(num):
 
     # since this is a bottom up process, every sub states are pre-calculated
     for idx in range(1, len(num)):
-        for curr_sum in range(1, s + 1):
+        for curr_sum in range(1, int(s / 2) + 1):
             # not include curr idx
             # if we can find curr_sum in [a, b, c], then definitely [a, b, c, d]
             if cache[idx - 1][curr_sum]:
                 cache[idx][curr_sum] = cache[idx - 1][curr_sum]
             # include curr idx
-            if curr_sum >= num[idx]:
+            if curr_sum >= num[idx]:  # remember this filter rule
                 # !!! this could be False
                 cache[idx][curr_sum] = cache[idx - 1][curr_sum - num[idx]]
 
-    if cache[len(num) - 1][s]:
+    if cache[len(num) - 1][int(s / 2)]:
         return True
     else:
         return False

@@ -7,6 +7,7 @@ The algorithm has the time and space complexity of O(N*S), where ‘N’ represe
 # Pros and Cons and Notation:
 
 Bottom-up Dynamic Programming
+dp[i][s] will be ‘true’ if we can make the sum ‘s’ from the first ‘i’ numbers
 '''
 
 
@@ -17,13 +18,10 @@ def can_partition(num):
     if s % 2 != 0:
         return False
 
-    # we are trying to find a subset of given numbers that has a total sum of 's/2'.
-    s = int(s / 2)
-
     n = len(num)
     # the range is quite different from op02_b
-    dp = [[False for x in range(s + 1)] for y in range(n)]
-    
+    dp = [[False for _ in range(int(s / 2) + 1)] for _ in range(n)]
+
     # init
     # populate the s=0 columns, as we can always for '0' sum with an empty set
     for i in range(0, n):
@@ -31,12 +29,12 @@ def can_partition(num):
 
     # with only one number, we can form a subset only when the required sum is
     # equal to its value
-    for j in range(1, s + 1):
+    for j in range(1, int(s / 2) + 1):
         dp[0][j] = num[0] == j
 
     # process all subsets for all sums
     for i in range(1, n):
-        for j in range(1, s + 1):
+        for j in range(1, int(s / 2) + 1):
             # if we can get the sum 'j' without the number at index 'i'
             if dp[i - 1][j]:
                 dp[i][j] = dp[i - 1][j]
@@ -45,7 +43,7 @@ def can_partition(num):
                 dp[i][j] = dp[i - 1][j - num[i]]
 
     # the bottom-right corner will have our answer.
-    return dp[n - 1][s]
+    return dp[n - 1][int(s / 2)]
 
 
 def main():

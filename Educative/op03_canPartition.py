@@ -1,4 +1,6 @@
 '''
+Given a set of positive numbers, determine if a subset exists whose sum is equal to a given number ‘S’.
+
 # Code Explain:
 - Time complexity: O(N * S)
 - Space complexity: O(N * S)
