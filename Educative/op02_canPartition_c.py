@@ -40,8 +40,8 @@ def can_partition(num):
             # if we can get the sum 'j' without the number at index 'i'
             if dp[i - 1][j]:
                 dp[i][j] = dp[i - 1][j]
-            elif j >= num[
-                    i]:  # else if we can find a subset to get the remaining sum
+            # else if we can find a subset to get the remaining sum
+            elif j >= num[i]:
                 dp[i][j] = dp[i - 1][j - num[i]]
 
     # the bottom-right corner will have our answer.

@@ -55,7 +55,7 @@ def can_partition(num):
             cache[idx][curr_sum] = top_down_dp(cache, idx + 1, curr_sum)
 
         return cache[idx][curr_sum]
-    
+
     if top_down_dp(cache, 0, int(s / 2)):
         return True
     else:
@@ -68,4 +68,62 @@ def main():
     print(str(can_partition([2, 3, 4, 6])))
 
 
-main()
+# main()
+'''
+Bottom up
+[1] Base State
+[2] State Transfer Equation => idx from idx-1 (bottom up)
+[3] Initialize Conditions
+[4] State Compression (optional)
+[5] Terminate Conditions
+'''
+
+
+def can_partition_2(num):
+    s = sum(num)
+
+    if s % 2 != 0:
+        return False
+
+    cache = [[-1 for _ in range(s + 1)] for _ in range(len(num))]
+
+    # init edge: curr_sum==0
+    # as we can always for '0' sum with an empty set
+    for idx in range(len(num)):
+        cache[idx][0] = 1
+
+    # init edge: idx 0
+    # when idx > 0, it will include selection options
+    # with only one number,
+    # we can form a subset only when the required sum is equal to its value
+    for curr_sum in range(1, s + 1):
+        if num[0] == curr_sum:
+            cache[0][curr_sum] = 1
+        else:
+            cache[0][curr_sum] = 0
+
+    # since this is a bottom up process, every sub states are pre-calculated
+    for idx in range(1, len(num)):
+        for curr_sum in range(1, s + 1):
+            # not include curr idx
+            # if we can find curr_sum in [a, b, c], then definitely [a, b, c, d]
+            if cache[idx - 1][curr_sum]:
+                cache[idx][curr_sum] = cache[idx - 1][curr_sum]
+            # include curr idx
+            if curr_sum >= num[idx]:
+                # !!! this could be False
+                cache[idx][curr_sum] = cache[idx - 1][curr_sum - num[idx]]
+
+    if cache[len(num) - 1][s]:
+        return True
+    else:
+        return False
+
+
+def main_2():
+    print(str(can_partition_2([1, 2, 3, 4])))
+    print(str(can_partition_2([1, 1, 3, 4, 7])))  # [1,3,4] and [1,7]
+    print(str(can_partition_2([2, 3, 4, 6])))
+
+
+main_2()
