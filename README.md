@@ -13,6 +13,12 @@ d88' d88'  88b`?88P'?8b     `?88P'`88b  88b`?88P'`88b`?8888P'
 
 ```
 
+# Pending List
+https://leetcode-cn.com/problems/same-tree/
+https://leetcode-cn.com/problems/ugly-number/
+https://leetcode-cn.com/problems/flipping-an-image/
+
+
 # Source
 - Leetcode CN (it's cheaper...)
 - Educative
