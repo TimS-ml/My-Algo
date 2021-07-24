@@ -1,11 +1,11 @@
 class Solution(object):
-    def wordPattern(self, pattern, str):
+    def wordPattern(self, pattern, s):
         """
         :type pattern: str
-        :type str: str
+        :type s: str
         :rtype: bool
         """
         str = s.split()
         a = zip(pattern, str)
-        return len(pattern) == len(str) and len(set(a)) == len(
-            set(pattern)) == len(set(str))
+        return len(pattern) == len(str) and \
+            len(set(a)) == len(set(pattern)) == len(set(str))
