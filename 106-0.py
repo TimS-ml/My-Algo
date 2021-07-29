@@ -74,7 +74,6 @@ class Solution:
         idx_map = {val: idx for idx, val in enumerate(inorder)}
 
         def helper(in_left, in_right):
-            # 如果这里没有节点构造二叉树了, 结束
             if in_left > in_right:
                 return None
 
