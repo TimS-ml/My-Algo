@@ -40,7 +40,7 @@ class DLinkedNode:
 class LRUCache:
     def __init__(self, capacity: int):
         self.cache = dict()
-        # 使用伪头部和伪尾部节点
+        # Dummy head and tail
         self.head = DLinkedNode()
         self.tail = DLinkedNode()
         self.head.next = self.tail
@@ -51,35 +51,40 @@ class LRUCache:
     def get(self, key: int) -> int:
         if key not in self.cache:
             return -1
-        # 如果 key 存在，先通过哈希表定位，再移到头部
+        # if key in self.cache
+        # locate(dict) then move to head(DLinkedNode)
         node = self.cache[key]
         self.moveToHead(node)
         return node.value
 
     def put(self, key: int, value: int) -> None:
         if key not in self.cache:
-            # 如果 key 不存在，创建一个新的节点
+            # update dict and head of DLinkedNode
             node = DLinkedNode(key, value)
-            # 添加进哈希表
             self.cache[key] = node
-            # 添加至双向链表的头部
             self.addToHead(node)
             self.size += 1
+
+            # remove tail's node if exceed capacity
             if self.size > self.capacity:
-                # 如果超出容量，删除双向链表的尾部节点
                 removed = self.removeTail()
-                # 删除哈希表中对应的项
+                # remember to update dict
                 self.cache.pop(removed.key)
                 self.size -= 1
         else:
-            # 如果 key 存在，先通过哈希表定位，再修改 value，并移到头部
+            # if key exsit
+            # [1] locate using dict
+            # [2] update value
+            # [3] move to DLinkedNode's head
             node = self.cache[key]
             node.value = value
             self.moveToHead(node)
 
     def addToHead(self, node):
+        # add node after head
         node.prev = self.head
         node.next = self.head.next
+        # (head.next).prev and (head).next
         self.head.next.prev = node
         self.head.next = node
 

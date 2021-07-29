@@ -16,12 +16,7 @@
 [4] State Compression (optional)
 [5] Terminate Conditions
 
-# Pros and Cons:
-## Pros:
-
-## Cons:
-
-# Notation:
+# Pros and Cons and Notation:
 
 '''
 
@@ -42,7 +37,7 @@ class Solution:
 
     # space compress
     # dp[i][j] is calculated by dp[i+1][j] and dp[i][j-1]
-    def PredictTheWinner2(self, nums: List[int]) -> bool:
+    def PredictTheWinner_2(self, nums: List[int]) -> bool:
         length = len(nums)
         dp = [0] * length
         for i, num in enumerate(nums):
