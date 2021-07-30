@@ -5,17 +5,10 @@
 
 # Pros and Cons and Notation:
 
-According to the characteristics of in-order traversal and post-order traversal, we analyze the restoration process of the tree
-- Find the root node (the last element) in the post-order traversal sequence
-- Find the position of the root node in the in-order traversal sequence
-    - The in-order traversal sequence is divided into a left subtree and a right subtree
-- Determine the left and right boundary positions of the left and right subtrees in the in-order array and post-order arrays according to the position of the root node
-- Recursively construct left and right subtrees
-- Return to the end of the root node
-
 '''
 
 from typing import List
+from collections import deque
 
 
 class TreeNode(object):
@@ -68,27 +61,23 @@ class Tree(object):
             if node.right != None:
                 myQueue.append(node.right)
 
-
 class Solution:
-    def buildTree(self, inorder: List[int], postorder: List[int]) -> TreeNode:
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
         idx_map = {val: idx for idx, val in enumerate(inorder)}
-
+        preorder = deque(preorder)
         def helper(in_left, in_right):
             if in_left > in_right:
                 return None
 
-            # find root note in postorder
-            # since postorder = [l, r, root], pop returns root of r
-            # that's the reason we put root.right at first
-            val = postorder.pop()
+            # find root note
+            val = preorder.popleft()
             root = TreeNode(val)
-            
-            # inorder index
+
             # split l-tree and r-tree based on root
             index = idx_map[val]
 
-            root.right = helper(index + 1, in_right)
             root.left = helper(in_left, index - 1)
+            root.right = helper(index + 1, in_right)
             return root
 
         return helper(0, len(inorder) - 1)
