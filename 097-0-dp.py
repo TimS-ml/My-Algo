@@ -1,9 +1,11 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(l1 * l2)
+- Space complexity: O(l1 * l2)
 
 # Pros and Cons and Notation:
+
+this solution can be further compressed!
 
 dp
 
@@ -18,8 +20,6 @@ if s3[i+j] == s1[i], and dp[i-1][j] == 1:
 init:
 dp[0][0] = 1
 '''
-
-# from pprint import pprint
 
 
 class Solution:
