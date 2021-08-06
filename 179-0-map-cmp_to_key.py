@@ -15,6 +15,7 @@ case:
 '''
 
 from typing import List
+from functools import cmp_to_key
 
 
 class Solution:
@@ -22,11 +23,12 @@ class Solution:
         def compare(x, y):
             return int(y + x) - int(x + y)
 
-        nums = sorted(map(str, nums), key=cmp_to_key(compare))
-        if nums[0] == '0':
+        li = map(str, nums)
+        li = sorted(li, key=cmp_to_key(compare))
+        if li[0] == '0':
             return '0'
         else:
-            return ''.join(nums)
+            return ''.join(li)
 
 
 nums = [3, 30, 34, 5, 9]
