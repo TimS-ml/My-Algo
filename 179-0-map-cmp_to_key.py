@@ -1,9 +1,13 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(nlogn)
+- Space complexity: O(n)
 
 # Pros and Cons and Notation:
+https://docs.python.org/3/library/functools.html#functools.cmp_to_key
+https://www.programiz.com/python-programming/methods/built-in/sorted
+
+We need reverse order, be careful with the cmp function
 
 case:
 - 30 > 2
@@ -12,6 +16,8 @@ case:
     -         [xxx, 4, 48, xxx]
 - 448 vs 48 vs 4?
     - compare [xxx, 48, 4, 448, xxx]
+- 0, 0
+    - output one 0
 '''
 
 from typing import List
@@ -30,6 +36,15 @@ class Solution:
         else:
             return ''.join(li)
 
+    def largestNumber_2(self, nums: List[int]) -> str:
+        compare = lambda x, y: 1 if x + y < y + x else -1
+        li = map(str, nums)
+        li = sorted(li, key=cmp_to_key(compare))
+        if li[0] == '0':
+            return '0'
+        else:
+            return ''.join(li)
+
 
 nums = [3, 30, 34, 5, 9]
-print(Solution().largestNumber(nums))
+print(Solution().largestNumber_2(nums))
