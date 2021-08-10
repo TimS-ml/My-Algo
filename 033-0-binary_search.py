@@ -41,14 +41,17 @@ class Solution:
             mid = (l + r) // 2
             if nums[mid] == target:
                 return mid  # this is the only place to return answer
-            
-            # update l and r
-            if nums[0] <= nums[mid]:  # ascending order
+
+            # update l and r, we can skip 'mid' since we already know mid != target
+            # [0, mid] is ascending order, sudden drop in [mid, end]
+            if nums[0] <= nums[mid]:
+                # tartget in ascending range
                 if nums[0] <= target < nums[mid]:
                     r = mid - 1
                 else:
                     l = mid + 1
-            else:
+            else:  # sudden drop in [0, mid], [mid, end] is ascending order
+                # tartget in ascending range
                 if nums[mid] < target <= nums[len(nums) - 1]:
                     l = mid + 1
                 else:
