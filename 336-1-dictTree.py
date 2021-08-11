@@ -7,10 +7,14 @@
 
 '''
 
+from typing import List
+
+
 class Node:
     def __init__(self):
         self.ch = [0] * 26
         self.flag = -1
+
 
 class Solution:
     def palindromePairs(self, words: List[str]) -> List[List[int]]:
@@ -26,7 +30,7 @@ class Solution:
                     tree[add].ch[x] = len(tree) - 1
                 add = tree[add].ch[x]
             tree[add].flag = index
-        
+
         def findWord(s: str, left: int, right: int) -> int:
             add = 0
             for i in range(right, left - 1, -1):
@@ -35,15 +39,16 @@ class Solution:
                     return -1
                 add = tree[add].ch[x]
             return tree[add].flag
-        
+
         def isPalindrome(s: str, left: int, right: int) -> bool:
             length = right - left + 1
-            return length < 0 or all(s[left + i] == s[right - i] for i in range(length // 2))
-        
+            return length < 0 or all(s[left + i] == s[right - i]
+                                     for i in range(length // 2))
+
         n = len(words)
         for i, word in enumerate(words):
             insert(word, i)
-        
+
         ans = list()
         for i, word in enumerate(words):
             m = len(word)
@@ -58,4 +63,3 @@ class Solution:
                         ans.append([rightId, i])
 
         return ans
-
