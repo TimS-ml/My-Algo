@@ -5,6 +5,10 @@
 
 # Pros and Cons and Notation:
 
+2 Possibility:
+- word1 = flip + palindrome, word2 = flip
+- word2 = flip + palindrome, word1 = flip
+
 '''
 
 from typing import List
