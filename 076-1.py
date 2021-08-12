@@ -1,4 +1,11 @@
-# https://leetcode-cn.com/problems/minimum-window-substring/
+'''
+# Code Explain:
+- Time complexity: O()
+- Space complexity: O()
+
+# Pros and Cons and Notation:
+
+'''
 
 
 class Solution:

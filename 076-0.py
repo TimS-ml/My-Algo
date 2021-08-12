@@ -1,7 +1,11 @@
-# https://leetcode-cn.com/problems/minimum-window-substring/
-# https://docs.python.org/3.8/library/collections.html#collections.Counter
-# https://docs.python.org/3.8/library/collections.html#collections.deque
-# http://book.pythontips.com/en/latest/enumerate.html
+'''
+# Code Explain:
+- Time complexity: O()
+- Space complexity: O()
+
+# Pros and Cons and Notation:
+
+'''
 
 import collections
 
