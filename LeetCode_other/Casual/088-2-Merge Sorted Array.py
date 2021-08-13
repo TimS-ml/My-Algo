@@ -6,7 +6,7 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
-        # 分别调整到合并、m、n的数组的最后一位序号
+        # 分别调整到合并, m, n的数组的最后一位序号
         end = m + n - 1
         m -= 1
         n -= 1

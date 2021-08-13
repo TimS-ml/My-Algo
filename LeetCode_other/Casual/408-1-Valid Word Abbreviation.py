@@ -7,7 +7,7 @@ class Solution:
         digit = False
         for i in range(0, len(abbr)):
             if abbr[i].isdigit():  # 直到走到不是.isdigit()
-                if not digit:  # digit == False，2-3位数的第二位就已经是True了
+                if not digit:  # digit == False, 2-3位数的第二位就已经是True了
                     if abbr[i] == "0":  # detail
                         return False
                     start = i

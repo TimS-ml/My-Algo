@@ -1,7 +1,7 @@
 # https://leetcode-cn.com/problems/symmetric-tree/
 
 
-# 此处有改动，多加了left和right，方便传递参数
+# 此处有改动, 多加了left和right, 方便传递参数
 class TreeNode(object):
     def __init__(self, x, left, right):
         self.val = x

@@ -1,5 +1,5 @@
 # https://leetcode-cn.com/problems/counting-bits/
-# 对于 0 ≤ i ≤ num 范围中的每个数字 i ，计算其二进制数中的 1 的数目并将它们作为数组返回
+# 对于 0 ≤ i ≤ num 范围中的每个数字 i , 计算其二进制数中的 1 的数目并将它们作为数组返回
 
 
 class Solution:

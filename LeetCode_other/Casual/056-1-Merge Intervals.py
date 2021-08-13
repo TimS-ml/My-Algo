@@ -12,7 +12,7 @@ class Solution:
 
         result = [intervals[0]]
         for i in range(1, n):
-            # 有重合，则重合区间的右值为最大的那个
+            # 有重合, 则重合区间的右值为最大的那个
             if intervals[i][0] <= result[-1][1]:
                 result[-1][1] = max(result[-1][1], intervals[i][1])
             else:

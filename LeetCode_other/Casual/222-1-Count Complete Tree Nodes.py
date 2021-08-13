@@ -26,11 +26,11 @@ class Solution:
                 h_r += 1
                 curRoot = curRoot.left
 
-        # 左右子树最大高度相同，说明左子树为满二叉树，在右子树继续递归求解
+        # 左右子树最大高度相同, 说明左子树为满二叉树, 在右子树继续递归求解
         if h_l == h_r:
             sumNodes_r = self.countNodes(root.right)
             sumNodes_l = 2**h_l - 1
-        # 左子树高度更高，说明右子树为满二叉树，在左子树继续递归求解
+        # 左子树高度更高, 说明右子树为满二叉树, 在左子树继续递归求解
         if h_l == h_r + 1:
             sumNodes_l = self.countNodes(root.left)
             sumNodes_r = 2**h_r - 1

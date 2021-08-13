@@ -3,9 +3,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# 准备试试暴力算法，官网解答里面用了一种递归一样的方法实现的
+# 准备试试暴力算法, 官网解答里面用了一种递归一样的方法实现的
 # 20190201 - 我自己是想不出用递归来解决问题的……
-# 顺便一说，range(s, len(prices))是不包括右边界的，也就是range(s, 12)是从s开始到11结束
+# 顺便一说, range(s, len(prices))是不包括右边界的, 也就是range(s, 12)是从s开始到11结束
 
 
 class Solution:
@@ -17,15 +17,15 @@ class Solution:
         return Solution().calculate(prices, 0)
 
     def calculate(self, prices, s):
-        if s >= len(prices):  # 递归的终止，最后一天到最后一天的利润是0
+        if s >= len(prices):  # 递归的终止, 最后一天到最后一天的利润是0
             return 0
         max = 0
         for start in range(s, len(prices)):  # 计算第s天到最后一天的收益
             maxprofit = 0
             for i in range(start + 1, len(prices)):
-                if prices[start] < prices[i]:  # 一旦存在第s天之后的某天价格更高，就更新profit
-                    # 比如len(prices) = 12，s = 3，5-12天范围内除了第6、7天之外都价格更高
-                    # 那也就是分别尝试profit = (6-12天里的最大收益) + (第5天的时候买入的收益)，同理后面的几天
+                if prices[start] < prices[i]:  # 一旦存在第s天之后的某天价格更高, 就更新profit
+                    # 比如len(prices) = 12, s = 3, 5-12天范围内除了第6, 7天之外都价格更高
+                    # 那也就是分别尝试profit = (6-12天里的最大收益) + (第5天的时候买入的收益), 同理后面的几天
                     profit = Solution().calculate(prices, i + 1) + \
                         prices[i] - prices[start]
                     if profit > maxprofit:  # 更新这个range里的最大收益

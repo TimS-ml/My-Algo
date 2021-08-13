@@ -1,6 +1,6 @@
 # https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/
 # Divide-and-conquer_algorithm
-# At least就表明至少有那么多，用字典就不太好使了
+# At least就表明至少有那么多, 用字典就不太好使了
 
 
 class Solution:

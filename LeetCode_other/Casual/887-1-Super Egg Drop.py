@@ -13,9 +13,9 @@ class Solution:
             minimun = N
             i = 1
             while i <= N:
-                # tMin判断i在F上or下（因为并没有给出F）
+                # tMin判断i在F上or下(因为并没有给出F)
                 # 输出的minimum number of moves是任意F的
-                # F取特定值的时候恰巧可以少一两步推算出来，要舍弃，所以tMin取max
+                # F取特定值的时候恰巧可以少一两步推算出来, 要舍弃, 所以tMin取max
                 # print(i, minimun, 'recursive(%d, %d), recursive(%d, %d)' %(K-1, i-1, K, N-1))
                 tMin = max(recursive(K - 1, i - 1),
                            recursive(K, N - i))  # 每次比较都要重新算一遍

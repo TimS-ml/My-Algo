@@ -18,7 +18,7 @@ so
                          nums[mid] < nums[0] <= target
 
 what we need to compare
-(nums[0] <= target)， (target <= nums[mid]) ，(nums[mid] < nums[0])
+(nums[0] <= target),  (target <= nums[mid]) , (nums[mid] < nums[0])
 
 - If [left, mid-1] is an ascending ordered array, and 'target' in [nums[left], nums[mid])
     - then we should narrow the search scope to [left, mid-1], otherwise, search in [mid+1, right]

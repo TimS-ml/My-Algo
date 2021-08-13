@@ -1,6 +1,6 @@
 # https://leetcode-cn.com/problems/longest-common-prefix/
 # max(str) or min(str) depends on the order of ascII
-# abb，aba，abac，max is abb，min is aba
+# abb, aba, abac, max is abb, min is aba
 # use chr(97) or ord('a')
 
 class Solution:

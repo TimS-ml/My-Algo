@@ -33,7 +33,7 @@ class Tree(object):
     def add(self, val):
         node = TreeNode(val)
 
-        # 如果树是空的，则对根节点赋值
+        # 如果树是空的, 则对根节点赋值
         if self.root.val == 0:
             self.root = node
             self.myQueue.append(self.root)
@@ -49,7 +49,7 @@ class Tree(object):
             else:
                 treeNode.right = node
                 self.myQueue.append(treeNode.right)
-                self.myQueue.pop(0)  # myQueue[0]节点左右都有了，pop掉
+                self.myQueue.pop(0)  # myQueue[0]节点左右都有了, pop掉
                 print(self.myQueue, self.root.val, 'right')
 
     def level_queue(self, root):

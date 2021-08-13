@@ -1,5 +1,5 @@
 # https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/
-# 每一次找到递增的时候，继续DFS，然后用cache来记录每一个（i，j）最大可能的递增长度
+# 每一次找到递增的时候, 继续DFS, 然后用cache来记录每一个(i, j)最大可能的递增长度
 
 
 class Solution:

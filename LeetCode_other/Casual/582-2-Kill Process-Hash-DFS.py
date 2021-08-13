@@ -12,7 +12,7 @@ class Solution:
                 mpppid[ppid[i]].append(i)
             else:
                 mpppid[ppid[i]] = [i]
-        # mpppid存了ppid[i]的location，用location去找对应的子pid
+        # mpppid存了ppid[i]的location, 用location去找对应的子pid
         print(mpppid)
         res = [kill]
 

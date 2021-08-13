@@ -10,7 +10,7 @@ class Solution:
                 count += 1
             else:
                 count -= 1
-                # count=0的时候，前面的数肯定被对掉了，剩下频率最高的数
+                # count=0的时候, 前面的数肯定被对掉了, 剩下频率最高的数
                 if count == 0:
                     maj = nums[i + 1]
         return maj

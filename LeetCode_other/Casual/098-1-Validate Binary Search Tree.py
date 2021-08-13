@@ -1,5 +1,5 @@
 # https://leetcode-cn.com/problems/validate-binary-search-tree/
-# 题目理解出了一些问题“节点的右子树只包含大于当前节点的数”
+# 题目理解出了一些问题"节点的右子树只包含大于当前节点的数"
 # 包括右子树的左树
 
 
@@ -75,7 +75,7 @@ class Solution:
 
 # vals = [5, 1, 5, None, None, 3, 6]
 # vals = [1, 1]
-vals = [10, 5, 15, None, None, 6, 20]  # 应该是右子树的6，实际应该在10-15之间
+vals = [10, 5, 15, None, None, 6, 20]  # 应该是右子树的6, 实际应该在10-15之间
 root = TreeNode(vals[0])
 myQueue = []
 myQueue.append(root)

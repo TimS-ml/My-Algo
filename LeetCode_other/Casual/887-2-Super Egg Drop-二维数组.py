@@ -8,7 +8,7 @@
 class Solution:
     def superEggDrop(self, K, N):
         # int[][] midResults = new int[K + 1][N + 1];
-        # 这里的midResults[i][j]是i个蛋，j层，需要多少步
+        # 这里的midResults[i][j]是i个蛋, j层, 需要多少步
         midResults = [[0 for col in range(N + 1)] for row in range(K + 1)]
 
         for i in range(1, K + 1):
@@ -20,7 +20,7 @@ class Solution:
 
         print(midResults)
 
-        for k in range(2, K + 1):  # start from 2 eggs，已经有了1 egg的数据
+        for k in range(2, K + 1):  # start from 2 eggs, 已经有了1 egg的数据
             for j in range(1, N + 1):
                 minimun = N
                 for x in range(1, j + 1):

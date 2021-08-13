@@ -1,6 +1,6 @@
 # https://leetcode-cn.com/problems/longest-substring-with-at-most-k-distinct-characters/
 # See 003 for template
-# 根据答案改的，因为限制k distinct characters，双指针的想法比较自然
+# 根据答案改的, 因为限制k distinct characters, 双指针的想法比较自然
 # https://leetcode-cn.com/problems/longest-substring-with-at-most-k-distinct-characters/solution/zhi-shao-bao-han-k-ge-bu-t
 
 

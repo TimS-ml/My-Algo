@@ -15,7 +15,7 @@
 
 class Solution:
     # 前缀递推
-    # 先计算包含 s2 的前缀子串的窗口，再根据前缀子串窗口不断拓展，找到包含整个字符串的窗口。
+    # 先计算包含 s2 的前缀子串的窗口, 再根据前缀子串窗口不断拓展, 找到包含整个字符串的窗口. 
     def minWindow_1(self, s1: str, s2: str) -> str:
         cur = [-1] * len(s1)
         # save the positions of all s2[0] in s1
@@ -23,23 +23,23 @@ class Solution:
             if m_char == s2[0]:
                 cur[i] = i
 
-        # 遍历s2中所有的字符，不断找到s2中所有字符在s1中出现的所有位置
+        # 遍历s2中所有的字符, 不断找到s2中所有字符在s1中出现的所有位置
         for j in range(1, len(s2)):
             # last 用来标记s2上一个字符最后出现的位置
             last = -1
             # new 用来标记上一个字符s2[j - 1]在s1中出现的所有位置
             new = [-1] * len(s1)
             for i, m_char in enumerate(s1):
-                # 由于我们需要保证s2字符的顺序，因此只有在上一个字符出现过
-                #   然后当前字符出现的情况下，才会记录上一个字符字符的位置
-                # 这样能够保证所有s2字符都在s1中，以正确的顺序出现
+                # 由于我们需要保证s2字符的顺序, 因此只有在上一个字符出现过
+                #   然后当前字符出现的情况下, 才会记录上一个字符字符的位置
+                # 这样能够保证所有s2字符都在s1中, 以正确的顺序出现
                 if last != -1 and m_char == s2[j]:
                     new[i] = last
                 if cur[i] != -1:
                     last = cur[i]
             cur = new
 
-        # 到这里时，cur[i]中存储的元素(在!=-1时)代表:
+        # 到这里时, cur[i]中存储的元素(在!=-1时)代表:
         #   以s1[i]为终点的最小窗口子序列的起点坐标
         start, end = 0, len(s1)
         for end_index, start_index in enumerate(cur):

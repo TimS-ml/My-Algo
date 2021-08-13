@@ -6,7 +6,7 @@
 class Solution:
     def hammingDistance(self, x, y) -> int:
         print(bin(x), bin(y))
-        x = x ^ y  # 按位亦或，不同->1，相同->0
+        x = x ^ y  # 按位亦或, 不同->1, 相同->0
         print(bin(x))  # x和y不同的位数显示为1
         y = 0  # use y as ANS
         while x:

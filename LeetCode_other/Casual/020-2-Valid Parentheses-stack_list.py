@@ -11,8 +11,8 @@ class Solution:
 
         for i in range(0, len(s)):
             stack.append(s[i])
-            # 比如i = 2的时候，stack = "{[]"
-            # 直觉上不太严谨，实际上是可行的……
+            # 比如i = 2的时候, stack = "{[]"
+            # 直觉上不太严谨, 实际上是可行的……
             if len(stack) >= 2 and stack[-2] + stack[-1] in mapping:
                 stack.pop()
                 stack.pop()

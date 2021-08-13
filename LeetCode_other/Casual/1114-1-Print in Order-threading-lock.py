@@ -1,6 +1,6 @@
 # https://leetcode-cn.com/problems/print-in-order/
 # https://leetcode.com/problems/print-in-order/solution/
-# 类初始化的时候不能包含有参数，所以要写一句acquire进行阻塞，调用其他函数的时候按顺序release释放
+# 类初始化的时候不能包含有参数, 所以要写一句acquire进行阻塞, 调用其他函数的时候按顺序release释放
 
 from threading import Lock
 

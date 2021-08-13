@@ -3,16 +3,16 @@
 
 class Solution:
     def partition(self, s):
-        # pal[len(s)][len(s)]，false填充
-        # 相当于创建了一个二维表，满足的地方填上True
+        # pal[len(s)][len(s)], false填充
+        # 相当于创建了一个二维表, 满足的地方填上True
         pal = [[False for i in range(len(s))] for j in range(len(s))]
         ans = [[[]]] + [[] for _ in range(len(s))]
 
         for i in range(0, len(s)):
             for j in range(0, i + 1):
-                # 先and再or，所以加括号
-                # j+1 > i-1对应相邻的，如cbaabc里的aa
-                # pal[j+1][i-1]对应间隔的，如cbaabc里的c-c和b-b
+                # 先and再or, 所以加括号
+                # j+1 > i-1对应相邻的, 如cbaabc里的aa
+                # pal[j+1][i-1]对应间隔的, 如cbaabc里的c-c和b-b
                 if (s[j] == s[i]) and ((j + 1 > i - 1) or pal[j + 1][i - 1]):
                     pal[j][i] = True
                     print(pal, j, i)

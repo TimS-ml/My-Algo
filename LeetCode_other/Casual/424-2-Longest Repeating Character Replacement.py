@@ -1,6 +1,6 @@
 # https://leetcode-cn.com/problems/longest-repeating-character-replacement/
 # 需要替换的字符数目＝窗口字符数目－数量最多的字符数目
-# 用子序列中出现频率最大的次数加上能被修改的次数K和窗口长度相比（也就是说窗口中都能统一）
+# 用子序列中出现频率最大的次数加上能被修改的次数K和窗口长度相比(也就是说窗口中都能统一)
 # unfinish
 
 

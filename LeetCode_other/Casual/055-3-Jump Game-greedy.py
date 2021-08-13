@@ -1,5 +1,5 @@
 # https://leetcode-cn.com/problems/jump-game/
-# 从后往前推，simplified version
+# 从后往前推, simplified version
 
 
 class Solution:

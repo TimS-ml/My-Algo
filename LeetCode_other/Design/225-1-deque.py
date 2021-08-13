@@ -7,9 +7,9 @@
 
 '''
 
-# stack:  last in - first out， LIFO
+# stack:  last in - first out,  LIFO
 #   if push 1, 2, then pop -> return 2
-# queues: first in - first out，FIFO
+# queues: first in - first out, FIFO
 
 from collections import deque
 

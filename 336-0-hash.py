@@ -50,7 +50,7 @@ class Solution:
         worddict = {w: i for i, w in enumerate(words)}
         for i, w in enumerate(words):
             for j in range(len(w)+1): 
-                # 这里+1是因为，列表切片是前闭后开区间
+                # 这里+1是因为, 列表切片是前闭后开区间
                 tmp1 = w[:j]  # 字符串的前缀
                 tmp2 = w[j:]  # 字符串的后缀
                 if tmp1[::-1] in worddict and worddict[tmp1[::-1]] != i and tmp2 == tmp2[::-1]:
