@@ -3,17 +3,12 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons:
-## Pros:
-
-## Cons:
-
-# Notation:
+# Pros and Cons and Notation:
 
 '''
 
 from typing import List
-import collections
+from collections import Counter, defaultdict
 
 
 class Solution:
@@ -33,12 +28,14 @@ class Solution:
             a, b = find(l), find(r)
             if a != b:
                 parent[b] = a
+
         # 获取根节点对应的连通块
-        dic = collections.defaultdict(list)
+        dic = defaultdict(list)
         for i in range(n):
             a = find(i)
             dic[a].append(i)
         ans = 0
+
         # 计算每个连通块对应的source元素与target的差集
         for k, v in dic.items():
             a = [source[i] for i in v]
