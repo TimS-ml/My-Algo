@@ -1,6 +1,13 @@
-# https://leetcode-cn.com/problems/number-of-islands/
-# https://leetcode-cn.com/problems/number-of-islands/solution/dfs-bfs-bing-cha-ji-python-dai-ma-java-dai-ma-by-l/
-# 一次dfs可以走完一块island area
+'''
+# Code Explain:
+- Time complexity: O()
+- Space complexity: O()
+
+# Pros and Cons and Notation:
+
+https://leetcode-cn.com/problems/number-of-islands/solution/dfs-bfs-bing-cha-ji-python-dai-ma-java-dai-ma-by-l/
+一次dfs可以走完一块island area
+'''
 
 
 class Solution:

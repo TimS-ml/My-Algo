@@ -26,3 +26,23 @@ find "$formatdir" -iname '*.py' -type f -exec sed -i -e \
     s/！/\! /g;\
     s/？/\? /g;\
     s/；/\; /g" {} \;
+
+find "$formatdir" -iname '*.md' -type f -exec sed -i -e \
+    "s/\，/, /g;\
+    s/\。/. /g;\
+    s/\：/: /g;\
+    s/\、/, /g;\
+    s/\—/-/g;\
+    s/“/\"/g;\
+    s/”/\"/g;\
+    s/【/ \[/g;\
+    s/】/\]/g;\
+    s/「/ \[/g;\
+    s/」/\]/g;\
+    s/《/ \[/g;\
+    s/》/\] /g;\
+    s/（/(/g;\
+    s/）/)/g;\
+    s/！/\! /g;\
+    s/？/\? /g;\
+    s/；/\; /g" {} \;
