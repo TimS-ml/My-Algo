@@ -43,3 +43,16 @@ class Solution:
                 if dp_sum >= num:
                     dp[i][dp_sum] += dp[i - 1][dp_sum - num]
         return dp[L][neg]
+
+    # 0/1 backpack
+    # https://leetcode-cn.com/problems/target-sum/solution/python-dfs-xiang-jie-by-jimmy00745/
+    def findTargetSumWays_2(self, nums: List[int], target: int) -> int:
+        if sum(nums) < target or (sum(nums) + target) % 2 == 1:
+            return 0
+        pos = (sum(nums) + target) // 2
+        dp = [1] + [0 for _ in range(pos)]
+
+        for num in nums:
+            for j in range(pos, num - 1, -1):
+                dp[j] += dp[j - num]
+        return dp[pos]
