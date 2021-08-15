@@ -37,27 +37,27 @@ class Solution:
         return ans
 
     # create a list to track if visited or not
-    def permuteUnique2(self, nums: List[int]) -> List[List[int]]:
+    def permuteUnique_2(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
         used = [False for i in nums]
 
-        def backtrack(subset, nums, used):
+        def backtrack(subset, used):
             if len(subset) == len(nums):
                 ans.append(list(subset))
             for i in range(len(nums)):
-                if used[i] or i > 0 and nums[i] == nums[i -
-                                                        1] and not used[i - 1]:
+                if used[i] or i > 0 and nums[i] == nums[i - 1] and not used[i - 1]:
                     continue
                 subset.append(nums[i])
                 used[i] = True  # track visit
-                backtrack(subset, nums, used)
+                backtrack(subset, used)
                 used[i] = False
+                # reverse movement
                 subset.pop()
 
         ans = []
-        backtrack([], nums, used)
+        backtrack([], used)
         return ans
 
 
 nums = [1, 1, 2]
-print(Solution().permuteUnique2(nums))
+print(Solution().permuteUnique_2(nums))

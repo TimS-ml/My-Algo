@@ -6,8 +6,10 @@ def test(li):
     for key in li:
         heappush(heap, key)
     
-    for _ in range(len(heap)):
-        print(heappop(heap))
+    # for _ in range(len(heap)):
+    #     print(heappop(heap))
+    for i in heap:
+        print(i)
 
 
 li = [

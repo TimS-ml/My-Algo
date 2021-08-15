@@ -44,6 +44,7 @@ class Solution:
                 # place i-th integer start
                 nums[start], nums[i] = nums[i], nums[start]
                 backtrack(start + 1)
+                # reverse movement
                 nums[start], nums[i] = nums[i], nums[start]
 
         n = len(nums)
@@ -51,8 +52,9 @@ class Solution:
         backtrack(0)
         return ans
 
-    # not useful in LC047 (duplication)
-    def permute2(self, nums):
+    # in lc 047 (duplication), add a var 'used'
+    # from joshuablog
+    def permute_2(self, nums):
         def backtrack(subset):
             if len(nums) == len(subset):
                 ans.append(subset[:])
@@ -62,6 +64,7 @@ class Solution:
                     continue
                 subset.append(nums[i])
                 backtrack(subset)
+                # reverse movement
                 subset.pop()
 
         ans = []
@@ -69,15 +72,15 @@ class Solution:
         return ans
 
     # yet another way to avoid duplicate
-    def permute3(self, nums):
+    def permute_3(self, nums):
         def backtrack(subset, nums):
             if not nums:
                 ans.append(subset[:])
                 return
             for i in range(len(nums)):
                 subset.append(nums[i])
-                print('sub:{} {}, nums:{}, i:{}'.format(
-                    nums[:i], nums[i + 1:], nums, i))
+                # print('sub:{} {}, nums:{}, i:{}'.format(
+                #     nums[:i], nums[i + 1:], nums, i))
                 backtrack(subset, nums[:i] + nums[i + 1:])
                 subset.pop()
 
@@ -87,4 +90,4 @@ class Solution:
 
 
 nums = [1, 2, 3]
-print(Solution().permute3(nums))
+print(Solution().permute(nums))

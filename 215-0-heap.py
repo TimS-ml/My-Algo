@@ -19,12 +19,12 @@ from heapq import heapify, heappush, heappop
 
 
 class Solution:
-    def findKthLargest(self, nums: List[int], k: int) -> int:
-        nums.sort(reverse=True)
-        # print(nums)
-        return nums[k - 1]
+    # def findKthLargest(self, nums: List[int], k: int) -> int:
+    #     nums.sort(reverse=True)
+    #     # print(nums)
+    #     return nums[k - 1]
 
-    def findKthLargest_2(self, nums: List[int], k: int) -> int:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
         heap = []
         heapify(heap)
 
@@ -35,6 +35,7 @@ class Solution:
             # !!! this will only keep k largest numbers from array
             if len(heap) > k:
                 heappop(heap)
+                # print(heappop(heap))
 
         # pick minimum among k largest numbers
         return heappop(heap)
@@ -42,4 +43,4 @@ class Solution:
 
 nums = [3, 2, 3, 1, 2, 4, 5, 5, 6]
 k = 4
-print(Solution().findKthLargest_2(nums, k))
+print(Solution().findKthLargest(nums, k))

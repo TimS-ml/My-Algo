@@ -16,8 +16,8 @@ class Solution:
         #     ans = ans[:k]
 
         ans = []
-        for key, val in sorted(dic.items(), key=lambda item: item[1],
-                           reverse=True):
+        for key, val in sorted(
+            dic.items(), key=lambda item: item[1], reverse=True):
             ans.append(key)
         return ans[:k]
 

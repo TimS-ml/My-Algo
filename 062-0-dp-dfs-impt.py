@@ -28,6 +28,7 @@ sol3 compression:
 - dp[j] corresponding to dp[-1][j] in sol1
 '''
 
+from functools import lru_cache
 
 class Solution:
     # bottom-up
