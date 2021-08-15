@@ -1,4 +1,14 @@
-# https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
+'''
+# Code Explain:
+- Time complexity: O()
+- Space complexity: O()
+
+# Pros and Cons and Notation:
+
+also check 107
+'''
+
+from collections import deque
 
 
 # Definition for a binary tree node.
@@ -43,14 +53,36 @@ def level_queue(root):
 
 class Solution:
     def levelOrder(self, root):
-        from collections import deque
+        if not root:
+            return []
+        res = []
+        queue = []
+
+        queue.append(root)
+        while queue:
+            size = len(queue)
+            temp = []
+            while size:
+                node = queue.pop(0)
+                temp.append(node.val)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+                size -= 1
+            # 执行操作
+            res.append(list(temp))
+        return res
+
+    def levelOrder_2(self, root):
         if not root:
             return []
         ans = [[root.val]]
         root_queue = deque([root])
+
         while root_queue:
             level_ans = []
-            for _ in range(0, len(root_queue)):
+            for _ in range(len(root_queue)):
                 root = root_queue.popleft()  # deque
                 if root.left:
                     level_ans.append(root.left.val)

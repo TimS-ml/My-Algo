@@ -86,6 +86,23 @@ class Solution:
 
         return False
 
+    def hasPathSum_dfs(self, root: TreeNode, targetSum: int) -> bool:
+        # if not root:
+        #     return False
+        # if not root.left and not root.right:
+        #     return sum == root.val
+        # return self.hasPathSum(root.left, sum - root.val) or self.hasPathSum(
+        #     root.right, sum - root.val)
+        def dfs(node, s):
+            if not node:
+                return False
+            if not node.left and not node.right:
+                return s == node.val
+            return dfs(node.left, s - node.val) or dfs(node.right, s - node.val)
+             
+        return dfs(root, targetSum)
+
+
 
 li = [1, 2, 3]
 
