@@ -56,30 +56,31 @@ class Solution:
         return climb(n - 1)
 
     # dfs: use dict as cache + different way of return
-    def climbStairs_2_v2(self, n) -> int:
-        cache = {}
+    #  def climbStairs_2_v2(self, n) -> int:
+    #      cache = {}
 
-        def climb(i):
-            if i in cache:
-                return cache[i]
-            if i > n:
-                return 0
-            if i == n:
-                return 1
-            else:
-                cache[i] = climb(i + 1) + climb(i + 2)
-            return cache[i]
+    #      def climb(i):
+    #          if i in cache:
+    #              return cache[i]
+    #          if i > n:
+    #              return 0
+    #          if i == n:
+    #              return 1
+    #          else:
+    #              cache[i] = climb(i + 1) + climb(i + 2)
+    #          return cache[i]
 
-        return climb(0)
+    #      return climb(0)
+
 
 class Solution_backtrack:
-    # backtrack: go over all the routines
+    # backtrack: go over all the possible routines
     def climbStairs(self, n):
         def backtrack(subset):
             if n == sum(subset):
                 ans.append(subset[:])
                 return
-            for i in range(1, 2+1):  # 1 step or 2 steps
+            for i in range(1, 2 + 1):  # 1 step or 2 steps
                 if n - sum(subset) - i >= 0:
                     subset.append(i)
                     backtrack(subset)
@@ -96,10 +97,11 @@ class Solution_backtrack:
             if target_sum == 0:
                 ans.append(subset[:])
                 return
-            for i in range(1, 2+1):  # 1 step or 2 steps
+            for i in range(1, 2 + 1):  # 1 step or 2 steps
                 if target_sum - i >= 0:
                     subset.append(i)
-                    backtrack(subset, n - sum(subset))
+                    #  backtrack(subset, n - sum(subset))
+                    backtrack(subset, target_sum - i)
                     # reverse movement
                     subset.pop()
 
@@ -107,10 +109,22 @@ class Solution_backtrack:
         backtrack([], n)
         return ans
 
+    def climbStairs_3(self, n):
+        def backtrack(subset, target_sum):
+            if target_sum == 0:
+                ans.append(subset[:])
+                return
+            for i in range(1, 2 + 1):  # 1 step or 2 steps
+                if target_sum - i >= 0:
+                    backtrack(subset + [i], target_sum - i)
+
+        ans = []
+        backtrack([], n)
+        return ans
 
 
 # backtrack solution
-result = Solution_backtrack().climbStairs_2(5)
+result = Solution_backtrack().climbStairs_3(5)
 print(len(result))
 print(result)
 
