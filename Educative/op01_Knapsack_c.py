@@ -28,11 +28,11 @@ def solve_knapsack(profits, weights, capacity):
         return 0
     
     # same as sol b
-    dp = [[0 for x in range(capacity + 1)] for y in range(n)]
+    dp = [[-1 for x in range(capacity + 1)] for y in range(n)]
 
     # populate the capacity = 0 columns, with '0' capacity we have '0' profit
-    # for i in range(n):
-    #     dp[i][0] = 0
+    for i in range(n):
+        dp[i][0] = 0
 
     # [3] Initialize Conditions
     # if we have only one weight (one product), we will take it if it is not more than the capacity
@@ -57,8 +57,9 @@ def solve_knapsack(profits, weights, capacity):
     # print_selected_elements(dp, weights, profits, capacity)
     # maximum profit will be at the bottom-right corner.
     
-    #  for index in range(len(dp)):
-    #      print(dp[index])
+    for index in range(len(dp)):
+        print(dp[index])
+    # print(dp)
     return dp[n - 1][capacity]
 
 
