@@ -5,8 +5,9 @@ where ‘N’ is the number of items and ‘C’ is the knapsack capacity
 - Space complexity: O(N*C + N)
 
 # Pros and Cons and Notation:
-
 Top-down Dynamic Programming with Memoization
+=> state: maximum profit for capacity 'c' and **calculated from 'i' to len items (dp[i][c])**
+
 Top-to-bottom Dynamic Programming is nothing else than ordinary recursion, enhanced with *memorizing the solutions for intermediate sub-problems*.
 
 [1] Base State
@@ -20,6 +21,11 @@ def solve_knapsack(profits, weights, capacity):
     # [3] Initialize Conditions
     # create a two dimensional array for Memoization, each element is initialized to '-1'
     dp = [[-1 for x in range(capacity + 1)] for y in range(len(profits))]
+    
+    # yep that will do!
+    for c in range(capacity + 1):
+       if weights[-1] <= c:
+           dp[-1][c] = profits[-1]
     return knapsack_recursive(dp, profits, weights, capacity, 0)
 
 
