@@ -41,8 +41,12 @@ class Solution:
     # 1 -> 2 -> 3 <- 4 <- 5
     #      |    |
     #     head prev
+    # actually you don't change `prev`
+    # it's more like a reverse for loop
+    # [1] use: prev = reverse(head.next) to reach the end of the LinkedList
+    # [2] use: return prev to go back step by step
     def reverseList_2(self, head: ListNode) -> ListNode:
-        def reverse(head):
+        def reverse(head):  # return previous node
             if not head or not head.next:
                 return head
             prev = reverse(head.next)
@@ -52,17 +56,17 @@ class Solution:
 
         return reverse(head)
 
-    def reverseList_3(self, head: ListNode) -> ListNode:
-        def reverse(head):
-            if not head or not head.next:
-                return head, head
-            prev, curr = reverse(head.next)
-            curr.next = head
-            head.next = None
-            return prev, head
+    # def reverseList_3(self, head: ListNode) -> ListNode:
+    #     def reverse(head):
+    #         if not head or not head.next:
+    #             return head, head
+    #         prev, curr = reverse(head.next)
+    #         curr.next = head
+    #         head.next = None
+    #         return prev, head
 
-        ans, _ = reverse(head)
-        return ans
+    #     ans, _ = reverse(head)
+    #     return ans
 
 
 def listToListNode(input):
