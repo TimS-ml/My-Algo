@@ -8,7 +8,6 @@
 1 <= days[i] <= 365
 
 if not travel in that day: dp[i]=dp[i+1]
-
 '''
 
 from typing import List
