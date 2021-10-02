@@ -13,17 +13,19 @@ d88' d88'  88b`?88P'?8b     `?88P'`88b  88b`?88P'`88b`?8888P'
 
 ```
 
-# Pending List
-https://leetcode-cn.com/company/shopee/problemset/
-https://leetcode-cn.com/company/garena/problemset/
-
-
 
 # Source
-- Leetcode CN (it's cheaper...)
-- Educative
-- HackerRank
-- Codingame
+
+- [HackerRank](https://www.hackerrank.com/dashboard)
+  - https://www.hackerrank.com/domains/algorithms
+  - https://www.hackerrank.com/domains/data-structures
+  - https://www.hackerrank.com/domains/mathematics
+  - https://www.hackerrank.com/domains/ai
+- [HackerEarth](https://www.hackerearth.com/practice/)
+- [Leetcode CN](https://leetcode-cn.com/problemset/all/)
+- [Educative](https://www.educative.io/courses/grokking-the-coding-interview)
+- [Codingame](https://www.codingame.com/training)
+
 
 
 # How to Practice
@@ -50,6 +52,7 @@ https://leetcode-cn.com/company/garena/problemset/
 
 
 # Other
+
 [0] For HackerRank
 ```bash
 python3 D01_Weighted_Mean.py < in01.txt
