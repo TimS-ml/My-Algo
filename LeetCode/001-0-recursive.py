@@ -16,6 +16,7 @@ from typing import List
 
 
 class Solution:
+    # really slow solution
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         for i in range(len(nums)):
             if target - nums[i] in nums and nums.index(target - nums[i]) != i:
@@ -36,10 +37,23 @@ class Solution:
                 return [d[nums[i]], i]
             else:
                 d[target - nums[i]] = i
+    
+    # recursion: reverse for loop of solution 3
+    def twoSum_4(self, nums: List[int], target: int) -> List[int]:
+        cache = {}
 
+        def helper(idx):
+            # print(idx, cache)
+            if target - nums[idx] in cache:
+                return [cache[target - nums[idx]], idx]
+            else:
+                cache[nums[idx]] = idx
+                return helper(idx+1)
+
+        return helper(0)
 
 # nums, target
 # IN = ([11, 2, 15, 7], 19)
 # IN = ([2, 7, 11, 15], 9)
 IN = ([3, 2, 4], 6)
-print(Solution().twoSum_2(IN[0], IN[1]))
+print(Solution().twoSum_4(IN[0], IN[1]))
