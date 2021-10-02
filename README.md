@@ -29,16 +29,16 @@ d88' d88'  88b`?88P'?8b     `?88P'`88b  88b`?88P'`88b`?8888P'
 
 
 # How to Practice
+[Source](https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=521825)
 
 ```
-  https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=521825
-  
   刷題多少不是重點, 重點是: 
   [1] presentation
     特別是在phonein時, 要講得讓interviewer明白
 
   [2] 要能在不用editor/compilor幫助下, 写(尽量)bug-free的code
-    因為不論是whiteboard還是phonein用google doc/livecode/coderpad, 你不會有editor/compiler幫助, interviwer也不會幫你debug
+    因為不論是whiteboard還是phonein用google doc/livecode/coderpad, 
+    你不會有editor/compiler幫助, interviwer也不會幫你debug
   
   所以現在, 每題我也像考speaking般:
   [1] 先說thought prcoess
