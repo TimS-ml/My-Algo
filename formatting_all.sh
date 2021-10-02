@@ -1,6 +1,10 @@
 #!/bin/bash
 
 # https://askubuntu.com/questions/343727/filenames-with-spaces-breaking-for-loop-find-command
+lc="./LeetCode/"
+lc_sql="./LeetCode/SQL/"
+edu="./Educative/"
+hack="./HackerRank/"
 
 if [ $1 == 'py' ]
 then
@@ -12,14 +16,14 @@ then
         done
     elif [ $2 == 'lc' ]
     then
-        for pycode in ./*.py; do
+        for pycode in "$lc"*.py; do
             echo "$pycode"
             yapf -i -r "$pycode"
         done
     elif [ $2 == 'edu' ]
     then
         # for pycode in "`find . -type f -name '*.py'`"; do
-        for pycode in ./Educative/*.py; do
+        for pycode in "$edu"*.py; do
             echo "$pycode"
             yapf -i -r "$pycode"
         done
@@ -30,7 +34,8 @@ then
         #     echo "$pycode"
         #     yapf -i -r "$pycode"
         # done
-        for pycode in ./HackerRank/Statistics/*.py; do
+        # for pycode in ./HackerRank/Statistics/*.py; do
+        for pycode in "$hack"*.py; do
             echo "$pycode"
             yapf -i -r "$pycode"
         done
@@ -45,21 +50,21 @@ then
         done
     elif [ $2 == 'lc' ]
     then
-        for javacode in ./Casual_Java/*.java; do
+        for javacode in "$lc"*.java; do
             echo "$javacode"
             google-java-format -r "$javacode"
         done
     elif [ $2 == 'edu' ]
     then
         # for pycode in "`find . -type f -name '*.py'`"; do
-        for javacode in ./Educative/*.java; do
+        for javacode in "$edu"*.java; do
             echo "$javacode"
             google-java-format -r "$javacode"
         done
     fi        
 elif [ $1 == 'sql' ]
 then
-    for sqlcode in ./SQL/*.sql; do
+    for sqlcode in "$lc_sql"*.sql; do
         echo "$sqlcode"
         sqlformat -r -k upper -i lower -o "$sqlcode" "$sqlcode"
     done
