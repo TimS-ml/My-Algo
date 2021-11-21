@@ -16,6 +16,19 @@ we need to merge them into a new interval `c` such that:
     c.end = max(a.end, b.end)
 We will keep repeating the above two steps to merge `c` 
 with the next interval if it overlaps with `c`.
+
+- input is unsorted start
+  - do I need to sort by interval.start?
+- case: 2+ intervals overlaps
+  - [1, 3], [4, 5], [2, 7]
+  - [1, 3], [4, 8], [1, 7]
+
+- create 2 variables: start and end
+  - if merge, update start and end
+  - if no overlaps ???
+    - that's why you need to sort interval.start (to make sure prev.start <= curr.start)
+      - overlap:    [1, 3], [2, 7], [4, 8] => [1, 7], [4, 8]
+      - no overlap: [1, 3], [4, 7], [4, 8] => [4, 7], [4, 8]
 '''
 
 
@@ -32,32 +45,26 @@ class Interval:
 
 
 def merge(intervals):
-    if len(intervals) < 2:
-        return intervals
-
-    # sort the intervals on the start time
     intervals.sort(key=lambda x: x.start)
 
-    mergedIntervals = []
+    ans = []
     start = intervals[0].start
     end = intervals[0].end
 
-    # start with 1st element
     for i in range(1, len(intervals)):
-        interv = intervals[i]
-        # overlapping intervals, adjust the 'end'
-        if interv.start <= end:
-            end = max(interv.end, end)
-        # non-overlapping interval, add the previous internval and reset
+        # overlap
+        if intervals[i].start <= end:
+            end = max(intervals[i].end, end)
+        # no overlap, add [start, end] to ans
         else:
-            mergedIntervals.append(Interval(start, end))
-            # !!! update comparison standard
-            start = interv.start
-            end = interv.end
+            ans.append(Interval(start, end))
+            start = intervals[i].start
+            end = intervals[i].end
+    
+    # the last one
+    ans.append(Interval(start, end))
+    return ans
 
-    # add the last interval
-    mergedIntervals.append(Interval(start, end))
-    return mergedIntervals
 
 
 def main():
