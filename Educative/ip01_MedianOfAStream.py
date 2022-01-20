@@ -1,47 +1,55 @@
-# The time complexity of the insertNum() will be O(logN) 
-#   due to the insertion in the heap 
-# The time complexity of the findMedian() will be O(1) 
+# The time complexity of the insertNum() will be O(logN)
+#   due to the insertion in the heap
+# The time complexity of the findMedian() will be O(1)
 #   as we can find the median from the top elements of the heaps
 # space: O(N)
 
-from heapq import heappush, heappop
+# Min heap and max heap
+# heapq is _min heap_, to use max heap, invert the value of the keys and use heapq
+# since min heap [0] return the smallest element, it should be put in bigger half
+# We let 1 >= len(maxHeap) - len(minHeap) >= 0
+
+import heapq
 
 
 class MedianOfAStream:
-    maxHeap = []  # containing first half of numbers
-    minHeap = []  # containing second half of numbers
+    def __init__(self):
+        self.minHeap = []  # second half
+        self.maxHeap = []  # first half
 
     def insert_num(self, num):
-        if not self.maxHeap or -self.maxHeap[0] >= num:
-            heappush(self.maxHeap, -num)
+        # Insert number
+        if not self.maxHeap or num <= -self.maxHeap[0]:
+            heapq.heappush(self.maxHeap, -num)
+            print('Max heap', self.maxHeap, self.maxHeap[0])
         else:
-            heappush(self.minHeap, num)
+            heapq.heappush(self.minHeap, num)
+            print('Min heap', self.minHeap, self.minHeap[0])
 
-        # either both the heaps will have equal number of elements or max-heap will have one
-        # more element than the min-heap
-        if len(self.maxHeap) > len(self.minHeap) + 1:
-            heappush(self.minHeap, -heappop(self.maxHeap))
-        elif len(self.maxHeap) < len(self.minHeap):
-            heappush(self.maxHeap, -heappop(self.minHeap))
+        # Check length
+        if len(self.maxHeap) < len(self.minHeap):
+            # move top of minHeap to maxHeap
+            heapq.heappush(self.maxHeap, -heapq.heappop(self.minHeap))
+        elif len(self.maxHeap) - len(self.minHeap) > 1:
+            heapq.heappush(self.minHeap, -heapq.heappop(self.maxHeap))
 
     def find_median(self):
         if len(self.maxHeap) == len(self.minHeap):
-            # we have even number of elements, take the average of middle two elements
-            return -self.maxHeap[0] / 2.0 + self.minHeap[0] / 2.0
-
-        # because max-heap will have one more element than the min-heap
-        return -self.maxHeap[0] / 1.0
+            median = (-self.maxHeap[0] + self.minHeap[0]) / 2
+        else:
+            median = -self.maxHeap[0]
+        return median
 
 
 def main():
     medianOfAStream = MedianOfAStream()
     medianOfAStream.insert_num(3)
     medianOfAStream.insert_num(1)
-    print("The median is: " + str(medianOfAStream.find_median()))
+    print("The median is: " + str(medianOfAStream.find_median()))  # 2
     medianOfAStream.insert_num(5)
-    print("The median is: " + str(medianOfAStream.find_median()))
+    print("The median is: " + str(medianOfAStream.find_median()))  # 3
     medianOfAStream.insert_num(4)
-    print("The median is: " + str(medianOfAStream.find_median()))
+    print("The median is: " + str(medianOfAStream.find_median()))  # 3.5
 
 
 main()
