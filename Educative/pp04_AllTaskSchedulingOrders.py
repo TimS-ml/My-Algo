@@ -13,57 +13,54 @@ We can use a recursive approach with Backtracking to consider all sources at any
 from collections import deque
 
 
-def print_orders(tasks, prerequisites):
-    sortedOrder = []
-    if tasks <= 0:
-        return False
+def print_orders(tasks, prereqs):
+    ans = []
 
-    # a. Initialize the graph
-    inDegree = {i: 0 for i in range(tasks)}  # count of incoming edges
-    graph = {i: [] for i in range(tasks)}  # adjacency list graph
+    # we need 2 hash dict:
+    # [1] key is child
+    # count of in degrees (number of connection to that node) => for popup order usage
+    inDegree = {i: 0 for i in range(tasks)}
 
-    # b. Build the graph
-    for prerequisite in prerequisites:
-        parent, child = prerequisite[0], prerequisite[1]
-        graph[parent].append(child)  # put the child into it's parent's list
-        inDegree[child] += 1  # increment child's inDegree
+    # [2] key is parent
+    # list of out node(s) => for connection usage
+    graph = {i: [] for i in range(tasks)}
 
-    # c. Find all sources i.e., all vertices with 0 in-degrees
+    # [3] list of head
     sources = deque()
-    for key in inDegree:
-        if inDegree[key] == 0:
-            sources.append(key)
 
-    print_all_topological_sorts(graph, inDegree, sources, sortedOrder)
+    for edge in prereqs:
+        parent, child = edge[0], edge[1]
+        inDegree[child] += 1
+        graph[parent].append(child)
 
+    for child in inDegree:
+        if inDegree[child] == 0:
+            sources.append(child)  # then this child is an orphan
 
-def print_all_topological_sorts(graph, inDegree, sources, sortedOrder):
-    if sources:
-        for vertex in sources:
-            sortedOrder.append(vertex)
-            sourcesForNextCall = deque(sources)  # make a copy of sources
-            # only remove the current source, all other sources should remain in the queue for the next call
-            sourcesForNextCall.remove(vertex)
-            # get the node's children to decrement their in-degrees
-            for child in graph[vertex]:
-                inDegree[child] -= 1
-                if inDegree[child] == 0:
-                    sourcesForNextCall.append(child)
+    # BFS
+    def bfs(sources, ans):
+        if sources:
+            for curr_source in sources:
+                ans.append(curr_source)
+                sources_next = deque(sources)
+                sources_next.remove(curr_source)
+                for child in graph[curr_source]:
+                    inDegree[child] -= 1
+                    # update `source`
+                    if inDegree[child] == 0:
+                        sources_next.append(child)
 
-            # recursive call to print other orderings from the remaining (and new) sources
-            print_all_topological_sorts(graph, inDegree, sourcesForNextCall,
-                                        sortedOrder)
+                bfs(sources_next, ans)
 
-            # backtrack, remove the vertex from the sorted order and put all of its children back to consider
-            # the next source instead of the current vertex
-            sortedOrder.remove(vertex)
-            for child in graph[vertex]:
-                inDegree[child] += 1
+                ans.remove(curr_source)
+                for child in graph[curr_source]:
+                    inDegree[child] += 1
 
-    # if sortedOrder doesn't contain all tasks, either we've a cyclic dependency between tasks, or
-    # we have not processed all the tasks in this recursive call
-    if len(sortedOrder) == len(inDegree):
-        print(sortedOrder)
+        # why based on num of connection ???
+        if len(ans) == len(inDegree):
+            print(ans)
+
+    bfs(sources, ans)
 
 
 def main():

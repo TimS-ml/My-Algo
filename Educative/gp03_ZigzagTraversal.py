@@ -43,7 +43,8 @@ def traverse(root):
                 queue.append(currentNode.right)
 
         result.append(list(currentLevel))
-        # reverse the traversal direction
+
+        # !! reverse the traversal direction
         leftToRight = not leftToRight
 
     return result

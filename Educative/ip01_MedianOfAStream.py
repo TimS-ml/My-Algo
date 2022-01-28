@@ -1,44 +1,30 @@
-# The time complexity of the insertNum() will be O(logN)
-#   due to the insertion in the heap
-# The time complexity of the findMedian() will be O(1)
-#   as we can find the median from the top elements of the heaps
-# space: O(N)
-
-# Min heap and max heap
-# heapq is _min heap_, to use max heap, invert the value of the keys and use heapq
-# since min heap [0] return the smallest element, it should be put in bigger half
-# We let 1 >= len(maxHeap) - len(minHeap) >= 0
+# Let's try len(minHeap) >= len(maxHeap)
+# median = (min[0] + -max[0]) / 2
 
 import heapq
 
 
 class MedianOfAStream:
     def __init__(self):
-        self.minHeap = []  # second half
-        self.maxHeap = []  # first half
+        self.maxHeap = []  # containing first half of numbers
+        self.minHeap = []  # containing second half of numbers
 
     def insert_num(self, num):
-        # Insert number
-        if not self.maxHeap or num <= -self.maxHeap[0]:
-            heapq.heappush(self.maxHeap, -num)
-            print('Max heap', self.maxHeap, self.maxHeap[0])
-        else:
+        if not self.minHeap or num >= self.minHeap[0]:
             heapq.heappush(self.minHeap, num)
-            print('Min heap', self.minHeap, self.minHeap[0])
+        else:
+            heapq.heappush(self.maxHeap, -num)
 
-        # Check length
-        if len(self.maxHeap) < len(self.minHeap):
-            # move top of minHeap to maxHeap
-            heapq.heappush(self.maxHeap, -heapq.heappop(self.minHeap))
-        elif len(self.maxHeap) - len(self.minHeap) > 1:
+        if len(self.maxHeap) > len(self.minHeap):
             heapq.heappush(self.minHeap, -heapq.heappop(self.maxHeap))
+        elif len(self.minHeap) - len(self.maxHeap) > 1:
+            heapq.heappush(self.maxHeap, -heapq.heappop(self.minHeap))
 
     def find_median(self):
-        if len(self.maxHeap) == len(self.minHeap):
-            median = (-self.maxHeap[0] + self.minHeap[0]) / 2
+        if len(self.minHeap) == len(self.maxHeap):
+            return (self.minHeap[0] - self.maxHeap[0]) / 2
         else:
-            median = -self.maxHeap[0]
-        return median
+            return self.minHeap[0]
 
 
 def main():

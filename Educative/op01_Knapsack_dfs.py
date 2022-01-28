@@ -1,65 +1,62 @@
 '''
+Given the weights and profits of ‘N’ items, we are asked to put these items in a knapsack with a capacity ‘C.’ 
+The goal is to get the maximum profit out of the knapsack items. 
+Each item can only be selected once, as we don’t have multiple quantities of any item.
+
 # Code Explain:
-- Time complexity: O(N*C) 
-where ‘N’ is the number of items and ‘C’ is the knapsack capacity
-- Space complexity: O(N*C + N)
+- Time complexity: O(N * C)
+- Space complexity: O(N * C)
 
 # Pros and Cons and Notation:
-Top-down Dynamic Programming with Memoization
-=> state: maximum profit for capacity 'c' and **calculated from 'i' to len items (dp[i][c])**
-
-Top-to-bottom Dynamic Programming is nothing else than ordinary recursion, enhanced with *memorizing the solutions for intermediate sub-problems*.
 
 [1] Base State
-[2] State Transfer Equation => idx from idx+1 (top down)
+dp[i][j] = maximum profit considering product 0~i, weight remain (or sum weight) is j
+
+[2] State Transfer Equation
+dp[i][j] = max(choose, not choose)
+
+choose (at lease j-w[i] to carry product i)
+dp[i][j] = p[i] + dp[i-1][j-w[i]]
+
+not choose
+dp[i][j] = dp[i-1][j]
+
 [3] Initialize Conditions
+dp[0][~] = if w[i] < c
+return dp[-1][w]
+
 [4] State Compression (optional)
+
 [5] Terminate Conditions
+w should > 0
 '''
 
+
 def solve_knapsack(profits, weights, capacity):
-    # [3] Initialize Conditions
-    # create a two dimensional array for Memoization, each element is initialized to '-1'
-    dp = [[-1 for x in range(capacity + 1)] for y in range(len(profits))]
+    # N * C
+    # you have to avoid to init to 0, since you need to return 0 in top-down
+    cache = [[-1] * (capacity + 1) for _ in range(len(profits))]
+    L = len(profits)
     
-    # yep that will do!
-    for c in range(capacity + 1):
-       if weights[-1] <= c:
-           dp[-1][c] = profits[-1]
-    return knapsack_recursive(dp, profits, weights, capacity, 0)
+    # idx is from top to bottom
+    def dfs(idx, c):
+        if c <= 0 or idx >= L:
+            return 0
+        if cache[idx][c] != -1:
+            return cache[idx][c]
+        p1, p2 = 0, 0
+        if weights[idx] <= c:
+            # this is +1
+            p1 = profits[idx] + dfs(idx + 1, c - weights[idx])
+        p2 = dfs(idx + 1, c)
+        cache[idx][c] = max(p1, p2)
+        return cache[idx][c]
 
-
-def knapsack_recursive(dp, profits, weights, capacity, currentIndex):
-    # [5] Terminate Conditions
-    # base checks
-    if capacity <= 0 or currentIndex >= len(profits):
-        return 0
-
-    # [4] State Compression (optional)
-    # if we have already solved a similar problem, return the result from memory
-    if dp[currentIndex][capacity] != -1:
-        return dp[currentIndex][capacity]
-
-    # recursive call after choosing the element at the currentIndex
-    # if the weight of the element at currentIndex exceeds the capacity, we
-    # shouldn't process this
-    # [2.1] State Transfer Equation
-    profit1 = 0
-    if weights[currentIndex] <= capacity:
-        profit1 = profits[currentIndex] + knapsack_recursive(
-            dp, profits, weights, capacity - weights[currentIndex],
-            currentIndex + 1)
-
-    # [2.2] State Transfer Equation
-    # recursive call after excluding the element at the currentIndex
-    profit2 = knapsack_recursive(dp, profits, weights, capacity,
-                                 currentIndex + 1)
-
-    dp[currentIndex][capacity] = max(profit1, profit2)
-    return dp[currentIndex][capacity]
+    return dfs(0, capacity)
 
 
 def main():
+    # profits, weights, capacity
     print(solve_knapsack([1, 6, 10, 16], [1, 2, 3, 5], 5))
     print(solve_knapsack([1, 6, 10, 16], [1, 2, 3, 5], 6))
     print(solve_knapsack([1, 6, 10, 16], [1, 2, 3, 5], 7))

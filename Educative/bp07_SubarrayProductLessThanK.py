@@ -8,74 +8,100 @@ they believe substr generation will cause n^2
 
 # Pros and Cons and Notation:
 same as bp06
-- this time we are calc sub arr product instead of sum
-    - unfix length
-    - not include duplicate
-- **contiguous** subarrays, so don't sort arr
+this time we are calc sub arr product instead of sum
 
-same as bp06, fix one boundary and move another
-if arr[l] * ... * arr[r] < target, then all sub arrays in middle < target
+careful, this is an unsorted array
+
+if a * b * ... * h < target
+then any contiguous subarr's product in a~h should < target
+but we'd better fix one boundary
+
+in find_subarrays_brute, fix l side, gen subarr from l side
+in find_subarrays, fix r side, gen subarr from r side
 '''
-
 
 from collections import deque
 
 
+def find_subarrays_brute(arr, target):
+    ans = []
+    for i in range(len(arr)):
+        if arr[i] < target:
+            temp_mul = arr[i]
+            temp_li = [arr[i]]
+            ans.append(temp_li.copy())
+            # print(temp_li, ans)
+
+            for j in range(i+1, len(arr)):
+                temp_mul *= arr[j]
+                if temp_mul < target:
+                    temp_li.append(arr[j])
+                    ans.append(temp_li.copy())
+                    # print(temp_li, ans)
+                else:
+                    break
+    return ans
+            
+def find_subarrays_brute2(arr, target):
+    ans = []
+    for i in range(len(arr)):
+        if arr[i] < target:
+            temp_mul = arr[i]
+            temp_li = [arr[i]]
+            
+            # r will stop at: [1] end of loop, [2] prod *= arr[r+1] > j
+            for j in range(i+1, len(arr)):
+                temp_mul *= arr[j] 
+
+                # if   a * b * ... * f > target
+                # then a * b * ... * f * g > target
+                if temp_mul >= target:
+                    break
+                
+                temp_li.append(arr[j])
+
+            while len(temp_li) > 0:  # make sure not add []
+                ans.append(temp_li.copy())
+                # print(temp_li, ans)
+                temp_li.pop()
+    return ans
+
+
 def find_subarrays(arr, target):
-    result = []
-    product = 1  # can target=0 ? yes
-    left = 0
-    # at start, left and right are all 0
-    # update ans every time after move 'right'
-    for right in range(len(arr)):
-        product *= arr[right]
-        # move left to correct position
-        # in [2, 2, 5, 3, 10] case, when r at 10, l still at 5
-        while (product >= target and left < len(arr)):
-            # print(left, right, product)
-            product /= arr[left]
-            left += 1
+    ans = []
+    l, r = 0, 0
+    temp_mul = 1
 
-        # since the product of all numbers from left to right is less than the target therefore,
-        # all subarrays from left to right will have a product less than the target too; to avoid
-        # duplicates, we will start with a subarray containing only arr[right] and then extend it
-        temp_list = deque()
-        # 2, 2, 5
-        # r=2, l=0
-        # order: [5], [2, 5], [2, 2, 5]
-        # if not reverse: [2], [2, 2], [2, 2, 5]
-        # we loop though r, and focus on right edges
-        for i in range(right, left - 1, -1):
-            temp_list.appendleft(arr[i])  # small number first
-            result.append(list(temp_list))
-            # print(right, left, temp_list, result)
-    return result
+    while r < len(arr):
+        temp_mul *= arr[r]
 
+        # if   c * ... * f > target
+        # then c * ... * f * g > target
+        # which means 'l' doesn't need to move left
+        while temp_mul >= target and l < r:
+            temp_mul /= arr[l]
+            l += 1
 
-def find_subarrays_v2(arr, target):
-    result = []
-    # at start, left and right are all 0
-    for left in range(len(arr)):
-        product = 1
-        right = left
-        while product < target and right < len(arr):
-            product *= arr[right]
-            right += 1
-        if product >= target:
-            right -= 1
-        temp_list = []
-        for i in range(left, right):
-            temp_list.append(arr[i])
-            result.append(list(temp_list))
-            # print(right, left, temp_list, result)
-    return result
+        # !! since we fix r side, if we generate subarr from l side, there will be duplicates
+        # if from l side: [2, 5] will add [[2], [2, 5]]
+        #              [2, 5, 3] will have [[2], [2, 5], [2, 5, 3]]
+        # if from r side: [2, 5] will add [[5], [5, 2]]
+        #              [2, 5, 3] will have [[3], [3, 5], [3, 5, 2]]
+        temp_li = deque()  # popleft
+        for i in range(r, l - 1, -1):
+            temp_li.appendleft(arr[i])
+            ans.append(list(temp_li))
+
+        r += 1
+
+    return ans
 
 
 def main():
-    print(find_subarrays([2, 2, 5, 3, 10], 30))
-    print(find_subarrays_v2([2, 2, 5, 3, 10], 30))
+    print(find_subarrays([2, 5, 3, 10], 300))
+    print(find_subarrays_brute([2, 5, 3, 10], 300))
+    print(find_subarrays_brute2([2, 5, 3, 10], 300))
     # print(find_subarrays([2, 2, 5, 3, 10], 0))
-    # print(find_subarrays_v2([2, 2, 5, 3, 10], 0))
     # print(find_subarrays([8, 2, 6, 5], 50))
 
 

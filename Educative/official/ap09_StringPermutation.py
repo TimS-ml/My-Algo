@@ -1,3 +1,11 @@
+# (wrong) Fixed windows size
+# if index dict: not gonna work for the repeating char case ?
+#   case: abb, string ccbabc
+# how to determine if substr is correct ?
+#   a brute force way: sort sub string
+#   i.e. how to use freq dict ? => not sure
+
+
 def find_permutation(str1, pattern):
     window_start, matched = 0, 0
     char_frequency = {}

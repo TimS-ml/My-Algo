@@ -26,7 +26,6 @@ def traverse(root):
     queue.append(root)
     while queue:
         levelSize = len(queue)
-        print(levelSize)
         currentLevel = []
         for _ in range(levelSize):
             currentNode = queue.popleft()
