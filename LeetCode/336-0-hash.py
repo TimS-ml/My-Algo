@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 - len(word1) == len(word2)
     - check word1 == word2[::-1]
 - len(word1) != len(word2) 2 Possibility:

@@ -3,7 +3,7 @@
 - Time complexity: O()
 - space complexity: O()
 
-# Pros and Cons and Notation:
+
 
 case: s = "a-bC-dEf-ghIj"
 out :     "j-Ih-gfE-dCba" 

@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 https://leetcode-cn.com/problems/target-sum/solution/python-dfs-xiang-jie-by-jimmy00745/
 
 dp: 

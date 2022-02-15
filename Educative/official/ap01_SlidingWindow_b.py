@@ -5,7 +5,7 @@ https://www.educative.io/courses/grokking-the-coding-interview/7D5NNZWQ8Wr
 - Time complexity: O(N)
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 
 '''
 

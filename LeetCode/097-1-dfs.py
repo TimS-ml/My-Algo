@@ -3,7 +3,7 @@
 - Time complexity: O(n^2)
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 
 '''
 

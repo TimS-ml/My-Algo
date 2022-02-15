@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 
 https://leetcode-cn.com/problems/contiguous-array/solution/python-qian-zhui-he-bian-liang-zi-dian-b-9oct/
 

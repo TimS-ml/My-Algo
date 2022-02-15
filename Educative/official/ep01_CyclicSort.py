@@ -7,7 +7,7 @@ This means that the object with sequence number ‘3’ was created just before 
 - Time complexity: O(N)
 - Space complexity: O(1)
 
-# Pros and Cons and Notation:
+
 
 i: 0 [2, 4, 5, 1, 3]
 i: 0 [4, 2, 5, 1, 3]

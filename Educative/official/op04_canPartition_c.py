@@ -3,7 +3,7 @@
 - Time complexity: O(N * S)
 - Space complexity: O(N * S)
 
-# Pros and Cons and Notation:
+
 
 Bottom-up Dynamic Programming
 '''

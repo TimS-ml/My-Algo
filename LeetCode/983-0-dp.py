@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 1 <= days.length <= 365
 1 <= days[i] <= 365
 

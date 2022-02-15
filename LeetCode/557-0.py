@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 There is at least one word in s
 
 sol 2:

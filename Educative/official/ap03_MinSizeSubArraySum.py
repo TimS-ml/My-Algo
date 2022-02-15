@@ -7,7 +7,7 @@ https://www.educative.io/courses/grokking-the-coding-interview/7XMlMEQPnnQ
 
 The outer for loop runs for all elements, and the inner while loop processes each element only once
 
-# Pros and Cons and Notation:
+
 
 Find the length of the smallest(len) contiguous subarray whose sum is greater than or equal to ‘S’
 case: 7, [2, 1, 5, 2, 3, 2]

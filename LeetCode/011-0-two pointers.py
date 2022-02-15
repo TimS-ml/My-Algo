@@ -3,7 +3,7 @@
 - Time complexity: O(n)
 - Space complexity: O(1)
 
-# Pros and Cons and Notation:
+
 
 S(i, j) = min(h[i], h[j]) x (j-i)
 

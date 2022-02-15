@@ -4,7 +4,7 @@
 where ‘N’ is the number of items and ‘C’ is the knapsack capacity
 - Space complexity: O(N*C + N)
 
-# Pros and Cons and Notation:
+
 Top-down Dynamic Programming with Memoization
 => state: maximum profit for capacity 'c' and **calculated from 'i' to len items (dp[i][c])**
 

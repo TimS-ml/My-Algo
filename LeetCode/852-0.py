@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 
 find idx of maximum val using binary search
 or just return arr.index(max(arr))

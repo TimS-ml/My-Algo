@@ -3,7 +3,7 @@
 - Time complexity: O(N)
 - Space complexity: O(1)
 
-# Pros and Cons and Notation:
+
 longest substring with same letter after k letters replacement
 same as ap04
 ap04, ap05 dic is frequency dict

@@ -4,7 +4,7 @@
 where ‘N’ is the number of items and ‘C’ is the knapsack capacity
 - Space complexity: O(N*C)
 
-# Pros and Cons and Notation:
+
 Bottom-up Dynamic Programming
 
 In Bottom-to-top Dynamic Programming the approach is also based on *storing sub-solutions* in memory,

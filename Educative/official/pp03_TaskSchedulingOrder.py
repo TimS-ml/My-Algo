@@ -5,7 +5,7 @@ We need to find the ordering of tasks we should pick to finish all tasks
 - Time complexity: O(V + E)
 - Space complexity: O(V + E)
 
-# Pros and Cons and Notation:
+
 
 '''
 

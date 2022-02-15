@@ -4,7 +4,7 @@
 n is len(str)
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 
 - In a palindrome, only at most one character appears an odd number of times
     - pick the first odd number of times char

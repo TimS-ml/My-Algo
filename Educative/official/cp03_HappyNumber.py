@@ -6,7 +6,7 @@ All other (not-happy) numbers will never reach ‘1’. Instead, they will be st
 - Time complexity: O(longN)
 - Space complexity: O(1)
 
-# Pros and Cons and Notation:
+
 
 Each number will definitely have a cycle.
 https://en.wikipedia.org/wiki/Happy_number

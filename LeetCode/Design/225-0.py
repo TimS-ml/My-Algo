@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 
 stack:  last in - first out,  LIFO
   if push 1, 2, then pop -> return 2

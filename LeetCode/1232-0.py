@@ -3,7 +3,7 @@
 - Time complexity: O(n)
 - Space complexity: O(1)
 
-# Pros and Cons and Notation:
+
 check if dy/dx = k for every c[0] and c[i!=0]
 
 special case: 

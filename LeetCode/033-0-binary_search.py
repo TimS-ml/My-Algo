@@ -3,7 +3,7 @@
 - Time complexity: O(logn)
 - Space complexity: O(1)
 
-# Pros and Cons and Notation:
+
 - The array itself is not ordered. After the rotation, only the parts of the array are guaranteed to be ordered
     - All are ascending arrays except for a sudden drop at a certain point
 

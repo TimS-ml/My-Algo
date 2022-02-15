@@ -3,7 +3,7 @@
 - Time complexity: O(n^2)
 - Space complexity: O(n)
 
-# Pros and Cons and Notation:
+
 
 what we need to find is the "sum of closest pair", not the diff
 so case [-3, -1, 1, 2], target=1

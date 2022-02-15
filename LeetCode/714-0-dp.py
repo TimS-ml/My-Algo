@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 
 dp[i][j] max Profit at day i
 j = 0: not buy

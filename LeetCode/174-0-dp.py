@@ -3,7 +3,7 @@
 - Time complexity: O(n)
 - Space complexity: O(n)
 
-# Pros and Cons and Notation:
+
 
 dp
 [1] Base State

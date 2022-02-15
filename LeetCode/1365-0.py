@@ -3,7 +3,7 @@
 - Time complexity: O(NlogN)
 - Space complexity: O(N)
 
-# Pros and Cons and Notation:
+
 case: [8, 1, 2, 2, 3]
 - sort list [8, 1, 2, 2, 3]
 - ans[i] = len(nums[k:]) k is the first number that smaller than ans[i]

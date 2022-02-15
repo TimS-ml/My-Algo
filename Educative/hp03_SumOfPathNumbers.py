@@ -3,7 +3,7 @@
 - Time complexity: O(N)
 - Space complexity: O(N)
 
-# Pros and Cons and Notation:
+
 
 '''
 

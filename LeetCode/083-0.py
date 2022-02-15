@@ -3,7 +3,7 @@
 - Time complexity: O(n)
 - Space complexity: O(1)
 
-# Pros and Cons and Notation:
+
 Do not try to jump n nodes once, it will bring you a lot of troubles
 '''
 

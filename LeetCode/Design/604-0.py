@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 
 self.p  : (position) Save the next character to be generated in cstr
 self.num: Number of char left

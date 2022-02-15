@@ -5,7 +5,7 @@ Given a directed graph(a graph with unidirectional edges), find the topological 
 - Time complexity: O(V + E)
 - Space complexity: O(V + E)
 
-# Pros and Cons and Notation:
+
 A topological ordering starts with one of the sources and ends at one of the sinks
 A topological ordering is possible only when the graph has no directed cycles
 

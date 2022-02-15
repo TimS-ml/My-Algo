@@ -3,7 +3,7 @@
 - Time complexity: O(2^N)
 - Space complexity: O(N)
 
-# Pros and Cons and Notation:
+
 
 Basic Solution
 for each number 'i' 

@@ -3,7 +3,7 @@
 - Time complexity: O(l1 * l2)
 - Space complexity: O(l1 * l2)
 
-# Pros and Cons and Notation:
+
 
 this solution can be further compressed!
 

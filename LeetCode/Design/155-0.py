@@ -3,7 +3,7 @@
 - Time complexity: O(1)
 - Space complexity: O(n)
 
-# Pros and Cons and Notation:
+
 
 stack =          [-2,  0, -3]
 min_s = [INT_MAX, -2, -2, -3]

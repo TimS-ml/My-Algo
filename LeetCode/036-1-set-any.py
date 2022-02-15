@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 
 https://leetcode.com/problems/valid-sudoku/discuss/15460/1-7-lines-Python-4-solutions
 '''

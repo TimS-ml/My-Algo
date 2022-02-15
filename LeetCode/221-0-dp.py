@@ -3,7 +3,7 @@
 - Time complexity: O(mn)
 - Space complexity: O(mn)
 
-# Pros and Cons and Notation:
+
 dp[i][j] = Maximum length of the square, (i,j) as the lower right corner
 
 input:

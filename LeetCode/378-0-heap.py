@@ -3,7 +3,7 @@
 - Time complexity: O(klogN)
 - Space complexity: O(N)
 
-# Pros and Cons and Notation:
+
 
 Each of the rows and columns are sorted in ascending order
 

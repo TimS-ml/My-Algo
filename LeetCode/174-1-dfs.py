@@ -3,7 +3,7 @@
 - Time complexity: O(n)
 - Space complexity: O(n)
 
-# Pros and Cons and Notation:
+
 https://leetcode-cn.com/problems/dungeon-game/solution/cong-hui-su-dao-ji-yi-hua-sou-suo-dao-dong-tai-gui/
 
 [1] Base State

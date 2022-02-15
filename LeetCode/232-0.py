@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 
 - 栈是一种后进先出的数据结构
     - 元素从顶端入栈, 从顶端出栈

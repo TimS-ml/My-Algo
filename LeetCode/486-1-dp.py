@@ -16,7 +16,7 @@
 [4] State Compression (optional)
 [5] Terminate Conditions
 
-# Pros and Cons and Notation:
+
 
 '''
 

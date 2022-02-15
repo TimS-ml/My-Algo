@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 
 Usually sort the p[0] in ascending order and p[1] with decending order (or vice versa) is ok
 

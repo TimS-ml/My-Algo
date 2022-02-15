@@ -3,7 +3,7 @@
 - Time complexity: O(Row * Col)
 - Space complexity: O(Row * Col)
 
-# Pros and Cons and Notation:
+
 
 https://leetcode-cn.com/problems/number-of-islands/solution/dfs-bfs-bing-cha-ji-python-dai-ma-java-dai-ma-by-l/
 '''

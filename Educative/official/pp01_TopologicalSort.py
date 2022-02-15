@@ -5,7 +5,7 @@ Given a directed graph(a graph with unidirectional edges), find the topological 
 - Time complexity: O(V + E)
 - Space complexity: O(V + E)
 
-# Pros and Cons and Notation:
+
 
 The basic idea behind the topological sort is to provide a partial ordering among the vertices (顶点) of the graph 
 such that if there is an edge from U to V then U≤V i.e., U comes before V in the ordering:

@@ -6,7 +6,7 @@ Given a set of positive numbers, determine if a subset exists whose sum is equal
 - Space complexity: O(N * S)
 The algorithm has the time and space complexity of O(N*S), where ‘N’ represents total numbers and ‘S’ is the total sum of all the numbers.
 
-# Pros and Cons and Notation:
+
 
 if Basic solution
 for each number 'i' 

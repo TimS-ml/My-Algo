@@ -6,7 +6,7 @@ Since the array has only ‘n’ numbers out of the total ‘n+1’ numbers, fin
 - Time complexity: O(N)
 - Space complexity: O(1)
 
-# Pros and Cons and Notation:
+
 range from 0 to n
 
 case: arr = [4, 0, 3, 1]

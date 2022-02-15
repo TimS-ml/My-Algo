@@ -3,7 +3,7 @@
 - Time complexity: O(n)
 - Space complexity: O(n)
 
-# Pros and Cons and Notation:
+
 
 left==0相当于左右括号的平衡
 '''

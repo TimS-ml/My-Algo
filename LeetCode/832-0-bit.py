@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 [[1,1,0],
  [1,0,1],
  [0,0,0]]

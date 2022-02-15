@@ -3,7 +3,7 @@
 - Time complexity: O(N)
 - Space complexity: O(1)
 
-# Pros and Cons and Notation:
+
 
 dp * 2
 state: leftMax and rightMax

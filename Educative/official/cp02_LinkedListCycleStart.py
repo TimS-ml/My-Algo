@@ -5,7 +5,7 @@ Given the head of a Singly LinkedList that contains a cycle, write a function to
 - Time complexity: O(N)
 - Space complexity: O(1)
 
-# Pros and Cons and Notation:
+
 
 using the code from cp01, we can find the length of loop L_loop
 '''

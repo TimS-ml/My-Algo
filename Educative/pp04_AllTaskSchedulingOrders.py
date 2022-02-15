@@ -5,7 +5,7 @@ We need to print all possible ordering of tasks meeting all prerequisites
 - Time complexity: O(V! + E)
 - Space complexity: O(V! + E)
 
-# Pros and Cons and Notation:
+
 At any stage, if we have more than one source available and since we can choose any source, therefore, in this case, we will have multiple orderings of the tasks. 
 We can use a recursive approach with Backtracking to consider all sources at any step.
 '''

@@ -3,7 +3,7 @@
 - Time complexity: O(mn)
 - Space complexity: O(mn)
 
-# Pros and Cons and Notation:
+
 Tricky part:
 - Operation position does not affect result
     - so we do all the position at the end of string

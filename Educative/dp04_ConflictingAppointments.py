@@ -6,7 +6,7 @@ find out if a person can attend all the appointments.
 - Time complexity: O(N * logN)
 - Space complexity: O(N)
 
-# Pros and Cons and Notation:
+
 
 We can sort all the intervals by start time and then check if any two intervals overlap.
 '''

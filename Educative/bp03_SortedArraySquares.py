@@ -6,7 +6,7 @@ create a new array containing squares of all the numbers of the input array in t
 - Time complexity: O(n)
 - Space complexity: O(n)
 
-# Pros and Cons and Notation:
+
 Two ways:
 [1] sort after calculate all the squares
 [2] sort when calculate squares

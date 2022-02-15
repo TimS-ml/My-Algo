@@ -3,7 +3,7 @@
 - Time complexity: O(n)
 - Space complexity: O(n)
 
-# Pros and Cons and Notation:
+
 case: 0 in list
 count_0 =0 or =1 or >1
 '''

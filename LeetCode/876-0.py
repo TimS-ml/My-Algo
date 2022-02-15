@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 用两个指针 slow 与 fast 一起遍历链表
 那么当 fast 到达链表的末尾时, slow 必然位于中间
 '''

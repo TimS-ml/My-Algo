@@ -3,7 +3,7 @@
 - Time complexity: O(n)
 - Space complexity: O(n)  # dose python provide in/out stack?
 
-# Pros and Cons and Notation:
+
 
 '''
 

@@ -3,7 +3,7 @@
 - Time complexity: O(n * 2^n)
 - Space complexity: O(n)
 
-# Pros and Cons and Notation:
+
 
 '''
 

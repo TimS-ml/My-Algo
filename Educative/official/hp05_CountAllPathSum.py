@@ -3,7 +3,7 @@
 - Time complexity: O(N)
 - Space complexity: O(N)
 
-# Pros and Cons and Notation:
+
 
 This problem follows the Binary Tree Path Sum pattern. We can follow the same DFS approach. But there will be four differences:
 - We will keep track of the current path in a list which will be passed to every recursive call.

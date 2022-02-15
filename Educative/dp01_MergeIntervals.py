@@ -7,7 +7,7 @@ merge all the overlapping intervals to produce a list that has only mutually exc
 include sort
 - Space complexity: O(N)
 
-# Pros and Cons and Notation:
+
 
 Sort the intervals on the start time to ensure a.start <= b.start
 If `a` overlaps `b` (i.e. b.start <= a.end), 

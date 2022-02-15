@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 
 case 1:
 rec1 = [0,0,2,2], rec2 = [1,1,3,3]

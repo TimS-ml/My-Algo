@@ -5,7 +5,7 @@ Count all triplets in it such that arr[i] + arr[j] + arr[k] < target where i, j,
 - Time complexity: O(n^2)
 - Space complexity: O(n)
 
-# Pros and Cons and Notation:
+
 
 same as bp04
 target_sum is given

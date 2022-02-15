@@ -3,7 +3,7 @@
 - Time complexity: O(nlogn) for sort()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 先对people 排序
 然后用两个指针分别指向体重最轻和体重最重的人
 '''

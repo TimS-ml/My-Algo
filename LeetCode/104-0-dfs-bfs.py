@@ -8,7 +8,7 @@ bfs
 - Time complexity: O(n)
 - Space complexity: O(width of tree)
 
-# Pros and Cons and Notation:
+
 
 '''
 from collections import deque

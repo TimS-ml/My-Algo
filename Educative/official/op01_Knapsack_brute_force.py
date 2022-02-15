@@ -7,7 +7,7 @@ Each item can only be selected once, as we don’t have multiple quantities of a
 - Time complexity: O(2^N)
 - Space complexity: O(N)
 
-# Pros and Cons and Notation:
+
 Brute-force, Overlapping Sub-problems
 
 [1] Base State

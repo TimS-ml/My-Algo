@@ -6,7 +6,7 @@ create a new array containing squares of all the numbers of the input array in t
 - Time complexity: O(n)
 - Space complexity: O(n)
 
-# Pros and Cons and Notation:
+
 sorted, 2 pointers start at middle (0) and move to the two ends
 make comparison to decide which pointer to move
 '''

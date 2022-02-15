@@ -3,7 +3,7 @@
 - Time complexity: O(nlogn)
 - Space complexity: O(n)
 
-# Pros and Cons and Notation:
+
 https://docs.python.org/3/library/functools.html#functools.cmp_to_key
 https://www.programiz.com/python-programming/methods/built-in/sorted
 

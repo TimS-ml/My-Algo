@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 - target len(str) must be divisor of the length of the two strings
 - If there is a string X that meets the requirements, there must also be a string X' that meets the requirements
   - and its length is the greatest common divisor of the lengths of str1 and str2

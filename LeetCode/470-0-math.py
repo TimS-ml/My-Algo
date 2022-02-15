@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 (randX() - 1)*Y + randY() 可以等概率的生成[1, X * Y]范围的随机数
 '''
 

@@ -5,7 +5,7 @@ Given a set of positive numbers, find if we can partition it into two subsets su
 - Time complexity: O(2^N)
 - Space complexity: O(N)
 
-# Pros and Cons and Notation:
+
 important: 
 - the two subsets have the sum of sum(num)/2
 - you only need to find one subset that sum(subset) = sum(num)/2

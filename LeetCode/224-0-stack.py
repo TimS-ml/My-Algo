@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 
 - 与字符串中当前位置的运算符有关
 - 如果当前位置处于一系列括号之内, 则也与这些括号前面的运算符有关

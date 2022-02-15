@@ -7,7 +7,7 @@ https://www.educative.io/courses/grokking-the-coding-interview/7D5NNZWQ8Wr
 
 Time for arr[i:i + K] is O(K)
 
-# Pros and Cons and Notation:
+
 A brute-force algorithm will calculate the **sum of every 5-element**
 fix window + 1 pointer
 return average

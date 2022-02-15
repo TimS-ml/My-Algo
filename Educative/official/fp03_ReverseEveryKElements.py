@@ -6,7 +6,7 @@ If, in the end, you are left with a sub-list with less than ‘k’ elements, re
 - Time complexity: O(N)
 - Space complexity: O(1)
 
-# Pros and Cons and Notation:
+
 
 Same as fp02
 Special case: k=1

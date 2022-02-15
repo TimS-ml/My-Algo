@@ -10,7 +10,7 @@ The searchPair() function will take O(n)
     which is asymptotically equivalent to O(n^2)
 - Space complexity: O(n)
 
-# Pros and Cons and Notation:
+
 
 same as bp01
 element may be used multiple times

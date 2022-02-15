@@ -5,7 +5,7 @@ Given the head of a LinkedList and two positions ‘p’ and ‘q’, reverse th
 - Time complexity: O(N)
 - Space complexity: O(1)
 
-# Pros and Cons and Notation:
+
 
 [1] Goto p
 [2] Reverse p~q

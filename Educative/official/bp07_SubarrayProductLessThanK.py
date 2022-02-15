@@ -6,7 +6,7 @@ Find all of its contiguous subarrays whose product is less than the target numbe
 they believe substr generation will cause n^2
 - Space complexity: O(n^3)
 
-# Pros and Cons and Notation:
+
 same as bp06
 - this time we are calc sub arr product instead of sum
     - unfix length

@@ -7,7 +7,7 @@ Each item can only be selected once, as we don’t have multiple quantities of a
 - Time complexity: O(N * C)
 - Space complexity: O(N * C)
 
-# Pros and Cons and Notation:
+
 
 [1] Base State
 dp[i][j] = maximum profit considering product 0~i, weight remain (or sum weight) is j

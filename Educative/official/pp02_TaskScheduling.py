@@ -7,7 +7,7 @@ Given the number of tasks and a list of prerequisite pairs, find out if it is po
 - Time complexity: O(V + E)
 - Space complexity: O(V + E)
 
-# Pros and Cons and Notation:
+
 
 '''
 '''

@@ -7,7 +7,7 @@ The output list contains the common intervals between the two lists.
 - Time complexity: O(N + M)
 - Space complexity: O(1)
 
-# Pros and Cons and Notation:
+
 
 Same as dp01
 

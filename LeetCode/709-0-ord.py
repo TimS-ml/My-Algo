@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 ord('a') - ord('A') = 32! not 26
 
 s could be: '"Hello@[]"'

@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 
 - 如果一个node的左儿子为空 右儿子不空 从root 到左儿子的路径不算是minimum depth
     - 因为左儿子不算这个node的leaf node

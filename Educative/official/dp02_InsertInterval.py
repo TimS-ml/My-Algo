@@ -7,7 +7,7 @@ merge all necessary intervals to produce a list that has only mutually exclusive
 - Time complexity: O(N)
 - Space complexity: O(N)
 
-# Pros and Cons and Notation:
+
 
 insert and merge
 Skip all intervals which end before the start of the new interval, 

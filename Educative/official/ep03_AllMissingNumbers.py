@@ -6,7 +6,7 @@ The array can have duplicates, which means some numbers will be missing. Find al
 - Time complexity: O(N)
 - Space complexity: O(1)
 
-# Pros and Cons and Notation:
+
 
 same as ep02
 the key concept is that ignore about the duplicates, all you need is to put the correct into correct position

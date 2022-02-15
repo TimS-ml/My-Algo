@@ -7,7 +7,7 @@ Find that duplicate number without using any extra space.
 - Time complexity: O(N)
 - Space complexity: O(1)
 
-# Pros and Cons and Notation:
+
 
 same as ep02
 '''

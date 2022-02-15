@@ -7,7 +7,7 @@ return length
 - Time complexity: O(n)
 - Space complexity: O(1)
 
-# Pros and Cons and Notation:
+
 sorted, 2 pointers non_dupl_idx and i
 fast and slow pointers, swap value
 
@@ -52,7 +52,7 @@ remove all instances of ‘key’ in-place and return the new length of the arra
 - Time complexity: O(n)
 - Space complexity: O(1)
 
-# Pros and Cons and Notation:
+
 
 '''
 

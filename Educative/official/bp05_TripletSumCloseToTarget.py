@@ -5,7 +5,7 @@ If there are more than one such triplet, return the sum of the triplet with the 
 - Time complexity: O(n^2)
 - Space complexity: O(n)
 
-# Pros and Cons and Notation:
+
 
 same as bp04
 - target_sum is given

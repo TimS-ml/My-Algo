@@ -3,7 +3,7 @@
 - Time complexity: O(n)
 - Space complexity: O(n)
 
-# Pros and Cons and Notation:
+
 
 According to the characteristics of in-order traversal and post-order traversal, we analyze the restoration process of the tree
 - Find the root node (the last element) in the post-order traversal sequence

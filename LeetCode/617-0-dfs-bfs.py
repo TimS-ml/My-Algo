@@ -3,7 +3,7 @@
 - Time complexity: O(min(m, n))
 - Space complexity: O(min(m, n))
 
-# Pros and Cons and Notation:
+
 
 The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node. Otherwise, the NOT null node will be used as the node of the new tree.
 

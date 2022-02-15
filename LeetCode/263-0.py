@@ -3,7 +3,7 @@
 - Time complexity: O(logN)
 - Space complexity: O(1)
 
-# Pros and Cons and Notation:
+
 - num > 0
 '''
 

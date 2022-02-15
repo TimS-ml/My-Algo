@@ -5,7 +5,7 @@ Given an array of unsorted numbers, find all unique triplets in it that add up t
 - Time complexity: O(n^2)
 - Space complexity: O(n)
 
-# Pros and Cons and Notation:
+
 target = 0 = a + b + c
 
 for i in xxx:

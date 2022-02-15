@@ -4,7 +4,7 @@ both dfs and bfs
 - Time complexity: O(n)
 - Space complexity: O(n)
 
-# Pros and Cons and Notation:
+
 One employee has at most one direct leader and may have several subordinates.
 
 input is a list of type 'Employee'

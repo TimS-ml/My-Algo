@@ -6,7 +6,7 @@ The level order successor is the node that appears right after the given node in
 - Time complexity: O(N)
 - Space complexity: O(N)
 
-# Pros and Cons and Notation:
+
 
 '''
 

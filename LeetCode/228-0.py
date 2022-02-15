@@ -3,7 +3,7 @@
 - Time complexity: O(n)
 - Space complexity: O(1)
 
-# Pros and Cons and Notation:
+
 - we need 2 pointers
   - low and high
   - if low == high:

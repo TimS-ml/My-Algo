@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 按对遍历, 若该对不是情侣, 将其分别对应的情侣对的编号进行联通同时计数加一
 
 https://leetcode-cn.com/problems/couples-holding-hands/solution/bing-cha-ji-union-find-by-shty/

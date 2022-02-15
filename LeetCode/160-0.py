@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 - intersectVal is 0 if listA and listB do not intersect
 - intersectVal == listA[skipA] == listB[skipB] if listA and listB intersect
 - if skipA and skipB is the last node, then value compare is enough

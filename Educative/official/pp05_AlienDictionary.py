@@ -7,7 +7,7 @@ It is given that the input is a valid dictionary and there exists an ordering am
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 
 Same to pp02
 The only difference being that we need to build the graph of the characters by comparing adjacent words first, 

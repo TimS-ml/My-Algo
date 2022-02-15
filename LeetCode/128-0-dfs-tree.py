@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 Value:
 - empty node = 0
 - non-leaf node = node.val + children's val

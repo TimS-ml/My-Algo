@@ -7,25 +7,30 @@ else
     formatdir="./"
 fi
 
+# find "$formatdir" -iname '*.py' -type f -exec sed -i -e \
+#     "s/\，/, /g;\
+#     s/\。/. /g;\
+#     s/\：/: /g;\
+#     s/\、/, /g;\
+#     s/\—/-/g;\
+#     s/“/\"/g;\
+#     s/”/\"/g;\
+#     s/【/ \[/g;\
+#     s/】/\]/g;\
+#     s/「/ \[/g;\
+#     s/」/\]/g;\
+#     s/《/ \[/g;\
+#     s/》/\] /g;\
+#     s/（/(/g;\
+#     s/）/)/g;\
+#     s/！/\! /g;\
+#     s/？/\? /g;\
+#     s/；/\; /g" {} \;
+
+BEFORE="# Pros and Cons and Notation:"
+AFTER=""
 find "$formatdir" -iname '*.py' -type f -exec sed -i -e \
-    "s/\，/, /g;\
-    s/\。/. /g;\
-    s/\：/: /g;\
-    s/\、/, /g;\
-    s/\—/-/g;\
-    s/“/\"/g;\
-    s/”/\"/g;\
-    s/【/ \[/g;\
-    s/】/\]/g;\
-    s/「/ \[/g;\
-    s/」/\]/g;\
-    s/《/ \[/g;\
-    s/》/\] /g;\
-    s/（/(/g;\
-    s/）/)/g;\
-    s/！/\! /g;\
-    s/？/\? /g;\
-    s/；/\; /g" {} \;
+    "s/${BEFORE}/${AFTER}/g" {} \;
 
 # find "$formatdir" -iname '*.md' -type f -exec sed -i -e \
 #     "s/\，/, /g;\

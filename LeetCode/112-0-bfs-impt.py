@@ -3,7 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons and Notation:
+
 BFS uses a queue to save the path sum when traversing to each node
 If the node happens to be a leaf node, and the path sum is exactly equal to sum, then it means that you have found the ans
 '''

@@ -3,7 +3,7 @@
 - Time complexity: O(n)
 - Space complexity: O(1)
 
-# Pros and Cons and Notation:
+
 - if you need to modify head, add a dummy and set dummy.next = head, it will save you a lot of time
 '''
 

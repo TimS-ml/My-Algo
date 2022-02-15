@@ -3,7 +3,7 @@
 - Time complexity: O(n)
 - Space complexity: O(n) or O(1)
 
-# Pros and Cons and Notation:
+
 
 decode in to a list of num<=26
 - 1 or 2 dig split
