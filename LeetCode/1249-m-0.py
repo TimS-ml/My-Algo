@@ -27,12 +27,40 @@ After looping:
 - case3: (()   => (
 - case4: )(    => )(
 - case5: )()   => )
+- case6: ())()((( => )(((
+
+After s.remove:
+- case1: (())  => (())
+- case2: (l)c) => (lc)
+- case3: (l(c) => l(c)
+- case4: )(    => )(
+- case5: )()   => )
+- case6: ())()((( => ())(
+
+what's wrong with my this solve:
+no index infos saved during the first looping
 '''
 
 import pytest
 
 class Solution:
     def minRemoveToMakeValid(self, s: str) -> str:
+        s = list(s)
+        stack = []
+
+        for i in range(len(s)):
+            if s[i] == '(':
+                stack.append(s[i])
+            elif s[i] == ')':
+                if stack and stack[-1] == '(':
+                    stack.pop()
+                else:  # empty or ')'
+                    stack.append(s[i])
+        
+        for i in range(len(stack)):
+            s.remove(stack[i])  # remove the first appearance
+        
+        return ''.join(s)
 
 
 @pytest.mark.parametrize(
@@ -40,7 +68,8 @@ class Solution:
     [
         ("lee(t(c)o)de)", {"lee(t(c)o)de", "lee(t(co)de)", "lee(t(c)ode)"}),
         ("a)b(c)d", {"ab(c)d"}),
-        ("))((", {""})
+        ("))((", {""}),
+        ("())()(((", {"()()"})  # failed
     ]
 )
 
