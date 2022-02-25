@@ -1,7 +1,7 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(N)
+- Space complexity: O(1)
 
 A building has an ocean view if 
 all the buildings to its right have a smaller (h >= h_right) height.
@@ -16,10 +16,11 @@ tallest_li = [tallest(li, i) for i in range xxx]
 compare if li[i] > tallest_li(i)
 
 
-# Stack
+# Monotonic Stack
 Know ans[-1] = 1
 
-# Loop reverslly
+
+# Loop Reverslly (space optimization)
 Loop reverslly, we should ideally found an increasing seq
 Just mark the non increasing seq idx
 '''
@@ -28,6 +29,26 @@ from typing import List
 
 class Solution:
     def findBuildings(self, heights: List[int]) -> List[int]:
+        '''
+        Monotonic Stack
+        '''
+        n = len(heights)
+        answer = []
+        stack = []
+        
+        for current in range(n):
+            while stack and heights[current] >= stack[-1]:
+                stack.pop()
+                answer.pop()
+            stack.append(heights[current])
+            answer.append(current)
+        
+        return answer
+
+    def findBuildings_2(self, heights: List[int]) -> List[int]:
+        '''
+        Space Optimization
+        '''
         n = len(heights)
         answer = []
         max_height = -1
@@ -36,22 +57,6 @@ class Solution:
             if heights[current] > max_height:
                 answer.append(current)
                 max_height = heights[current]
-        
-        answer.reverse()  # remember to reverse it
-        return answer
-
-    def findBuildings_2(self, heights: List[int]) -> List[int]:
-        '''
-        The same as v1 but using stack and not looping reverselly
-        '''
-        n = len(heights)
-        answer = []
-        stack = []
-        
-        for current in range(n):
-            while stack and heights[current] > stack[-1]:
-                stack.pop()
-                answer.pop()
         
         answer.reverse()  # remember to reverse it
         return answer
