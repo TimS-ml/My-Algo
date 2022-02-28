@@ -58,6 +58,21 @@ class Solution:
 
         return True
 
+    def validPalindrome_2(self, s: str) -> bool:
+        def isPalindrome(l, r, s, d=1):
+            while l < r:
+                if s[l] == s[r]:
+                    l += 1 
+                    r -= 1
+                else:
+                    if d > 0:
+                        return isPalindrome(l+1, r, s, d-1) or isPalindrome(l, r-1, s, d-1)
+                    else:
+                        return False
+            return True
+
+        return isPalindrome(0, len(s)-1, s, 1)
+
 
 @pytest.mark.parametrize(
     "test_input, expected", 
@@ -70,6 +85,6 @@ class Solution:
 )
 
 def test_func(test_input, expected):
-    assert Solution().validPalindrome(test_input) == expected
+    assert Solution().validPalindrome_2(test_input) == expected
 
 # pytest.main()

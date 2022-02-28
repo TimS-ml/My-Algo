@@ -12,6 +12,7 @@
 
 '''
 
+import pytest
 from typing import List
 
 
@@ -52,8 +53,30 @@ class Solution:
 
         return helper(0)
 
-# nums, target
-# IN = ([11, 2, 15, 7], 19)
-# IN = ([2, 7, 11, 15], 9)
-IN = ([3, 2, 4], 6)
-print(Solution().twoSum_4(IN[0], IN[1]))
+    # solution 4 in stack + looping
+    def twoSum_5(self, nums: List[int], target: int) -> List[int]:
+        from collections import deque
+        cache = {}
+        stack = deque([0])  # a stack of idx
+
+        while stack:
+            idx = stack.popleft()
+            # print(idx, cache)
+            if target - nums[idx] in cache:
+                return [cache[target - nums[idx]], idx]
+            else:
+                cache[nums[idx]] = idx
+                stack.append(idx+1)
+
+
+@pytest.mark.parametrize(
+    "test_input_1, test_input_2, expected", 
+    [([3, 2, 4], 6, [1, 2]),
+     ([2, 7, 11, 15], 9, [0, 1]),
+     ([11, 2, 15, 7], 18, [0, 3])]
+)
+
+def test_func(test_input_1, test_input_2, expected):
+    assert Solution().twoSum_5(test_input_1, test_input_2) == expected
+
+# pytest.main()
