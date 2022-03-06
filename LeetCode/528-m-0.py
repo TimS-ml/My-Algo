@@ -1,19 +1,24 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(n)
+- Space complexity: O(n)
 
-Solution 1
+Solution
 random pick one element from list
-case 1: [1, 3]
-- calc ratio: [0.25, 0.75]
-- seq = [0, 1, 1, 1]
-- random pick one
+case: [1, 2, 3, 4]
+- calc ratio: [0.1, 0.2, 0.3, 0.4]
 
+- by generating a large seqence
+    - seq = [0, 1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+    - random pick one, return number (index)
 
-Solution 2
-Genrate a random number between 0 and 1
-Figure out the rang this random number is in
+- genrate a random number between 0 and 1
+    - figure out the range this random number in
+
+This solution could be optimized, check sol1 in 528-0.py
+- cumsum could be replaced by a for loop
+- no need to do element/sum, simply random * sum
+- prefix sums + binary search is a better solution
 '''
 
 from typing import List
