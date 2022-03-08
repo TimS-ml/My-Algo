@@ -27,6 +27,8 @@ case:
 "apple"
 "b"
 
+Feedback
+- compare adjacent words is correct
 - zip is an elegant but not suitable approach
 - make sure which type of hash dict are you using (by idx or by freq)
 '''
