@@ -3,13 +3,6 @@
 - Time complexity: O()
 - Space complexity: O()
 
-# Pros and Cons:
-## Pros:
-
-## Cons:
-
-# Notation:
-
 '''
 
 import pytest
@@ -24,22 +17,13 @@ class Solution:
                 return [i, nums.index(target - nums[i])]
 
     def twoSum_2(self, nums: List[int], target: int) -> List[int]:
-        d = {}
+        d = {}  # a index dict
         for key, value in enumerate(nums):
             if value in d:
                 return [d[value], key]
             d[target - value] = key
 
-    # same as sol 2
-    def twoSum_3(self, nums: List[int], target: int) -> List[int]:
-        d = {}
-        for i in range(len(nums)):
-            if nums[i] in d:
-                return [d[nums[i]], i]
-            else:
-                d[target - nums[i]] = i
-    
-    # recursion: reverse for loop of solution 3
+    # recursion: reverse for loop of solution 2
     def twoSum_4(self, nums: List[int], target: int) -> List[int]:
         cache = {}
 

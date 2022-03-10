@@ -1,6 +1,6 @@
 '''
 # Code Explain:
-N is number of no
+N is number of nodes
 - Time complexity: O(NlogN)
 - Space complexity: O(N)
 
@@ -19,7 +19,6 @@ from collections import defaultdict
 
 # Definition for a binary tree node.
 class TreeNode:
-
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
@@ -27,7 +26,6 @@ class TreeNode:
 
 
 class Solution:
-
     def verticalOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         columnTable = defaultdict(list)
         queue = deque([(root, 0)])  # the <node, column> pattern

@@ -13,27 +13,27 @@ import itertools, random
 class Solution:
     def __init__(self, w: List[int]):
         self.prefix_sums = []
-        prefix_sum = 0
+        presum = 0
         for weight in w:
-            prefix_sum += weight
-            self.prefix_sums.append(prefix_sum)
-        self.total_sum = prefix_sum
+            presum += weight
+            self.prefix_sums.append(presum)
+        self.total_sum = presum
 
     def pickIndex(self) -> int:
         target = self.total_sum * random.random()
         # run a linear search to find the target zone
-        for i, prefix_sum in enumerate(self.prefix_sums):
-            if target < prefix_sum:
+        for i, presum in enumerate(self.prefix_sums):
+            if target < presum:
                 return i
 
 class Solution2:
     def __init__(self, w: List[int]):
         self.prefix_sums = []
-        prefix_sum = 0
+        presum = 0
         for weight in w:
-            prefix_sum += weight
-            self.prefix_sums.append(prefix_sum)
-        self.total_sum = prefix_sum
+            presum += weight
+            self.prefix_sums.append(presum)
+        self.total_sum = presum
 
     def pickIndex(self) -> int:
         target = self.total_sum * random.random()
