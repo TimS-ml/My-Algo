@@ -31,21 +31,19 @@ state compresstion:
 
 class Solution:
     def numDecodings(self, s: str) -> int:
-        L = len(s)
-        f = [1] + [0] * L
-        for i in range(1, L + 1):
+        f = [1] + [0] * len(s)
+        for i in range(1, len(s) + 1):
             if s[i - 1] != '0':
                 f[i] += f[i - 1]
             if i > 1 and s[i - 2] != '0' and int(s[i - 2:i]) <= 26:
                 f[i] += f[i - 2]
-        return f[L]
+        return f[len(s)]
 
     # state compress
     def numDecodings_2(self, s: str) -> int:
-        L = len(s)
         # a = f[i-2], b = f[i-1], c = f[i]
         a, b, c = 0, 1, 0
-        for i in range(1, L + 1):
+        for i in range(1, len(s) + 1):
             c = 0
             if s[i - 1] != '0':
                 c += b
