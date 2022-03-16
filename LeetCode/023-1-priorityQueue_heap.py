@@ -2,10 +2,14 @@
 # Code Explain:
 - Time complexity: O(N logk)
 k is the number of linked lists.
-- Space complexity: O()
+- Space complexity: O(1)
 
 https://leetcode.com/problems/merge-k-sorted-lists/discuss/10511/10-line-python-solution-with-priority-queue
 https://leetcode.com/problems/merge-k-sorted-lists/discuss/1745539/Python3-PRIORITY-QUEUE-()-Explained
+
+key idea:
+- same to:
+    - given a list of k linked lists, create k pointer
 '''
 
 from queue import PriorityQueue
