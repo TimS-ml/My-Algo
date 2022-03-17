@@ -1,15 +1,24 @@
 '''
 # Code Explain:
+Sol 1
 - Time complexity: O(N logK)
 K is the number of linked lists.
 - Space complexity: O(1)
 
+Sol 2
+- Time complexity: O(N logK)
+K is the number of linked lists.
+- Space complexity: O(N)
+
+Sol 1
 Merge with Divide And Conquer
 - Pair up k lists and merge each pair
 - After the first pairing, k lists are merged into k/2 lists with average 2N/k length, 
     then k/4, k/8 and so on
 - Repeat this procedure until we get the final sorted linked list
 
+Sol 2
+Merge Sort Template
 '''
 
 # Definition for singly-linked list.
