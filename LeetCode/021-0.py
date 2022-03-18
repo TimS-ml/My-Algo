@@ -1,20 +1,13 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(N)
+- Space complexity: O(1)  for solution 3
 
 The intuitive way is create an empty linked list and append emement one by one
 l1 and l2 may have different length
     - place largest or longest element to the end
 
-sol3 is a in-place solution
-
-# Pros and Cons:
-## Pros:
-
-## Cons:
-
-# Notation:
+sol 2 is a in-place solution
 
 '''
 
@@ -41,27 +34,8 @@ class Solution:
         curr.next = l1 or l2  # place largest or longest element to the end
         return ans.next
 
-    # If you prefer not create an empty linked list
-    def mergeTwoLists_2(self, l1: ListNode, l2: ListNode) -> ListNode:
-        head = ListNode(0)
-        first = head
-        while l1 != None and l2 != None:
-            if l1.val > l2.val:
-                head.next = l2
-                l2 = l2.next
-            else:
-                head.next = l1
-                l1 = l1.next
-            head = head.next
-        if l1 == None:
-            head.next = l2
-        elif l2 == None:
-            head.next = l1
-        return first.next
-
     # This is a in-place version
-    # In-place will be slightly faster
-    def mergeTwoLists_3(self, l1: ListNode, l2: ListNode) -> ListNode:
+    def mergeTwoLists_2(self, l1: ListNode, l2: ListNode) -> ListNode:
         if None in (l1, l2):
             return l1 or l2
         ans = curr = ListNode(0)

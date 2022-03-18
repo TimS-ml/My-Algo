@@ -1,11 +1,7 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
-
-
-用两个指针 slow 与 fast 一起遍历链表
-那么当 fast 到达链表的末尾时, slow 必然位于中间
+- Time complexity: O(N)
+- Space complexity: O(1)
 '''
 
 
@@ -18,13 +14,16 @@ class ListNode:
 
 class Solution:
     def middleNode(self, head: ListNode) -> ListNode:
-        # A = [head]
-        # while A[-1].next:
-        #     A.append(A[-1].next)
-        # return A[len(A) // 2]
-
         slow = fast = head
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
         return slow
+
+    # in this case time and space are both O(N)
+    def middleNode_2(self, head: ListNode) -> ListNode:
+        nodes = [head]
+        # append all nodes to a list
+        while nodes[-1].next:
+            nodes.append(nodes[-1].next)
+        return nodes[len(nodes) // 2]

@@ -1,14 +1,7 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
-
-# Pros and Cons:
-## Pros:
-
-## Cons:
-
-# Notation:
+- Time complexity: O(N)
+- Space complexity: O(N)
 
 '''
 
