@@ -1,7 +1,7 @@
 '''
 # Code Explain:
-- Time complexity: O(N logk)
-k is the number of linked lists.
+- Time complexity: O(N logK)
+K is the number of linked lists.
 - Space complexity: O(1)
 
 https://leetcode.com/problems/merge-k-sorted-lists/discuss/10511/10-line-python-solution-with-priority-queue
