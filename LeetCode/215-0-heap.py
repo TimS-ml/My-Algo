@@ -1,29 +1,26 @@
 '''
-# Thought process
-[1] sort the list
-  - easy way: nums.sort(reverse=True), time: O(N * log(N))
-  - heapq in python: O(N * log(2N))
-    - in python, heappop will pop minimum value
-  - Merge Sort or Quick Sort: O(N * log(N))
-[2] located the kth number
-  - k start at 1
+# Code Explain:
+- Time complexity: O(N logK)
+It's O(N log2K) slower than quick sort
+- Space complexity: O(K)
 
-# Test cases
+easy way: nums.sort(reverse=True), time: O(N * log(N))
+
+Sol: heap
+in python, heappop will pop minimum value
+
+case:
 3,2,3,1,2,4,5,5,6
 4
 
 '''
 
 from typing import List
+import heapq
 from heapq import heapify, heappush, heappop
 
 
 class Solution:
-    # def findKthLargest(self, nums: List[int], k: int) -> int:
-    #     nums.sort(reverse=True)
-    #     # print(nums)
-    #     return nums[k - 1]
-
     def findKthLargest(self, nums: List[int], k: int) -> int:
         heap = []
         heapify(heap)
@@ -39,6 +36,9 @@ class Solution:
 
         # pick minimum among k largest numbers
         return heappop(heap)
+
+    def findKthLargest_2(self, nums: List[int], k: int) -> int:
+        return heapq.nlargest(k, nums)[-1]
 
 
 nums = [3, 2, 3, 1, 2, 4, 5, 5, 6]
