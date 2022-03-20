@@ -1,6 +1,7 @@
 # Links
 https://leetcode.com/problems/kth-largest-element-in-an-array/
 https://leetcode.com/problems/kth-largest-element-in-an-array/discuss/
+https://leetcode.com/problems/kth-largest-element-in-an-array/discuss/60306/Python-different-solutions-with-comments-(bubble-sort-selection-sort-heap-sort-and-quick-sort).
 
 l book p137
 https://books.halfrost.com/leetcode/ChapterFour/0200~0299/0215.Kth-Largest-Element-in-an-Array/
