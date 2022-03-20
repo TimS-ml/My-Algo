@@ -9,15 +9,18 @@ https://www.programiz.com/python-programming/methods/built-in/sorted
 
 We need reverse order, be careful with the cmp function
 
+If:
+A concat B > B concat C
+B concat C > C concat A
+
+Then:
+A concat C > C concat A
+
+Is that correct: number start with 9 should be placed first. => NO
+
 case:
-- 30 > 2
-- 48 vs 4?
-    - compare [xxx, 48, 4, xxx]
-    -         [xxx, 4, 48, xxx]
-- 448 vs 48 vs 4?
-    - compare [xxx, 48, 4, 448, xxx]
-- 0, 0
-    - output one 0
+aStr := "3" + "30" = "330"
+bStr := "30" + "3" = "303"
 '''
 
 from typing import List
