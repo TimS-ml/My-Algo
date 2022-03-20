@@ -1,7 +1,7 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(N logN)
+- Space complexity: O(n)
 
 '''
 from typing import List
