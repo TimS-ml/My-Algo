@@ -28,6 +28,7 @@ from functools import cmp_to_key
 
 class Solution:
     def largestNumber(self, nums: List[int]) -> str:
+        # input: str
         def compare(x, y):
             return int(y + x) - int(x + y)
 
@@ -39,7 +40,10 @@ class Solution:
             return ''.join(li)
 
     def largestNumber_2(self, nums: List[int]) -> str:
+        # input: str
+        # if x + y is bigger return -1: we want desc order
         compare = lambda x, y: 1 if x + y < y + x else -1
+
         li = map(str, nums)
         li = sorted(li, key=cmp_to_key(compare))
         if li[0] == '0':

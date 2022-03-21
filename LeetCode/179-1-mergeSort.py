@@ -12,9 +12,12 @@ class Solution:
         nums = self.mergeSort(nums, 0, len(nums)-1)
         return str(int("".join(map(str, nums))))
 
+    # input: int
     def compare(self, n1, n2):
-        return str(n1) + str(n2) > str(n2) + str(n1)
+        # both > or >= is ok
+        return str(n1) + str(n2) >= str(n2) + str(n1)
     
+    # this is same as normal merge sort
     def mergeSort(self, nums, l, r):
         if l > r:
             return 
@@ -25,6 +28,7 @@ class Solution:
         right = self.mergeSort(nums, mid+1, r)
         return self.merge(left, right)
         
+    # specifiy compare rules
     def merge(self, l1, l2):
         ans, i, j = [], 0, 0
         while i < len(l1) and j < len(l2):
@@ -36,3 +40,7 @@ class Solution:
                 i += 1
         ans.extend(l1[i:] or l2[j:])
         return ans
+
+
+nums = [3, 30, 34, 5, 9]
+print(Solution().largestNumber(nums))
