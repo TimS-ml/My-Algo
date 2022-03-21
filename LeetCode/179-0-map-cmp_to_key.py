@@ -1,8 +1,7 @@
 '''
 # Code Explain:
-- Time complexity: O(nlogn)
+- Time complexity: O(N logN)
 - Space complexity: O(n)
-
 
 https://docs.python.org/3/library/functools.html#functools.cmp_to_key
 https://www.programiz.com/python-programming/methods/built-in/sorted

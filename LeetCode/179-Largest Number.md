@@ -6,6 +6,8 @@ https://leetcode.com/problems/largest-number/discuss/53298/Python-different-solu
 https://books.halfrost.com/leetcode/ChapterFour/0100~0199/0179.Largest-Number/
 
 # Thought Process
+Proof of greedy will work
+https://leetcode-cn.com/problems/largest-number/solution/gong-shui-san-xie-noxiang-xin-ke-xue-xi-vn86e/
 
 # Test Cases
 
