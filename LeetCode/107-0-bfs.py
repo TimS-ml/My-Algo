@@ -1,12 +1,11 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
-
-
+- Time complexity: O(N)
+- Space complexity: O(N)
 
 '''
 
+from collections import deque
 
 # Definition for a binary tree node.
 class TreeNode:
@@ -15,27 +14,24 @@ class TreeNode:
         self.left = left
         self.right = right
 
-
 class Solution:
     def levelOrderBottom(self, root: TreeNode):
         if not root:
             return []
-        res = []
-        queue = []
 
-        queue.append(root)
+        ans = [[root.val]]
+        queue = deque([root])
         while queue:
-            size = len(queue)
-            temp = []
-            while size:
-                node = queue.pop(0)
-                temp.append(node.val)
+            levelList = []
+            for _ in range(len(queue)):
+                node = queue.popleft()
                 if node.left:
+                    levelList.append(node.left.val)
                     queue.append(node.left)
                 if node.right:
+                    levelList.append(node.right.val)
                     queue.append(node.right)
-                size -= 1
-            # 执行操作
-            # res.append(list(temp))
-            res.insert(0, list(temp))
-        return res
+            if levelList:
+                # ans.append(levelList)
+                ans.insert(0, levelList)
+        return ans
