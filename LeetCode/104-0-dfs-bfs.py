@@ -1,18 +1,15 @@
 '''
 # Code Explain:
 dfs
-- Time complexity: O(n)
+- Time complexity: O(N)
 - Space complexity: O(height of tree)
 
 bfs
-- Time complexity: O(n)
+- Time complexity: O(N)
 - Space complexity: O(width of tree)
-
-
-
 '''
-from collections import deque
 
+from collections import deque
 
 class TreeNode:
     def __init__(self, x):
@@ -23,6 +20,22 @@ class TreeNode:
 
 class Solution:
     def maxDepth_dfs(self, root) -> int:
+        ans = 0
+        def dfs(node, depth):  # return maxLen
+            if not node:
+                nonlocal ans
+                ans = max(ans, depth)
+                return
+            depth += 1
+            dfs(node.left, depth)
+            dfs(node.right, depth)
+            depth -= 1
+            return
+        
+        dfs(root, 0)
+        return ans
+
+    def maxDepth_dfs_2(self, root) -> int:
         def dfs(node):  # return maxLen
             if not node:
                 return 0
@@ -35,6 +48,7 @@ class Solution:
     def maxDepth_bfs(self, root) -> int:
         if not root:
             return 0
+
         queue = deque([root])
         ans = 0  # depth
         while queue:
