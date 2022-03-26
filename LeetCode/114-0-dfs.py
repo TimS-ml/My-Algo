@@ -1,8 +1,11 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(N)
+- Space complexity: O(N)
 
+Fun fact
+- The solution is post order (to get more info than pre-order), 
+    however the question requires output in pre-order traversal 
 '''
 
 
