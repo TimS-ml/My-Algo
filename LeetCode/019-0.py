@@ -1,6 +1,6 @@
 '''
 # Code Explain:
-- Time complexity: O(n)
+- Time complexity: O(N)
 - Space complexity: O(1)
 
 The question is:
@@ -12,14 +12,6 @@ If we wants one pass, we need to keep the i-n position
 We need dummy Nodes, for example
 [1], 1 will return []
 Or, we can add a if-else as shown in sol 3
-
-# Pros and Cons:
-## Pros:
-
-## Cons:
-
-# Notation:
-
 '''
 
 
@@ -81,31 +73,3 @@ class Solution:
 
         slow.next = slow.next.next
         return dummy.next
-
-
-def listToListNode(input):
-    # Now convert that list into linked list
-    dummyRoot = ListNode(0)
-    ptr = dummyRoot
-    for number in input:
-        ptr.next = ListNode(number)
-        ptr = ptr.next
-    ptr = dummyRoot.next
-    return ptr
-
-
-def listNodeToString(node):
-    if not node:
-        return "[]"
-    result = ""
-    while node:
-        result += str(node.val) + ", "
-        node = node.next
-    return "[" + result[:-2] + "]"
-
-
-line = [1, 2, 3, 4, 5]
-head = listToListNode(line)
-ans = Solution().xxx(head)
-out = listNodeToString(ans)
-print(out)
