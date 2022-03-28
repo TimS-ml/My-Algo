@@ -3,8 +3,6 @@
 - Time complexity: O()
 - Space complexity: O()
 
-
-
 '''
 
 from typing import List
@@ -13,11 +11,10 @@ from typing import List
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
         def binarySearch(nums, target):
-            n = len(nums) - 1
             left = 0
-            right = n
+            right = len(nums) - 1
             while (left <= right):
-                mid = (left + right) // 2
+                mid = left + (left - right) // 2
                 if nums[mid] >= target:
                     right = mid - 1
                 if nums[mid] < target:
