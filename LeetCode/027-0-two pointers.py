@@ -4,16 +4,19 @@
 - Space complexity: O(1)
 
 '''
+
 from typing import List
 
 class Solution:
     # fast slow pointers
     def removeElement(self, nums: List[int], val: int) -> int:
-        slow = 0
-        for i in range(len(nums)):
-            if nums[i] != val:
-                nums[slow] = nums[i]
+        fast, slow = 0
+        while fast < len(nums):
+            if nums[fast] != val:
+                # edge case, assign val to slow first
+                nums[slow] = nums[fast]
                 slow += 1
+            fast += 1
         return slow
 
     # this is super slow
@@ -29,6 +32,7 @@ class Solution:
         position = len(nums) - nums.count(val)
         nums.sort(key=lambda x: x != val, reverse=True)
         return position
+
 
 nums = [0, 1, 2, 2, 3, 0, 4, 2]
 val = 2
