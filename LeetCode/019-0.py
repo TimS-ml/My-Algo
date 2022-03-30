@@ -22,27 +22,28 @@ class ListNode:
 
 
 class Solution:
-    def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
-        dummy = ListNode(0)
-        dummy.next = head
-        lenth = 0
-        temp = head  # start at head position
+    # get length then move
+    # def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
+    #     dummy = ListNode(0)
+    #     dummy.next = head
+    #     lenth = 0
+    #     temp = head  # start at head position
 
-        while temp:
-            temp = temp.next
-            lenth += 1
+    #     while temp:
+    #         temp = temp.next
+    #         lenth += 1
 
-        temp = dummy
-        lenth -= n
-        while lenth > 0:
-            temp = temp.next
-            lenth -= 1
+    #     temp = dummy
+    #     lenth -= n
+    #     while lenth > 0:
+    #         temp = temp.next
+    #         lenth -= 1
 
-        temp.next = temp.next.next
-        return dummy.next
+    #     temp.next = temp.next.next
+    #     return dummy.next
 
     # two pointers
-    def removeNthFromEnd_2(self, head, n) -> ListNode:
+    def removeNthFromEnd(self, head, n) -> ListNode:
         dummy = ListNode(0)
         dummy.next = head
         fast = slow = dummy
@@ -58,7 +59,7 @@ class Solution:
         return dummy.next
 
     # two pointers, no dummy version
-    def removeNthFromEnd_3(self, head, n) -> ListNode:
+    def removeNthFromEnd_2(self, head, n) -> ListNode:
         fast = slow = head
 
         for i in range(n):  # make 'fast' n steps ahead

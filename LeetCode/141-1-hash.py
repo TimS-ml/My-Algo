@@ -1,14 +1,8 @@
 '''
 # Code Explain:
-- Time complexity: O(n)
-- Space complexity: O(n)
+- Time complexity: O(N)
+- Space complexity: O(N)
 Key point is, how to mark nodes
-
-# Pros and Cons:
-## Pros:
-- O(n) time complexity, since we only need to go through each nodes once
-## Cons:
-- O(n) space complexity
 
 # Notation:
 [1]

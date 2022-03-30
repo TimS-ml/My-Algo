@@ -21,8 +21,8 @@ class ListNode:
 class Solution:
     # Template
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
-        ans = ListNode(0)
-        curr = ans
+        dummy = ListNode(0)
+        curr = dummy
         while l1 and l2:
             if l1.val < l2.val:
                 curr.next = l1
@@ -33,17 +33,17 @@ class Solution:
             curr = curr.next
 
         curr.next = l1 or l2  # place largest or longest element to the end
-        return ans.next
+        return dummy.next
 
     # This is a in-place version
     def mergeTwoLists_2(self, l1: ListNode, l2: ListNode) -> ListNode:
         if None in (l1, l2):
             return l1 or l2
-        ans = curr = ListNode(0)
-        ans.next = l1  # l1 in-place
+        dummy = curr = ListNode(0)
+        dummy.next = l1  # l1 in-place
         while l1 and l2:
             if l1.val < l2.val:
-                l1 = l1.next  # skip these nodes, notice that ans.next = l1
+                l1 = l1.next  # skip these nodes, notice that dummy.next = l1
             else:
                 temp1 = curr.next
                 temp2 = l2.next
@@ -52,7 +52,7 @@ class Solution:
                 l2 = temp2
             curr = curr.next
         curr.next = l1 or l2
-        return ans.next
+        return dummy.next
 
 
 def listToListNode(input):

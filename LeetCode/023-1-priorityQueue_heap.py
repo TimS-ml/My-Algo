@@ -38,17 +38,26 @@ class Solution:
                 # which is a ListNode object (and this is not a comparable type)
                 queue.put((node.val, count, node))
                 count += 1
-                
+
         while not queue.empty():
-            val, _,  node = queue.get()
-            curr.next = ListNode(val)
+            # val, _, node = queue.get()
+            # curr.next = ListNode(val)
+            # curr = curr.next
+            # node = node.next
+
+            # # replace node with node.next
+            # # without count, will return error
+            # if node:
+            #     queue.put((node.val, count, node))
+            #     count += 1
+
+            _, _, curr.next = queue.get()
             curr = curr.next
-            node = node.next
 
             # replace node with node.next
             # without count, will return error
-            if node:
-                queue.put((node.val, count, node))
+            if curr.next is not None:
+                queue.put((curr.next.val, count, curr.next))
                 count += 1
                 
         return head.next
