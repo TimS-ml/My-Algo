@@ -6,12 +6,10 @@
 Pre-process of sorting is in-place, no need of extra space
 
 sol1 
-brute force:
-- go through all possibilities
-- need 3 pointers to do that
+brute force first number + 2sum
 
 sol2
-- Time complexity: O(n^2)
+- Time complexity: O(N^2)
 Creating a loop to iterate over x, then reduce to two sum with y + z = target = -x
 Use 3 pointers more cleverly: i, start, end
 - i < start < end
@@ -21,15 +19,7 @@ Use 3 pointers more cleverly: i, start, end
     - if we find that as the first element increases, the second element decreases, then we can use the two pointers to reduce the time complexity
     - if num[start] increases, then num[end] decreases, related to O(N)
 
-time complexity for num.sort(): O(N longN)
-
-
-# Pros and Cons:
-## Pros:
-
-## Cons:
-- The trade-off of sort cost us O(N logN), in this case we can ignore that
-
+time complexity for num.sort(): O(N logN)
 
 # Notation:
 0 <= nums.length <= 3000
@@ -39,18 +29,45 @@ from typing import List
 
 
 class Solution:
+    # time O(N^2)
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
-        ans = []
-        for i in range(len(nums)):
-            for j in range(i + 1, len(nums)):
-                for k in range(j + 1, len(nums)):
-                    if nums[i] + nums[j] + nums[k] == 0 and [
-                            nums[i], nums[j], nums[k]
-                    ] not in ans:
-                        ans.append([nums[i], nums[j], nums[k]])
-        return ans
 
+        def twoSumTarget(nums, start, target):
+            lo, hi = start, len(nums) - 1
+            ans = []
+            while lo < hi:
+                s = nums[lo] + nums[hi]
+                left = nums[lo]
+                right = nums[hi]
+                if s < target:
+                    while lo < hi and nums[lo] == left:
+                        lo += 1
+                elif s > target:
+                    while lo < hi and nums[hi] == right:
+                        hi -= 1
+                else:
+                    ans.append([left, right])
+                    while lo < hi and nums[lo] == left:
+                        lo += 1
+                    while lo < hi and nums[hi] == right:
+                        hi -= 1
+            return ans
+        
+        target = 0
+        ans = []
+        i = 0
+        while i < len(nums):
+            tuples = twoSumTarget(nums, i + 1, target - nums[i])
+            for subList in tuples:
+                subList.append(nums[i])
+                ans.append(subList)
+            while i < len(nums) - 1 and nums[i] == nums[i+1]:
+                i += 1
+            i += 1 
+
+        return ans
+        
     def threeSum_2(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
         ans = []

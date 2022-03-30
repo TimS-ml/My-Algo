@@ -1,14 +1,9 @@
 '''
 # Code Explain:
-- Time complexity: O(n^2)
+- Time complexity: O(N^2)
 - Space complexity: O()
 
 This is way faster since it includes bisect
-
-# Pros and Cons:
-## Pros:
-
-## Cons:
 
 # Notation:
 !!! Sort first before using bisect !!!
