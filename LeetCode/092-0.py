@@ -1,6 +1,6 @@
 '''
 # Code Explain:
-- Time complexity: O(n)
+- Time complexity: O(N)
 - Space complexity: O(1)
 
 Reverse the pointers of Linked List
@@ -22,12 +22,6 @@ And then connect the pieces together
  con  tail     prev  curr
 
   1 -> 4 -> 3 -> 2 -> 5
-
-# Pros and Cons:
-## Pros:
-- Don't need to change the data in the node
-
-## Cons:
 
 # Notation:
 - [1] Pay attention to the boundaries

@@ -1,7 +1,7 @@
 '''
 # Code Explain:
-- Time complexity: O(n)
-- Space complexity: O(n)
+- Time complexity: O(N)
+- Space complexity: O(N)
     - The extra space comes from implicit stack space due to recursion, up to n levels deep
 
 In a recursive, we need:
@@ -12,14 +12,6 @@ In a recursive, we need:
         - self.reverseList(head.next)
     [3] terminating senario
         - end of linked list or only one node left
-
-# Pros and Cons:
-## Pros:
-
-## Cons:
-
-# Notation:
-
 '''
 
 
@@ -42,13 +34,15 @@ class Solution:
     #      |    |
     #     head prev
     # actually you don't change `prev`
-    # it's more like a reverse for loop
     # [1] use: prev = reverse(head.next) to reach the end of the LinkedList
     # [2] use: return prev to go back step by step
     def reverseList_2(self, head: ListNode) -> ListNode:
         def reverse(head):  # return previous node
+            # base case
             if not head or not head.next:
                 return head
+
+            # state transfer
             prev = reverse(head.next)
             head.next.next = head  # add pointer: i <- i+1
             head.next = None  # remove pointer: i -> i+1

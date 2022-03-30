@@ -1,6 +1,6 @@
 '''
 # Code Explain:
-- Time complexity: O(n)
+- Time complexity: O(N)
 - Space complexity: O(1)
 
 Reverse the pointers of Linked List
@@ -12,14 +12,6 @@ Empty Linked List:
     return head
 Start of Linked List:
     we initialized prev to None
-
-# Pros and Cons:
-## Pros:
-
-## Cons:
-
-# Notation:
-
 '''
 
 

@@ -1,5 +1,5 @@
 # Links
-https://leetcode-cn.com/problems/reverse-linked-list/
+https://leetcode.com/problems/reverse-linked-list/
 https://leetcode.com/problems/reverse-linked-list/discuss/
 https://leetcode.com/problems/reverse-linked-list/solution/
 

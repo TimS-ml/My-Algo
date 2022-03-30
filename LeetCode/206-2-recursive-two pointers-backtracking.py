@@ -1,37 +1,19 @@
 '''
 # Code Explain:
-- Time complexity: O(n)
-- Space complexity: O(n)
+- Time complexity: O(N)
+- Space complexity: O(N)
     - The extra space comes from implicit stack space due to recursion, up to n levels deep
 
-What we can do there is to simply have two pointers, one at the beginning of the array and one at the end ('l' and 'r').
-We repeatedly swap elements pointed to by these two pointers and we move both the pointers towards the center of the array.
-
-However, we don't have any backward pointers in our linked list and neither do we have any indexes. (Question requires do it in one-pass)
-So, we rely on recursion to simulate the backward pointer. We need a function to do the job.
+This is inspired by lc 92
 
 In a recursive, we need:
     [1] a simple base case(s), not a terminating senario
+        - head.next.next = head  # add pointer: i <- i+1
+        - head.next = None  # remove current pointer
     [2] a set of rules: recurrence relation
+        - self.reverseList(head.next)
     [3] terminating senario
-
-Steps:
-- Move l and r to m
-- Move r to n
-- Backtracking r + Move l
-    - Swap values
-    - Until r crossed l
-
-# Pros and Cons:
-## Pros:
-- Only need 2 pointers
-- No special cases
-
-## Cons:
-- We need to change the value of Linked List
-
-# Notation:
-- recurse_and_reverse(r, m-1, n-1) separate the function into two parts
+        - end of linked list or only one node left
 '''
 
 
@@ -42,14 +24,20 @@ class ListNode:
 
 
 class Solution:
-    def reverseBetween(self, head: ListNode, m: int, n: int) -> ListNode:
-        if not head:
-            return None
+    def reverseList(self, head: ListNode) -> ListNode:
+        if not head or not head.next:
+            return head
+
+        temp = head
+        n = 0
+        while temp:
+            temp = temp.next
+            n += 1
 
         l, r = head, head
         stop = False
 
-        def recurse_and_reverse(r, m, n):
+        def recurse_and_reverse(r, n):
             nonlocal l, stop
 
             # Part 1
@@ -59,10 +47,8 @@ class Solution:
 
             # move to the proper node
             r = r.next
-            if m > 1:
-                l = l.next
 
-            recurse_and_reverse(r, m - 1, n - 1)
+            recurse_and_reverse(r, n - 1)
 
             # Part 2
             if l == r or l == r.next:
@@ -73,7 +59,7 @@ class Solution:
                 # r moves one step back via backtracking
                 l = l.next
 
-        recurse_and_reverse(r, m, n)
+        recurse_and_reverse(r, n)
         return head
 
 
