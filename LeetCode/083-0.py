@@ -1,10 +1,7 @@
 '''
 # Code Explain:
-- Time complexity: O(n)
+- Time complexity: O(N)
 - Space complexity: O(1)
-
-
-Do not try to jump n nodes once, it will bring you a lot of troubles
 '''
 
 
@@ -19,26 +16,14 @@ class Solution:
         if not head or not head.next:
             return head
 
-        curr, nxt = head, head.next
-        while curr.next:
-            if curr.val == nxt.val:
-                curr.next = nxt.next
-                nxt = nxt.next
+        slow, fast = head, head.next
+        while slow.next:
+            if slow.val == fast.val:
+                slow.next = fast.next
+                fast = fast.next
             else:
-                curr = curr.next
-                nxt = nxt.next
-        return head
-
-    def deleteDuplicates_2(self, head: ListNode) -> ListNode:
-        if not head or not head.next:
-            return head
-
-        curr = head
-        while curr.next:
-            if curr.val == curr.next.val:
-                curr.next = curr.next.next
-            else:
-                curr = curr.next
+                slow = slow.next
+                fast = fast.next
         return head
 
 
