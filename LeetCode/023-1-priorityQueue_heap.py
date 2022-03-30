@@ -37,7 +37,7 @@ class Solution:
                 # since the queue module will compare the second element in the priority queue
                 # which is a ListNode object (and this is not a comparable type)
                 queue.put((node.val, count, node))
-                count+=1
+                count += 1
                 
         while not queue.empty():
             val, _,  node = queue.get()
@@ -49,12 +49,12 @@ class Solution:
             # without count, will return error
             if node:
                 queue.put((node.val, count, node))
-                count +=1
+                count += 1
                 
         return head.next
 
     # a heap implementation
-    def mergeKLists2(self, lists: List[ListNode]) -> ListNode:
+    def mergeKLists_2(self, lists: List[ListNode]) -> ListNode:
         curr = head = ListNode(0)
         heap = []
         count = 0

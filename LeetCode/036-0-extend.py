@@ -4,7 +4,6 @@ sol1 (loop once):
 - Time complexity: O(1)
 - Space complexity: O(1)
 
-
 - how to convert to list
 - how to find dupl
 '''

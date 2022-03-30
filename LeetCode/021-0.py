@@ -19,6 +19,7 @@ class ListNode:
 
 
 class Solution:
+    # Template
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         ans = ListNode(0)
         curr = ans

@@ -1,21 +1,14 @@
 '''
 # Code Explain:
-- Time complexity: O(N logN)
+- Time complexity: O(N logN)  # slow!!!
 - Space complexity: O(N)
 
 each linked-list is sorted in ascending order
 
-sol 1
 bring all nudes into a large list
 sort (N logN)
 conenct the list
 go over the node 3 times: append to list + sort + connect
-
-
-sol 2
-O(kN) where k is the number of linked lists.
-two pointer, keep a sorted long linked list
-go over all nodes even more times
 '''
 
 

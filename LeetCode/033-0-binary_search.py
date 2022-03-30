@@ -1,6 +1,6 @@
 '''
 # Code Explain:
-- Time complexity: O(logn)
+- Time complexity: O(logN)
 - Space complexity: O(1)
 
 
