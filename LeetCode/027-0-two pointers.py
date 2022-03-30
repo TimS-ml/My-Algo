@@ -10,7 +10,7 @@ from typing import List
 class Solution:
     # fast slow pointers
     def removeElement(self, nums: List[int], val: int) -> int:
-        fast, slow = 0
+        fast, slow = 0, 0
         while fast < len(nums):
             if nums[fast] != val:
                 # edge case, assign val to slow first

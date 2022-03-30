@@ -2,9 +2,6 @@
 # Code Explain:
 - Time complexity: O()
 - Space complexity: O()
-
-
-
 '''
 
 from typing import List
