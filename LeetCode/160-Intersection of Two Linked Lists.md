@@ -1,5 +1,5 @@
 # Links
-https://leetcode-cn.com/problems/intersection-of-two-linked-lists/
+https://leetcode.com/problems/intersection-of-two-linked-lists/
 
 # Thought Process
 https://leetcode-cn.com/problems/intersection-of-two-linked-lists/solution/xiang-jiao-lian-biao-by-leetcode-solutio-a8jn/

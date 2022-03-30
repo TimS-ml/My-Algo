@@ -1,7 +1,7 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(N)
+- Space complexity: O(1)
 
 
 - intersectVal is 0 if listA and listB do not intersect
@@ -19,6 +19,9 @@ sol2:
 2 pointers
 After pointer A move to the end, move it to B
 When the pointer of the longer linked list points to the head of the shorter linked list, the length difference is eliminated
+
+
+!!! Not intersect = intersect at None
 '''
 
 
