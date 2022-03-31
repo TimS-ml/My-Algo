@@ -28,7 +28,7 @@ class Solution:
     #     return ans   #     return ans
 
     def subarraySum(self, nums: List[int], k: int) -> int:
-        preS = []
+        preS = [0]
         s = 0
         ans = 0
         
@@ -44,10 +44,16 @@ class Solution:
         
         print(preS)
         
-        for i in range(len(nums)):
+        freq[0] = 1
+
+        for i in range(1, len(nums)+1):
+            # for j in range(0, i):
+            #     if preS[i] - preS[j] == k:
+            #         ans += 1
             target = preS[i] - k
             if target in freq:
                 ans += freq[target]
-            freq[target] = freq.get(target, 0) + 1
-        
+            freq[preS[i]] = freq.get(preS[i], 0) + 1
+            
+        print(freq)
         return ans
