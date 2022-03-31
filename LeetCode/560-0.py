@@ -1,7 +1,7 @@
 '''
 # Code Explain:
-- Time complexity: O(n)
-- Space complexity: O(n)
+- Time complexity: O(N)
+- Space complexity: O(N)
 
 input:     [3, 4,  7,  2, -3,  1,  4,  2,  1], K = 7
 presum: [0, 3, 7, 14, 16, 13, 14, 18, 20, 21]
