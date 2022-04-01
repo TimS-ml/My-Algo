@@ -3,15 +3,13 @@
 - Time complexity: O()
 - Space complexity: O()
 
-
-
 '''
 
 import collections
 
-
 class Solution:
-    def minWindow(self, s: str, t: str) -> str:
+
+    def minWindow_2(self, s: str, t: str) -> str:
         score = 0
 
         wanted = collections.Counter(t)  # for T could be "AABC"
@@ -53,8 +51,6 @@ class Solution:
         return s[start:end + 1]
 
 
-# Output: "BANC"
-S = "ADOBECODEBANC"
-T = "AABC"  # this will not trigger the while loop
-# T = "ABC"
-print(Solution().minWindow(S, T))
+s = "ADOBECODEBANC"
+t = "ABC"
+print(Solution().minWindow(s, t))
