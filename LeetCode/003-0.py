@@ -14,22 +14,31 @@ case: 'abcabcbb'
      new start = old start + 1
                = 0 + 1
 
-# Pros and Cons:
-## Pros:
-
-## Cons:
-
-# Notation:
-
 '''
 import collections
 
-# import pysnooper
-
-
-# @pysnooper.snoop()
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
+        left, right = 0, 0
+        ans = 0
+        win = dict()  # window freq dict
+
+        while right < len(s):
+            c = s[right]
+            right += 1
+
+            win[c] = win.get(c, 0) + 1
+
+            while win[c] > 1:
+                d = s[left]
+                left += 1
+                win[d] -= 1
+
+            ans = max(ans, right - left)
+
+        return ans
+
+    def lengthOfLongestSubstring_2(self, s: str) -> int:
         dic = {}
         ans = 0
         start = 0
@@ -48,7 +57,7 @@ class Solution:
             dic[s[i]] = i  # save the position to dict
         return ans
 
-    def lengthOfLongestSubstring_2(self, s: str) -> int:
+    def lengthOfLongestSubstring_3(self, s: str) -> int:
         dic = {}
         ans = 0
         start = 0
@@ -62,7 +71,8 @@ class Solution:
             dic[c] = i
         return ans
 
-    def lengthOfLongestSubstring_3(self, s: str) -> int:
+    # this is close to sol 1
+    def lengthOfLongestSubstring_4(self, s: str) -> int:
         dic = collections.defaultdict(int)
         ans = 0
         length = 0

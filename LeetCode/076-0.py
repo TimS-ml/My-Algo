@@ -11,7 +11,8 @@ import collections
 
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
-        dic = dict()  # target freq dict, unchange after init
+        # 'need', no need to be a dict in this case
+        need = dict() # char needed, unchange
         win = dict()  # window freq dict
         left, right = 0, 0
 
@@ -20,18 +21,18 @@ class Solution:
 
         # hash init
         for char in t:
-            dic[char] = dic.get(char, 0) + 1
+            need[char] = need.get(char, 0) + 1
 
         while right < len(s):
             c = s[right]
             right += 1
 
-            if c in dic:
+            if c in need:
                 win[c] = win.get(c, 0) + 1
-                if win[c] == dic[c]:
+                if win[c] == need[c]:
                     valid += 1
 
-            while valid == len(dic):
+            while valid == len(need):
                 if right - left < minLen:
                     minStart = left
                     minLen = right - left
@@ -40,8 +41,8 @@ class Solution:
                 d = s[left]
                 left += 1
 
-                if d in dic:
-                    if win[d] == dic[d]:
+                if d in need:
+                    if win[d] == need[d]:
                         valid -= 1
                     win[d] -= 1
 
