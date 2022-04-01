@@ -1,5 +1,10 @@
-# https://leetcode-cn.com/problems/spiral-matrix/
-# this is a stupid official anster
+'''
+# Code Explain:
+- Time complexity: O()
+- Space complexity: O()
+
+'''
+
 from typing import List
 
 

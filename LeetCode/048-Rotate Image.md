@@ -1,5 +1,5 @@
 # Links
-# https://leetcode-cn.com/problems/rotate-image/
+# https://leetcode.com/problems/rotate-image/
 
 # Thought Process
 The reason why we can use flip + transpose:

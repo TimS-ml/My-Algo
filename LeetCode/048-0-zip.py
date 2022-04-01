@@ -3,8 +3,6 @@
 - Time complexity: O()
 - Space complexity: O()
 
-
-
 Flip + Transpose
 '''
 
