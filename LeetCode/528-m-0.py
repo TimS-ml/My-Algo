@@ -1,7 +1,7 @@
 '''
 # Code Explain:
-- Time complexity: O(n)
-- Space complexity: O(n)
+- Time complexity: O(logN)
+- Space complexity: O(N)
 
 Solution
 random pick one element from list
