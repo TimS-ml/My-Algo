@@ -37,8 +37,16 @@ After s.remove:
 - case5: )()   => )
 - case6: ())()((( => ())(
 
-what's wrong with my this solve:
-no index infos saved during the first looping
+
+# Feedback
+This is wrong
+You should save idx of what parentheses needed to be remove 
+Next time use stack + save idx, it's easier
+
+How to find unmatched left parentheses  (count > 0)? Remove fist appearance is wrong
+    case: ( () (, delete 1st and 3rd
+    https://youtu.be/U1nwBAIQ-oc?t=420
+How to find unmatched right parentheses (count < 0)? Remove directly
 '''
 
 import pytest
