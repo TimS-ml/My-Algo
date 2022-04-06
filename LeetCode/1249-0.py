@@ -4,6 +4,9 @@ sol 1
 - Time complexity: O(N)
 - Space complexity: O(N)
 
+sol 1
+- Time complexity: O(N)
+- Space complexity: O(1)
 '''
 
 class Solution:
@@ -27,6 +30,7 @@ class Solution:
 
     # two pass without stack
     def minRemoveToMakeValid_2(self, s: str) -> str:
+        s = list(s)
         del_idx = set()
         stack = []  # save idx for `(` only
 
@@ -40,9 +44,13 @@ class Solution:
                     stack.pop()
 
         del_idx = del_idx.union(set(stack))  # idx of `(` and `)`
-        ans = []
-        for i, c in enumerate(s):
-            if i not in del_idx:
-                ans.append(c)
 
-        return ''.join(ans)
+        while stack:
+            s[stack.pop()] = ''  # remove `(` based on idx
+
+        # ans = []
+        # for i, c in enumerate(s):
+        #     if i not in del_idx:
+        #         ans.append(c)
+
+        return ''.join(s)
