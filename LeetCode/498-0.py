@@ -1,11 +1,22 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(N) or O(ROW x COL)
+- Space complexity: O(1)
 
+A few things to start if you don't have a clue:
+- We can turn zigzag traverse to single direction traverse 
+    - How the start point move? [ROW, 0] first, then [last ROW, COL], total ROW + COL - 1
+    - Why '-1'? Because ROW and COL overlap at corner
+- Total number of element: ROW x COL
+- Total number of traverse: ROW + COL - 1
+    - even idx: up right
+    - odd idx: down left
+- How to get r, c from current iter? Does r + c fixed?
+    - For up right: row-- and col++
 '''
 
 from typing import List
+import collections
 
 
 class Solution:
@@ -13,45 +24,45 @@ class Solution:
         if not matrix or not matrix[0]:
             return []
 
-        Y, X = len(matrix), len(matrix[0])
-        ans, temp = [], []
-
-        for i in range(X + Y - 1):
-            temp.clear()
+        ROW, COL = len(matrix), len(matrix[0])
+        ans, traverse = [], []
+        
+        # total iter: row + col - 1
+        for i in range(COL + ROW - 1):
+            traverse.clear()
             # Elements in the first row and the last column are the respective heads.
-            # r, c = 0 if i < X else i - X + 1, i if i < X else X - 1
-            if i < X:
+            # r, c = 0 if i < COL else i - COL + 1, i if i < COL else COL - 1
+            if i < COL:
                 r = 0
                 c = i
             else:
-                r = i - X + 1
-                c = X - 1
-            print(r, c)
+                r = i - COL + 1
+                c = COL - 1
 
-            while r < Y and c > -1:
-                temp.append(matrix[r][c])
+            while r < ROW and c > -1:
+                traverse.append(matrix[r][c])
                 r += 1
                 c -= 1
-            print(temp)
 
             if i % 2 == 0:
-                ans.extend(temp[::-1])  # reverse
+                ans.extend(traverse[::-1])  # reverse
             else:
-                ans.extend(temp)
+                ans.extend(traverse)
         return ans
 
 
+    # to avoid traverse[::-1]
     def findDiagonalOrder_2(self, matrix: List[List[int]]) -> List[int]:
         if not matrix or not matrix[0]:
             return []
 
-        Y, X = len(matrix), len(matrix[0])
+        ROW, COL = len(matrix), len(matrix[0])
         ans = []
 
-        for i in range(X + Y - 1):
+        for i in range(COL + ROW - 1):
             # Elements in the first row and the last column are the respective heads.
-            r = 0 if i < X else i - X + 1
-            c = i if i < Y else Y - 1
+            r = 0 if i < COL else i - COL + 1
+            c = i if i < ROW else ROW - 1
 
             if i % 2 == 1:
                 for j in range(r, c + 1):
@@ -61,26 +72,26 @@ class Solution:
                     ans.append(matrix[j][i - j])
         return ans
 
+
+    # Double loop is slow avoid using this solution
     def findDiagonalOrder_3(self, matrix: List[List[int]]) -> List[int]:
         if not matrix or not matrix[0]:
             return []
 
-        Y, X = len(matrix), len(matrix[0])
+        ROW, COL = len(matrix), len(matrix[0])
 
         ans = []
-        dic = defaultdict(list)  # empty dict
-        print(dic)
+        traverse = collections.defaultdict(list)
 
-        for i in range(Y):
-            for j in range(X):
+        for i in range(ROW):
+            for j in range(COL):
                 # Elements in the first row and the last column are the respective heads.
-                dic[i + j + 1].append(matrix[i][j])
-            print(dic)
+                traverse[i + j + 1].append(matrix[i][j])
 
-        for i in sorted(dic.keys()):
+        for i in sorted(traverse.keys()):
             if i % 2 == 1:
-                dic[i].reverse()  # reverse
-            ans.extend(dic[i])
+                traverse[i].reverse()  # reverse
+            ans.extend(traverse[i])
         return ans
 
 
