@@ -28,6 +28,7 @@ class Solution:
         return helper(0, len(s)-1, k)
 
     # a better DFS
+    # a while loop inside helper will reduce the call of recursion thus increase the speed
     def isValidPalindrome_2(self, s: str, k: int) -> bool:
         if s == s[::-1]: return True
         

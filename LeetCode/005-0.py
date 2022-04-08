@@ -8,7 +8,7 @@ Palindrome: two pointers
 
 
 class Solution:
-    def longestPalindromeo_2(self, s: str) -> str:
+    def longestPalindromeo(self, s: str) -> str:
         # start at middle, move to the left and right end
         # if same start l, r => find odd len sub str
         # if l + 1 = r, then find even len sub str
@@ -20,13 +20,14 @@ class Solution:
         
         ans = ''
         for i in range(len(s)):
-            s1 = find_palidrome(s, i, i)
-            s2 = find_palidrome(s, i, i+1)
+            s1 = find_palidrome(s, i, i)  # aba
+            s2 = find_palidrome(s, i, i+1)  # abba
             if len(ans) < len(s1):
                 ans = s1
             if len(ans) < len(s2):
                 ans = s2
         return ans
+
 
     def longestPalindromeo_2(self, s: str) -> str:
         l = r = 0
