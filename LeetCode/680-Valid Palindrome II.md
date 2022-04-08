@@ -1,9 +1,9 @@
 # Links
 https://leetcode.com/problems/valid-palindrome-ii/
-
+https://www.youtube.com/watch?v=hvI-rJyG4ik
 
 # Thought Process
-https://leetcode-cn.com/problems/valid-palindrome-ii/solution/ji-yu-yan-ge-yan-zheng-hui-wen-chuan-he-fa-xing-de/
+https://leetcode-cn.com/problems/valid-palindrome-ii/solution/cong-liang-ce-xiang-zhong-jian-zhao-dao-bu-deng-de/
 
 with N del
 You need recursion
