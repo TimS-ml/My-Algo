@@ -42,8 +42,41 @@ class Solution:
             ans.append(colVals)
         return ans
 
-    # dfs
+    # a better bfs
     def verticalTraversal_2(self, root: Optional[TreeNode]) -> List[List[int]]:
+        colTable = defaultdict(list)
+        queue = deque([(root, 0, 0)])  # the <node, row, col> pattern
+
+        min_column = max_column = 0
+        while queue:
+            node, row, col = queue.popleft()
+
+            if node is not None:
+                # if you are using normal dict, you may need to init first
+                colTable[col].append((row, node.val))
+
+                min_column = min(min_column, column)
+                max_column = max(max_column, column)
+
+                queue.append((node.left, 
+                              row + 1, col - 1))
+                queue.append((node.right, 
+                              row + 1, col + 1))
+
+        ans = []
+        # return [colTable[x] for x in sorted(colTable.keys())]
+        for col in range(min_column, max_column + 1):
+            # sort first by 'row', then by 'value', in ascending order
+            ans.append([val for row, val in sorted(colTable[col])])
+
+            # actually the same...
+            # colTable[col].sort(key=lambda x:[x[0], x[1]])  # this line is different than 314
+            # colVals = [val for row, val in colTable[col]]
+            # ans.append(colVals)
+        return ans
+
+    # dfs
+    def verticalTraversal_3(self, root: Optional[TreeNode]) -> List[List[int]]:
         # why this is faster? Maybe because the min max comparison?
         colTable = defaultdict(list)
         visited = []  # Set to keep track of visited nodes
