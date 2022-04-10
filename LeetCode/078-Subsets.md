@@ -1,5 +1,5 @@
 # Links
-https://leetcode-cn.com/problems/subsets/description/
+https://leetcode.com/problems/subsets/description/
 https://leetcode.com/problems/subsets/solution/
 https://leetcode.com/problems/subsets/discuss/
 

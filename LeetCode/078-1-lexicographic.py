@@ -9,10 +9,6 @@ For instance, the bitmask 0..00 (all zeros) corresponds to an empty subset, and 
 
 Hence to solve the initial problem, we just need to generate n bitmasks from 0..00 to 1..11.
 
-# Pros and Cons:
-## Pros:
-
-## Cons:
 The real problem here is how to deal with zero left padding, because one has to generate bitmasks of fixed length, i.e. 001 and not just 1
 
 ```
