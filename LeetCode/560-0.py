@@ -23,6 +23,7 @@ class Solution:
         for num in nums:
             presum += num
 
+            # [1] find presum-k
             if presum - k in sum_dict:
                 # to determine the sum of elements for the subarray nums[i:j], 
                 #   we can directly use sum[j+1] - sum[i]
@@ -30,8 +31,15 @@ class Solution:
                 # then the gap between 14(presum-k) and 21 is your target
                 # you only need to worry about how many times this 14 apprears
                 # attention: add 0 to sum_dict!!!
+                # note: we don't care the presum-k after current idx!!! 
+                #   even sum_dict[presum-k] may change after looping
+                #   i.e.: 14, xxx, 14, xxx, 21, xxx, 14, 21
+                #                           |
+                #      at this position, you only care about the '14' before
+                #      e.g. the sum_dict[14] (=2) at current idx
                 ans += sum_dict[presum - k]
             
+            # [2] update presum
             sum_dict[presum] = sum_dict.get(presum, 0) + 1
         return ans
 
