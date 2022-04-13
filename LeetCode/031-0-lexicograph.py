@@ -4,27 +4,25 @@
 - Space complexity: O(1)
 
 # Solution
+
+case 
+idx    0  1  2  3  4
+in  = [2, 5, 4, 3, 1]
+out = [3, 1, 2, 4, 5]
+
 - Find the largest index k such that nums[k] < nums[k + 1]. If no such index exists, just reverse nums and done.
+    - (the peak with least weightage), k = 0
 - Find the largest index l > k such that nums[k] < nums[l].
-- Swap nums[k] and nums[l].
-- Reverse the sub-array nums[k + 1:].
-
-# Detail
-a = [2, 5, 4, 3, 1]
-     |  |     |
-    idx_desc-1 idx_desc     i
-
-- find a[idx_desc] > a[idx_desc-1] *from right*
-    - 2, 5
-- replace a[idx_desc-1] with number just larger than itself among the numbers lying to its right
-    - swap 2, 3 
-    - now we have correct number at idx_desc-1
-        [3, 5, 4, 2, 1]
-- reverse the numbers following a[idx_desc-1]
+    - l = 3
+- Swap nums[k] and nums[l]
+    - [3, 5, 4, 2, 1]
+- Reverse the sub-array nums[k + 1:]
+    - reverse 5~1, the goal is to make it in ASC order
     - [3, 1, 2, 4, 5]
 
+
 # Notation:
-remember to sort !!!
+Special case: Desc order => reverse
 lc 46: no duplication version
 '''
 
@@ -33,26 +31,32 @@ import bisect
 
 
 class Solution:
-    def nextPermutation(self, nums: List[int]) -> None:
-        idx_desc = i = len(nums) - 1
-        while idx_desc > 0 and nums[idx_desc - 1] >= nums[idx_desc]:
-            idx_desc -= 1
-        if idx_desc == 0:  # nums are in descending order
-            nums.reverse()
-            return
-
-        idx_desc = idx_desc - 1  # find the last "ascending" position
-        while nums[i] <= nums[idx_desc]:
+    def nextPermutation(self, nums):
+        i = len(nums)-1
+        while i > 0 and nums[i-1] >= nums[i]:
             i -= 1
 
-        nums[idx_desc], nums[i] = nums[i], nums[idx_desc]
-        l, r = idx_desc + 1, len(nums) - 1  # reverse the second part
+        # nums are in descending order
+        if i == 0:
+            nums.reverse()
+            return 
 
+        # find the last "ascending" position
+        k = i - 1
+        j = len(nums)-1
+        while nums[j] <= nums[k]:
+            j -= 1
+
+        # swap
+        nums[k], nums[j] = nums[j], nums[k]  
+
+        # reverse the second part
+        l, r = k+1, len(nums)-1  
         while l < r:
             nums[l], nums[r] = nums[r], nums[l]
-            l += 1
-            r -= 1
+            l +=1 ; r -= 1
 
+    # not recommand
     def nextPermutation_2(self, nums: List[int]) -> None:
         idx_desc = len(nums) - 1
         while idx_desc > 0:
