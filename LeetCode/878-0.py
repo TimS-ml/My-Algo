@@ -4,6 +4,7 @@
 - Space complexity: O(1)
 
 [1] Get gcd (greatest common divisor) and lcm (least common multiple) of (A, B).
+https://www.geeksforgeeks.org/gcd-in-python/
 (a, b) = (A, B) while b > 0: (a, b) = (b, a % b)
 then, gcd = a and lcm = A * B / a
 

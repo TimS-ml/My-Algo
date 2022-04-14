@@ -36,3 +36,32 @@ class Solution:
             ans.append(col[c])
 
         return ans
+
+    def verticalOrder_2(self, root: Optional[TreeNode]) -> List[List[int]]:
+        # node, col
+        q = deque([(root, 0)])
+        colDic = {}
+        
+        minCol, maxCol = 0, 0
+        while q:
+            node, col = q.popleft()
+            print(node, col)
+            if col in colDic:
+                # details!!! val = col.append(xxx), then val = None
+                colDic[col].append(node.val)
+            else:
+                colDic[col] = [node.val]
+            
+            minCol = min(minCol, col)
+            maxCol = max(maxCol, col)
+            if node.left:
+                q.append((node.left, col-1))
+            if node.right:
+                q.append((node.right, col+1))
+        
+        ans = []
+        for col in range(minCol, maxCol+1):  # maxCol + 1!!!
+            print(colDic[col])
+            ans.append(colDic[col])
+            
+        return ans
