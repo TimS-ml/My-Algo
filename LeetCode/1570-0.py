@@ -1,8 +1,24 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+Let N be the length of the input array and L1, L2 be the number of non-zero elements.
 
+Sol 1
+Init
+- Time complexity: O(N)
+- Space complexity: O(L)
+
+Dot (v1.dot(v2))
+- Time complexity: O(L1)
+- Space complexity: O(1)
+
+Sol 1
+Init
+- Time complexity: O(N)
+- Space complexity: O(L)
+
+Dot (v1.dot(v2))
+- Time complexity: O(L1 + L2)
+- Space complexity: O(1)
 '''
 
 # hash dic

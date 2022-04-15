@@ -20,21 +20,27 @@ class Solution:
             left -> node -> right
             and links all nodes into DLL
             """
+            # the 'last' node is the node that we create double link with curr node
+            # the 'first' node is the node that we create circle after recursion
             nonlocal last, first
             if node:
                 # left
                 helper(node.left)
-                # node 
+
+                # middle node 
                 if last:
                     # link the previous node (last)
                     # with the current one (node)
                     last.right = node
                     node.left = last
+                    last = node
                 else:
+                    # init, only run once
                     # keep the smallest node
                     # to close DLL later on
                     first = node        
-                last = node
+                    last = node
+
                 # right
                 helper(node.right)
         
