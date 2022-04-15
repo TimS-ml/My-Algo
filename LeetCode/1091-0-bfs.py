@@ -13,25 +13,29 @@ class Solution:
         max_row = len(grid) - 1
         max_col = len(grid[0]) - 1
         directions = [
-            (-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
+            (1, 0), (-1, 0), (0, 1), (0, -1),  # typical 4 directions
+            (1, 1), (1, -1), (-1, 1), (-1, -1)
+        ]
         
         # Helper function to find the neighbors of a given cell.
         def get_neighbours(row, col):
-            for row_difference, col_difference in directions:
-                new_row = row + row_difference
-                new_col = col + col_difference
+            for row_diff, col_diff in directions:
+                new_row = row + row_diff
+                new_col = col + col_diff
+
+                # boundarys
                 if not(0 <= new_row <= max_row and 0 <= new_col <= max_col):
                     continue
                 if grid[new_row][new_col] != 0:
                     continue
-                yield (new_row, new_col)
+                yield (new_row, new_col)  # using yield will return all outputs in for loop
         
         # Check that the first and last cells are open. 
         if grid[0][0] != 0 or grid[max_row][max_col] != 0:
             return -1
         
         # Set up the BFS.
-        queue = deque([(0, 0, 1)])
+        queue = deque([(0, 0, 1)])  # edge: start count 1, not 0
         visited = {(0, 0)}
         
         # Do the BFS.
@@ -58,9 +62,9 @@ class Solution:
         
         # Helper function to find the neighbors of a given cell.
         def get_neighbours(row, col):
-            for row_difference, col_difference in directions:
-                new_row = row + row_difference
-                new_col = col + col_difference
+            for row_diff, col_diff in directions:
+                new_row = row + row_diff
+                new_col = col + col_diff
                 if not(0 <= new_row <= max_row and 0 <= new_col <= max_col):
                     continue
                 if grid[new_row][new_col] != 0:

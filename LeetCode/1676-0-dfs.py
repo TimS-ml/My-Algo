@@ -3,28 +3,18 @@
 - Time complexity: O(N)
 - Space complexity: O(N)
 
-case 1
-p in lca.l and q in lca.r
-
-case 2
-q in p.l or p.r
 '''
 
-# Definition for a binary tree node.
-class TreeNode:
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
-
 class Solution:
-    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+    def lowestCommonAncestor(self, root: 'TreeNode', nodes: 'List[TreeNode]') -> 'TreeNode':
+        N = set(nodes)  # a set of TreeNode
+
         def helper(node):
             if not node:
                 return None
 
             # terminate, case 2, find 1 node
-            if node.val == p.val or node.val == q.val:
+            if node in N:
                 return node
 
             l = helper(node.left)
