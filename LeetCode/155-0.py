@@ -3,19 +3,15 @@
 - Time complexity: O(1)
 - Space complexity: O(n)
 
-
-
 stack =          [-2,  0, -3]
 min_s = [INT_MAX, -2, -2, -3]
 
-The idea is: if -3 is the top of stack, 
-    then -2,0,-3 all in stack
-    then the min val is -3
 '''
 
 import math
 
 
+# two stacks
 class MinStack:
     def __init__(self):
         self.stack = []
@@ -36,6 +32,7 @@ class MinStack:
         return self.min_stack[-1]
 
 
+# two stacks optimization
 # O(1) space complexity
 class MinStack_2:
     def __init__(self):

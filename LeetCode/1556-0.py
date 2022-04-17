@@ -1,10 +1,9 @@
 '''
 # Code Explain:
-- Time complexity: O(logn)
-- Space complexity: O(logn)
+- Time complexity: O(N)
+- Space complexity: O(N)
 
-
-- from right to left
+- reverse, reverse, reverse !!!
 '''
 
 
@@ -20,5 +19,10 @@ class Solution:
             count += 1
         return ans[::-1]
 
+    def thousandSeparator_2(self, n: int) -> str:
+        s = str(n)
+        s = s[::-1]
+        res = '.'.join(s[i:i + 3] for i in range(0, len(s), 3))
+        return res[::-1]
 
 print(Solution().thousandSeparator(1234))
