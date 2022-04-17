@@ -15,9 +15,10 @@ class Solution:
     def findLeaves(self, root: Optional[TreeNode]) -> List[List[int]]:
         def maxDepth(node):
             if not node:
-                return 0
+                return 0  # depth
             
             # get max depth of tree
+            # root h = height of tree; leaf h = 0
             h = max(maxDepth(node.left), maxDepth(node.right)) + 1
             
             # post order
@@ -26,6 +27,8 @@ class Solution:
                 ans.append([])
             
             ans[h-1].append(node.val)
+
+            # return depth
             return h
             
         ans = []
