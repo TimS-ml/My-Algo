@@ -3,6 +3,9 @@
 - Time complexity: O(1)
 - Space complexity: O(N)
 
+Starting from the Insert, we immediately have two good candidates with O(1):
+- Hash (has problem with getRandom)
+- Array List (has problem with delete)
 '''
 
 from random import choice
@@ -41,12 +44,12 @@ class RandomizedSet():
             return True
         return False
 
+
     def getRandom(self) -> int:
         """
         Get a random element from the set.
         """
         return choice(self.list)
-
 
 
 # Your RandomizedSet object will be instantiated and called as such:

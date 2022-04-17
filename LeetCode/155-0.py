@@ -32,9 +32,34 @@ class MinStack:
         return self.min_stack[-1]
 
 
-# two stacks optimization
-# O(1) space complexity
+# two stacks, a shorter min_stack
 class MinStack_2:
+    def __init__(self):
+        self.stack = []
+        self.min_stack = []        
+
+    def push(self, x: int) -> None:
+        self.stack.append(x)
+        # note: it's <= not <
+        # case: [6, 6, 6, 6]
+        if not self.min_stack or x <= self.min_stack[-1]:
+            self.min_stack.append(x)
+    
+    def pop(self) -> None:
+        if self.min_stack[-1] == self.stack[-1]:
+            self.min_stack.pop()
+        self.stack.pop()
+
+    def top(self) -> int:
+        return self.stack[-1]
+
+    def getMin(self) -> int:
+        return self.min_stack[-1]
+
+
+# two stacks optimization: one value + diff array
+# O(1) space complexity
+class MinStack_3:
     def __init__(self):
         self.stack = []
         self.min_val = -1
