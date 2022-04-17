@@ -1,15 +1,7 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
-
-# Pros and Cons:
-## Pros:
-
-## Cons:
-
-# Notation:
-
+- Time complexity: O(M + N) where M and N are the length of n1 and n2
+- Space complexity: O(M + N)
 '''
 
 
