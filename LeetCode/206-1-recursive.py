@@ -37,30 +37,24 @@ class Solution:
     # [1] use: prev = reverse(head.next) to reach the end of the LinkedList
     # [2] use: return prev to go back step by step
     def reverseList_2(self, head: ListNode) -> ListNode:
-        def reverse(head):  # return previous node
+        def reverse(node):  # return previous node
             # base case
-            if not head or not head.next:
-                return head
+            if not node or not node.next:
+                return node
 
             # state transfer
-            prev = reverse(head.next)
-            head.next.next = head  # add pointer: i <- i+1
-            head.next = None  # remove pointer: i -> i+1
+            # prev is an reversed linked list!!!
+            # xxx -> node -> reverse(node.next <- xxx)
+            #              |
+            #   This is what you want to change
+            prev = reverse(node.next)
+
+            # post order
+            node.next.next = node  # add pointer: i <- i+1
+            node.next = None  # remove pointer: i -> i+1
             return prev
 
         return reverse(head)
-
-    # def reverseList_3(self, head: ListNode) -> ListNode:
-    #     def reverse(head):
-    #         if not head or not head.next:
-    #             return head, head
-    #         prev, curr = reverse(head.next)
-    #         curr.next = head
-    #         head.next = None
-    #         return prev, head
-
-    #     ans, _ = reverse(head)
-    #     return ans
 
 
 def listToListNode(input):

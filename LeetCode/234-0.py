@@ -18,18 +18,26 @@ class ListNode:
 
 class Solution:
     # post-order traversal of linked list
+    # although you only need to compare the first half
+    # this solution compares full list
     def isPalindrome(self, head):
         left = head
         
         def traverse(right):
-            nonlocal left
             if not right:
                 return True
+
             ans = traverse(right.next)
 
             # post-order
+            nonlocal left
+            # the very first comparison:
+            #   left at [0] and right at [-1]
+            # if list[x] != list[-(x+1)], ans = False
+            # the rest comparison (x+1 to mid) all False
             ans = ans and (right.val == left.val)
             left = left.next
+
             return ans
 
         return traverse(head)
@@ -41,14 +49,12 @@ class Solution:
             slow = slow.next
             fast = fast.next.next
 
-        # odd length, move slow to right
-        # 1, 2, 3, 2, 1
-        # |        |  |
-        # head  slow  fast
+        # if even length (1~8)
+        # 4 steps, slow at 5 (second middle), fast at None
 
-        # 1, 2, 3, 3, 2, 1, None
-        # |        |        |
-        # head    slow     fast
+        # if odd length (1~7)
+        # 3 steps, slow at 4 (middle), fast at 7 (not None)
+
         if fast:
             slow = slow.next
         
@@ -72,6 +78,16 @@ class Solution:
             right = right.next
 
         return True 
+
+
+    # a very simple solution
+    def isPalindrome_3(self, head):
+        vals = []
+        current_node = head
+        while current_node is not None:
+            vals.append(current_node.val)
+            current_node = current_node.next
+        return vals == vals[::-1]
 
 
 head1 = ListNode(1)
