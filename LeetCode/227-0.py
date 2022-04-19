@@ -1,31 +1,35 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(N)
+- Space complexity: O(N)
 
 - operator needs the number before (that is easy) and after
-    - sol: when we find the next operator, we do current calc
+    - sol: when we find the next operator, we do current calc for prev operator
 '''
 
 class Solution:
     def calculate(self, s: str) -> int:
-        # sign is previous operator
-        num, stack, sign = 0, [], "+"
+        num, stack = 0, []
+        prevSign = '+'
         for i in range(len(s)):
             if s[i].isdigit():
                 num = num * 10 + int(s[i])
 
             # edge case, last dig
-            if s[i] in "+-*/" or i == len(s) - 1:
-                if sign == "+":
+            # Do math operation of prevSign until we meet new sign
+            if s[i] in '+-*/' or i == len(s) - 1:
+                if prevSign == '+':
                     stack.append(num)
-                elif sign == "-":
+                elif prevSign == '-':
                     stack.append(-num)
-                elif sign == "*":
-                    stack.append(stack.pop()*num)
-                else:
-                    stack.append(int(stack.pop()/num))
+                elif prevSign == '*':
+                    # stack.append(stack.pop()*num)
+                    stack[-1] = stack[-1] * num
+                elif prevSign == '/':
+                    # stack.append(int(stack.pop()/num))
+                    # python way to write division round to 0
+                    stack[-1] = int(stack[-1] / float(num))
                 num = 0
-                sign = s[i]
+                prevSign = s[i]
 
         return sum(stack)  # since '-' is append as -num
