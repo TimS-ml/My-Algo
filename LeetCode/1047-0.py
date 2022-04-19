@@ -1,35 +1,21 @@
 '''
 # Code Explain:
-- Time complexity: O(n)
-- Space complexity: O(n)  # dose python provide in/out stack?
-
-
-
+- Time complexity: O(N)
+- Space complexity: O(N)
 '''
 
 
 class Solution:
     def removeDuplicates(self, s: str) -> str:
-        ans = list()
+        stack = []
         for c in s:
-            if ans and ans[-1] == c:
-                ans.pop()
+            if stack and stack[-1] == c:
+                stack.pop()
+                continue
             else:
-                ans.append(c)
-        return "".join(ans)
-
-    def removeDuplicates_2(self, s: str) -> str:
-        def recursion(arr):
-            if len(arr) < 2:
-                return arr
-
-            for i in range(len(arr) - 1):
-                if arr[i] == arr[i + 1]:
-                    arr = arr.replace(arr[i] + arr[i], '')
-                    return recursion(arr)
-            return arr
-
-        return recursion(s)
+                stack.append(c)
+        
+        return ''.join(stack)
 
 
 s = 'abbaca'

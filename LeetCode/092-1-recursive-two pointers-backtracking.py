@@ -57,6 +57,8 @@ class Solution:
         if m == 1:
             # reverse top n
             return reverseN(head, n)
+
+        # move to m=1, then reverse first N nodes
         head.next = self.reverseBetween(head.next, m-1, n-1)
         return head
 
