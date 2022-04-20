@@ -6,7 +6,7 @@ It's O(N log2K) slower than quick sort
 
 easy way: nums.sort(reverse=True), time: O(N * log(N))
 
-Sol: heap
+Sol: min heap => pop largest
 in python, heappop will pop minimum value
 
 case:

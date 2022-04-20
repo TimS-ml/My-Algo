@@ -13,7 +13,7 @@ if you put entire list to heap, the time complexity is O(N logN) then it's meani
 
 # sol 2 
 b search's search space: distance
-- range: between low_dist and high_dist = 0, max(distances)
+- range: between low_dist and high_dist = 0, max(dist_list)
 
 func of mid_dist low or high: compare 'len(close) based on curr mid_dist' with k  
 
@@ -33,10 +33,12 @@ class Solution:
         def sqDist(point):
             return point[0] ** 2 + point[1] ** 2
 
+        # heap contains 0-k-1
         # build heap, (dist, idx) pair, first k elements !!!
         heap = [(-sqDist(points[i]), i) for i in range(k)]
         heapq.heapify(heap)
 
+        # loop k~len(points)
         # maintain heap of size k
         for i in range(k, len(points)):
             dist = -sqDist(points[i])
@@ -53,40 +55,40 @@ class Solution:
         def sqDist(point):
             return point[0] ** 2 + point[1] ** 2
 
-        def splitDist(remain_idx, distances, mid_dist):
-            """Split the distances around the midpoint
+        def splitDist(remain_idx, dist_list, mid_dist):
+            """Split the dist_list around the midpoint
             and return them in separate lists."""
             close_idx, far_idx = [], []
             for index in remain_idx:
-                if distances[index] <= mid_dist:
+                if dist_list[index] <= mid_dist:
                     close_idx.append(index)
                 else:
                     far_idx.append(index)
             return close_idx, far_idx
 
         # list of dist
-        distances = [sqDist(point) for point in points]
+        dist_list = [sqDist(point) for point in points]
 
         # list of idx
         remain_idx = [i for i in range(len(points))]
 
         # Define the initial binary search range
-        low_dist, high_dist = 0, max(distances)
+        low_dist, high_dist = 0, max(dist_list)
         
-        # Perform a binary search of the distances
+        # Perform a binary search of the dist_list
         # to find the k closest points
         closest = []
         while k:
             mid_dist = (low_dist + high_dist) / 2
-            close_idx, far_idx = splitDist(remain_idx, distances, mid_dist)
+            close_idx, far_idx = splitDist(remain_idx, dist_list, mid_dist)
             if len(close_idx) > k:
-                # If more than k points are in the close_idx distances
+                # If more than k points are in the close_idx dist_list
                 # then discard the far_idx points and continue
                 remain_idx = close_idx
                 high_dist = mid_dist
             else:
                 # Add the close_idx points to the answer array and keep
-                # searching the far_idx distances for the remain_idx points
+                # searching the far_idx dist_list for the remain_idx points
                 k -= len(close_idx)
                 closest.extend(close_idx)
                 remain_idx = far_idx
