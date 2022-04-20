@@ -14,10 +14,10 @@ class Node:
 
 class Solution:
     def lowestCommonAncestor(self, p: 'Node', q: 'Node') -> 'Node':
-        p1, p2 = p, q
-        while p1 != p2:
-            p1 = p1.parent if p1.parent else q
-            p2 = p2.parent if p2.parent else p
+        a, b = p, q
+        while a != b:
+            a = a.parent if a.parent else q
+            b = b.parent if b.parent else p
             
-        return p1
+        return a
 

@@ -30,6 +30,11 @@ class Solution:
                 dig = j
                 while dig < len(abbr) and abbr[dig].isnumeric():
                     dig += 1
+                # when j at first digit, i is at the first char of shortened string
+                # apple  a3e
+                #  |      |
+                #  i      j
+                # so it's i += num not i += num+1
                 i += int(abbr[j:dig])
                 j = dig
             else:

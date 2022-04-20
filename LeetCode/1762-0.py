@@ -28,35 +28,32 @@ Just mark the non increasing seq idx
 from typing import List
 
 class Solution:
+    # Monotonic Stack
     def findBuildings(self, heights: List[int]) -> List[int]:
-        '''
-        Monotonic Stack
-        '''
         n = len(heights)
-        answer = []
+        ans = []
         stack = []
         
-        for current in range(n):
-            while stack and heights[current] >= stack[-1]:
+        for i in range(n):
+            # building i block some of the building before i
+            while stack and heights[i] >= stack[-1]:
                 stack.pop()
-                answer.pop()
-            stack.append(heights[current])
-            answer.append(current)
+                ans.pop()
+            stack.append(heights[i])
+            ans.append(i)
         
-        return answer
+        return ans
 
+    # Space Optimization
     def findBuildings_2(self, heights: List[int]) -> List[int]:
-        '''
-        Space Optimization
-        '''
         n = len(heights)
-        answer = []
+        ans = []
         max_height = -1
         
-        for current in reversed(range(n)):
-            if heights[current] > max_height:
-                answer.append(current)
-                max_height = heights[current]
+        for i in reversed(range(n)):
+            if heights[i] > max_height:
+                ans.append(i)
+                max_height = heights[i]
         
-        answer.reverse()  # remember to reverse it
-        return answer
+        ans.reverse()  # remember to reverse it
+        return ans
