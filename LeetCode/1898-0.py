@@ -23,13 +23,13 @@ class Solution:
 
         removed = set()
         res = 0
-        l, r = 0, len(removeable) - 1
+        l, r = 0, len(removable) - 1
 
         while l <= r:
             m = (l + r) // 2
 
             # take first m value from removable list
-            removed = set(removeable[:m + 1])
+            removed = set(removable[:m + 1])
             if isSubseq(s, p):
                 res = max(res, m + 1)
                 l = m + 1
