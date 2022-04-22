@@ -51,9 +51,9 @@ class Solution:
 
             # Terminate
             if nOpen < 0:
-                return ans  # Invalid -> return 0 result
+                return ans  # Invalid, return empty set
             if i == len(s):
-                if nOpen == 0: ans.add("")  # Valid -> Return 1 result (empty string)
+                if nOpen == 0: ans.add("")  # Valid: (all paired)
                 return ans
 
             # Case 1: Skip s[i] -> remove???
@@ -62,6 +62,7 @@ class Solution:
                 ans.update(dfs(i + 1, nOpen))
 
             # Case 2: Include s[i]: '(', ')'
+            # if we want to include s[i], then we need to update nOpen first
             if s[i] == '(':
                 nOpen += 1
             elif s[i] == ')':
