@@ -1,16 +1,21 @@
 # Links
 https://leetcode.com/problems/remove-invalid-parentheses/
 
-https://www.youtube.com/watch?v=NWAseBzZj-c
-
-Purning
-https://youtu.be/NWAseBzZj-c?t=429
-
-https://leetcode.com/problems/remove-invalid-parentheses/discuss/75038/Evolve-from-intuitive-solution-to-optimal-a-review-of-all-solutions
-
-https://leetcode.com/problems/remove-invalid-parentheses/discuss/75028/Short-Python-BFS
 
 # Thought Process
+Solution
+https://www.youtube.com/watch?v=NWAseBzZj-c
+  Purning
+  https://youtu.be/NWAseBzZj-c?t=429
+
+BFS + DFS
+https://leetcode.com/problems/remove-invalid-parentheses/discuss/75038/Evolve-from-intuitive-solution-to-optimal-a-review-of-all-solutions
+
+DFS
+https://leetcode.com/problems/remove-invalid-parentheses/discuss/75117/Python-DFS-Solution
+
+BFS
+https://leetcode.com/problems/remove-invalid-parentheses/discuss/75028/Short-Python-BFS
 
 # Test Cases
 

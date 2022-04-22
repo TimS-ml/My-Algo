@@ -66,8 +66,8 @@ class Solution:
     def mergeKLists_2(self, lists: List[ListNode]) -> ListNode:
         curr = head = ListNode(0)
         heap = []
+
         count = 0
-        
         for node in lists:
             if node is not None:
                 count += 1

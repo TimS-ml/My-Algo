@@ -22,13 +22,26 @@ class Solution:
         memo = defaultdict(list)
 
         #@lru_cache(maxsize=None)    # alternative memoization solution
+        # func(path, search space) -> subsentence (the solution of this subStr)
+        # in this case, path is sub string of s, search space is fixed
+        # {'dog': [['dog']], 'sanddog': [['sand', 'dog']], 
+        #  'catsanddog': [['cat', 'sand', 'dog'], ['cats', 'and', 'dog']], 
+        #  'anddog': [['and', 'dog']]}
         def helper(subStr):
             if not subStr:
                 return [[]]  # list of empty list
 
+            # multiple path can lead to the same substring
+            # case: s = 'catdogcatdog'
             if subStr in memo:
                 return memo[subStr]
 
+            # s = 'catsanddog', wordDict = ['cat','cats','and','sand','dog', 's', 'andd', 'og']
+            # the very first recursion will pick
+            #   'cat' + helper('sanddog')
+            #   = 'cat' + ['sand', 'dog'] or ['s', 'andd', 'og']
+            #   'cats' + helper('anddog')
+            #   ...
             for endIndex in range(1, len(subStr)+1):
                 word = subStr[:endIndex]
                 if word in wordSet:

@@ -1,33 +1,9 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
-
-
+- Time complexity: O(1)
+- Space complexity: O(capacity)
 
 '''
-
-from collections import deque, OrderedDict
-
-
-class LRUCache_easy(OrderedDict):
-    def __init__(self, capacity: int):
-        super().__init__()
-        self.capacity = capacity
-
-    def get(self, key: int) -> int:
-        if key not in self:
-            return -1
-        self.move_to_end(key)
-        return self[key]
-
-    def put(self, key: int, value: int) -> None:
-        if key in self:
-            self.move_to_end(key)
-        self[key] = value
-        if len(self) > self.capacity:
-            self.popitem(last=False)
-
 
 class DLinkedNode:
     def __init__(self, key=0, value=0):
