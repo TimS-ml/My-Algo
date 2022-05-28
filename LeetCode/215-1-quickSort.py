@@ -1,7 +1,6 @@
 '''
 # Code Explain:
 - Time complexity: O(N logK)
-It's O(N log2K) slower than quick sort
 - Space complexity: O(K)
 
 # Thought process

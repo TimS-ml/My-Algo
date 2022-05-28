@@ -24,7 +24,7 @@ class Solution:
             d[target - value] = key
 
     # recursion: reverse for loop of solution 2
-    def twoSum_4(self, nums: List[int], target: int) -> List[int]:
+    def twoSum_3(self, nums: List[int], target: int) -> List[int]:
         cache = {}
 
         def helper(idx):
@@ -37,8 +37,8 @@ class Solution:
 
         return helper(0)
 
-    # solution 4 in stack + looping
-    def twoSum_5(self, nums: List[int], target: int) -> List[int]:
+    # solution 3 in stack + looping
+    def twoSum_4(self, nums: List[int], target: int) -> List[int]:
         from collections import deque
         cache = {}
         stack = deque([0])  # a stack of idx
