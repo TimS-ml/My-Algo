@@ -3,12 +3,13 @@
 - Time complexity: O(N)
 - Space complexity: O(1)
 
+2 type of chars in unfix size window
 '''
 
 from collections import deque
 
 
-def longest_substring_with_k_distinct(arr, K):
+def fruits_into_baskets(arr, K=2):
     ans = 0  # max length
     l, r = 0, 0
     subarr = deque([])
@@ -27,14 +28,11 @@ def longest_substring_with_k_distinct(arr, K):
     return ans
 
 
-
 def main():
-    print("Length of the longest substr1ing: " +
-          str(longest_substring_with_k_distinct("araaci", 2)))
-    print("Length of the longest substr1ing: " +
-          str(longest_substring_with_k_distinct("araaci", 1)))
-    print("Length of the longest substr1ing: " +
-          str(longest_substring_with_k_distinct("cbbebi", 3)))
+    print("Maximum number of fruits: " +
+          str(fruits_into_baskets(['A', 'B', 'C', 'A', 'C'])))
+    print("Maximum number of fruits: " +
+          str(fruits_into_baskets(['A', 'B', 'C', 'B', 'B', 'C'])))
 
 
 main()

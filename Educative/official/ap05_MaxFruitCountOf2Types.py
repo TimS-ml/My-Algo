@@ -3,10 +3,8 @@
 - Time complexity: O(N)
 - Space complexity: O(1)
 
-
-
+2 type of chars in unfix size window
 '''
-# same as ap04, k=2 case
 
 # we need hash dict + left / right char
 # arr of characters, k=2

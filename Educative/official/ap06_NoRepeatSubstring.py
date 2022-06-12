@@ -14,29 +14,31 @@ in ap06, dic is index dict
 if char in dic, means char appears twice
 the index helps to determine the boundary of window
   i.e. locate faster
+
+
+- change freq dict in ap04 to index dict
+    - len(dic) should <= 2
+    - else, the 3rd char is arr[end]
+        - before updating arr end index to dic, update start to dic[arr[end]] + 1 or unchange
+        - update / not update start: the new start should be >= than old start
+- the order of each steps?
+    - we only need to update the edge of dynamic window
 '''
 
-
-# we need hash dict + left / right char
-# use dic to track location
 def my(arr):
-    ans = 0  # max len
+    ans = 0
     start = 0
     dic = {}
+    # loop end idx
     for end in range(len(arr)):
-        # rchar start at 0
-        # move rchar until len(dic) > k
-        rchar = arr[end]
-        if rchar in dic:
-            # update start
+        if arr[end] in dic:
+            # start idx
             # in what cases start will bigger than dic[rchar] + 1 ???
             # case: aabccbb, the 2nd b
             # since current dic[rchat] is not update, and start will not change
-            start = max(start, dic[rchar] + 1)
-        # add/update char location
-        dic[rchar] = end
-        
-        # update answer for each `end` index
+            start = max(start, dic[arr[end]] + 1)
+        # update end idx to lastest appearance
+        dic[arr[end]] = end
         ans = max(ans, end - start + 1)
     return ans
 

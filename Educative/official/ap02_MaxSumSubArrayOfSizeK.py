@@ -6,7 +6,6 @@ https://www.educative.io/courses/grokking-the-coding-interview/JPKr0kqLGNP
 - Space complexity: O(1)
 
 
-
 two pointers: start, end
 '''
 
