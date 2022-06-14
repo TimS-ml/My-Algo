@@ -3,50 +3,44 @@
 - Time complexity: O(N)
 - Space complexity: O(1)
 
+- goal: longest subarr with same letters
+    - find the most freq letters then replace the rest
+- allowed to replace no more than k letters with any letter
 
-'''
-'''
-- calc max replacement letter in sliding window
-    - use freq dict to track max repleating letter in that window
-    - case: aabaabbcc
-    - if max replacement > k, update boundary
-        - until it's == k
-- how to get `maxrepl` ?
+!!! careful with indexing !!!
+if use for loop: 
+    if (r - l + 1 - maxRepl) > k:
 '''
 
 def length_of_longest_substring(arr, k):
+    window = {}
+    l, r = 0, 0
     ans = 0
-    start =  0
-    maxrepl = 0
-    dic = {}
-    for end in range(len(arr)):
-        rchar = arr[end]
-        dic[rchar] = dic.get(rchar, 0) + 1
-        maxrepl = max(maxrepl, dic[rchar])
+    maxRepl = 0
+    
+    while r < len(arr):
+        c = arr[r]
+        r += 1
+        window[c] = window.get(c, 0) + 1
 
-        # that's not correct in many means
-        # while maxrepl > k:
-        #     # do sth
-        #     # update start
-        #     lchar = arr[start]
-        #     dic[lchar] -= 1
-        #     # if dic[lchar] == 0:
-        #     #     del dic[lchar]
-        
-        # what if aaaabacddd, when end at 1st d?
-        #   max repl still dic[a], not changed...
-        if (end - start + 1 - maxrepl) > k:
-            lchar = arr[start]
-            dic[lchar] -= 1  # no need to del when freq == 0
-            start += 1
-        ans = max(ans, end - start + 1)
+        maxRepl = max(maxRepl, window[c])
+
+        if (r - l - maxRepl) > k:
+            d = arr[l]
+            l += 1
+            window[d] -= 1
+
+        ans = max(ans, r - l)  # no +1 as well
+        # print(l, r, window, maxRepl, ans)
     return ans
 
+
+
 def main():
-    print(length_of_longest_substring("aabaabbcc", 2))
-    # print(length_of_longest_substring("aabccbb", 2))
-    # print(length_of_longest_substring("abbcb", 1))
-    # print(length_of_longest_substring("abccde", 1))
+    # print(length_of_longest_substring("aabaabbcc", 2))
+    print(length_of_longest_substring("aabccbb", 2))
+    print(length_of_longest_substring("abbcb", 1))
+    print(length_of_longest_substring("abccde", 1))
 
 
 main()

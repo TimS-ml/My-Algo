@@ -54,10 +54,10 @@ def length_of_longest_substring(str1, k):
 
 
 def main():
-    print(length_of_longest_substring("aabaabbcc", 2))
-    # print(length_of_longest_substring("aabccbb", 2))
-    # print(length_of_longest_substring("abbcb", 1))
-    # print(length_of_longest_substring("abccde", 1))
+    # print(length_of_longest_substring("aabaabbcc", 2))
+    print(length_of_longest_substring("aabccbb", 2))
+    print(length_of_longest_substring("abbcb", 1))
+    print(length_of_longest_substring("abccde", 1))
 
 
 main()
