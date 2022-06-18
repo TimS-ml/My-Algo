@@ -13,7 +13,7 @@ LCA = [1] start or dest
     = [2] node x, start at L/R, dest at R/L
 
 [B]
-find path => LRU string
+find path => 'LRU' string
 
 [C] concat
 reverse: replace all L/R to U
