@@ -24,31 +24,26 @@ class TreeNode:
         self.left = left
         self.right = right
 
+class Solution:
+    def getDirections(self, root: Optional[TreeNode], startValue: int, destValue: int) -> str:
+        # find the path to startValue and destValue
+        def helper(node):
+            pass
+
+        helper(root)
+
+        # remove common ancestor
+        p = 0
+        while p < len(startPath) and p < len(destPath) and startPath[p] == destPath[p]:
+            p += 1
+        
+        startPath = 'U' * (len(startPath) - p)
+        destPath = destPath[p:]
+
+        return startPath + destPath
+            
+
 '''
-class Solution {
-    public String getDirections(TreeNode root, int startValue, int destValue) {
-        this.startValue = startValue;
-        this.destValue = destValue;
-        // 寻找走到 startValue 和 destValue 的方向路径
-        traverse(root);
-        // 去除两个方向路径的公共前缀
-        int p = 0, m = startPath.length(), n = destPath.length();
-        while (p < m && p < n
-                && startPath.charAt(p) == destPath.charAt(p)) {
-            p++;
-        }
-        startPath = startPath.substring(p);
-        destPath = destPath.substring(p);
-        // 将走向 startValue 的方向路径全部变成 U
-        startPath = "U".repeat(startPath.length());
-        // 组合 startPath 和 destPath 就得到了答案
-        return startPath + destPath;
-    }
-
-    StringBuilder path = new StringBuilder();
-    String startPath, destPath;
-    int startValue, destValue;
-
     // 二叉树遍历函数
     void traverse(TreeNode root) {
         if (root == null) {
