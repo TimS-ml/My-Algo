@@ -3,13 +3,6 @@
 - Time complexity: O(logn)
 - Space complexity: O(1)
 
-# Pros and Cons:
-## Pros:
-
-## Cons:
-
-# Notation:
-
 '''
 
 
