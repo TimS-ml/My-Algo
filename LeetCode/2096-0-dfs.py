@@ -26,12 +26,29 @@ class TreeNode:
 
 class Solution:
     def getDirections(self, root: Optional[TreeNode], startValue: int, destValue: int) -> str:
-        # find the path to startValue and destValue
+        path = []
+        startPath, destPath = '', ''
+        
         def helper(node):
-            pass
+            if not node:
+                return
+            if node.val == startValue:
+                nonlocal startPath
+                startPath = ''.join(path)
+            elif node.val == destValue:
+                nonlocal destPath
+                destPath = ''.join(path)
+
+            path.append('L')
+            helper(node.left)
+            path.pop()
+
+            path.append('R')
+            helper(node.right)
+            path.pop()
 
         helper(root)
-
+        
         # remove common ancestor
         p = 0
         while p < len(startPath) and p < len(destPath) and startPath[p] == destPath[p]:
@@ -41,28 +58,3 @@ class Solution:
         destPath = destPath[p:]
 
         return startPath + destPath
-            
-
-'''
-    // 二叉树遍历函数
-    void traverse(TreeNode root) {
-        if (root == null) {
-            return;
-        }
-        if (root.val == startValue) {
-            startPath = path.toString();
-        } else if (root.val == destValue) {
-            destPath = path.toString();
-        }
-
-        // 二叉树遍历框架
-        path.append('L');
-        traverse(root.left);
-        path.deleteCharAt(path.length() - 1);
-
-        path.append('R');
-        traverse(root.right);
-        path.deleteCharAt(path.length() - 1);
-    }
-}
-'''
