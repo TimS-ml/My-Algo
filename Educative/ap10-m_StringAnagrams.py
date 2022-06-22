@@ -3,6 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
+lc 438, 567
 same as ap09, but return string idx
 '''
 
