@@ -46,13 +46,13 @@ def main():
 main()
 
 '''
-remove all instances of ‘key’ in-place and return the new length of the array
+unsorted array
+remove all instances of 'key' in-place
+return the new length of the array
 
 # Code Explain:
 - Time complexity: O(n)
 - Space complexity: O(1)
-
-
 
 '''
 
