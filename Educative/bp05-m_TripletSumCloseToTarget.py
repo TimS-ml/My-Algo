@@ -3,60 +3,40 @@
 - Time complexity: O(n^2)
 - Space complexity: O(n)
 
-
-
-what we need to find is the "sum of closest pair", not the diff
-so case [-3, -1, 1, 2], target=1
-out: sum([-3, 1, 2])=0, not sum([-1, 1, 2])=2, through the gap is the same
-i.e.: If there are more than one such triplet, return the sum of the triplet with the smallest sum
-
-same as bp04
-- target_sum is given
-- we need to define a variable to describe `difference`: target_diff
-- in bp04, we need to skip dulicate elements
-
-need a function to find smallest_diff
-- does the diff >0 or <0 matters?
-    - actually abs(diff) is ok to find global minimul
-    - >0 or <0 matters
+return the sum of the triplet
 '''
 
+def triplet_sum_close_to_target(nums, target_sum):
+    nums.sort()
+    ans = float('inf')
 
-import math
-
-
-def triplet_sum_close_to_target(arr, target_sum):
-    def find_diff(target, subarr, smallest_diff):
-        # !! find the one that has the abs(diff) closest to 0
-        # since this is a sorted array, we can use two pointers to do that
-        l = 0
-        r = len(subarr) - 1
-        while l < r:
-            if l > 0 and subarr[l] == subarr[l - 1]:
-                l += 1
-            if r > 0 and subarr[r] == subarr[r - 1]:
-                r -= 1
-            diff = target - subarr[l] - subarr[r]
-            if diff > 0:
-                l += 1
-            else:
-                r -= 1
-            
-            # !! you cannnot simply use min(smallest_diff, diff)
-            if abs(diff) < abs(smallest_diff) or \
-                    (abs(diff) == abs(smallest_diff)
-                        and diff > smallest_diff):
-                smallest_diff = diff
-        return smallest_diff
-    
-    arr.sort()
-    smallest_diff = math.inf
-    for i in range(len(arr) - 2):
-        if i > 0 and arr[i] == arr[i - 1]:
+    for i in range(len(nums) - 2):
+        if i > 0 and nums[i] == nums[i - 1]:
             continue
-        smallest_diff = find_diff(target_sum - arr[i], arr[i+1:], smallest_diff)
+        target = target_sum - nums[i]
+        start, end = i + 1, len(nums) - 1
 
-    return target_sum - smallest_diff  # target_sum - (target_sum - sum)
+        while start < end:
+            target_diff = target_sum - (nums[start] + nums[end] + nums[i])
+            if target_diff == 0:
+                return target_sum
+
+            if abs(target_diff) < abs(ans) or \
+                    (abs(target_diff) == abs(ans)
+                        and target_diff > ans):
+                # print([nums[i], nums[start], nums[end])
+                ans = target_diff
+
+            if nums[start] + nums[end] > target:
+                end -= 1
+                while start < end and nums[end] == nums[end + 1]:
+                    end -= 1
+            elif nums[start] + nums[end] < target:
+                start += 1
+                while start < end and nums[start] == nums[start - 1]:
+                    start += 1
+    return target_sum - ans
+
 
 
 def main():

@@ -10,31 +10,31 @@ lc 015, lc 018
 
 
 def search_triplets(nums):
-        nums.sort()
-        ans = []
+    nums.sort()
+    ans = []
 
-        for i in range(len(nums) - 2):
-            if i > 0 and nums[i] == nums[i - 1]:
-                continue
-            target = 0 - nums[i]
-            start, end = i + 1, len(nums) - 1
-            # aggregate two pointers in one loop
-            while start < end:
-                if nums[start] + nums[end] > target:
+    for i in range(len(nums) - 2):
+        if i > 0 and nums[i] == nums[i - 1]:
+            continue
+        target = 0 - nums[i]
+        start, end = i + 1, len(nums) - 1
+        # aggregate two pointers in one loop
+        while start < end:
+            if nums[start] + nums[end] > target:
+                end -= 1
+            elif nums[start] + nums[end] < target:
+                start += 1
+            else:
+                ans.append([nums[i], nums[start], nums[end]])
+                # move 2 pointers to avoid duplicate ans
+                # think about case: [-1, 0, 0, 0 , 1, 1]
+                end -= 1
+                start += 1
+                while start < end and nums[end] == nums[end + 1]:
                     end -= 1
-                elif nums[start] + nums[end] < target:
+                while start < end and nums[start] == nums[start - 1]:
                     start += 1
-                else:
-                    ans.append([nums[i], nums[start], nums[end]])
-                    # move 2 pointers to avoid duplicate ans
-                    # think about case: [-1, 0, 0, 0 , 1, 1]
-                    end -= 1
-                    start += 1
-                    while start < end and nums[end] == nums[end + 1]:
-                        end -= 1
-                    while start < end and nums[start] == nums[start - 1]:
-                        start += 1
-        return ans
+    return ans
 
 
 def main():
