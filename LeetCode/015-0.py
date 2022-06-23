@@ -31,8 +31,6 @@ from typing import List
 class Solution:
     # time O(N^2)
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        nums.sort()
-
         def twoSumTarget(nums, start, target):
             lo, hi = start, len(nums) - 1
             ans = []
@@ -54,15 +52,16 @@ class Solution:
                         hi -= 1
             return ans
         
+        nums.sort()
         target = 0
         ans = []
         i = 0
-        while i < len(nums):
+        while i < len(nums) - 2:  # you can remove -2
             tuples = twoSumTarget(nums, i + 1, target - nums[i])
             for subList in tuples:
                 subList.append(nums[i])
                 ans.append(subList)
-            while i < len(nums) - 1 and nums[i] == nums[i+1]:
+            while i < len(nums) - 1 and nums[i] == nums[i + 1]:
                 i += 1
             i += 1 
 
@@ -103,4 +102,4 @@ class Solution:
 # nums = [-1, 0, 1, 2, -1, -4]
 # nums = [-2, 0, 1, 1, 2]
 nums = [-1, 0, 0, 0, 1, 1]
-print(Solution().threeSum_2(nums))
+print(Solution().threeSum(nums))

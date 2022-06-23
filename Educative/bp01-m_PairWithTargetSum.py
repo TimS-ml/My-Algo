@@ -6,6 +6,7 @@ Brute force
 sorted nSum pattern
 '''
 
+# further (potential) improvement: skip or remove dupl
 def pair_with_targetsum(arr, target_sum):
     l, r = 0, len(arr) - 1
     while l < r:
@@ -21,6 +22,7 @@ def pair_with_targetsum(arr, target_sum):
 
 def main():
     print(pair_with_targetsum([1, 2, 3, 4, 6], 6))
+    # print(pair_with_targetsum([1, 1, 1, 1, 2, 3, 4, 6], 6))
     print(pair_with_targetsum([2, 5, 9, 11], 11))
 
 

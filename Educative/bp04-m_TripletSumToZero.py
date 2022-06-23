@@ -5,41 +5,36 @@ Given an array of unsorted numbers, find all unique triplets in it that add up t
 - Time complexity: O(n^2)
 - Space complexity: O(n)
 
-
-target = 0 = a + b + c
-
-for i in xxx:
-    a = arr[i]
-    for j in xxx:
-        # search pair in range j
-        if -(c+b) == a:
-            ans.append([a, b, c])  # a <= b <= c
-
-[1] How to avoid duplicate?
-- Make sure all elements in sub-list are in the same order
-- Sort elements and skip duplicate one, search range should not be overlap
-    - case: [-1, -1, -1, -1, 2]
-[2] Convert to search pair
+lc 015, lc 018
 '''
 
 
-def search_triplets(arr):
-    def search_pair(target, subarr, ans):
-        # find all x + y == target
-        for i in range(len(subarr)-1):
-            if i > 0 and subarr[i] == subarr[i - 1]:
-                continue
-            if target - subarr[i] in subarr[i+1:]:
-                ans.append([-target, subarr[i], target - subarr[i]])
-        return ans
+def search_triplets(nums):
+        nums.sort()
+        ans = []
 
-    arr.sort()
-    ans = []
-    for i in range(len(arr) - 2):
-        if i > 0 and arr[i] == arr[i - 1]:
-            continue
-        ans = search_pair(-arr[i], arr[i+1:], ans)
-    return ans
+        for i in range(len(nums) - 2):
+            if i > 0 and nums[i] == nums[i - 1]:
+                continue
+            target = 0 - nums[i]
+            start, end = i + 1, len(nums) - 1
+            # aggregate two pointers in one loop
+            while start < end:
+                if nums[start] + nums[end] > target:
+                    end -= 1
+                elif nums[start] + nums[end] < target:
+                    start += 1
+                else:
+                    ans.append([nums[i], nums[start], nums[end]])
+                    # move 2 pointers to avoid duplicate ans
+                    # think about case: [-1, 0, 0, 0 , 1, 1]
+                    end -= 1
+                    start += 1
+                    while start < end and nums[end] == nums[end + 1]:
+                        end -= 1
+                    while start < end and nums[start] == nums[start - 1]:
+                        start += 1
+        return ans
 
 
 def main():
