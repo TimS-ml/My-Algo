@@ -9,8 +9,8 @@ they believe substr generation will cause n^2
 
 same as bp06
 this time we are calc sub arr product instead of sum
-
-careful, this is an unsorted array
+'contiguous' subarrays => sliding window
+unsorted array
 
 if a * b * ... * h < target
 then any contiguous subarr's product in a~h should < target
@@ -32,7 +32,7 @@ def find_subarrays_brute(arr, target):
             ans.append(temp_li.copy())
             # print(temp_li, ans)
 
-            for j in range(i+1, len(arr)):
+            for j in range(i + 1, len(arr)):
                 temp_mul *= arr[j]
                 if temp_mul < target:
                     temp_li.append(arr[j])
@@ -41,23 +41,24 @@ def find_subarrays_brute(arr, target):
                 else:
                     break
     return ans
-            
+
+
 def find_subarrays_brute2(arr, target):
     ans = []
     for i in range(len(arr)):
         if arr[i] < target:
             temp_mul = arr[i]
             temp_li = [arr[i]]
-            
+
             # r will stop at: [1] end of loop, [2] prod *= arr[r+1] > j
-            for j in range(i+1, len(arr)):
-                temp_mul *= arr[j] 
+            for j in range(i + 1, len(arr)):
+                temp_mul *= arr[j]
 
                 # if   a * b * ... * f > target
                 # then a * b * ... * f * g > target
                 if temp_mul >= target:
                     break
-                
+
                 temp_li.append(arr[j])
 
             while len(temp_li) > 0:  # make sure not add []
