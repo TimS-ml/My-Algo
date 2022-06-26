@@ -7,15 +7,28 @@ merge all the overlapping intervals to produce a list that has only mutually exc
 include sort
 - Space complexity: O(N)
 
-
+lc 56 
 
 Sort the intervals on the start time to ensure a.start <= b.start
 If `a` overlaps `b` (i.e. b.start <= a.end), 
 we need to merge them into a new interval `c` such that:
-    c.start = a.start
+    c.start = a.start = min(a.start, b.start)
     c.end = max(a.end, b.end)
 We will keep repeating the above two steps to merge `c` 
 with the next interval if it overlaps with `c`.
+
+- input is unsorted start
+  - do I need to sort by interval.start?
+- case: 2+ intervals overlaps
+  - [1, 3], [4, 5], [2, 7]
+  - [1, 3], [4, 8], [1, 7]
+
+- create 2 variables: start and end
+  - if merge, update start and end
+  - if no overlaps ???
+    - that's why you need to sort interval.start (to make sure prev.start <= curr.start)
+      - overlap:    [1, 3], [2, 7], [4, 8] => [1, 7], [4, 8]
+      - no overlap: [1, 3], [4, 7], [4, 8] => [4, 7], [4, 8]
 '''
 
 

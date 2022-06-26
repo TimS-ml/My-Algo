@@ -3,6 +3,7 @@
 - Time complexity: O(N logN)
 - Space complexity: O(N)
 
+intervals intersection pattern
 '''
 
 import heapq
