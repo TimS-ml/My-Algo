@@ -5,8 +5,8 @@ Given the head of a Singly LinkedList that contains a cycle, write a function to
 - Time complexity: O(N)
 - Space complexity: O(1)
 
+
 lc 141 and lc 142
-This is not a good solution...
 '''
 
 from __future__ import print_function
@@ -26,41 +26,22 @@ class Node:
 
 
 def find_cycle_start(head):
-    cycle_length = 0
-    # find the LinkedList cycle
-    slow, fast = head, head
-    while (fast is not None and fast.next is not None):
+    fast = slow = head
+    while fast and fast.next:
         fast = fast.next.next
         slow = slow.next
-        if slow == fast:  # found the cycle
-            cycle_length = calculate_cycle_length(slow)
+        if slow == fast:
             break
-    return find_start(head, cycle_length)
 
+    # no cycle
+    if not fast or not fast.next:
+        return None
 
-def calculate_cycle_length(slow):
-    current = slow
-    cycle_length = 0
-    while True:
-        current = current.next
-        cycle_length += 1
-        if current == slow:
-            break
-    return cycle_length
-
-
-def find_start(head, cycle_length):
-    pointer1 = head
-    pointer2 = head
-    # move pointer2 ahead 'cycle_length' nodes
-    while cycle_length > 0:
-        pointer2 = pointer2.next
-        cycle_length -= 1
-    # increment both pointers until they meet at the start of the cycle
-    while pointer1 != pointer2:
-        pointer1 = pointer1.next
-        pointer2 = pointer2.next
-    return pointer1
+    slow = head
+    while slow != fast:
+        slow = slow.next
+        fast = fast.next
+    return slow
 
 
 def main():
