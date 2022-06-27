@@ -7,44 +7,32 @@ The output list contains the common intervals between the two lists.
 - Time complexity: O(N + M)
 - Space complexity: O(1)
 
+- len(a) might be different than len(b)
+- can output intervals have intersection? No, since a and b does not have
 
+- for element in b, find intersection in a, append to List
 
-Same as dp01
-
-The overlapping interval will be equal to:
-    start = max(a.start, b.start)
-    end = min(a.end, b.end) 
-That is, the highest start time and the lowest end time will be the overlapping interval.
+intervals pattern
 '''
 
 
 def merge(intervals_a, intervals_b):
-    result = []
-    i, j, start, end = 0, 0, 0, 1
-
+    i, j = 0, 0
+    ans = []
     while i < len(intervals_a) and j < len(intervals_b):
-        # check if intervals overlap and intervals_a[i]'s start time lies within the other intervals_b[j]
-        a_overlaps_b = intervals_a[i][start] >= intervals_b[j][start] and \
-                       intervals_a[i][start] <= intervals_b[j][end]
+        a1, a2 = intervals_a[i][0], intervals_a[i][1]
+        b1, b2 = intervals_b[j][0], intervals_b[j][1]
 
-        # check if intervals overlap and intervals_a[j]'s start time lies within the other intervals_b[i]
-        b_overlaps_a = intervals_b[j][start] >= intervals_a[i][start] and \
-                       intervals_b[j][start] <= intervals_a[i][end]
+        # a1 <= b1 <= b2 <= a2
+        # this not work a1 <= b1 and b2 <= a2
+        if b2 >= a1 and a2 >= b1:
+            ans.append([max(a1, b1), min(a2, b2)])
 
-        # store the the intersection part
-        if (a_overlaps_b or b_overlaps_a):
-            result.append([
-                max(intervals_a[i][start], intervals_b[j][start]),
-                min(intervals_a[i][end], intervals_b[j][end])
-            ])
-
-        # move next from the interval which is finishing first
-        if intervals_a[i][end] < intervals_b[j][end]:
-            i += 1
-        else:
+        if b2 < a2:
             j += 1
-
-    return result
+        else:
+            i += 1
+    return ans
 
 
 def main():

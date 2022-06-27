@@ -7,10 +7,7 @@ The output list contains the common intervals between the two lists.
 - Time complexity: O(N + M)
 - Space complexity: O(1)
 
-
-
-Same as dp01
-
+Intersection pattern
 The overlapping interval will be equal to:
     start = max(a.start, b.start)
     end = min(a.end, b.end) 
