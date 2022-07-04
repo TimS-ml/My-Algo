@@ -3,8 +3,6 @@
 - Time complexity: O(N)
 - Space complexity: O(N)
 
-
-
 '''
 
 from __future__ import print_function
@@ -12,6 +10,7 @@ from collections import deque
 
 
 class TreeNode:
+
     def __init__(self, val):
         self.val = val
         self.left, self.right, self.next = None, None, None
@@ -34,26 +33,22 @@ class TreeNode:
 
 
 def connect_level_order_siblings(root):
-    if root is None:
-        return
+    if root:
+        curr, nxt = root, root.left
+    else:
+        curr, nxt = root, None
 
-    queue = deque()
-    queue.append(root)
-    while queue:
-        previousNode = None
-        levelSize = len(queue)
-        # connect all nodes of this level
-        for _ in range(levelSize):
-            currentNode = queue.popleft()
-            if previousNode:
-                previousNode.next = currentNode
-            previousNode = currentNode
+    while curr and nxt:
+        curr.left.next = curr.right
+        if curr.next:  # the gap between left node and right node
+            curr.right.next = curr.next.left
 
-            # insert the children of current node in the queue
-            if currentNode.left:
-                queue.append(currentNode.left)
-            if currentNode.right:
-                queue.append(currentNode.right)
+        # update curr
+        curr = curr.next
+        if not curr:  # end of this row
+            curr = nxt
+            nxt = curr.left
+    return root
 
 
 def main():

@@ -3,49 +3,38 @@
 - Time complexity: O(N)
 - Space complexity: O(N)
 
-
-
+lc 199
 '''
-
+from __future__ import print_function
 from collections import deque
 
 
 class TreeNode:
+
     def __init__(self, val):
         self.val = val
         self.left, self.right = None, None
 
 
-def traverse(root):
+def tree_right_view(root):
     result = []
     if root is None:
         return result
 
     queue = deque()
     queue.append(root)
-    leftToRight = True
     while queue:
         levelSize = len(queue)
-        currentLevel = deque()
-        for _ in range(levelSize):
+        for i in range(0, levelSize):
             currentNode = queue.popleft()
-
-            # add the node to the current level based on the traverse direction
-            if leftToRight:
-                currentLevel.append(currentNode.val)
-            else:
-                currentLevel.appendleft(currentNode.val)
-
+            # if it is the last node of this level, add it to the result
+            if i == levelSize - 1:
+                result.append(currentNode)
             # insert the children of current node in the queue
             if currentNode.left:
                 queue.append(currentNode.left)
             if currentNode.right:
                 queue.append(currentNode.right)
-
-        result.append(list(currentLevel))
-
-        # !! reverse the traversal direction
-        leftToRight = not leftToRight
 
     return result
 
@@ -57,9 +46,11 @@ def main():
     root.left.left = TreeNode(9)
     root.right.left = TreeNode(10)
     root.right.right = TreeNode(5)
-    root.right.left.left = TreeNode(20)
-    root.right.left.right = TreeNode(17)
-    print("Zigzag traversal: " + str(traverse(root)))
+    root.left.left.left = TreeNode(3)
+    result = tree_right_view(root)
+    print("Tree right view: ")
+    for node in result:
+        print(str(node.val) + " ", end='')
 
 
 main()

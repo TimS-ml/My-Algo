@@ -9,31 +9,35 @@ from collections import deque
 
 
 class TreeNode:
-    def __init__(self, val, left=None, right=None):
+    def __init__(self, val):
         self.val = val
-        self.left = left
-        self.right = right
+        self.left, self.right = None, None
 
 
 def traverse(root):
     que = deque([root])
     ans = []
-    # visited = [root]
 
+    reverse = 1
     while que:
         size = len(que)
-        currLv = []
+        currLv = deque([])
         for _ in range(size):
             node = que.popleft()
-            currLv.append(node.val)
+            if reverse == 1:
+                currLv.append(node.val)
+            else:
+                currLv.appendleft(node.val)
 
             if node.left:
                 que.append(node.left)
             if node.right:
                 que.append(node.right)
-
+        
+        reverse *= -1
         ans.append(currLv)
     return ans 
+
 
 
 def main():
@@ -43,7 +47,9 @@ def main():
     root.left.left = TreeNode(9)
     root.right.left = TreeNode(10)
     root.right.right = TreeNode(5)
-    print("Level order traversal: " + str(traverse(root)))
+    root.right.left.left = TreeNode(20)
+    root.right.left.right = TreeNode(17)
+    print("Zigzag traversal: " + str(traverse(root)))
 
 
 main()

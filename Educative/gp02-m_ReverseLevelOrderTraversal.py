@@ -9,15 +9,14 @@ from collections import deque
 
 
 class TreeNode:
-    def __init__(self, val, left=None, right=None):
+    def __init__(self, val):
         self.val = val
-        self.left = left
-        self.right = right
+        self.left, self.right = None, None
 
 
 def traverse(root):
     que = deque([root])
-    ans = []
+    ans = deque([])
     # visited = [root]
 
     while que:
@@ -32,7 +31,7 @@ def traverse(root):
             if node.right:
                 que.append(node.right)
 
-        ans.append(currLv)
+        ans.appendleft(currLv)
     return ans 
 
 
@@ -43,7 +42,7 @@ def main():
     root.left.left = TreeNode(9)
     root.right.left = TreeNode(10)
     root.right.right = TreeNode(5)
-    print("Level order traversal: " + str(traverse(root)))
+    print("Reverse level order traversal: " + str(traverse(root)))
 
 
 main()
