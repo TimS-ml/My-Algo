@@ -34,13 +34,12 @@ class Solution:
         return prev  # you can return temp as well
 
     def reverseList_2(self, head: ListNode) -> ListNode:
-        prev = None
-        while head:
-            temp = head.next  # move to next, step ahead than temp
-            head.next = prev  # change the pointer
-            prev = head  # update prev
-            head = temp
-        return prev  # you can return temp as well
+        if not head or not head.next:
+            return head  # the last Node
+        last = self.reverseList_2(head.next)
+        head.next.next = head
+        head.next = None
+        return last
 
 
 def listToListNode(input):
@@ -66,6 +65,6 @@ def listNodeToString(node):
 
 line = [1, 2, 3, 4, 5]
 head = listToListNode(line)
-ans = Solution().xxx(head)
+ans = Solution().reverseList_2(head)
 out = listNodeToString(ans)
 print(out)

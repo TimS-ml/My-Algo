@@ -3,7 +3,8 @@
 - Time complexity: O()
 - Space complexity: O()
 
-lc 1235
+check dp05
+related: lc 1235, using dp
 '''
 
 from heapq import *

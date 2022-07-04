@@ -62,7 +62,7 @@ class ListNode:
 
 
 class Solution:
-    def reverseBetween(self, head: ListNode, m: int, n: int) -> ListNode:
+    def reverseBetween_iter(self, head: ListNode, m: int, n: int) -> ListNode:
         if not head:
             return None
 
@@ -90,33 +90,32 @@ class Solution:
 
         return head
 
-    # This not gonna work, somehow we can't update head
-    # We need a variable 'curr'
-    def reverseBetween_2(self, head: ListNode, m: int, n: int) -> ListNode:
+    def reverseBetween(self, head: ListNode, m: int, n: int) -> ListNode:
+        prev = None
+        def reverseN(head: ListNode, n: int):
+            nonlocal prev
+            if n == 1:
+                prev = head.next
+                return head
+            
+            print('before:', '  ' * n, n, prev)
+            last = reverseN(head.next, n - 1)
+            # prev and last are both fixed
+            print('after :', '  ' * n, n, prev.val, last.val)
+
+            head.next.next = head 
+            head.next = prev
+            return last
+
         if not head:
             return None
 
-        ans, prev = head, None
-        while m > 1:
-            prev = head
-            head = head.next
-            m, n = m - 1, n - 1
+        if m == 1:
+            return reverseN(head, n)
+        
+        head.next = self.reverseBetween(head.next, m - 1, n - 1)
+        return head
 
-        tail, con = head, prev
-        while n:
-            temp = head
-            head = head.next  # move to next, step ahead than temp
-            temp.next = prev  # change the pointer
-            prev = temp  # update prev
-
-        if con:
-            con.next = prev
-        else:
-            ans = prev
-
-        tail.next = head
-
-        return ans
 
 
 def listToListNode(input):
@@ -142,6 +141,7 @@ def listNodeToString(node):
 
 line = [1, 2, 3, 4, 5]
 head = listToListNode(line)
-ans = Solution().reverseBetween(head, 2, 4)
+# ans = Solution().reverseBetween(head, 2, 4)
+ans = Solution().reverseBetween(head, 1, 4)
 out = listNodeToString(ans)
 print(out)

@@ -11,7 +11,6 @@ from heapq import *
 
 
 class Interval:
-
     def __init__(self, start, end):
         self.start = start
         self.end = end
@@ -21,7 +20,6 @@ class Interval:
 
 
 class EmployeeInterval:
-
     def __init__(self, interval, employeeIndex, intervalIndex):
         self.interval = interval  # interval representing employee's working hours
         # index of the list containing working hours of this employee

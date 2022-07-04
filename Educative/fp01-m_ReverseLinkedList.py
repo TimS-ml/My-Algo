@@ -22,13 +22,12 @@ class Node:
 
 
 def reverse(head):
-    previous, current, next = None, head, None
-    while current is not None:
-        next = current.next  # temporarily store the next node
-        current.next = previous  # reverse the current node
-        previous = current  # before we move to the next node, point previous to the current node
-        current = next  # move on the next node
-    return previous
+    if not head or not head.next:
+        return head  # the last Node
+    last = reverse(head.next)
+    head.next.next = head
+    head.next = None
+    return last
 
 
 def main():
