@@ -17,6 +17,9 @@ post-order:
 Also, check 297-1, list operation is faster than string add
 '''
 
+from collections import deque
+
+
 # Definition for a binary tree node.
 class TreeNode(object):
     def __init__(self, x):
@@ -127,6 +130,66 @@ class Codec_post_order:
         data_list.pop()  # [x, x, x, '']
         root = deHelper(data_list)
         return root 
+
+
+class Codec_level_order:
+    def serialize(self, root):
+        """ Encodes a tree to a single string.
+        :type root: TreeNode
+        :rtype: str
+        """
+        if not root:
+            return ''
+
+        s = ''
+        q = deque([root])
+        while q:
+            node = q.popleft()
+
+            if not node:
+                s = s + 'None' + ','
+                continue
+
+            s = s + str(node.val) + ','
+            q.append(node.left)
+            q.append(node.right)
+
+        return s
+
+    def deserialize(self, data):
+        """Decodes your encoded data to tree.
+        :type data: str
+        :rtype: TreeNode
+        """
+        if not data:
+            return None
+
+        data_list = data.split(',')
+        root = TreeNode(data_list[0])
+
+        q = deque([root])
+        i = 0
+        while i < len(data_list) and q:
+            node = q.popleft()
+
+            i += 1
+            left = data_list[i]
+            if left != 'None':
+                node.left = TreeNode(int(left))
+                q.append(node.left)
+            else:
+                node.left = None
+
+            i += 1
+            right = data_list[i]
+            if right != 'None':
+                node.right = TreeNode(int(right))
+                q.append(node.right)
+            else:
+                node.right = None
+        
+        return root
+
 
 # Your Codec object will be instantiated and called as such:
 # ser = Codec()

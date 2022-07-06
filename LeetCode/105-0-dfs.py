@@ -34,8 +34,8 @@ class Solution:
         inorder_idx_map = {val: idx for idx, val in enumerate(inorder)}
         preorder = deque(preorder)
 
-        def build(inorder_left, inorder_right):
-            if inorder_left > inorder_right:
+        def build(inStart, inEnd):
+            if inStart > inEnd:
                 return None
 
             # find root note
@@ -44,10 +44,12 @@ class Solution:
             root = TreeNode(root_val)
 
             # split l-tree and r-tree based on root
-            index = inorder_idx_map[root_val]
-
-            root.left = build(inorder_left, index - 1)
-            root.right = build(index + 1, inorder_right)
+            inorderRootIdx = inorder_idx_map[root_val]
+            
+            # !!! left first !!!
+            # !!! does not include inorderRootIdx !!!
+            root.left = build(inStart, inorderRootIdx - 1)
+            root.right = build(inorderRootIdx + 1, inEnd)
             return root
 
         return build(0, len(inorder) - 1)
@@ -64,9 +66,9 @@ class Solution:
             # find in in-order in range(inStart, inEnd+1)
             # be aware of this edge case
             # if use hash map, then inStart, inEnd are not necessary...
-            idx = inorder_idx_map[rootVal]
+            inorderRootIdx = inorder_idx_map[rootVal]
 
-            leftSize = idx - inStart
+            leftSize = inorderRootIdx - inStart
 
             root = TreeNode(rootVal)
             # idx = inStart+leftSize

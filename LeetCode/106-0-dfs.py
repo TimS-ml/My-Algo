@@ -27,8 +27,8 @@ class Solution:
     def buildTree(self, inorder: List[int], postorder: List[int]) -> TreeNode:
         inorder_idx_map = {val: idx for idx, val in enumerate(inorder)}
 
-        def build(inorder_left, inorder_right):
-            if inorder_left > inorder_right:
+        def build(inStart, inEnd):
+            if inStart > inEnd:
                 return None
 
             # find root note in postorder
@@ -37,12 +37,12 @@ class Solution:
             val = postorder.pop()
             root = TreeNode(val)
 
-            # inorder index
+            # inorder inorderRootIdx
             # split l-tree and r-tree based on root
-            index = inorder_idx_map[val]
+            inorderRootIdx = inorder_idx_map[val]
 
-            root.right = build(index + 1, inorder_right)
-            root.left = build(inorder_left, index - 1)
+            root.right = build(inorderRootIdx + 1, inEnd)
+            root.left = build(inStart, inorderRootIdx - 1)
             return root
 
         return build(0, len(inorder) - 1)
