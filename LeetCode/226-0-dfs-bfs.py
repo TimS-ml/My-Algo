@@ -3,6 +3,7 @@
 - Time complexity: O()
 - Space complexity: O()
 
+Invert node.left and node.right for every node
 '''
 
 
@@ -48,6 +49,7 @@ class Solution:
 
         return invert(root)
 
+    # traverse, iter version
     def invertTree_bfs(self, root: TreeNode) -> TreeNode:
         stack = [root]
         while stack:

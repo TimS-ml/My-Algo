@@ -15,18 +15,28 @@ class TreeNode:
         self.right = right
 
 
-def has_path(root, sum):
+def has_path(root, s):
     if root is None:
         return False
 
-    # if the current node is a leaf and its value is equal to the sum, we've found a path
-    if root.val == sum and root.left is None and root.right is None:
-        return True
+    def dfs(node, remain):
+        if not node.left and not node.right:
+            return remain == node.val
+        # the terminate case not this:
+        # if not node:
+        #     return remain == 0
+        if node.left:
+            left = dfs(node.left, remain - node.val)
+        else:
+            left = False
+        if node.right:
+            right = dfs(node.right, remain - node.val)
+        else:
+            right = False
 
-    # recursively call to traverse the left and right sub-tree
-    # return true if any of the two recursive call return true
-    return has_path(root.left, sum - root.val) or \
-           has_path(root.right, sum - root.val)
+        return left or right
+
+    return dfs(root, s)
 
 
 def traverse(root):

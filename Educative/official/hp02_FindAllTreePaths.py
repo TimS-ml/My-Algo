@@ -5,8 +5,6 @@ This is due to the fact that we traverse each node once (which will take O(N)),
 and for every leaf node, we might have to store its path (by making a copy of the current path) which will take O(N)
 - Space complexity: O(N*logN)
 
-
-
 '''
 
 
@@ -32,7 +30,7 @@ def find_paths_recursive(currentNode, required_sum, currentPath, allPaths):
 
     # if the current node is a leaf and its value is equal to required_sum, save the current path
     if currentNode.val == required_sum and currentNode.left is None and currentNode.right is None:
-        allPaths.append(list(currentPath))
+        allPaths.append(list(currentPath))  # this is O(N)???
     else:
         # traverse the left sub-tree
         find_paths_recursive(currentNode.left, required_sum - currentNode.val,

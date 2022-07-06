@@ -3,6 +3,8 @@
 - Time complexity: O(N)
 - Space complexity: O(N)
     If the tree is balanced, it'd be O(logN)
+
+check lc 104
 '''
 
 
@@ -13,24 +15,11 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 class Solution(object):
-    # post-order: fast
+    # pre-order: slow, time O(N^2)
+    # lc 104 sol 1
     def diameterOfBinaryTree(self, root):
-        self.ans = 0
-
-        def dfs(node):
-            if not node:
-                return 0
-            left = dfs(node.left)
-            right = dfs(node.right)
-            self.ans = max(self.ans, left + right)
-            return max(left, right) + 1
-
-        dfs(root)
-        return self.ans
-    
-    # pre-order: slow, time O(N^2), just for demonstration
-    def diameterOfBinaryTree_2(self, root):
         self.ans = 0
 
         def dfs(node):
@@ -58,11 +47,22 @@ class Solution(object):
         dfs(root)
         return self.ans
 
+    # post-order + split sub-problems
+    # lc 104 sol 2
+    def diameterOfBinaryTree_2(self, root):
+        self.ans = 0
 
-vals = [1, 2, 3, 4, 5]
-tree = Tree()
+        def dfs(node):
+            if not node:
+                return 0
 
-for i in range(len(vals)):
-    tree.add(vals[i])
+            left = dfs(node.left)
+            right = dfs(node.right)
 
-print(Solution().diameterOfBinaryTree(tree.root))
+            # post-order
+            self.ans = max(self.ans, left + right)
+            return max(left, right) + 1  # remember to +1
+
+        dfs(root)
+        return self.ans
+

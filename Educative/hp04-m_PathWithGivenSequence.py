@@ -3,10 +3,10 @@
 - Time complexity: O(N)
 - Space complexity: O(N)
 
-
-
+Backtrack + cut leaf
 '''
 
+# from collections import deque
 
 class TreeNode:
     def __init__(self, val, left=None, right=None):
@@ -15,24 +15,20 @@ class TreeNode:
         self.right = right
 
 
+# You don't need to modify the seq, compare val at idx is ok
 def find_path(root, sequence):
-    if not root:
-        return len(sequence) == 0
-    L = len(sequence)
-    
-    # pre-order?
-    def dfs(currNode, idx):
-        if currNode is None:
+
+    def dfs(node, idx):
+        if not node:
+            return idx == len(sequence)
+
+        if sequence[idx] != node.val:
             return False
 
-        if idx >= L or currNode.val != sequence[idx]:
-            return False
-
-        if currNode.left is None and currNode.right is None and idx == L - 1:
-            return True
-
-        return dfs(currNode.left, idx + 1) or dfs(currNode.right, idx + 1)
-
+        l = dfs(node.left, idx + 1)
+        r = dfs(node.right, idx + 1)
+        return l or r
+        
     return dfs(root, 0)
 
 

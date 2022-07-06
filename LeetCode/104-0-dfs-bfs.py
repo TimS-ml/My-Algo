@@ -19,6 +19,8 @@ class TreeNode:
 
 
 class Solution:
+    # traverse: back tracking
+    # top down: not node -> update path depth
     def maxDepth_dfs(self, root) -> int:
         ans = 0
         def dfs(node, depth):  # return maxLen
@@ -26,15 +28,22 @@ class Solution:
                 nonlocal ans
                 ans = max(ans, depth)
                 return
+
+            # pre-order position
+            # diameter is hard to get at pre-order in lc 543
             depth += 1
             dfs(node.left, depth)
             dfs(node.right, depth)
+
+            # post-order position
             depth -= 1
             return
         
         dfs(root, 0)
         return ans
 
+    # split sub-problems: dp
+    # bottom up: not node -> return depth=0
     def maxDepth_dfs_2(self, root) -> int:
         def dfs(node):  # return maxLen
             if not node:
@@ -53,7 +62,7 @@ class Solution:
         ans = 0  # depth
         while queue:
             n = len(queue)
-            for i in range(n):
+            for _ in range(n):
                 node = queue.popleft()
                 if node.left:
                     queue.append(node.left)
@@ -64,4 +73,4 @@ class Solution:
 
 
 root = TreeNode([3, 9, 20, None, None, 15, 7])
-print(Solution().maxDepth(root))
+print(Solution().maxDepth_dfs(root))
