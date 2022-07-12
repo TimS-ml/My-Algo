@@ -1,3 +1,11 @@
+'''
+# Code Explain:
+- Time complexity: O()
+- Space complexity: O()
+
+lc 295
+'''
+
 # The time complexity of the insertNum() will be O(logN)
 #   due to the insertion in the heap
 # The time complexity of the findMedian() will be O(1)

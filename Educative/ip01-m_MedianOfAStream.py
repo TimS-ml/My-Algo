@@ -6,15 +6,17 @@ import heapq
 
 class MedianOfAStream:
     def __init__(self):
-        self.maxHeap = []  # containing first half of numbers
-        self.minHeap = []  # containing second half of numbers
+        self.maxHeap = []  # first half
+        self.minHeap = []  # second half
 
     def insert_num(self, num):
         if not self.minHeap or num >= self.minHeap[0]:
             heapq.heappush(self.minHeap, num)
         else:
+            # max heap using -num
             heapq.heappush(self.maxHeap, -num)
 
+        # balance
         if len(self.maxHeap) > len(self.minHeap):
             heapq.heappush(self.minHeap, -heapq.heappop(self.maxHeap))
         elif len(self.minHeap) - len(self.maxHeap) > 1:
