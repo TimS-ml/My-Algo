@@ -18,28 +18,33 @@ class Solution:
         def backtrack(start, subset):
             ans.append(subset[:])
             for i in range(start, len(nums)):
-                backtrack(i + 1, subset + [nums[i]])
+                # backtrack(i + 1, subset + [nums[i]])
+                subset.append(nums[i])
+                backtrack(i + 1, subset)
+                subset.pop()
 
         ans = []
         backtrack(0, [])
         return ans
 
-    def subsets_2(self, nums: List[int]) -> List[List[int]]:
-        def backtrack(start, subset):
-            # subset[:] create a shallow copy of the list
-            if len(subset) == k:
-                ans.append(subset[:])
-            for i in range(start, len(nums)):
-                subset.append(nums[i])
-                backtrack(i + 1, subset)
-                # print('After:', subset)
-                subset.pop()
-                # print(subset.pop())
+    # a terrible unnecessary solution
+    # def subsets_2(self, nums: List[int]) -> List[List[int]]:
+    #     def backtrack(start, subset):
+    #         # subset[:] create a shallow copy of the list
+    #         print(k, len(subset))
+    #         if len(subset) == k:
+    #             ans.append(subset[:])
+    #         for i in range(start, len(nums)):
+    #             subset.append(nums[i])
+    #             backtrack(i + 1, subset)
+    #             # print('After:', subset)
+    #             subset.pop()
+    #             # print(subset.pop())
 
-        ans = []
-        for k in range(len(nums) + 1):
-            backtrack(0, [])
-        return ans
+    #     ans = []
+    #     for k in range(len(nums) + 1):
+    #         backtrack(0, [])
+    #     return ans
 
     def subsets_3(self, nums: List[int]) -> List[List[int]]:
         ans = [[]]

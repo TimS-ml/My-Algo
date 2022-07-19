@@ -1,7 +1,7 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(1)
+- Space complexity: O(1)
 
 
 ord('a') - ord('A') = 32! not 26

@@ -4,11 +4,27 @@
 - Space complexity: O()
 
 lc 502
+
+in each step:
+- find [capital, profit] pair that:
+  - captial <= current captical
+  - maximum profit
+
+current captial is a non-decrease seq
+what if non-increasing?
+- sort captial asc
+- binary search find available idx, pool = list[:idx]
+
+so, two steps:
+- maintain a available capital pool after update
+- pick maximum profit from pool
+  - if no heap: sort numberOfProjects times
 '''
 
 from heapq import *
 
 
+# one heap is good enough
 def find_maximum_capital(capital, profits, numberOfProjects, initialCapital):
     minCapitalHeap = []
     maxProfitHeap = []
@@ -20,7 +36,7 @@ def find_maximum_capital(capital, profits, numberOfProjects, initialCapital):
     # let's try to find a total of 'numberOfProjects' best projects
     availableCapital = initialCapital
     for _ in range(numberOfProjects):
-        # find all projects that can be selected within the available capital and insert them in a max-heap
+        # !!! find all projects that can be selected within the available capital and insert them in a max-heap
         while minCapitalHeap and minCapitalHeap[0][0] <= availableCapital:
             capital, i = heappop(minCapitalHeap)
             heappush(maxProfitHeap, (-profits[i], i))

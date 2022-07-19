@@ -62,7 +62,7 @@ class Solution(object):
                 matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
         return matrix
 
-    def rotate_2(self, matrix):
+    def rotate_3(self, matrix):
         '''
         using [::-1] to flip the matrix upside down
         and then zip to transpose it

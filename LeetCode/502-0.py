@@ -3,7 +3,22 @@
 - Time complexity: O()
 - Space complexity: O()
 
+in each step:
+- find [capital, profit] pair that:
+  - captial <= current captical
+  - maximum profit
+
+current captial is a non-decrease seq
+what if non-increasing?
+- sort captial asc
+- binary search find available idx, pool = list[:idx]
+
+so, two steps:
+- maintain a available capital pool after update
+- pick maximum profit from pool
+  - if no heap: sort k times
 '''
+
 from heapq import nlargest, heappop, heappush
 
 class Solution:

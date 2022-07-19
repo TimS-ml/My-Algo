@@ -36,4 +36,4 @@ class Solution:
 
 
 x, n = 2, 10
-print(Solution().myPow2(x, n))
+print(Solution().myPow(x, n))

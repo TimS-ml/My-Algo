@@ -1,7 +1,7 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(k C{k}{N})
+- Space complexity: O(C{k}{N})
 
 For the case [1, 2, 3, 4], k = 2
 after [1, 2] (len = k)
@@ -14,13 +14,6 @@ need to pop 2, then visit [1, 3]
 - Backtrack senario: len(curr) < k
 [3] loop over remaining pieces, need a pointer to track the position
 
-
-# Pros and Cons:
-## Pros:
-
-## Cons:
-
-# Notation:
 shallow copy:
     subset[:]
 '''
@@ -33,6 +26,8 @@ class Solution:
         nums = [i for i in range(1, n + 1)]
 
         def backtrack(start, subset):
+            # comb: only append ans when reach the k level
+            # since require "all possible combinations of k´"
             if len(subset) == k:
                 ans.append(subset[:])
                 return

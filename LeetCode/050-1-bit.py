@@ -22,13 +22,13 @@ class Solution:
             x = 1 / x
             n = -n
 
-        pow = 1
+        ans = 1
         while n:
             if n & 1:
-                pow *= x
+                ans *= x
             x *= x
             n >>= 1
-        return pow
+        return ans
 
 
 x, n = 2, 10
