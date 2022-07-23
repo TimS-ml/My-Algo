@@ -1,10 +1,9 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(N*2^N)
+- Space complexity: O(N*2^N)
 
 Same like lc 78
-
 Pay attention on the case like [4,4,4,1,4] => sort at first
 '''
 
@@ -14,6 +13,7 @@ from typing import List
 class Solution:
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
         def backtrack(start, subset):
+            # not efficient
             if subset not in ans:
                 ans.append(subset)
             for i in range(start, len(nums)):
@@ -41,15 +41,13 @@ class Solution:
 
     # cascade
     def subsets_3(self, nums: List[int]) -> List[List[int]]:
-        n = len(nums)
         output = [[]]
-        
+
         for num in nums:
             output += [curr + [num] for curr in output]
-        
+
         return output
 
-# inputs
-IN = [(38), (128)]
-useSet = 1
-print(Solution().subsetsWithDup(IN[useSet]))
+
+n = [1, 2, 2]
+print(Solution().subsetsWithDup(n))

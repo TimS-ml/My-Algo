@@ -13,17 +13,6 @@
 for sol 3:
 if c = [1, 1, 1, 3], target = 3
 the subset [1, 1, 1] comes from i == start
-
-# Pros and Cons:
-## Pros:
-
-## Cons:
-
-# Notation:
-unlike LC039, this question requires elements only occur once
-
-shallow copy:
-    subset[:]
 '''
 
 from typing import List
@@ -44,7 +33,7 @@ class Solution:
             for i in range(start, len(candidates)):
                 subset.append(candidates[i])
                 # print(subset)
-                backtrack(i + 1, subset)
+                backtrack(i + 1, subset)  # lc39 is i
                 subset.pop()
 
         ans = []
@@ -52,7 +41,7 @@ class Solution:
         return ans
 
     # avoid using sum, it will be faster
-    def combinationSum22(self, candidates: List[int],
+    def combinationSum2_2(self, candidates: List[int],
                          target: int) -> List[List[int]]:
         candidates.sort()
 
@@ -66,14 +55,14 @@ class Solution:
                     return
                 else:
                     backtrack(i + 1, subset + [candidates[i]],
-                              remain - candidates[i])
+                              remain - candidates[i])  # lc39 is i
 
         ans = []
         backtrack(0, [], target)
         return ans
 
     # avoid duplicate
-    def combinationSum23(self, candidates: List[int],
+    def combinationSum2_3(self, candidates: List[int],
                          target: int) -> List[List[int]]:
         candidates.sort()
 
@@ -97,6 +86,8 @@ class Solution:
 
 
 # inputs
-c = [10, 1, 2, 7, 6, 1, 5]
-t = 8
-print(Solution().combinationSum23(c, t))
+c = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+t = 27
+# c = [10, 1, 2, 7, 6, 1, 5]
+# t = 8
+print(Solution().combinationSum2(c, t))
