@@ -13,7 +13,7 @@ nums[:i] + nums[i+1:] will give us
 class Solution:
     # this is not universal solution
     def permute(self, nums):
-        # `start´` only applies for non-dupl nums
+        # `start` only applies for non-dupl nums
         def backtrack(start):
             if start == n:
                 ans.append(nums[:])
