@@ -11,21 +11,21 @@ from typing import List
 
 
 class Solution:
-    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
-        def backtrack(start, subset):
-            # not efficient
-            if subset not in ans:
-                ans.append(subset)
-            for i in range(start, len(nums)):
-                backtrack(i + 1, subset + [nums[i]])
+    # def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+    #     def backtrack(start, subset):
+    #         # not efficient
+    #         if subset not in ans:
+    #             ans.append(subset)
+    #         for i in range(start, len(nums)):
+    #             backtrack(i + 1, subset + [nums[i]])
 
-        nums.sort()
-        ans = []
-        backtrack(0, [])
-        return ans
+    #     nums.sort()
+    #     ans = []
+    #     backtrack(0, [])
+    #     return ans
 
     # right way to remove duplicate
-    def subsetsWithDup_2(self, nums: List[int]) -> List[List[int]]:
+    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
         def backtrack(start, subset):
             ans.append(subset)
             for i in range(start, len(nums)):
@@ -40,7 +40,7 @@ class Solution:
         return ans
 
     # cascade
-    def subsets_3(self, nums: List[int]) -> List[List[int]]:
+    def subsetsWithDup_2(self, nums: List[int]) -> List[List[int]]:
         output = [[]]
 
         for num in nums:

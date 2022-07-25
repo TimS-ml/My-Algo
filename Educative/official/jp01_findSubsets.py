@@ -1,3 +1,12 @@
+'''
+# Code Explain:
+- Time complexity: O(N * 2^N)
+- Space complexity: O(N * 2^N)
+
+lc 78
+input no dupl + element select once + subset / comb
+'''
+
 def find_subsets(nums):
     subsets = []
     # start by adding the empty subset

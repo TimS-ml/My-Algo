@@ -1,13 +1,16 @@
-# https://leetcode-cn.com/problems/unique-binary-search-trees-ii/
+'''
+# Code Explain:
+- Time complexity: O()
+- Space complexity: O()
+
+'''
 
 
 class Solution:
     def generateTrees(self, n: int) -> List[TreeNode]:
         def generate_trees(start, end):
             if start > end:
-                return [
-                    None,
-                ]
+                return [None,]
 
             all_trees = []
             for i in range(start, end + 1):  # pick up a root

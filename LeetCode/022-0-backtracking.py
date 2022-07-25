@@ -3,9 +3,7 @@
 - Time complexity: O(n)
 - Space complexity: O(n)
 
-
-
-left==0相当于左右括号的平衡
+for backtracking: path and search space
 '''
 
 
@@ -18,20 +16,16 @@ class Solution:
                 return
             # if left < n and if right < left will keep balance
             if left < n:
-                # print('before 1:', subStr)
                 backtrack(subStr + '(', left + 1, right)
-                # print('after 1:', subStr)
             if right < left:
-                # print('before 2:', subStr)
                 backtrack(subStr + ')', left, right + 1)
-                # print('after 2:', subStr)
 
         ans = []
         backtrack('', 0, 0)
         return ans
 
     # same... but we need to check if left is 0
-    # other wise will include '()()(('
+    # otherwise will include '()()(('
     def generateParenthesis_2(self, n: int):
         def backtrack(left, subPath):
             if len(subPath) == 2 * n:
@@ -53,6 +47,18 @@ class Solution:
         backtrack(0, [])
         return ans
 
+    def generateParenthesis_dp(self, n: int):
+        dp = [[] for _ in range(n + 1)]
+        dp[0] = ['']
+        for i in range(1, n + 1):
+            for p in range(i):
+                l1 = dp[p]
+                l2 = dp[i - 1 - p]
+                for k1 in l1:
+                    for k2 in l2:
+                        dp[i].append('({0}){1}'.format(k1, k2))
+
+        return dp[n]
 
 print(Solution().generateParenthesis(3))
 # print(Solution().generateParenthesis_2(3))
