@@ -3,29 +3,28 @@
 - Time complexity: O(logN)
 - Space complexity: O(1)
 
-This is a great example on how ultimately the start, end, mid will go when key is not in arr
-- Asc array
-- find ceiling (smallest element in the given array greater than or equal to the ‘key’.)
+- find ceiling (smallest element in the given array greater than or equal to the ‘key’)
+
+lc 35
 '''
 
-def search_ceiling_of_a_number(arr, key):
-    start, end = 0, len(arr)-1
+# [l, r)
+def search_ceiling_of_a_number(nums, target):
+    left, right = 0, len(nums)
 
-    while start <= end:
-        mid = int((start + end) // 2)
+    while left < right:
+        mid = int((left + right) // 2)
         
-        if key < arr[mid]:
-            end = mid - 1
-        elif key > arr[mid]:
-            start = mid + 1
+        print(left, right, mid)
+        if target < nums[mid]:
+            right = mid
+        elif target > nums[mid]:
+            left = mid + 1
         else:  # key == arr[mid+1]
             return mid
 
-    # since the loop is running until 'start <= end', 
-    # so at the end of the while loop, 'start == end+1' (start > end)
-    # we are not able to find the element in the given array, 
-    # so the next big number will be arr[start]
-    return start
+    # this is different, end of loop: l = r = 0 or = -1
+    return left
 
 
 def main():

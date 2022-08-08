@@ -1,3 +1,11 @@
+'''
+# Code Explain:
+- Time complexity: O(logN)
+- Space complexity: O(1)
+
+lc 704
+'''
+
 def binary_search(arr, key):
     start, end = 0, len(arr) - 1
     isAscending = arr[start] < arr[end]

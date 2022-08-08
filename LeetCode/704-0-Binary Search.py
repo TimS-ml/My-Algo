@@ -9,6 +9,7 @@ from typing import List
 
 
 class Solution:
+    # [left, right]
     def search(self, nums: List[int], target: int) -> int:
         left, right = 0, len(nums) - 1
 
@@ -24,21 +25,19 @@ class Solution:
 
         return -1
 
+    # [left, right), mainly modify r side
     def search_2(self, nums: List[int], target: int) -> int:
-        left, right = 0, len(nums) - 1
+        left, right = 0, len(nums)
 
-        while left < right:  # if you do this way
+        while left < right:
             # update pivot every time
             pivot = left + (right - left) // 2
             if nums[pivot] == target:
                 return pivot
             if target < nums[pivot]:
-                right = pivot - 1
+                right = pivot  # note: since l < r
             else:
                 left = pivot + 1
 
-        if nums[left] == target:
-            return left
-        else:
-            return -1
+        return -1
 

@@ -1,10 +1,9 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(logN)
+- Space complexity: O(1)
 
-
-
+lc 35
 '''
 
 
@@ -23,8 +22,10 @@ def search_ceiling_of_a_number(arr, key):
         else:  # found the key
             return mid
 
-    # since the loop is running until 'start <= end', so at the end of the while loop, 'start == end+1'
-    # we are not able to find the element in the given array, so the next big number will be arr[start]
+    # since the loop is running until 'start <= end', 
+    # so at the end of the while loop, 'start == end+1' (start > end)
+    # we are not able to find the element in the given array, 
+    # so the next big number will be arr[start]
     return start
 
 

@@ -1,15 +1,15 @@
--[ ] [a] Sliding Window
--[ ] [b] Two Pointers
--[ ] [c] Fast & Slow Pointers
--[ ] [d] Merge Intervals
--[ ] [e] Cyclic Sort
--[ ] [f] In-place Reversal of a LinkedList
--[ ] [g] Tree Breadth First Search
--[ ] [h] Tree Depth First Search
--[ ] [i] Two Heaps
--[ ] [j] Subsets
--[ ] [k] Modified Binary Search
--[ ] [l] Bitewise XOR
+-[x] [a] Sliding Window
+-[x] [b] Two Pointers
+-[x] [c] Fast & Slow Pointers
+-[x] [d] Merge Intervals
+-[x] [e] Cyclic Sort
+-[x] [f] In-place Reversal of a LinkedList
+-[x] [g] Tree Breadth First Search
+-[x] [h] Tree Depth First Search
+-[x] [i] Two Heaps
+-[x] [j] Subsets
+-[x] [k] Modified Binary Search
+-[x] [l] Bitewise XOR
 -[ ] [m] Top 'K' Elements
 -[ ] [n] K-way merge
 -[ ] [o] 0/1 Knapsack (Dynamic Programming)

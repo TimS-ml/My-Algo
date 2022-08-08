@@ -8,41 +8,32 @@
 - number exsit or not exsit
 - number have dupl
 
-Using:
-- end = mid - 1
-- start = mid + 1
+we cannot do arr = arr[::-1]
+since the time complexity is O(n)
 
-Instead of (this will fall in to inf-loop):
-- end = mid 
-- start = mid
+lc 704
 '''
 
-def binary_search(arr, key):
-    isAsc = arr[0] < arr[-1]
-    start, end = 0, len(arr)-1
+# [l, r)
+def binary_search(nums, target):
+    isAsc = nums[0] < nums[-1]
+    left, right = 0, len(nums)
 
-    while start <= end:
-        # mid = int(start + (end - start) // 2)  # this is better
-        mid = int((start + end) // 2)
+    while left < right:
+        mid = int(left + (right - left) // 2)  # this is better
         
-        # or you can put mid here
-        # if arr[mid] == key:
-        #     return mid
-        
-        # we cannot do arr = arr[::-1]
-        # since the time complexity is O(n)
         if isAsc:
-            if key < arr[mid]:
-                end = mid - 1
-            elif key > arr[mid]:
-                start = mid + 1
+            if target < nums[mid]:  # target at left half, reduce right
+                right = mid
+            elif target > nums[mid]:  # target at right half, increase left
+                left = mid + 1
             else:  # arr[mid] == key
                 return mid
-        else:
-            if key > arr[mid]:
-                end = mid - 1
-            elif key < arr[mid]:
-                start = mid + 1
+        else:  # !!! change < to >, > to <
+            if target > nums[mid]:
+                right = mid
+            elif target < nums[mid]:
+                left = mid + 1
             else:  # arr[mid] == key
                 return mid
 
