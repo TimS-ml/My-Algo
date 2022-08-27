@@ -1,8 +1,9 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(logN)
+- Space complexity: O(1)
 
+lc 34
 '''
 
 # [left, right)
