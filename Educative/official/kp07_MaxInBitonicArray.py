@@ -17,7 +17,8 @@ def find_max_in_bitonic_array(arr):
             start = mid + 1
 
     # at the end of the while loop, 'start == end'
-    return arr[start]
+    # return arr[start]
+    return start
 
 
 def main():
