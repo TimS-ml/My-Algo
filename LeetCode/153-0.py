@@ -1,11 +1,12 @@
 '''
-Determine if left or right part of arr is in Asc order
+No dupl
 
-nums = left sorted + right sorted
+case: ASC arr: [a, b, c, d], rotate: [c, d, a, b]
+any number in c~d > any number in a~b
 
-case:
+steps:
 nums = [3, 4, 5, 1, 2]
-     L  m        R
+        L  m        R
 
 check if nums[m] >= nums[L]:
     search right
@@ -15,18 +16,18 @@ else:
 
 class Solution:
     def findMin(self, nums):
-        res = nums[0]
+        ans = nums[0]
         l, r = 0, len(nums) - 1
 
         while l <= r:
             if nums[l] < nums[r]:
-                res = min(res, nums[l])
+                ans = min(ans, nums[l])
                 break
 
             m = (l + r) // 2
-            res = min(res, nums[m])
+            ans = min(ans, nums[m])
             if nums[m] >= nums[l]:
                 l = m + 1
             else:
                 r = m - 1
-        return res
+        return ans

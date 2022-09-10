@@ -1,7 +1,7 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(logN)
+- Space complexity: O(1)
 
 lc 1095, 852
 
@@ -11,18 +11,21 @@ case:
       |        |
      mid     target
 
+since peak is max(nums), why use binary search find peak?
+list.index is O(n)
+
 thus
 - find mid point
 - two binary search
 '''
 
 
-def search_bitonic_array(arr, key):
-    def find_max(arr):
-        start, end = 0, len(arr) - 1
+def search_bitonic_array(nums, target):
+    def find_max(nums):
+        start, end = 0, len(nums) - 1
         while start < end:
             mid = start + (end - start) // 2
-            if arr[mid] > arr[mid + 1]:
+            if nums[mid] > nums[mid + 1]:
                 end = mid
             else:
                 start = mid + 1
@@ -30,32 +33,35 @@ def search_bitonic_array(arr, key):
         # at the end of the while loop, 'start == end'
         return start
 
-    def binary_search(arr, key, start, end):
-        while start <= end:
+    def binary_search(nums, target, start, end, isAsc=True):
+        while start < end:
             mid = int(start + (end - start) / 2)
     
-            if key == arr[mid]:
+            if target == nums[mid]:
                 return mid
     
-            if arr[start] < arr[end]:  # ascending order
-                if key < arr[mid]:
-                    end = mid - 1
-                else:  # key > arr[mid]
+            if isAsc:  # ascending order
+                if target < nums[mid]:
+                    end = mid
+                else:  # target > arr[mid]
                     start = mid + 1
             else:  # descending order
-                if key > arr[mid]:
-                    end = mid - 1
-                else:  # key < arr[mid]
+                if target > nums[mid]:
+                    end = mid
+                else:  # target < arr[mid]
                     start = mid + 1
     
         return -1  # element is not found
 
-    maxIndex = find_max(arr)
-    keyIndex = binary_search(arr, key, 0, maxIndex)
+    maxIndex = find_max(nums)
+
+    # 0 ~ mid idx
+    keyIndex = binary_search(nums, target, 0, maxIndex + 1)
     if keyIndex != -1:
         return keyIndex
     else:
-        return binary_search(arr, key, maxIndex + 1, len(arr) - 1)
+        # mid idx ~ end
+        return binary_search(nums, target, maxIndex + 1, len(nums), False)
 
 
 def main():
