@@ -13,6 +13,7 @@ init=N, pop=KlogN
 
 Note:
 log10 == 1
+but usually we believe NlogN worse than N
 '''
 
 from heapq import *
