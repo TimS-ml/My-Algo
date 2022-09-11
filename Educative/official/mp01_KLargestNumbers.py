@@ -1,3 +1,10 @@
+'''
+# Code Explain:
+- Time complexity: O(NlogK)
+- Space complexity: O(K)
+
+'''
+
 from heapq import *
 
 
