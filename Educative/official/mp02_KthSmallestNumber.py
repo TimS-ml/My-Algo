@@ -1,8 +1,18 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
 
+sol 1
+init=KlogK, pop=(N-K)logK
+- Time complexity: O(NlogK)
+- Space complexity: O(K)
+
+if put all into a min heap then pop top K
+init=N, pop=KlogN
+- Time complexity: O(N + KlogN)
+- Space complexity: O(N)
+
+Note:
+log10 == 1
 '''
 
 from heapq import *
