@@ -5,39 +5,18 @@ sol 1: heap
     We need O(logN) for Binary Search and O(KlogK) to insert the numbers in the Min Heap
 - Space complexity: O(K)
 
-sol 2: two pointers + binary search
+sol 2: two pointers + binary search (better)
 - Time complexity: O(logN + K)
     We need O(logN) for Binary Search and O(K) for finding the ‘K’ closest numbers using the two pointers
 - Space complexity: O(1)
 
 lc 658
 
-K closest number to X
+sorted array, K closest number to X
 '''
 
 from heapq import *
-
-
-def find_closest_elements(arr, K, X):
-    index = binary_search(arr, X)
-    low, high = index - K, index + K
-
-    low = max(low, 0)  # 'low' should not be less than zero
-    # 'high' should not be greater the size of the array
-    high = min(high, len(arr) - 1)
-
-    minHeap = []
-    # add all candidate elements to the min heap, sorted by their absolute difference from 'X'
-    for i in range(low, high + 1):
-        heappush(minHeap, (abs(arr[i] - X), arr[i]))
-
-    # we need the top 'K' elements having smallest difference from 'X'
-    result = []
-    for _ in range(K):
-        result.append(heappop(minHeap)[1])
-
-    result.sort()
-    return result
+from collections import deque
 
 
 def binary_search(arr, target):
@@ -55,18 +34,27 @@ def binary_search(arr, target):
     return low
 
 
-def main():
-    print("'K' closest numbers to 'X' are: " +
-          str(find_closest_elements([5, 6, 7, 8, 9], 3, 7)))
-    print("'K' closest numbers to 'X' are: " +
-          str(find_closest_elements([2, 4, 5, 6, 9], 3, 6)))
-    print("'K' closest numbers to 'X' are: " +
-          str(find_closest_elements([2, 4, 5, 6, 9], 3, 10)))
+def find_closest_elements(arr, K, X):
+    index = binary_search(arr, X)
+    low, high = index - K, index + K
 
+    # 'low' should not be less than zero 
+    low = max(low, 0)
+    # 'high' should not be greater the size of the array
+    high = min(high, len(arr) - 1)
 
-main()
+    minHeap = []
+    # add all candidate elements to the min heap, sorted by their absolute difference from 'X'
+    for i in range(low, high + 1):
+        heappush(minHeap, (abs(arr[i] - X), arr[i]))
 
-from collections import deque
+    # we need the top 'K' elements having smallest difference from 'X'
+    result = []
+    for _ in range(K):
+        result.append(heappop(minHeap)[1])
+
+    result.sort()
+    return result
 
 
 def find_closest_elements_2(arr, K, X):
@@ -94,19 +82,14 @@ def find_closest_elements_2(arr, K, X):
     return result
 
 
-def binary_search(arr, target):
-    low, high = 0, len(arr) - 1
-    while low <= high:
-        mid = int(low + (high - low) / 2)
-        if arr[mid] == target:
-            return mid
-        if arr[mid] < target:
-            low = mid + 1
-        else:
-            high = mid - 1
-    if low > 0:
-        return low - 1
-    return low
+
+def main():
+    print("'K' closest numbers to 'X' are: " +
+          str(find_closest_elements([5, 6, 7, 8, 9], 3, 7)))
+    print("'K' closest numbers to 'X' are: " +
+          str(find_closest_elements([2, 4, 5, 6, 9], 3, 6)))
+    print("'K' closest numbers to 'X' are: " +
+          str(find_closest_elements([2, 4, 5, 6, 9], 3, 10)))
 
 
 def main_2():
@@ -118,4 +101,5 @@ def main_2():
           str(find_closest_elements_2([2, 4, 5, 6, 9], 3, 10)))
 
 
+main()
 main_2()
