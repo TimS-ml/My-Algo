@@ -1,7 +1,7 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(NlogN)
+- Space complexity: O(N)
 
 lc 767
 '''
@@ -21,15 +21,17 @@ def rearrange_string(str):
 
     previousChar, previousFrequency = None, 0
     resultString = []
+
+    # !!! the trick here is pop first, then push, so no dupl char
     while maxHeap:
-        frequency, char = heappop(maxHeap)
+        negFrequency, char = heappop(maxHeap)
         # add the previous entry back in the heap if its frequency is greater than zero
         if previousChar and -previousFrequency > 0:
             heappush(maxHeap, (previousFrequency, previousChar))
         # append the current character to the result string and decrement its count
         resultString.append(char)
         previousChar = char
-        previousFrequency = frequency + 1  # decrement the frequency
+        previousFrequency = negFrequency + 1  # decrement the frequency
 
     # if we were successful in appending all the characters to the result string, return it
     return ''.join(resultString) if len(resultString) == len(str) else ""
