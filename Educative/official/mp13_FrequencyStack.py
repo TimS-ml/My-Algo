@@ -21,6 +21,7 @@ class Element:
         self.frequency = frequency
         self.sequenceNumber = sequenceNumber
 
+    # other: Element
     def __lt__(self, other):
         # higher frequency wins
         if self.frequency != other.frequency:
@@ -36,6 +37,8 @@ class FrequencyStack:
 
     def push(self, num):
         self.frequencyMap[num] = self.frequencyMap.get(num, 0) + 1
+
+        # Element.__lt__: for heap val comparision
         heappush(self.maxHeap,
                  Element(num, self.frequencyMap[num], self.sequenceNumber))
         self.sequenceNumber += 1
