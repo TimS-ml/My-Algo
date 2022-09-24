@@ -23,7 +23,9 @@ d88' d88'  88b`?88P'?8b     `?88P'`88b  88b`?88P'`88b`?8888P'
   - https://www.hackerrank.com/domains/ai
 - [HackerEarth](https://www.hackerearth.com/practice/)
 - [Leetcode](https://leetcode.com/problemset/all/)
+  - [Non-js (?) version](https://leetcode.ca/all/problems.html)
   - [Blind 75](https://leetcode.com/discuss/general-discussion/460599/blind-75-leetcode-questions)
+  - [Blind 75 + Neetcode 150](https://neetcode.io/practice)
 - [Educative](https://www.educative.io/courses/grokking-the-coding-interview)
 - [Codingame](https://www.codingame.com/training)
 
