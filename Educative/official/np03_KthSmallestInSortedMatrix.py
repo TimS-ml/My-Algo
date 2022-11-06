@@ -16,8 +16,8 @@ lc 378
 def find_Kth_smallest(matrix, k):
     minHeap = []
 
-    # put the 1st element of each row in the min heap
-    # we don't need to push more than 'k' elements in the heap
+    # [1] put the 1st element of each row in the min heap
+    # [2] we don't need to push more than 'k' elements in the heap
     for i in range(min(k, len(matrix))):
         heappush(minHeap, (matrix[i][0], 0, matrix[i]))
 

@@ -1,7 +1,8 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(N logM)
+    - N=total number, M=num of input arrs
+- Space complexity: O(M)
 
 lc 632
 '''
@@ -28,6 +29,7 @@ def find_smallest_range(lists):
             rangeStart = num
             rangeEnd = currentMaxNumber
 
+        # if next number is available
         if len(arr) > i + 1:
             # insert the next element in the heap
             heappush(minHeap, (arr[i + 1], i + 1, arr))
