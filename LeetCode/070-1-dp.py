@@ -3,8 +3,6 @@
 - Time complexity: O()
 - Space complexity: O()
 
-
-
 '''
 
 
@@ -14,6 +12,8 @@ class Solution:
     def climbStairs_3(self, n) -> int:
         if n == 1:
             return 1
+
+        # dp[0] = 0
         dp = [0] * (n + 1)
         dp[1] = 1
         dp[2] = 2
@@ -26,6 +26,7 @@ class Solution:
     def climbStairs_3_v2(self, n) -> int:
         if n == 1:
             return 1
+
         first = 1
         second = 2
         for i in range(3, n + 1):

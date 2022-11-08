@@ -3,18 +3,6 @@
 - Time complexity: O()
 - Space complexity: O()
 
-[1] Base State
-[2] State Transfer Equation
-[3] Initialize Conditions
-[4] State Compression (optional)
-[5] Terminate Conditions
-
-# Pros and Cons:
-## Pros:
-
-## Cons:
-
-# Notation:
 (tree) top-down: bigger problem first
     return c[n] => c[n-1] ...
                 => c[n-2] ...
@@ -23,8 +11,6 @@
     start with dp[1] and dp[2]
         dp[3] = dp[1] + dp[2] ...
 
-sol4 (for simple dp)
-If the current state is only related to the previous one, we can all simplify the space complexity by scrolling the array and variables
 '''
 
 
@@ -80,7 +66,7 @@ class Solution_backtrack:
             if n == sum(subset):
                 ans.append(subset[:])
                 return
-            for i in range(1, 2 + 1):  # 1 step or 2 steps
+            for i in (1, 2):  # 1 step or 2 steps
                 if n - sum(subset) - i >= 0:
                     subset.append(i)
                     backtrack(subset)
@@ -97,7 +83,7 @@ class Solution_backtrack:
             if target_sum == 0:
                 ans.append(subset[:])
                 return
-            for i in range(1, 2 + 1):  # 1 step or 2 steps
+            for i in (1, 2):  # 1 step or 2 steps
                 if target_sum - i >= 0:
                     subset.append(i)
                     #  backtrack(subset, n - sum(subset))
@@ -114,7 +100,7 @@ class Solution_backtrack:
             if target_sum == 0:
                 ans.append(subset[:])
                 return
-            for i in range(1, 2 + 1):  # 1 step or 2 steps
+            for i in (1, 2):  # 1 step or 2 steps
                 if target_sum - i >= 0:
                     backtrack(subset + [i], target_sum - i)
 
