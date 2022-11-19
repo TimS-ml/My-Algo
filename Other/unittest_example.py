@@ -1,38 +1,41 @@
-# Python code to demonstrate working of unittest
+'''
+lc 680
+'''
+
 import unittest
   
-class TestStringMethods(unittest.TestCase):
-      
-    def setUp(self):
-        pass
-  
-    # Returns True if the string contains 4 a.
-    def test_strings_a(self):
-        self.assertEqual( 'a'*4, 'aaaa')
-  
-    # Returns True if the string is in upper case.
-    def test_upper(self):        
-        self.assertEqual('foo'.upper(), 'FOO')
-  
-    # Returns TRUE if the string is in uppercase
-    # else returns False.
-    def test_isupper(self):        
-        self.assertTrue('FOO'.isupper())
-        self.assertFalse('Foo'.isupper())
-  
-    # Returns true if the string is stripped and 
-    # matches the given output.
-    def test_strip(self):        
-        s = 'geeksforgeeks'
-        self.assertEqual(s.strip('geek'), 'sforgeeks')
-  
-    # Returns true if the string splits and matches
-    # the given output.
-    def test_split(self):        
-        s = 'hello world'
-        self.assertEqual(s.split(), ['hello', 'world'])
-        with self.assertRaises(TypeError):
-            s.split(2)
-  
+class Solution:
+    def validPalindrome(self, s: str) -> bool:
+        l, r = 0, len(s)-1
+
+        while l <= r:
+            if s[l] == s[r]:
+                l += 1 
+                r -= 1
+            else:
+                sl = s[l+1:r+1]
+                sr = s[l:r]
+                return sl == sl[::-1] or \
+                        sr == sr[::-1]
+
+        return True
+
+
+testFunc = Solution().validPalindrome
+class Test(unittest.TestCase):
+    def test_dege(self):
+        self.assertEqual(testFunc(""), True)
+    
+    def test_valid(self):
+        self.assertEqual(testFunc("a"), True)
+        self.assertEqual(testFunc("aaa"), True)
+
+    def test_valid_after_Del(self):
+        self.assertEqual(testFunc("abobca"), True)
+        self.assertEqual(testFunc("abab"), True)
+        self.assertEqual(testFunc("abc"), False)
+
+
 if __name__ == '__main__':
     unittest.main()
+
