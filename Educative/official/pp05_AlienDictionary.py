@@ -4,10 +4,10 @@ Write a method to find the correct order of the alphabets in the alien language.
 It is given that the input is a valid dictionary and there exists an ordering among its alphabets.
 
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(V + N)
+- Space complexity: O(V + N)
 
-
+lc 269
 
 Same to pp02
 The only difference being that we need to build the graph of the characters by comparing adjacent words first, 

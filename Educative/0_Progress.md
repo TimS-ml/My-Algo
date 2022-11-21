@@ -11,6 +11,6 @@
 -[x] [k] Modified Binary Search
 -[x] [l] Bitewise XOR
 -[x] [m] Top 'K' Elements
--[ ] [n] K-way merge
--[ ] [o] 0/1 Knapsack (Dynamic Programming)
--[ ] [p] Topological Sort (Graph)
+-[x] [n] K-way merge
+-[x] [o] 0/1 Knapsack (Dynamic Programming)
+-[x] [p] Topological Sort (Graph)
