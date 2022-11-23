@@ -12,26 +12,26 @@ class Node:
 
 class Solution:
     def insert(self, head: 'Node', insertVal: int) -> 'Node':
-        node = Node(insertVal)  
-        
+        node = Node(insertVal)
+
         if not head:
             node.next = node
             return node
 
         prev, curr = head, head.next
-        
+
         while prev.next != head:
-            # Case1: 
+            # Case1:
             # 1 <- Node(2) <- 3
             # prev < curr
             if prev.val <= node.val <= curr.val:
                 break
-            
+
             # Case2 and 3: beginning and end of loop
             # 3 -> 1, 3 -> Node(4) -> 1
             if prev.val > curr.val and node.val > prev.val:
                 break
-            
+
             # 3 -> 1, 3 -> Node(0) -> 1
             if prev.val > curr.val and node.val < curr.val:
                 break
@@ -40,6 +40,6 @@ class Solution:
 
         # Insert node.
         node.next = curr
-        prev.next = node           
-        
+        prev.next = node
+
         return head

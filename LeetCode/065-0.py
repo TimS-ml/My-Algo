@@ -25,5 +25,5 @@ class Solution:
                 seen_dot = True
             else:
                 return False
-        
+
         return seen_digit

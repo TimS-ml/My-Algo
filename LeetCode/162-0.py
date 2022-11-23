@@ -22,13 +22,13 @@ class Solution:
             # target
             if nums[mid] > nums[mid+1] and nums[mid] > nums[mid-1]:
                 return mid
-                
+
             # change search space
             if nums[mid] < nums[mid+1]:
                 left = mid+1
             else:
                 right = mid-1
-                
+
         # after while loop: left = right - 1
         if nums[left] >= nums[right]:
             return left

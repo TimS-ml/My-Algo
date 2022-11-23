@@ -6,7 +6,7 @@ def twoSum(nums, target):
 for i in range(len(nums)):
     n0 = -nums[i]
     # find n1 and n2 in nums[i+1:]
-    
+
     # remove dupl
     # nums [0, 0, 0], [-1, -1, 2]
 '''
@@ -26,7 +26,7 @@ class Solution:
                         ans.append(tmp)
                 dic[nums[i]] = i
             return ans
-        
+
         ans = []
         for i in range(len(nums)-2):
             n0 = nums[i]

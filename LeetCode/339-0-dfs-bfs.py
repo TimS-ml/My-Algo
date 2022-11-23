@@ -65,7 +65,7 @@ class Solution:
             return total
 
         return dfs(nestedList, 1)
-        
+
     # bfs
     def depthSum_2(self, nestedList: List[NestedInteger]) -> int:
         queue = deque(nestedList)
@@ -82,4 +82,4 @@ class Solution:
                     queue.extendleft(nested.getList())  # interesting
             depth += 1
 
-        return total 
+        return total

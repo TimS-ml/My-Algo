@@ -2,7 +2,7 @@
 
 # The roads on the map are rasterized and produce a matrix of boolean values - True if the road is present or False if it is not. The roads in the matrix are connected only if the road is immediately left, right, below or above it.
 
-# Finish the route_exists method so that it returns True if the destination is reachable or False if it is not. The from_row and from_column parameters are the starting row and column in the map_matrix. 
+# Finish the route_exists method so that it returns True if the destination is reachable or False if it is not. The from_row and from_column parameters are the starting row and column in the map_matrix.
 # The to_row and to_column are the destination row and column in the map_matrix. The map_matrix parameter is the above mentioned matrix produced from the map.
 
 from collections import deque
@@ -28,7 +28,7 @@ def route_exists(from_row, from_column, to_row, to_column, map_matrix):
         current = q.popleft()
         if current[0] == to_row and current[1] == to_column:
             return True
-        
+
         visited[current[0]][current[1]] = True
         up = (current[0] - 1, current[1])
         down = (current[0] + 1, current[1])

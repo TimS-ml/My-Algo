@@ -22,7 +22,7 @@ def find_subsets(nums):
     ans = []
     backtrack(0, [])
     return ans
-    
+
 
 
 

@@ -10,30 +10,30 @@ A topological ordering starts with one of the sources and ends at one of the sin
 A topological ordering is possible only when the graph has no directed cycles
 
 BFS
-We will start with all the sources, and in a stepwise fashion, save all sources to a sorted list. 
-We will then remove all sources and their edges from the graph. 
+We will start with all the sources, and in a stepwise fashion, save all sources to a sorted list.
+We will then remove all sources and their edges from the graph.
 After the removal of the edges, we will have new sources, so we will repeat the above process until all vertices are visited.
 '''
 '''
 [a] Initialization
-We will store the graph in Adjacency Lists, 
-    which means each parent vertex will have a list containing all of its children. 
-    We will do this using a HashMap where the ‘key’ will be the parent vertex number and the value will be a List containing children vertices.
-To find the sources, we will keep a HashMap to count the in-degrees 
-    i.e., count of incoming edges of each vertex. Any vertex with ‘0’ in-degree will be a source.
+We will store the graph in Adjacency Lists,
+    which means each parent vertex will have a list containing all of its children.
+    We will do this using a HashMap where the 'key' will be the parent vertex number and the value will be a List containing children vertices.
+To find the sources, we will keep a HashMap to count the in-degrees
+    i.e., count of incoming edges of each vertex. Any vertex with '0' in-degree will be a source.
 
 [b] Build the graph and find in-degrees of all vertices
 We will build the graph from the input and populate the in-degrees HashMap.
 
 [c] Find all sources
-All vertices with ‘0’ in-degrees will be our sources and we will store them in a Queue.
+All vertices with '0' in-degrees will be our sources and we will store them in a Queue.
 
 [d] Sort
 For each source, do the following things:
     Add it to the sorted list.
     Get all of its children from the graph.
     Decrement the in-degree of each child by 1.
-    If a child’s in-degree becomes ‘0’, add it to the sources Queue.
+    If a child's in-degree becomes '0', add it to the sources Queue.
 Repeat until the source Queue is empty.
 '''
 

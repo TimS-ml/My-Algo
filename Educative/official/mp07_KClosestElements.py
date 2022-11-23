@@ -7,7 +7,7 @@ sol 1: heap
 
 sol 2: two pointers + binary search (better)
 - Time complexity: O(logN + K)
-    We need O(logN) for Binary Search and O(K) for finding the ‘K’ closest numbers using the two pointers
+    We need O(logN) for Binary Search and O(K) for finding the 'K' closest numbers using the two pointers
 - Space complexity: O(1)
 
 lc 658
@@ -38,7 +38,7 @@ def find_closest_elements(arr, K, X):
     index = binary_search(arr, X)
     low, high = index - K, index + K
 
-    # 'low' should not be less than zero 
+    # 'low' should not be less than zero
     low = max(low, 0)
     # 'high' should not be greater the size of the array
     high = min(high, len(arr) - 1)

@@ -1,4 +1,4 @@
-# https://www.hackerrank.com/challenges/s10-poisson-distribution-2/problem# 
+# https://www.hackerrank.com/challenges/s10-poisson-distribution-2/problem#
 # Given cost_A = 160 + 40*X**2
 # E(cost_A) = E(160 + 40*X**2)
 #   = E(160) + E(40*X**2)

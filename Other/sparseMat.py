@@ -21,7 +21,7 @@ class sparceMat:
         for (row, col), val, in self.mat.items():
             strings.append(f'row {row}, col {col}, val {val}')
         return '\n'.join(strings)
-    
+
     def __len__(self):
         return int(self.nrow * self.ncol)
 
@@ -55,7 +55,7 @@ class sparceMat:
     def set_val(self, row, col, val):
         assert 0 <= row < self.nrow and 0 <= col < self.ncol, "rol and col must in range"
         self.mat[(row, col)] = val
-    
+
     def get_val(self, row, col):
         assert 0 <= row < self.nrow and 0 <= col < self.ncol, "rol and col must in range"
         return self.mat[(row, col)]
@@ -84,7 +84,7 @@ class sparceMat:
                 if (k, col2) in mat2:
                     val2 = mat2[(k, col2)]
                     outDict[(row1, col2)] = outDict.get((row1, col2), 0) + val1 * val2
-        
+
         return self.from_sparce(self.nrow, M.ncol, outDict)
 
     def __add__(self, M: 'sparceMat'):
@@ -96,7 +96,7 @@ class sparceMat:
 
         for (row2, col2), val2, in mat2.items():
             outDict[(row2, col2)] = outDict.get((row2, col2), 0) + val2
-        
+
         return self.from_sparce(self.nrow, M.ncol, outDict)
 
 

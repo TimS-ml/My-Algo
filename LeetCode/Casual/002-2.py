@@ -1,8 +1,8 @@
-''' 
+'''
 # Thought process
 
 - Number is stored in reverse order
-  - the answer should also in reverse order 
+  - the answer should also in reverse order
 - Do not contain any leading zero (except number 0)
 - Difference length of l1 and l2
 

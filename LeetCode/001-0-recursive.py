@@ -54,7 +54,7 @@ class Solution:
 
 
 @pytest.mark.parametrize(
-    "test_input_1, test_input_2, expected", 
+    "test_input_1, test_input_2, expected",
     [([3, 2, 4], 6, [1, 2]),
      ([2, 7, 11, 15], 9, [0, 1]),
      ([11, 2, 15, 7], 18, [0, 3])]

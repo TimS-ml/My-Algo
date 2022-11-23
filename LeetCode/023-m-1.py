@@ -19,7 +19,7 @@ class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         h = []
         ans = ListNode()
-        
+
         count = 0
         for l in lists:
             heappush(h, count, l)

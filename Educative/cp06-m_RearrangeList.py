@@ -3,9 +3,9 @@
 - Time complexity: O()
 - Space complexity: O()
 
-the nodes from the second half of the LinkedList are inserted alternately 
+the nodes from the second half of the LinkedList are inserted alternately
     to the nodes from the first half in reverse order
-So if the LinkedList has nodes 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> null, 
+So if the LinkedList has nodes 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> null,
 your method should return 1 -> 6 -> 2 -> 5 -> 3 -> 4 -> null.
 '''
 

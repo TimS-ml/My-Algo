@@ -11,15 +11,15 @@ r | e d b l u | e r e d
 r | e d b l u e | r e d
 r | e d b l u e r | e d
 r | e d b l u e r e | d
-r e | d | b l u e r e d 
-r e | d b | l u e r e d 
-r e | d b l | u e r e d  
-r e | d b l u | e r e d 
-r e | d b l u e | r e d  
-r e | d b l u e r | e d 
-r e | d b l u e r e | d  
-r e d | b | l u e r e d  
-..... 
+r e | d | b l u e r e d
+r e | d b | l u e r e d
+r e | d b l | u e r e d
+r e | d b l u | e r e d
+r e | d b l u e | r e d
+r e | d b l u e r | e d
+r e | d b l u e r e | d
+r e d | b | l u e r e d
+.....
 
 basically we extend backtracking function, now we have p and s in that function
 for 'aba', len(set(s_path)) = 2
@@ -37,7 +37,7 @@ s = 'ttwtt'
 sol2:
 use recursion to try all the possibilites when we slice the remaining pattern and the remaining string
 Look at the corner case 'twt' and 'ttwtt':
-- Be careful that for the last p = "" and s = "t", we cannot just backtrack directly 
+- Be careful that for the last p = "" and s = "t", we cannot just backtrack directly
 - because t:tt was also mapped earlier in the beginning
 Therefore, we need to check if a mapping was made earlier before we backtrack
 

@@ -32,16 +32,16 @@ class Solution(object):
 
         def numBelow(x):
             return (x // A) + (x // B) - (x // lcm)
-        
+
         gcd = getGCD(A, B)
         lcm = getLCM(A, B, gcd)
-        
+
         left = 0
-        right = N * min(A, B) 
-        
+        right = N * min(A, B)
+
         while left < right:
             mid = (left + right) // 2
-            
+
             if numBelow(mid) < N:
                 left = mid + 1
             else:

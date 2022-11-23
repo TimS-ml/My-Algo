@@ -26,7 +26,7 @@ def search_in_infinite_array(reader, target):
         left = right  # shrink start is better, but won't affect complexity
         # right = right ** 2
         right <<= 1  # right start with 1, so = r ** 2 won't work
-    
+
     # print(left, right)
     while left < right:
         mid = left + (right - left) // 2

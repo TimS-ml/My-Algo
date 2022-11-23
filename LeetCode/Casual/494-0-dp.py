@@ -12,7 +12,7 @@
 dp: dp[i][dp_sum] = num of ways: pick first i numbers, sum is dp_sum
     return answer is dp[n][neg]
 
-init: 
+init:
 - dp[0][0] = 1, consider no number, sum = 0
 - dp[0][>0] = 0
 

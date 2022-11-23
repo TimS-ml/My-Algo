@@ -17,7 +17,7 @@ def find_path(root, sequence):
     if not root:
         return len(sequence) == 0
     L = len(sequence)
-    
+
     # pre-order?
     def dfs(currNode, idx):
         if currNode is None:

@@ -31,7 +31,7 @@ class Solution(object):
             left = maxDepth(node.left)
             right = maxDepth(node.right)
             self.ans = max(self.ans, left + right)
-            
+
             dfs(node.left)
             dfs(node.right)
 

@@ -25,7 +25,7 @@ class Solution:
             else:
                 zeroIdx.append(i)
                 break
-        
+
         ans = []
         if len(zeroIdx) > 1:
             ans = [0 for _ in nums]

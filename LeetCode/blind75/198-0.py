@@ -1,5 +1,5 @@
 '''
-case: rob 
+case: rob
 1, 3, 6, 8 ....
 
 if rob i, then the next:
@@ -33,7 +33,7 @@ class Solution:
 
         for i in range(3, len(nums) + 1):
             dp[i] = max(dp[i-2], dp[i-3]) + nums[i-1]
-        
+
         return max(dp[-1], dp[-2])
 
     # neetcode solution in dp
@@ -45,7 +45,7 @@ class Solution:
 
         for i in range(2, len(nums) + 1):
             dp[i] = max(dp[i-2] + nums[i-1], dp[i-1])
-        
+
         return dp[-1]
 
     # neetcode solution
@@ -70,13 +70,13 @@ class Solution:
             # !!!
             if i == 0:
                 return 0
-            
+
             if i <= 2:
                 return nums[i-1]
-            
+
             if i in cache:
                 return cache[i]
-            
+
             ans = max(helper(i-2), helper(i-3)) + nums[i-1]
             cache[i] = ans
             return ans

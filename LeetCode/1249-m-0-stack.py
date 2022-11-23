@@ -40,7 +40,7 @@ After s.remove:
 
 # Feedback
 This is wrong
-You should save idx of what parentheses needed to be remove 
+You should save idx of what parentheses needed to be remove
 Next time use stack + save idx, it's easier
 
 How to find unmatched left parentheses  (count > 0)? Remove fist appearance is wrong
@@ -64,15 +64,15 @@ class Solution:
                     stack.pop()
                 else:  # empty or ')'
                     stack.append(s[i])
-        
+
         for i in range(len(stack)):
             s.remove(stack[i])  # remove the first appearance
-        
+
         return ''.join(s)
 
 
 @pytest.mark.parametrize(
-    "test_input, expected", 
+    "test_input, expected",
     [
         ("lee(t(c)o)de)", {"lee(t(c)o)de", "lee(t(co)de)", "lee(t(c)ode)"}),
         ("a)b(c)d", {"ab(c)d"}),

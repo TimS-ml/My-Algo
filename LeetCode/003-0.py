@@ -10,7 +10,7 @@ case: 'abcabcbb'
 [2-3] i -> c, updated dic = {'a': 0, 'b': 1, 'c': 2}, update ans = 3
 [4]   s[i] = 'a' and dic = {'a': 3, 'b': 1, 'c': 2}, update ans still = 3
 [5]   'abcabcbb'
-        |  
+        |
      new start = old start + 1
                = 0 + 1
 

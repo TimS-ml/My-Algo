@@ -9,7 +9,7 @@ this solution can be further compressed!
 
 dp
 
-state: 
+state:
 dp[i][j] = if s1[i] and s2[j] can make s3[i+j]
 
 transfer:

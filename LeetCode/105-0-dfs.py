@@ -45,7 +45,7 @@ class Solution:
 
             # split l-tree and r-tree based on root
             inorderRootIdx = inorder_idx_map[root_val]
-            
+
             # !!! left first !!!
             # !!! does not include inorderRootIdx !!!
             root.left = build(inStart, inorderRootIdx - 1)
@@ -78,5 +78,5 @@ class Solution:
                                inStart + leftSize + 1, inEnd)
             return root
 
-        return build(0, len(preorder)-1, 
+        return build(0, len(preorder)-1,
                      0, len(inorder)-1)

@@ -22,10 +22,10 @@ class Solution:
                 # if it's a leaf, update root-to-leaf sum
                 if not (node.left or node.right):
                     ans += curr_number
-                    
+
                 preorder(node.left, curr_number)
-                preorder(node.right, curr_number) 
-        
+                preorder(node.right, curr_number)
+
         ans = 0
         preorder(root, 0)
         return ans
@@ -37,16 +37,16 @@ class Solution:
             # if it's a leaf, update root-to-leaf sum
             if not (node.left or node.right):
                 ans += int(''.join(path))
-                
+
             # remember to add a post order pop
             if node.left:
                 preorder(node.left)
                 path.pop()
-            
+
             if node.right:
-                preorder(node.right) 
+                preorder(node.right)
                 path.pop()
-        
+
         path = []
         ans = 0
         preorder(root)

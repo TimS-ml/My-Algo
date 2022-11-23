@@ -2,12 +2,12 @@
 # Code Explain:
 - Time complexity: O(N * S)
 - Space complexity: O(N * S)
-The algorithm has the time and space complexity of O(N*S), where ‘N’ represents total numbers and ‘S’ is the total sum of all the numbers.
+The algorithm has the time and space complexity of O(N*S), where 'N' represents total numbers and 'S' is the total sum of all the numbers.
 
 
 
 Bottom-up Dynamic Programming
-dp[i][s] will be ‘true’ if we can make the sum ‘s’ from the first ‘i’ numbers
+dp[i][s] will be 'true' if we can make the sum 's' from the first 'i' numbers
 '''
 
 

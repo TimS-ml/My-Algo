@@ -33,7 +33,7 @@ def traverse(root):
                 que.append(node.right)
 
         ans.append(currLv)
-    return ans 
+    return ans
 
 
 def main():

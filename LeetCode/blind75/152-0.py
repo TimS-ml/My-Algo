@@ -6,20 +6,20 @@ class Solution:
     def maxProduct_wrong(self, nums: List[int]) -> int:
         if len(nums) <= 1:
             return nums[0]
-        
+
         dp1 = [0] * (len(nums) + 1)
         dp1[1] = nums[0]
-        
+
         dp2 = [0] * (len(nums) + 1)
         dp2[1] = nums[0]
-        
+
         for i in range(2, len(nums) + 1):
             dp1[i] = max(nums[i-1], nums[i-1] * dp1[i-1])
             if abs(nums[i-1]) > abs(nums[i-1] * dp2[i-1]):
                 dp2[i] = nums[i-1]
             else:
                 dp2[i] = nums[i-1] * dp2[i-1]
-        
+
         return max(max(dp1), max(dp2))
 
     # DP, but no dp table, only min and max val

@@ -12,7 +12,7 @@ def longest_substring_with_k_distinct(arr, K):
     ans = 0  # max length
     l, r = 0, 0
     subarr = deque([])
-    
+
     while r < len(arr):
         if len(set(subarr)) < K:
             subarr.append(arr[r])

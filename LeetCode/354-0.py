@@ -26,8 +26,8 @@ class Solution:
     # dp
     def maxEnvelopes_2(self, envelopes: List[List[int]]) -> int:
         '''
-        Since we have sorted width in increasing order, it is already increasing. 
-        So we do not need to LIS in width as it is handled by sorting. 
+        Since we have sorted width in increasing order, it is already increasing.
+        So we do not need to LIS in width as it is handled by sorting.
         But the heights are non-increasingly sorted, so there we need to check for LIS
         '''
         envelopes.sort(key=lambda x: (x[0], -x[1]))

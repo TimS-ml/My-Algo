@@ -17,6 +17,6 @@ class Solution:
                 sub2 = s[l+1:r+1]
                 print(sub1, sub2)
                 return sub1 == sub1[::-1] or sub2 == sub2[::-1]
-        
+
         return True
 

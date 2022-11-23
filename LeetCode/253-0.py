@@ -13,7 +13,7 @@ class Solution:
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
         begin = [meet[0] for meet in intervals]
         end = [meet[1] for meet in intervals]
-        
+
         begin.sort()
         end.sort()
 
@@ -25,7 +25,7 @@ class Solution:
                 count += 1
                 i += 1
             else:
-                count -= 1 
+                count -= 1
                 j += 1
             ans = max(ans, count)
 
@@ -37,7 +37,7 @@ class Solution:
         intervals.sort(key=lambda x:x.start)
         heap = []  # stores the end time of intervals
         for meet in intervals:
-            if heap and meet.start >= heap[0]: 
+            if heap and meet.start >= heap[0]:
                 # means two intervals can use the same room
                 heapq.heapreplace(heap, meet.end)  # pop + push
             else:

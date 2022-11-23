@@ -17,7 +17,7 @@ import collections
 from typing import List
 
 class Solution:
-    def calculate(self, s: str) -> int:      
+    def calculate(self, s: str) -> int:
         def helper(s: List) -> int:
             stack = []
             prevSign = '+'
@@ -42,7 +42,7 @@ class Solution:
                         stack[-1] = stack[-1] * num
                     elif prevSign == '/':
                         # python way to write division round to 0
-                        stack[-1] = int(stack[-1] / float(num))       
+                        stack[-1] = int(stack[-1] / float(num))
                     num = 0
                     prevSign = c
 
@@ -56,7 +56,7 @@ class Solution:
     def calculate_2(self, s: str) -> int:
         stack = []
         num = 0
-        prevSign = 1  # 1 means positive, -1 means negative  
+        prevSign = 1  # 1 means positive, -1 means negative
         ans = 0  # For the on-going result
 
         for c in s:
@@ -87,7 +87,7 @@ class Solution:
                 # stack = [prevAns, prevSign]
                 ans += prevSign * num
                 ans *= stack.pop()
-                ans += stack.pop()  # ans in () + prevAns 
+                ans += stack.pop()  # ans in () + prevAns
 
                 # Reset the num
                 num = 0

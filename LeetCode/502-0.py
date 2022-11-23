@@ -27,13 +27,13 @@ class Solution:
         # to speed up: if all projects are available
         if W >= max(Capital):
             return W + sum(nlargest(k, Profits))
-        
+
         n = len(Profits)
         projects = [(Capital[i], Profits[i]) for i in range(n)]
         # sort the projects :
         # the most available (= the smallest capital) is the last one
         projects.sort(key = lambda x : -x[0])
-        
+
         available = []
         while k > 0:
             # update available projects
@@ -47,4 +47,4 @@ class Solution:
             else:
                 break
             k -= 1
-        return W  
+        return W

@@ -9,7 +9,7 @@ class Solution:
     def searchRange(self, nums: List[int], t: int) -> List[int]:
         if not nums:
             return [-1, -1]
-            
+
         ans = []
 
         # [l, r]
@@ -26,7 +26,7 @@ class Solution:
                 l = mid + 1
             else:
                 r = mid - 1
-        
+
         # check l
         if l >= len(nums) or nums[l] != t:
             l = -1
@@ -47,7 +47,7 @@ class Solution:
                 l = mid + 1
             else:
                 l = mid + 1
-        
+
         # check r
         if r < 0 or nums[r] != t:
             r = -1

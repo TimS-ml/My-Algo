@@ -19,7 +19,7 @@ class Solution(object):
         for idx, (start, end) in left_sorted:
             heapq.heappush(heap, (end, idx))
             # heap[0][0] = right bound of smallest value on the heap
-            while heap and heap[0][0] <= start:  
+            while heap and heap[0][0] <= start:
                 _, left_idx = heapq.heappop(heap)
                 ans[left_idx] = idx
         return ans

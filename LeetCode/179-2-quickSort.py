@@ -10,7 +10,7 @@ from typing import List
 class Solution:
     def largestNumber(self, nums: List[int]) -> str:
         self.quickSort(nums, 0, len(nums)-1)
-        return str(int("".join(map(str, nums)))) 
+        return str(int("".join(map(str, nums))))
 
     # input: int
     def compare(self, n1, n2):
@@ -19,12 +19,12 @@ class Solution:
 
     def quickSort(self, nums, l, r):
         if l >= r:
-            return 
+            return
 
         p = self.partition(nums, l, r)
         self.quickSort(nums, l, p-1)
         self.quickSort(nums, p+1, r)
-        
+
     # def partition(self, nums, l, r):
     #     low = l
     #     while l < r:

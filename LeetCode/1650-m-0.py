@@ -10,7 +10,7 @@
 - Allow a node to be a descendant of itself
 - We only know root p and q
 
-LCA in persudo code without using `parent`, 
+LCA in persudo code without using `parent`,
     based on the input `root` and p.val and q.val:
 - loop through the answer node, we can find p and q
 - keep in track of the looping route:
@@ -88,14 +88,14 @@ class Solution:
         #     return p
         # elif lca_check_q:
         #     return q
-        
+
         # since we know the node is unique
         path_p = set()  # set is a better answer than list
 
         while p:
             path_p.add(p)
             p = p.parent
-        
+
         while q:
             if q in path_p:
                 return q
@@ -107,6 +107,6 @@ class Solution:
         while p1 != p2:
             p1 = p1.parent if p1.parent else q
             p2 = p2.parent if p2.parent else p
-            
+
         return p1
 

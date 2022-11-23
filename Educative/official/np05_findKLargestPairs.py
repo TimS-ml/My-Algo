@@ -20,7 +20,7 @@ def find_k_largest_pairs(nums1, nums2, k):
                 heappush(minHeap, (nums1[i] + nums2[j], i, j))
             else:
                 # If the sum of the two numbers from the two arrays is smaller than the smallest(top)
-                # element of the heap, we can 'break' here. 
+                # element of the heap, we can 'break' here.
                 # Since the arrays are sorted in the
                 # descending order, we'll not be able to find a pair with a higher sum moving forward
                 if nums1[i] + nums2[j] < minHeap[0][0]:

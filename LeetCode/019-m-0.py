@@ -32,11 +32,11 @@ class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         def getNode(head, n):
             fast, slow = head, head
-            
+
             while n > 0:
                 fast = fast.next
                 n -= 1
-            
+
             if fast:
                 while fast.next:
                     fast  = fast.next
@@ -44,7 +44,7 @@ class Solution:
                 return slow
             else:
                 return None
-            
+
         ans = head
         node = getNode(head, n)
         if not node:  # remove 1st node
@@ -52,7 +52,7 @@ class Solution:
                 return ans.next
             else:
                 return None
-        
+
         if node.next.next:
             node.next = node.next.next
         else:

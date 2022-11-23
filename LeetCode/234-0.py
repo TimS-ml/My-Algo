@@ -22,7 +22,7 @@ class Solution:
     # this solution compares full list
     def isPalindrome(self, head):
         left = head
-        
+
         def traverse(right):
             if not right:
                 return True
@@ -57,7 +57,7 @@ class Solution:
 
         if fast:
             slow = slow.next
-        
+
         def reverse(root):
             pre = None
             cur = root
@@ -67,7 +67,7 @@ class Solution:
                 pre = cur
                 cur = tmp
             return pre
-        
+
         left = head
         right = reverse(slow)
 
@@ -77,7 +77,7 @@ class Solution:
             left = left.next
             right = right.next
 
-        return True 
+        return True
 
 
     # a very simple solution

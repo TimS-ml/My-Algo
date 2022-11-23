@@ -29,9 +29,9 @@ class Solution:
                 # if you are using normal dict, you may need to init first
                 colTable[col].append((row, node.val))
 
-                queue.append((node.left, 
+                queue.append((node.left,
                               row + 1, col - 1))
-                queue.append((node.right, 
+                queue.append((node.right,
                               row + 1, col + 1))
 
         ans = []
@@ -58,9 +58,9 @@ class Solution:
                 min_column = min(min_column, column)
                 max_column = max(max_column, column)
 
-                queue.append((node.left, 
+                queue.append((node.left,
                               row + 1, col - 1))
-                queue.append((node.right, 
+                queue.append((node.right,
                               row + 1, col + 1))
 
         ans = []

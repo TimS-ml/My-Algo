@@ -3,7 +3,7 @@
 - Time complexity: O(logN)
 - Space complexity: O(1)
 
-left bound / ceiling (smallest element in the given array greater than or equal to the ‘key’)
+left bound / ceiling (smallest element in the given array greater than or equal to the 'key')
 
 lc 35
 '''
@@ -14,7 +14,7 @@ def search_ceiling_of_a_number(nums, target):
 
     while left < right:
         mid = int((left + right) // 2)
-        
+
         # print(left, right, mid)
         if target < nums[mid]:
             right = mid

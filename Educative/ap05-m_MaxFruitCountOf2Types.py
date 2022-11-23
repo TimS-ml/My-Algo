@@ -13,7 +13,7 @@ def fruits_into_baskets(arr, K=2):
     ans = 0  # max length
     l, r = 0, 0
     subarr = deque([])
-    
+
     while r < len(arr):
         if len(set(subarr)) < K:
             subarr.append(arr[r])

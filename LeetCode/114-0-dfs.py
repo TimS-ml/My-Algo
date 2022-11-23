@@ -4,8 +4,8 @@
 - Space complexity: O(N)
 
 Fun fact
-- The solution is post order (to get more info than pre-order), 
-    however the question requires output in pre-order traversal 
+- The solution is post order (to get more info than pre-order),
+    however the question requires output in pre-order traversal
 '''
 
 
@@ -88,7 +88,7 @@ class Solution:
             # pre-order
             p.right = TreeNode(node.val)
             p = p.right
-            
+
             traverse(node.left)
             traverse(node.right)
 

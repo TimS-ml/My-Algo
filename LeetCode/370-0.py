@@ -13,8 +13,8 @@ class Solution:
             end += 1
             if end < len(ans):
                 ans[end] -= value
-        
+
         for i in range(1, len(ans)):
             ans[i] += ans[i-1]
-        
+
         return ans

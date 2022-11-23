@@ -3,8 +3,8 @@
 - Time complexity: O(N^2)
 - Space complexity: O(N)
 
-This algorithm is correct simply because it is basically the brute force solution. 
-We compare every interval to every other interval, so we know exactly which intervals overlap. 
+This algorithm is correct simply because it is basically the brute force solution.
+We compare every interval to every other interval, so we know exactly which intervals overlap.
 The reason for the connected component search is that two intervals may not directly overlap, but might overlap indirectly via a third interval.
 '''
 

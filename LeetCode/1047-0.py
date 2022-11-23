@@ -14,7 +14,7 @@ class Solution:
                 continue
             else:
                 stack.append(c)
-        
+
         return ''.join(stack)
 
 

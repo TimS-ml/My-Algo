@@ -30,7 +30,7 @@ def non_repeat_substring_brute(arr):
 def non_repeat_substring_brute_v2(arr):
     # freq dict, make sure everything in char val=1
     # replace subarr
-    window = {}  
+    window = {}
     l, r = 0, 0
     ans = 0
 

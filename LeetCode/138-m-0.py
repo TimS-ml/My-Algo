@@ -15,20 +15,20 @@ class Node:
 class Solution:
     def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
         dic = {}
-        
+
         def helper(node):
             if not node:
                 return None
-            
+
             if node in dic:
                 return dic[node]
-            
+
             newNode = Node(node.val, None, None)
             dic[node] = newNode  # !!!
-            
+
             newNode.next = helper(node.next)
             newNode.random = helper(node.random)
-            
+
             return newNode
-        
+
         return helper(head)

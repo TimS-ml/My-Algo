@@ -7,7 +7,7 @@ Reverse the pointers of Linked List
 Same like lc 206
     - We need a temp pointer that will help us continue the link reversal process
 
-Essentially, starting from the node at position m and all the way up to n, we reverse the next pointers for all the nodes in between. 
+Essentially, starting from the node at position m and all the way up to n, we reverse the next pointers for all the nodes in between.
 
 And then connect the pieces together
     - We need to process 2 connections
@@ -25,7 +25,7 @@ And then connect the pieces together
 
 # Notation:
 - [1] Pay attention to the boundaries
-    For example: 
+    For example:
         before reverse: m>1; after: n=0
 
 - [2] Connection
@@ -44,7 +44,7 @@ And then connect the pieces together
 
     - If m = n
         - this is not a special case
-        - reverse on pointer first, then turn back by 
+        - reverse on pointer first, then turn back by
             tail.next = curr
 
 - [3] How many positions do we need to save
@@ -97,13 +97,13 @@ class Solution:
             if n == 1:
                 prev = head.next
                 return head
-            
+
             print('before:', '  ' * n, n, prev)
             last = reverseN(head.next, n - 1)
             # prev and last are both fixed
             print('after :', '  ' * n, n, prev.val, last.val)
 
-            head.next.next = head 
+            head.next.next = head
             head.next = prev
             return last
 
@@ -112,7 +112,7 @@ class Solution:
 
         if m == 1:
             return reverseN(head, n)
-        
+
         head.next = self.reverseBetween(head.next, m - 1, n - 1)
         return head
 

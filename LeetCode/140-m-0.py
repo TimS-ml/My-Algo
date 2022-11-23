@@ -7,9 +7,9 @@
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
         wd = set(wordDict)
-        
+
         cache = {}
-        
+
         # def recur(idx, path):
         #     if idx == len(s) - 1:
         #         ans.append(' '.join(path))
@@ -34,7 +34,7 @@ class Solution:
                     for substr in recur(path):
                         cache[path].append(substr)
                     path.pop()
-                    
+
             return cache[path]
 
         recur(s)

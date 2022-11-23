@@ -1,7 +1,7 @@
 '''
 # Code Explain:
 - Time complexity: O(N^2)
-This is due to the fact that we traverse each node once (which will take O(N)), 
+This is due to the fact that we traverse each node once (which will take O(N)),
 and for every leaf node, we might have to store its path (by making a copy of the current path) which will take O(N)
 - Space complexity: O(N*logN)
 

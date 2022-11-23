@@ -2,7 +2,7 @@
 # Code Explain:
 - Time complexity: O(N * S)
 - Space complexity: O(N * S)
-The algorithm has the time and space complexity of O(N*S), where ‘N’ represents total numbers and ‘S’ is the total sum of all the numbers.
+The algorithm has the time and space complexity of O(N*S), where 'N' represents total numbers and 'S' is the total sum of all the numbers.
 
 
 
@@ -37,7 +37,7 @@ def can_partition_recursive(dp, num, sum, currentIndex):
         # recursive call after choosing the number at the currentIndex
         # if the number at currentIndex exceeds the sum, we shouldn't process this
         if num[currentIndex] <= sum:
-            if can_partition_recursive(dp, num, 
+            if can_partition_recursive(dp, num,
                                        sum - num[currentIndex],
                                        currentIndex + 1) == 1:
                 dp[currentIndex][sum] = 1

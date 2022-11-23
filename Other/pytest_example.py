@@ -10,7 +10,7 @@ class Solution:
 
         while l <= r:
             if s[l] == s[r]:
-                l += 1 
+                l += 1
                 r -= 1
             else:
                 sl = s[l+1:r+1]
@@ -29,14 +29,14 @@ class Solution:
 
 # This is a decorator!!!
 @pytest.mark.parametrize(
-    "test_input, expected", 
+    "test_input, expected",
     [("", True)]
 )
 def test_dege(test_input, expected):
     assert Solution().validPalindrome(test_input) == expected
 
 @pytest.mark.parametrize(
-    "test_input, expected", 
+    "test_input, expected",
     [("a", True),
      ("aaa", True)]
 )
@@ -44,7 +44,7 @@ def test_valid(test_input, expected):
     assert Solution().validPalindrome(test_input) == expected
 
 @pytest.mark.parametrize(
-    "test_input, expected", 
+    "test_input, expected",
     [("abobca", True),
      ("abab", True),
      ("abc", False)]

@@ -9,7 +9,7 @@ The outer for loop runs for all elements, and the inner while loop processes eac
 
 
 
-Find the length of the smallest(len) contiguous subarray whose sum is greater than or equal to ‘S’
+Find the length of the smallest(len) contiguous subarray whose sum is greater than or equal to 'S'
 case: 7, [2, 1, 5, 2, 3, 2]
 [1] start = end, at arr[0]
 [2] start at arr[0] not move, end at arr[2], sum > 7

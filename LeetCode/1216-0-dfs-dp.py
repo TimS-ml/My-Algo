@@ -17,13 +17,13 @@ class Solution:
                 return True
             if (i, j, remaining) in memo:
                 return memo[(i, j, remaining)]
-            
+
             if s[i] == s[j]:
                 memo[(i, j, remaining)] = helper(i+1, j-1, remaining)
             else:
                 memo[(i, j, remaining)] = helper(i+1, j, remaining-1) or helper(i, j-1, remaining-1)
             return memo[(i, j, remaining)]
-        
+
         memo = {}
         return helper(0, len(s)-1, k)
 
@@ -31,7 +31,7 @@ class Solution:
     # a while loop inside helper will reduce the call of recursion thus increase the speed
     def isValidPalindrome_2(self, s: str, k: int) -> bool:
         if s == s[::-1]: return True
-        
+
         @lru_cache(None)
         def helper(l, r, numOfChoices):
             while l < r:
@@ -44,7 +44,7 @@ class Solution:
                     elif numOfChoices == k:  # cannot afford more mistakes
                         return False
             return True
-        
+
         return helper(0, len(s)-1, 0)
 
     # DP
@@ -52,13 +52,13 @@ class Solution:
     def isValidPalindrome_dp(self, s: str, k: int) -> bool:
         n = len(s)
         dp = [[0] * (n + 1) for _ in range(n + 1)]  # add additional 0
-        for i in range(n + 1): 
-            for j in range(n + 1): 
-                if not i or not j: 
-                    dp[i][j] = i or j 
-                elif s[i - 1] == s[n - j]: 
-                    dp[i][j] = dp[i - 1][j - 1] 
-                else: 
+        for i in range(n + 1):
+            for j in range(n + 1):
+                if not i or not j:
+                    dp[i][j] = i or j
+                elif s[i - 1] == s[n - j]:
+                    dp[i][j] = dp[i - 1][j - 1]
+                else:
                     # 1 del
                     dp[i][j] = 1 + min(dp[i - 1][j], dp[i][j - 1])
         return dp[n][n] <= k * 2

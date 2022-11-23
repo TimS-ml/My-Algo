@@ -17,7 +17,7 @@ class Solution:
                 l -= 1
                 r += 1
             return s[l + 1: r]
-        
+
         ans = ''
         for i in range(len(s)):
             s1 = find_palidrome(s, i, i)  # aba

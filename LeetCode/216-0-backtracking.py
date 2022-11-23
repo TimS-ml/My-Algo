@@ -7,7 +7,7 @@ for the case k, n = 3, 7
     [1] a simple base case(s) for recursion, not a terminating senario
     - append
     [2] a set of rules for backtrack ()
-    - Terminate scenario: 
+    - Terminate scenario:
         - len(curr) == k  (1, 2, 3)
         - sum(curr) > n  (4, 5)
     - Backtrack senario: samilarly

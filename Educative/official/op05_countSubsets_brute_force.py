@@ -1,5 +1,5 @@
 '''
-Given a set of positive numbers, find the total number of subsets whose S is equal to a given number ‘S’.
+Given a set of positive numbers, find the total number of subsets whose S is equal to a given number 'S'.
 
 # Code Explain:
 - Time complexity: O(2^N)
@@ -7,10 +7,10 @@ Given a set of positive numbers, find the total number of subsets whose S is equ
 
 lc 560
 
-for each number 'i' 
-  create a new set which includes number 'i' if it does not exceed 'S', and recursively   
+for each number 'i'
+  create a new set which includes number 'i' if it does not exceed 'S', and recursively
       process the remaining numbers and S
-  create a new set without number 'i', and recursively process the remaining numbers 
+  create a new set without number 'i', and recursively process the remaining numbers
 return the count of subsets who has a S equal to 'S'
 '''
 

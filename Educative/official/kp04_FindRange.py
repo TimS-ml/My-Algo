@@ -15,7 +15,7 @@ def find_range(arr, key):
     result[0] = binary_search(arr, key, False)
 
     # no need to search, if 'key' is not present in the input array
-    if result[0] != -1:  
+    if result[0] != -1:
         result[1] = binary_search(arr, key, True)
     return result
 

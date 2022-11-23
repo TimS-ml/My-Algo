@@ -7,7 +7,7 @@ class ListNode:
         self.val = x
         self.next = next
 
-    def __repr__(self):  # 只返回当前node的数值……循环添加节点的时候有些用
+    def __repr__(self):  # 只返回当前node的数值......循环添加节点的时候有些用
         # 否则TypeError: __str__ returned non-string (type int)
         return str(self.val)
 

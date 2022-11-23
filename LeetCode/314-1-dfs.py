@@ -9,7 +9,7 @@ What do I need:
 
 This is dfs, the node order inside dict are different
 so we need to keep in track of both row and col:
-Modified based on BFS: 
+Modified based on BFS:
 BFS solution: colTable[col].append(node.val)
 dfs solution: colTable[col].append((row, node.val))
 '''

@@ -6,7 +6,7 @@
 
 
 case: s = "a-bC-dEf-ghIj"
-out :     "j-Ih-gfE-dCba" 
+out :     "j-Ih-gfE-dCba"
 
 case: s = "Test1ng-Leet=code-Q!"
 out :     "Qedo1ct-eeLg=ntse-T!"

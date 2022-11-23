@@ -16,18 +16,18 @@ class Solution:
     def compare(self, n1, n2):
         # both > or >= is ok
         return str(n1) + str(n2) >= str(n2) + str(n1)
-    
+
     # this is same as normal merge sort
     def mergeSort(self, nums, l, r):
         if l > r:
-            return 
+            return
         if l == r:
             return [nums[l]]
         mid = l + (r-l)//2
         left = self.mergeSort(nums, l, mid)
         right = self.mergeSort(nums, mid+1, r)
         return self.merge(left, right)
-        
+
     # specifiy compare rules
     def merge(self, l1, l2):
         ans, i, j = [], 0, 0

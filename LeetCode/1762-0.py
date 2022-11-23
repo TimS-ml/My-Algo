@@ -3,7 +3,7 @@
 - Time complexity: O(N)
 - Space complexity: O(1)
 
-A building has an ocean view if 
+A building has an ocean view if
 all the buildings to its right have a smaller (h >= h_right) height.
 
 
@@ -33,7 +33,7 @@ class Solution:
         n = len(heights)
         ans = []
         stack = []
-        
+
         for i in range(n):
             # building i block some of the building before i
             while stack and heights[i] >= stack[-1]:
@@ -41,7 +41,7 @@ class Solution:
                 ans.pop()
             stack.append(heights[i])
             ans.append(i)
-        
+
         return ans
 
     # Space Optimization
@@ -49,11 +49,11 @@ class Solution:
         n = len(heights)
         ans = []
         max_height = -1
-        
+
         for i in reversed(range(n)):
             if heights[i] > max_height:
                 ans.append(i)
                 max_height = heights[i]
-        
+
         ans.reverse()  # remember to reverse it
         return ans

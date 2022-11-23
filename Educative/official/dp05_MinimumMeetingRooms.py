@@ -6,11 +6,11 @@
 lc 253
 
 Similar Problems
-Problem 1: 
+Problem 1:
 Given a list of intervals, find the point where the maximum number of intervals overlap
 
-Problem 2: 
-Given a list of intervals representing the arrival and departure times of trains to a train station, 
+Problem 2:
+Given a list of intervals representing the arrival and departure times of trains to a train station,
 our goal is to find the minimum number of platforms required for the train station so that no train has to wait
 
 '''

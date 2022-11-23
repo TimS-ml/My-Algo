@@ -13,7 +13,7 @@ import collections
 def sort_character_by_frequency(s):
     # O(N)
     counts = collections.Counter(s)
-    
+
     # Build up the string builder.
     string_builder = []
     for letter, freq in counts.most_common():

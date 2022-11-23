@@ -1,7 +1,7 @@
 '''
-We are given an array containing ‘n’ objects.
-Each object, when created, was assigned a unique number from 1 to ‘n’ based on their creation sequence.
-This means that the object with sequence number ‘3’ was created just before the object with sequence number ‘4’.
+We are given an array containing 'n' objects.
+Each object, when created, was assigned a unique number from 1 to 'n' based on their creation sequence.
+This means that the object with sequence number '3' was created just before the object with sequence number '4'.
 
 # Code Explain:
 - Time complexity: O(N)

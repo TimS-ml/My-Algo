@@ -21,7 +21,7 @@ def count_rotations(arr):
             return mid
 
         # left side is sorted, so the pivot is on right side
-        if arr[start] < arr[mid]:  
+        if arr[start] < arr[mid]:
             start = mid + 1
         else:  # right side is sorted, so the pivot is on the left side
             end = mid - 1

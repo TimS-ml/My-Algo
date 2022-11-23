@@ -53,7 +53,7 @@ class Solution:
         self.ans = 0
         dfs(root)
         return self.ans
-    
+
     # bfs
     def rangeSumBST_3(self, root: Optional[TreeNode], low: int, high: int) -> int:
         s = 0

@@ -1,5 +1,5 @@
 '''
-Given two lists of intervals, find the intersection of these two lists. 
+Given two lists of intervals, find the intersection of these two lists.
 Each list consists of disjoint intervals sorted on their start time.
 The output list contains the common intervals between the two lists.
 
@@ -37,10 +37,10 @@ def merge(intervals_a, intervals_b):
 
 def main():
     print("Intervals Intersection: " +
-          str(merge([[1, 3], [5, 6], [7, 9]], 
+          str(merge([[1, 3], [5, 6], [7, 9]],
                     [[2, 3], [5, 7]])))
     print("Intervals Intersection: " +
-          str(merge([[1, 3], [5, 7], [9, 12]], 
+          str(merge([[1, 3], [5, 7], [9, 12]],
                     [[5, 10]])))
 
 

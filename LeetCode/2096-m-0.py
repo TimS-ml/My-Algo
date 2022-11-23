@@ -29,7 +29,7 @@ class Solution:
             path = path.replace('L', 'U')
             path = path.replace('R', 'U')
             return path
-        
+
         def helper(node, path):
             if not node:
                 return None
@@ -37,28 +37,28 @@ class Solution:
                 return path
             elif node.val == destValue:
                 return path
-            
+
             subL = helper(node.left, 'L')
             subR = helper(node.right, 'R')
-            
+
             # A.2
             if subL and subR:
                 # LCA is node => C.2
                 # find start L or R ???
-                
-                return 
-            
+
+                return
+
             # A.1
             elif subL:
                 # C.1
                 # determine LCA = start or dest
                 return subL
-                
+
             # A.1
             elif subR:
                 # C.1
                 # determine LCA = start or dest
                 return subR
-            
+
         return helper(root, '')
 

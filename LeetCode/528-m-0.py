@@ -30,7 +30,7 @@ class Solution:
         self.probList = [i/s for i in w]
         self.probList = list(itertools.accumulate(self.probList))
         self.probList.insert(0, 0)
-        
+
     def pickIndex(self) -> int:
         prob = random.uniform(0, 1)
         for i in range(len(self.probList) - 1):
@@ -44,7 +44,7 @@ class Solution2:
         self.presumList = [0]
         for i in range(len(w)):
             self.presumList.append(w[i] + presum)
-        
+
     def pickIndex(self) -> int:
         randn = random.rand(0, self.presumList[-1])
         # determine the range: (0, a , a+b, a+b+c...)

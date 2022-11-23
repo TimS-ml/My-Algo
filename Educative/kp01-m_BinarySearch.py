@@ -21,7 +21,7 @@ def binary_search(nums, target):
 
     while left < right:
         mid = int(left + (right - left) // 2)  # this is better
-        
+
         if isAsc:
             if target < nums[mid]:  # target at left half, reduce right
                 right = mid

@@ -17,7 +17,7 @@ class Solution:
         def helper(node):
             l = helper(node.left) if node.left else None
             r = helper(node.right) if node.right else None
-            
+
             if l:
                 node.left = l
                 l.right = node
@@ -35,17 +35,17 @@ class Solution:
                 return node.right
             else:
                 return node
-        
+
         if not root:
             return None
-        
+
         start = root
-        
+
         while start.left:
             start = start.left
 
         end = helper(root)
-        
+
         # connect first and last node
         start.left = end
         end.right = start

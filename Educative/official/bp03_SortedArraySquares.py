@@ -54,7 +54,7 @@ Two ways:
 
 '''
 
-# time complexity of nlogn, ignored `sorted` condition 
+# time complexity of nlogn, ignored `sorted` condition
 def make_squares_heap(arr):
     # the simplest way is to return sorted(ans)
     ans = [i**2 for i in arr]
@@ -66,7 +66,7 @@ def make_squares_heap(arr):
     return heapsort(ans)
 
 
-# time complexity of nlogn, ignored `sorted` condition 
+# time complexity of nlogn, ignored `sorted` condition
 def make_squares_2(arr):
     arr = sorted(arr, key=lambda x: abs(x))
     return [x ** 2 for x in arr]

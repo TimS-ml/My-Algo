@@ -21,7 +21,7 @@ class NumMatrix:
 
     def sumRegion(self, r1: int, c1: int, r2: int, c2: int) -> int:
         # Since our `sum` starts by 1 so we need to increase r1, c1, r2, c2 by 1
-        r1, c1, r2, c2 = r1 + 1, c1 + 1, r2 + 1, c2 + 1  
+        r1, c1, r2, c2 = r1 + 1, c1 + 1, r2 + 1, c2 + 1
         return self.sum[r2][c2] - \
                self.sum[r2][c1 - 1] - \
                self.sum[r1 - 1][c2] + \

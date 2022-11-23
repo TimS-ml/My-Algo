@@ -28,7 +28,7 @@ class Solution:
     def getDirections(self, root: Optional[TreeNode], startValue: int, destValue: int) -> str:
         path = []
         startPath, destPath = '', ''
-        
+
         def helper(node):
             if not node:
                 return
@@ -48,12 +48,12 @@ class Solution:
             path.pop()
 
         helper(root)
-        
+
         # remove common ancestor
         p = 0
         while p < len(startPath) and p < len(destPath) and startPath[p] == destPath[p]:
             p += 1
-        
+
         startPath = 'U' * (len(startPath) - p)
         destPath = destPath[p:]
 

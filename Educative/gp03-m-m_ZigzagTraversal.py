@@ -33,10 +33,10 @@ def traverse(root):
                 que.append(node.left)
             if node.right:
                 que.append(node.right)
-        
+
         reverse *= -1
         ans.append(currLv)
-    return ans 
+    return ans
 
 
 

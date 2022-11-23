@@ -9,7 +9,7 @@
 - allowed to replace no more than k letters with any letter
 
 !!! careful with indexing !!!
-if use for loop: 
+if use for loop:
     if (r - l + 1 - mostFreq) > k:
 '''
 
@@ -18,7 +18,7 @@ def length_of_longest_substring(arr, k):
     l, r = 0, 0
     ans = 0
     mostFreq = 0
-    
+
     while r < len(arr):
         c = arr[r]
         r += 1

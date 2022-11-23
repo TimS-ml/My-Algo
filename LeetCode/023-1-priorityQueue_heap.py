@@ -27,13 +27,13 @@ class Solution:
         curr = head = ListNode(0)
         queue = PriorityQueue()
         count = 0
-        
+
         for node in lists:
             # only the 'curr' in queue
             if node:
                 # priority, node
-                # In the event that two or more of the lists have the same val, 
-                # this code will error out 
+                # In the event that two or more of the lists have the same val,
+                # this code will error out
                 # since the queue module will compare the second element in the priority queue
                 # which is a ListNode object (and this is not a comparable type)
                 queue.put((node.val, count, node))
@@ -59,7 +59,7 @@ class Solution:
             if curr.next is not None:
                 queue.put((curr.next.val, count, curr.next))
                 count += 1
-                
+
         return head.next
 
     # a heap implementation

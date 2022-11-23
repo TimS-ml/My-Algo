@@ -30,11 +30,11 @@ class Solution:
             if node == q:
                 findq = True
                 return node
-                
+
             # case: find both lca
             if l and r:
                 return node
-            
+
             # case: only find one target in one branch
             if l:
                 return l
@@ -42,10 +42,10 @@ class Solution:
                 return r
             else:
                 return None
-            
+
         findp, findq = False, False
         ans = helper(root)
-        
+
         if findp and findq:
             return ans
         return None

@@ -22,8 +22,8 @@ class Solution:
             dp[i][i] = 1
 
         '''
-        For those who are still wondering why the loop is reversed and j>i: 
-        Consider at i==1 and j==5 and this range is palindrome if str[1] == str[5] and i==2 and j==4 is palindrome. 
+        For those who are still wondering why the loop is reversed and j>i:
+        Consider at i==1 and j==5 and this range is palindrome if str[1] == str[5] and i==2 and j==4 is palindrome.
         You see we have to compute 2,4 before 1,5 and that's the reason we start from the bottom to compute 2,4 first
         In other words, calc i in desc order OR calc j in asc order
         '''

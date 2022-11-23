@@ -1,5 +1,5 @@
 # https://leetcode-cn.com/problems/power-of-three/
-# 想法很好……但是开根号的结果不是很靠谱
+# 想法很好......但是开根号的结果不是很靠谱
 # 用if n == math.pow(3, y)这种倒是可以
 
 

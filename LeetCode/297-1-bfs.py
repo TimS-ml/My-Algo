@@ -81,7 +81,7 @@ class Codec:
         i = 0
         while q:
             parent = q.popleft()
-            
+
             i += 1
             left = data_list[i]
             if left != 'None':
@@ -99,7 +99,7 @@ class Codec:
                 parent.right = None
 
         return root
-        
+
 
 # Your Codec object will be instantiated and called as such:
 # ser = Codec()

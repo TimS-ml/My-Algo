@@ -4,7 +4,7 @@
 - Space complexity: O(1)
 
 A few things to start if you don't have a clue:
-- We can turn zigzag traverse to single direction traverse 
+- We can turn zigzag traverse to single direction traverse
     - How the start point move? [ROW, 0] first, then [last ROW, COL], total ROW + COL - 1
     - Why '-1'? Because ROW and COL overlap at corner
 - Total number of element: ROW x COL
@@ -26,7 +26,7 @@ class Solution:
 
         ROW, COL = len(matrix), len(matrix[0])
         ans, traverse = [], []
-        
+
         # total iter: row + col - 1
         for i in range(COL + ROW - 1):
             traverse.clear()

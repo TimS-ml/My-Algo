@@ -1,7 +1,7 @@
 '''
 # Code Explain:
-- Time complexity: O(N*C) 
-where ‘N’ is the number of items and ‘C’ is the knapsack capacity
+- Time complexity: O(N*C)
+where 'N' is the number of items and 'C' is the knapsack capacity
 - Space complexity: O(N*C + N)
 
 
@@ -21,7 +21,7 @@ def solve_knapsack(profits, weights, capacity):
     # [3] Initialize Conditions
     # create a two dimensional array for Memoization, each element is initialized to '-1'
     dp = [[-1 for x in range(capacity + 1)] for y in range(len(profits))]
-    
+
     # yep that will do!
     for c in range(capacity + 1):
        if weights[-1] <= c:

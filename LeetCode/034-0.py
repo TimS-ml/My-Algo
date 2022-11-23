@@ -47,7 +47,7 @@ class Solution:
                 right = mid
 
         ans.append(left - 1)
-        
+
         return ans
 
     # not recommended...

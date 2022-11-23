@@ -15,11 +15,11 @@ sol 3
 # sol 1
 if you put entire list to heap, the time complexity is O(N logN) then it's meaningless
 
-# sol 2 
+# sol 2
 b search's search space: distance
 - range: between low_dist and high_dist = 0, max(dist_list)
 
-func of mid_dist low or high: compare 'len(close) based on curr mid_dist' with k  
+func of mid_dist low or high: compare 'len(close) based on curr mid_dist' with k
 
 tricky part: we search distance (an increasing sequence that can be searched)
 - check 1011
@@ -52,7 +52,7 @@ class Solution:
                 # If this point is close_idx than the kth farthest,
                 # discard the farthest point and add this one
                 heapq.heappushpop(heap, (dist, i))
-        
+
         return [points[i] for (_, i) in heap]
 
     # binary select !!! O(N) time and space
@@ -79,7 +79,7 @@ class Solution:
 
         # Define the initial binary search range
         low_dist, high_dist = 0, max(dist_list)
-        
+
         # Perform a binary search of the dist_list
         # to find the k closest points
         closest = []
@@ -98,7 +98,7 @@ class Solution:
                 closest.extend(close_idx)
                 remain_idx = far_idx
                 low_dist = mid_dist
-                
+
         # Return the k closest points using the reference indices
         return [points[i] for i in closest]
 

@@ -24,8 +24,8 @@ class Solution:
         #@lru_cache(maxsize=None)    # alternative memoization solution
         # func(path, search space) -> subsentence (the solution of this subStr)
         # in this case, path is sub string of s, search space is fixed
-        # {'dog': [['dog']], 'sanddog': [['sand', 'dog']], 
-        #  'catsanddog': [['cat', 'sand', 'dog'], ['cats', 'and', 'dog']], 
+        # {'dog': [['dog']], 'sanddog': [['sand', 'dog']],
+        #  'catsanddog': [['cat', 'sand', 'dog'], ['cats', 'and', 'dog']],
         #  'anddog': [['and', 'dog']]}
         def helper(subStr):
             if not subStr:

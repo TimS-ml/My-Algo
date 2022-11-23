@@ -19,7 +19,7 @@ class Solution:
     def findMedianSortedArrays(self, n1, n2):
         total = len(n1) + len(n2)
         half = total // 2
-        
+
         # binary search on the sorter list (n1)
         if len(n2) < len(n1):
             n1, n2 = n2, n1
@@ -37,7 +37,7 @@ class Solution:
             n1r = n1[i+1] if (i+1) < len(n1) else float('INF')
             n2l = n2[j] if j >= 0 else -float('INF')
             n2r = n2[j+1] if (j+1) < len(n2) else float('INF')
-            
+
             # correct partitation, rule1 and rule2 both True
             if n1l <= n2r and n2l <= n1r:
                 # odd
@@ -58,8 +58,8 @@ class Solution:
         if l % 2 == 1:
             return self.kth(A, B, l // 2)
         else:
-            return (self.kth(A, B, l // 2) + self.kth(A, B, l // 2 - 1)) / 2.   
-        
+            return (self.kth(A, B, l // 2) + self.kth(A, B, l // 2 - 1)) / 2.
+
     def kth(self, a, b, k):
         if not a:
             return b[k]
@@ -67,8 +67,8 @@ class Solution:
             return a[k]
         ia, ib = len(a) // 2 , len(b) // 2
         ma, mb = a[ia], b[ib]
-        
-        # when k is bigger than the sum of a and b's median indices 
+
+        # when k is bigger than the sum of a and b's median indices
         if ia + ib < k:
             # if a's median is bigger than b's, b's first half doesn't include k
             if ma > mb:

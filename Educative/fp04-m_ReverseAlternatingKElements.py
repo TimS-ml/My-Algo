@@ -48,7 +48,7 @@ def reverse_alternate_k_elements(head, k):
         if not a:
             return newHead
         a = a.next
-    
+
     if a:
         a.next = reverse_alternate_k_elements(a.next, k)
     return newHead

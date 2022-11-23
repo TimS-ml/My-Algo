@@ -6,7 +6,7 @@
 
 
 Basic Solution
-for each number 'i' 
+for each number 'i'
   add number 'i' to S1 and recursively process the remaining numbers
   add number 'i' to S2 and recursively process the remaining numbers
 return the minimum absolute difference of the above two sets

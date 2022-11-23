@@ -11,22 +11,22 @@ class LRUCache:
     def __init__(self, capacity):
         self.dic = OrderedDict()
         self.c = capacity
-    
+
     def get(self, key):
         if key not in self.dic:
             return -1
-        v = self.dic.pop(key) 
+        v = self.dic.pop(key)
         self.dic[key] = v  # set key as the newest one
         return v
-    
+
     def put(self, key, value):
-        if key in self.dic:    
+        if key in self.dic:
             self.dic.pop(key)
         else:
             if self.c > 0:
-                self.c -= 1  
+                self.c -= 1
             else:  # self.dic is full
-                self.dic.popitem(last=False) 
+                self.dic.popitem(last=False)
         self.dic[key] = value
 
 
@@ -45,7 +45,7 @@ class LRUCache_2(OrderedDict):
         """
         if key not in self:
             return - 1
-        
+
         self.move_to_end(key)
         return self[key]
 

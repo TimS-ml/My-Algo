@@ -34,7 +34,7 @@ class Solution:
                         while lo < hi and nums[hi] == right:
                             hi -= 1
                 return ans
-            
+
             ans = []
             i = start
             while i < len(nums):
@@ -44,7 +44,7 @@ class Solution:
                     ans.append(subList)
                 while i < len(nums) - 1 and nums[i] == nums[i+1]:
                     i += 1
-                i += 1 
+                i += 1
 
             return ans
 
@@ -57,6 +57,6 @@ class Solution:
                 ans.append(subList)
             while i < len(nums) - 1 and nums[i] == nums[i+1]:
                 i += 1
-            i += 1 
+            i += 1
 
         return ans

@@ -1,6 +1,6 @@
 '''
-We are given an unsorted array containing ‘n+1’ numbers taken from the range 1 to ‘n’. 
-The array has only one duplicate but it can be repeated multiple times. 
+We are given an unsorted array containing 'n+1' numbers taken from the range 1 to 'n'.
+The array has only one duplicate but it can be repeated multiple times.
 Find that duplicate number without using any extra space.
 
 # Code Explain:

@@ -26,7 +26,7 @@ class Solution:
                 win[c] = win.get(c, 0) + 1
                 if need[c] == win[c]:
                     valid += 1
-            
+
             # you can change 'while' to 'if'
             while right - left >= len(s1):
                 if valid == len(need):

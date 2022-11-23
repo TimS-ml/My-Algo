@@ -52,7 +52,7 @@ class Solution:
     def multiply(self, mat1: List[List[int]], mat2: List[List[int]]) -> List[List[int]]:
             A = SparseMatrix(mat1, False)
             B = SparseMatrix(mat2, True)
-            
+
             ans = [[0] * len(mat2[0]) for _ in range(len(mat1))]
 
             for row in range(len(ans)):
@@ -65,7 +65,7 @@ class Solution:
                     # Column element range indices
                     mat2_col_start = B.col_index[col]
                     mat2_col_end = B.col_index[col + 1]
-                    
+
                     # Iterate over both row and column.
                     while mat1_row_start < mat1_row_end and mat2_col_start < mat2_col_end:
                         if A.col_index[mat1_row_start] < B.row_index[mat2_col_start]:
@@ -77,5 +77,5 @@ class Solution:
                             ans[row][col] += A.values[mat1_row_start] * B.values[mat2_col_start]
                             mat1_row_start += 1
                             mat2_col_start += 1
-    
+
             return ans

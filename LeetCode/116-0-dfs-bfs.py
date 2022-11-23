@@ -60,7 +60,7 @@ class Solution:
             for i in range(size):
                 node = Q.popleft()
 
-                # This check ensures we don't establish 
+                # This check ensures we don't establish
                 # next pointers beyond the end of a level
                 if i < size - 1:
                     node.next = Q[0]  # Q[0] is the next node

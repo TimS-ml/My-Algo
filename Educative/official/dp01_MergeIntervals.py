@@ -1,5 +1,5 @@
 '''
-Given a list of intervals, 
+Given a list of intervals,
 merge all the overlapping intervals to produce a list that has only mutually exclusive intervals.
 
 # Code Explain:
@@ -7,14 +7,14 @@ merge all the overlapping intervals to produce a list that has only mutually exc
 include sort
 - Space complexity: O(N)
 
-lc 56 
+lc 56
 
 Sort the intervals on the start time to ensure a.start <= b.start
-If `a` overlaps `b` (i.e. b.start <= a.end), 
+If `a` overlaps `b` (i.e. b.start <= a.end),
 we need to merge them into a new interval `c` such that:
     c.start = a.start = min(a.start, b.start)
     c.end = max(a.end, b.end)
-We will keep repeating the above two steps to merge `c` 
+We will keep repeating the above two steps to merge `c`
 with the next interval if it overlaps with `c`.
 
 - input is unsorted start

@@ -13,7 +13,7 @@ K is the number of linked lists.
 Sol 1
 Merge with Divide And Conquer
 - Pair up k lists and merge each pair
-- After the first pairing, k lists are merged into k/2 lists with average 2N/k length, 
+- After the first pairing, k lists are merged into k/2 lists with average 2N/k length,
     then k/4, k/8 and so on
 - Repeat this procedure until we get the final sorted linked list
 
@@ -73,7 +73,7 @@ class Solution2(object):
             l1 = sort(lists, low, mid)
             l2 = sort(lists, mid + 1, high)
             return merge(l1, l2)
-    
+
         def merge(l1, l2):
             if not l1:
                 return l2
@@ -85,7 +85,7 @@ class Solution2(object):
             else:
                 l2.next = merge(l1, l2.next)
                 return l2
-    
+
         if len(lists) == 0:
             return None
         return sort(lists, 0, len(lists) - 1)

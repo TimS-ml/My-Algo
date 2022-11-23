@@ -14,7 +14,7 @@ class Solution:
                 l += 1
             while s[r].isalnum() == False and l < r:
                 r -= 1
-            
+
             if s[l] != s[r]:
                 return False
             else:
@@ -29,6 +29,6 @@ class Solution:
         for c in list(s):
             if c.isalnum():
                 s2 += c
-        
+
         return s2 == s2[::-1]
 

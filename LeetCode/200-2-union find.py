@@ -4,7 +4,7 @@
 - Space complexity: O()
 
 Union find in 1d
-usually 
+usually
 
 for i in range(row):
     for j in range(col):
@@ -23,19 +23,19 @@ class Solution(object):
         # init ans
         self.count = sum(grid[i][j]=='1' for i in range(row) for j in range(col))
         parent = [i for i in range(row*col)]  # groupTag
-        
+
         def find(x):
             if parent[x]!= x:
                 return find(parent[x])
             return parent[x]
-        
+
         def union(x, y):
             xroot, yroot = find(x), find(y)
             if xroot == yroot:
-                return 
+                return
             parent[xroot] = yroot
             self.count -= 1
-        
+
         for i in range(row):
             for j in range(col):
                 if grid[i][j] == '0':
@@ -57,7 +57,7 @@ class Solution_2(object):
         """
         # TIME O(MN)
         # SPACE O(MN)
-    
+
         if not grid or not len(grid) or not grid[0]:
             return 0
         m = len(grid)
@@ -73,7 +73,7 @@ class Solution_2(object):
                     groupTag[i*n+j] = i*n + j
                 else:
                     groupTag[i*n+j] = -1
-        
+
         for i in range(m):
             for j in range(n):
                 if grid[i][j] == '0':
@@ -82,13 +82,13 @@ class Solution_2(object):
                     self.union(i,j,i,j+1,groupTag,n)
                 if i+1 < m and grid[i+1][j] == '1':
                     self.union(i,j,i+1,j,groupTag,n)
-        
+
         count = 0
         for i in range(len(groupTag)):
             if groupTag[i] == i:
                 count += 1
         return count
-        
+
     def find(self, e, groupTag):
         # isolate
         if groupTag[e] == e:
@@ -96,7 +96,7 @@ class Solution_2(object):
         # group
         else:
             return self.find(groupTag[e], groupTag)
-    
+
     # in this example, x y is i j move 1
     def union(self, i, j, x, y, groupTag, n):
         index1 = i*n+j

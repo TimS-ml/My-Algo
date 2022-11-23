@@ -1,6 +1,6 @@
 '''
-There is a dictionary containing words from an alien language for which we don’t know the ordering of the alphabets. 
-Write a method to find the correct order of the alphabets in the alien language. 
+There is a dictionary containing words from an alien language for which we don't know the ordering of the alphabets.
+Write a method to find the correct order of the alphabets in the alien language.
 It is given that the input is a valid dictionary and there exists an ordering among its alphabets.
 
 # Code Explain:
@@ -10,7 +10,7 @@ It is given that the input is a valid dictionary and there exists an ordering am
 lc 269
 
 Same to pp02
-The only difference being that we need to build the graph of the characters by comparing adjacent words first, 
+The only difference being that we need to build the graph of the characters by comparing adjacent words first,
 and then perform the topological sort for the graph to determine the order of the characters
 '''
 

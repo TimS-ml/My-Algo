@@ -21,7 +21,7 @@ class Solution:
             ans.append(root.val)
             dfs(root.left)
             dfs(root.right)
-        
+
         dfs(root)
         return ans
 
@@ -34,7 +34,7 @@ class Solution:
         while stack:
             node = stack.pop()
             ans.append(node.val)
-            
+
             # right child is pushed first so that left is processed first
             if node.right:
                 stack.append(node.right)

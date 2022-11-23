@@ -13,11 +13,11 @@ wrong sol vs correct sol:
 w: min(h[l+1], h[r]) > min(h[l], h[r-1])
 c: h[l] <= h[r]
 
-当有两种选择，left 右移动 or right 左移动，当h[left]<h[right] 当right左移
-        1.if h[right-1]>=h[right]: 由于h[left]矮，container高度还是h[left]，而宽度却少了1，这样只会造成area减少，不可取抛弃；
-        2.if h[right-1]<h[right]: container高度减小，宽度减少1，area减少，不可取抛弃；
-        综上，**如果走高的一方，只会使得container整体area朝减少的方向走，不可取**
-所以，正确做法是每次走矮的一方，才有可能朝area增大的方向走；
+当有两种选择, left 右移动 or right 左移动, 当h[left]<h[right] 当right左移
+        1.if h[right-1]>=h[right]: 由于h[left]矮, container高度还是h[left], 而宽度却少了1, 这样只会造成area减少, 不可取抛弃; 
+        2.if h[right-1]<h[right]: container高度减小, 宽度减少1, area减少, 不可取抛弃; 
+        综上, **如果走高的一方, 只会使得container整体area朝减少的方向走, 不可取**
+所以, 正确做法是每次走矮的一方, 才有可能朝area增大的方向走; 
 
 also, another way of understanding (like DP)
 https://leetcode.com/problems/container-with-most-water/discuss/6099/Yet-another-way-to-see-what-happens-in-the-O(n)-algorithm
@@ -45,7 +45,7 @@ class Solution:
     def maxArea(self, h: List[int]) -> int:
         maxcap = 0
         l, r = 0, len(h) - 1
-        
+
         while l < r:
             width = r - l
             maxcap = max(maxcap, min(h[l], h[r]) * width)
@@ -53,5 +53,5 @@ class Solution:
                 l += 1
             else:
                 r -= 1
-                
+
         return maxcap

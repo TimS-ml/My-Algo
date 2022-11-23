@@ -6,15 +6,15 @@ Given a set of positive numbers, find if we can partition it into two subsets su
 - Space complexity: O(N)
 
 
-important: 
+important:
 - the two subsets have the sum of sum(num)/2
 - you only need to find one subset that sum(subset) = sum(num)/2
 
 basic solution
-for each number 'i' 
-  create a new set which INCLUDES number 'i' if it does not exceed 'S/2', and recursively 
+for each number 'i'
+  create a new set which INCLUDES number 'i' if it does not exceed 'S/2', and recursively
       process the remaining numbers
-  create a new set WITHOUT number 'i', and recursively process the remaining items 
+  create a new set WITHOUT number 'i', and recursively process the remaining items
 return true if any of the above sets has a sum equal to 'S/2', otherwise return false
 
 Brute-force, Overlapping Sub-problems
@@ -50,15 +50,15 @@ def can_partition_recursive(num, sum, currentIndex):
     # recursive call after choosing the number at the `currentIndex`
     # if the number at `currentIndex` exceeds the sum, we shouldn't process this
     if num[currentIndex] <= sum:
-        if (can_partition_recursive(num, 
+        if (can_partition_recursive(num,
                                     sum - num[currentIndex],
                                     currentIndex + 1)):
             return True
 
     # [2.2] State Transfer Equation
     # recursive call after excluding the number at the 'currentIndex'
-    return can_partition_recursive(num, 
-                                   sum, 
+    return can_partition_recursive(num,
+                                   sum,
                                    currentIndex + 1)
 
 

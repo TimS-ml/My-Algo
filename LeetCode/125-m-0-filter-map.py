@@ -19,7 +19,7 @@ class Solution:
 
 
 @pytest.mark.parametrize(
-    "test_input, expected", 
+    "test_input, expected",
     [("", True),
      ("A man, a plan, a canal: Panama", True),
      ("race a car", False)]

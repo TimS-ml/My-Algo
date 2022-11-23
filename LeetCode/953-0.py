@@ -39,7 +39,7 @@ class Solution:
         idx_dic = {}
         for index, val in enumerate(order):
             idx_dic[val] = index
-        
+
         # i: idx of a word
         # j; idx of a char in word[i]
         for i in range(len(words) - 1):
@@ -47,7 +47,7 @@ class Solution:
                 # no mismatch, examine length
                 if j >= len(words[i + 1]):
                     return False
-                
+
                 # mismatch
                 if words[i][j] != words[i + 1][j]:
                     if idx_dic[words[i][j]] > idx_dic[words[i + 1][j]]:

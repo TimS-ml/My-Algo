@@ -22,7 +22,7 @@ class Solution:
             slow = slow.next
             if slow == fast:
                 break
-        
+
         # no cycle
         if not fast or not fast.next:
             return None

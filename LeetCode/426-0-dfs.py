@@ -27,7 +27,7 @@ class Solution:
                 # left
                 helper(node.left)
 
-                # middle node 
+                # middle node
                 if last:
                     # link the previous node (last)
                     # with the current one (node)
@@ -38,15 +38,15 @@ class Solution:
                     # init, only run once
                     # keep the smallest node
                     # to close DLL later on
-                    first = node        
+                    first = node
                     last = node
 
                 # right
                 helper(node.right)
-        
+
         if not root:
             return None
-        
+
         # the smallest (first) and the largest (last) nodes
         first, last = None, None
         helper(root)
@@ -84,6 +84,6 @@ class Solution:
             rTail.right = lHead
 
             return lHead
-        
+
         return helper(root)
-                
+

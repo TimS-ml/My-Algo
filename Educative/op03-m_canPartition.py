@@ -2,7 +2,7 @@
 # Code Explain:
 - Time complexity: O(N * S)
 - Space complexity: O(N * S)
-The algorithm has the time and space complexity of O(N*S), where ‘N’ represents total numbers and ‘S’ is the total s of all the numbers.
+The algorithm has the time and space complexity of O(N*S), where 'N' represents total numbers and 'S' is the total s of all the numbers.
 
 
 
@@ -31,7 +31,7 @@ def can_partition(num, s):
             cache[idx][curr_sum] = top_down_dp(cache, idx + 1, curr_sum)
 
         return cache[idx][curr_sum]
-    
+
     if top_down_dp(cache, 0, s):
         return True
     else:

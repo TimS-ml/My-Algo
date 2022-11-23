@@ -1,6 +1,6 @@
 '''
 # Code Explain:
-- Time complexity: O(∣S∣+∣T∣) 
+- Time complexity: O(∣S∣+∣T∣)
     where |S| and |T| represent the lengths of strings S and T
 - Space complexity: O(∣S∣+∣T∣)
 
@@ -51,7 +51,7 @@ class Solution:
         else:
             return s[minStart: minStart + minLen]
 
-    
+
     # using fewer var
     def minWindow_2(self, s: str, t: str) -> str:
         ans = ''

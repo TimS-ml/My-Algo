@@ -1,6 +1,6 @@
 '''
-Given a list of non-overlapping intervals sorted by their start time, 
-insert a given interval at the correct position and 
+Given a list of non-overlapping intervals sorted by their start time,
+insert a given interval at the correct position and
 merge all necessary intervals to produce a list that has only mutually exclusive intervals.
 
 # Code Explain:
@@ -17,7 +17,7 @@ Two options:
 follow up:
 Not sorted by start time?
     print("Intervals after inserting the new interval: " +
-          str(insert([[5, 7], [1, 3], [8, 12]], 
+          str(insert([[5, 7], [1, 3], [8, 12]],
                      [4, 6])))
 '''
 
@@ -47,17 +47,17 @@ def insert(intervals, new_interval):
     ans.append([start, end])
     return ans
 
-            
+
 
 def main():
     print("Intervals after inserting the new interval: " +
-          str(insert([[1, 3], [5, 7], [8, 12]], 
+          str(insert([[1, 3], [5, 7], [8, 12]],
                      [4, 6])))
     print("Intervals after inserting the new interval: " +
-          str(insert([[1, 3], [5, 7], [8, 12]], 
+          str(insert([[1, 3], [5, 7], [8, 12]],
                      [5, 6])))
     print("Intervals after inserting the new interval: " +
-          str(insert([[1, 3], [5, 7], [8, 12]], 
+          str(insert([[1, 3], [5, 7], [8, 12]],
                      [6, 7])))
     # print("Intervals after inserting the new interval: " +
     #       str(insert([[1, 3], [5, 7], [8, 12]],

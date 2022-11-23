@@ -1,5 +1,5 @@
 '''
-Given a set of positive numbers, find the total number of subsets whose S is equal to a given number ‘S’.
+Given a set of positive numbers, find the total number of subsets whose S is equal to a given number 'S'.
 
 # Code Explain:
 - Time complexity: O()

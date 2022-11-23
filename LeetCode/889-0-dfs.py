@@ -11,7 +11,7 @@ Tree1
     3
 
 Tree2
-    1 
+    1
   2
 3
 '''
@@ -30,7 +30,7 @@ class Solution:
         def build(preStart, preEnd, postStart, postEnd):
             if preStart > preEnd:
                 return None
-            
+
             if preStart == preEnd:
                 return TreeNode(preorder[preStart])
 
@@ -52,5 +52,5 @@ class Solution:
                                postStart + leftSize, postEnd - 1)
             return root
 
-        return build(0, len(preorder)-1, 
+        return build(0, len(preorder)-1,
                      0, len(postorder)-1)

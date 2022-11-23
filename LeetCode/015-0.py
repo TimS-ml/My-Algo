@@ -5,7 +5,7 @@
 - Space complexity: O(1)
 Pre-process of sorting is in-place, no need of extra space
 
-sol1 
+sol1
 brute force first number + 2sum
 
 sol2
@@ -51,7 +51,7 @@ class Solution:
                     while lo < hi and nums[hi] == right:
                         hi -= 1
             return ans
-        
+
         nums.sort()
         target = 0
         ans = []
@@ -63,10 +63,10 @@ class Solution:
                 ans.append(subList)
             while i < len(nums) - 1 and nums[i] == nums[i + 1]:
                 i += 1
-            i += 1 
+            i += 1
 
         return ans
-        
+
     def threeSum_2(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
         ans = []

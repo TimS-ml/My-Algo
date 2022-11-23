@@ -1,6 +1,6 @@
 '''
-Given a list of non-overlapping intervals sorted by their start time, 
-insert a given interval at the correct position and 
+Given a list of non-overlapping intervals sorted by their start time,
+insert a given interval at the correct position and
 merge all necessary intervals to produce a list that has only mutually exclusive intervals.
 
 # Code Explain:
@@ -10,15 +10,15 @@ merge all necessary intervals to produce a list that has only mutually exclusive
 lc 57
 
 insert and merge
-Skip all intervals which end before the start of the new interval, 
+Skip all intervals which end before the start of the new interval,
 i.e., skip all intervals with the following condition:
     intervals[i].end < newInterval.start
-Let’s call the last interval ‘b’ that does not satisfy the above condition. 
-If ‘b’ overlaps with the new interval (a) (i.e. b.start <= a.end), 
-we need to merge them into a new interval ‘c’:
+Let's call the last interval 'b' that does not satisfy the above condition.
+If 'b' overlaps with the new interval (a) (i.e. b.start <= a.end),
+we need to merge them into a new interval 'c':
     c.start = min(a.start, b.start)
     c.end = max(a.end, b.end)
-We will repeat the above two steps to merge ‘c’ with the next overlapping interval.
+We will repeat the above two steps to merge 'c' with the next overlapping interval.
 '''
 
 
@@ -49,7 +49,7 @@ def insert(intervals, new_interval):
 
 def main():
     print("Intervals after inserting the new interval: " +
-          str(insert([[1, 3], [5, 7], [8, 12]], 
+          str(insert([[1, 3], [5, 7], [8, 12]],
                      [4, 6])))
     # print("Intervals after inserting the new interval: " +
     #       str(insert([[1, 3], [5, 7], [8, 12]],

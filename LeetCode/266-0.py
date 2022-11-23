@@ -30,8 +30,8 @@ class Solution:
                 sets.add(char)
             else:
                 sets.remove(char)
-        
-        return (len(sets) <= 1)  
+
+        return (len(sets) <= 1)
 
 s = "carerac"
 print(Solution().canPermutePalindrome(s))

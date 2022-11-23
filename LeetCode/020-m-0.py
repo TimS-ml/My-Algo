@@ -6,7 +6,7 @@ F ([)]
     when )
     if ] or } or ( alowed
     if ) or [ or {
-    
+
 F ())
 
 stack
@@ -15,12 +15,12 @@ stack
 
 class Solution:
     def isValid(self, s: str) -> bool:
-        dic = {')': '(', 
-               ']': '[', 
+        dic = {')': '(',
+               ']': '[',
                '}': '{'}
-        
+
         stack = []
-        
+
         s = list(s)
         for i in range(len(s)):
             # if s[i] in ['{', '(', '[']:
@@ -34,7 +34,7 @@ class Solution:
                     stack.pop()
                 else:
                     return False
-        
+
         if not stack:
             return True
         else:

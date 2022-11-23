@@ -80,7 +80,7 @@ class Solution:
         l, r = float('inf'), -float('inf')
         AscStack = []
         for i in range(len(nums)):
-            # The popped elements are all out-of-order elements, 
+            # The popped elements are all out-of-order elements,
             # and the smallest index is the left boundary of the out-of-order subarray
             while AscStack and nums[AscStack[-1]] > nums[i]:
                 l = min(l, AscStack.pop())
@@ -88,7 +88,7 @@ class Solution:
 
         DescStack = []
         for i in reversed(range(len(nums))):
-            # The popped elements are all out-of-order elements, 
+            # The popped elements are all out-of-order elements,
             # and the smallest index is the left boundary of the out-of-order subarray
             while DescStack and nums[DescStack[-1]] < nums[i]:
                 r = max(r, DescStack.pop())

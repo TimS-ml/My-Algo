@@ -21,7 +21,7 @@ def remove_duplicates(arr):
     i = 1
     while (i < len(arr)):
         # non_dupl_idx <= i
-        # make sure the continuing value is different 
+        # make sure the continuing value is different
         if arr[non_dupl_idx] != arr[i]:
             arr[non_dupl_idx + 1] = arr[i]  # swap
             non_dupl_idx += 1

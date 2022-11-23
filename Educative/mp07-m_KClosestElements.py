@@ -16,6 +16,6 @@ def find_closest_elements(arr, k, x):
     result = []
     for i in range(k):
         result.append(sorted_arr[i])
-    
+
     # Sort again to have output in ascending order
     return sorted(result)

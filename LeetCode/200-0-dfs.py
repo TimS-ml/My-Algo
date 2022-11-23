@@ -26,7 +26,7 @@ class Solution:
         #            not visited[new_i][new_j] and \
         #            grid[new_i][new_j] == '1':
         #             dfs(new_i, new_j)
-        
+
         def dfs(i, j):
             if i < 0 or j < 0 or i >= row or j >= col:
                 return

@@ -8,7 +8,7 @@ lc 702
 find bounds then binary_search
 
 we can calc worst search time:
-secret = [-1,0,3,5,9,12], target = 9, 
+secret = [-1,0,3,5,9,12], target = 9,
 worst time = target - 1st val = 9 - (-1) = 10
 '''
 

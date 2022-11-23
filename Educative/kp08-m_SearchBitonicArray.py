@@ -29,17 +29,17 @@ def search_bitonic_array(nums, target):
                 end = mid
             else:
                 start = mid + 1
-    
+
         # at the end of the while loop, 'start == end'
         return start
 
     def binary_search(nums, target, start, end, isAsc=True):
         while start < end:
             mid = int(start + (end - start) / 2)
-    
+
             if target == nums[mid]:
                 return mid
-    
+
             if isAsc:  # ascending order
                 if target < nums[mid]:
                     end = mid
@@ -50,7 +50,7 @@ def search_bitonic_array(nums, target):
                     end = mid
                 else:  # target < arr[mid]
                     start = mid + 1
-    
+
         return -1  # element is not found
 
     maxIndex = find_max(nums)

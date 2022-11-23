@@ -37,7 +37,7 @@ class SparseVector:
             if k1 in vec.dic:
                 ans += self.dic[k1] * vec.dic[k1]
         return ans
-        
+
 # 2 pointers
 class SparseVector_2:
     def __init__(self, nums: List[int]):
@@ -51,7 +51,7 @@ class SparseVector_2:
         # self.dic and vec.dic
         ans = 0
         p, q = 0, 0
-        
+
         while p < len(self.dic) and q < len(vec.dic):
             if self.dic[p][0] == vec.dic[q][0]:
                 ans += self.dic[p][1] * vec.dic[q][1]

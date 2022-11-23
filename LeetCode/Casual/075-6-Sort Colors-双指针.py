@@ -1,6 +1,6 @@
 # https://leetcode-cn.com/problems/sort-colors/
-# 左边交换完, nums[curr]的的值是0. 一定要往后挪一位继续扫描. 
-# 而右边交换完, nums[curr]是之前的nums[p2]的值, 这个值是没有被扫描过的, 所以不用挪一位, 直接扫描curr. 
+# 左边交换完, nums[curr]的的值是0. 一定要往后挪一位继续扫描.
+# 而右边交换完, nums[curr]是之前的nums[p2]的值, 这个值是没有被扫描过的, 所以不用挪一位, 直接扫描curr.
 
 
 class Solution(object):

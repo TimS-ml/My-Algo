@@ -44,7 +44,7 @@ class Solution:
             dic[char] = dic.get(char, 0) + 1
 
         zip_words = zip(*words)   # space ???
-        
+
         start_idx = 0
         for char_set in zip_words:
             i = start_idx
@@ -57,7 +57,7 @@ class Solution:
                         i += 1
                     else:
                         return False
-                    
+
         return True
 
     # a better but still failed solution
@@ -74,7 +74,7 @@ class Solution:
             for char_set in zip_words:
                 if dic[char_set[0]] > dic[char_set[1]] and last_dig_align:
                     return False
-                
+
             if len(words[0]) > len(words[1]):
                 return False
         else:

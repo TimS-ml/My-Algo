@@ -60,7 +60,7 @@ def find_successor(root, key):
         # break if we have found the key
         if currentNode.val == key:
             break
-    
+
     # return successor node
     return queue[0] if queue else None
 
@@ -72,7 +72,7 @@ def main():
     root.left.left = TreeNode(9)
     root.right.left = TreeNode(10)
     root.right.right = TreeNode(5)
-    
+
     traverse(root)
 
     result = find_successor(root, 12)

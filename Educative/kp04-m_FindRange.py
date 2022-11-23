@@ -43,5 +43,5 @@ def find_range(self, nums, target):
             right = mid
 
     ans.append(left - 1)
-    
+
     return ans

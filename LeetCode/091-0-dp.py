@@ -21,7 +21,7 @@ if i-1 == 0
 'xx26' = invalid: ('xx', 06) + ('xx2', 6)
 dp[i] = dp[i-2]
 
-init: 
+init:
 d[0] and dp[1]
 
 state compresstion:

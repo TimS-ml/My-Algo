@@ -41,7 +41,7 @@ def find_word_concatenation_2(arr, words):
         # print(window)
         while j < len(window):
             w = window[j - wordSize + 1: j + 1]
-            
+
             if w in freqWord:
                 freqArr[w] = freqArr.get(w, 0) + 1
 

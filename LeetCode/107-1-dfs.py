@@ -16,7 +16,7 @@ class Solution:
         ans = []
         if not root:
             return ans
-        
+
         def helper(node, level):
             # start the current level
             if len(ans) == level:
@@ -30,6 +30,6 @@ class Solution:
                 helper(node.left, level + 1)
             if node.right:
                 helper(node.right, level + 1)
-            
+
         helper(root, 0)
         return ans[::-1]

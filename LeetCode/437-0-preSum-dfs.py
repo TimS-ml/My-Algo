@@ -21,36 +21,36 @@ class Solution:
         def dfs(node, pathSumCurr) -> None:
             nonlocal count
             if not node:
-                return 
-            
+                return
+
             # current prefix targetSum
             pathSumCurr += node.val
-            
+
             # here is the targetSum we're looking for
             if pathSumCurr == targetSum:
                 count += 1
-            
+
             # the state is the feq dict!!!
-            # number of times the pathSumCurr − targetSum has occurred already, 
-            # determines the number of times a path with targetSum targetSum 
+            # number of times the pathSumCurr − targetSum has occurred already,
+            # determines the number of times a path with targetSum targetSum
             # has occurred up to the current node
             count += dic[pathSumCurr - targetSum]
-            
+
             # add the current targetSum into hashmap
             # to use it during the child nodes processing
             dic[pathSumCurr] += 1
-            
+
             # process left subtree
             dfs(node.left, pathSumCurr)
             # process right subtree
             dfs(node.right, pathSumCurr)
-            
+
             # backtrack
             # remove the current targetSum from the hashmap
-            # in order not to use it during 
+            # in order not to use it during
             # the parallel subtree processing
             dic[pathSumCurr] -= 1
-            
+
         count = 0
         dic = defaultdict(int)
         dfs(root, 0)

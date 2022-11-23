@@ -14,7 +14,7 @@ class KthLargestNumberInStream:
         self.k = k
         self.heap = nums
         heapify(self.heap)
-        
+
         while len(self.heap) > k:
             heappop(self.heap)
 

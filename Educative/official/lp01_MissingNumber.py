@@ -6,7 +6,7 @@ Find Missing Number
 - Space complexity: O()
 
 A straight forward approach to solve this problem can be:
-    Find the sum of all integers from 1 to n; let’s call it s1.
+    Find the sum of all integers from 1 to n; let's call it s1.
     Subtract all the numbers in the input array from s1; this will give us the missing number.
     While finding the sum of numbers from 1 to n, we can get integer overflow when n is large.
 time: O(n)

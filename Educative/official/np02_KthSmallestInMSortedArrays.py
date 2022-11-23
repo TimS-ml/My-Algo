@@ -19,7 +19,7 @@ def find_Kth_smallest(lists, k):
     for i in range(len(lists)):
         heappush(minHeap, (lists[i][0], 0, lists[i]))
 
-    # take the smallest(top) element form the min heap, 
+    # take the smallest(top) element form the min heap,
     # if the running count is equal to k return the number
     numberCount, number = 0, 0
     while minHeap:

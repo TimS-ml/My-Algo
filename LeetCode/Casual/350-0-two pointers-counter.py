@@ -67,7 +67,7 @@ class Solution:
         for n in nums2:
             if dic[n] > 0:  # this is sorter than dic version
                 # ans.append(n)
-                ans += n,  # means ans += (num,)
+                ans += n, # means ans += (num,)
                 dic[n] -= 1
         return ans
 

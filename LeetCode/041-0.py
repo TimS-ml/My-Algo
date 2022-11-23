@@ -9,7 +9,7 @@ search -> hash set
 [2] Starting from assuming missing number = 1
     Search in hash set
 
-The worse case: 
+The worse case:
 [1, 2, 3], missing 4 = len(arr) + 1
 solution set = [1, len(arr) + 1], len(sol set) = len(arr)
 

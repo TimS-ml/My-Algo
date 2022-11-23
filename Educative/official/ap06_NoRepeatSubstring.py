@@ -8,7 +8,7 @@ same as ap04
 but ap04, ap05 dic is frequency dict
 if dic[left_fruit] == 0:
     del dic[left_fruit]
-use len(dic) to check how many chars  
+use len(dic) to check how many chars
 
 in ap06, dic is index dict
 if char in dic, means char appears twice

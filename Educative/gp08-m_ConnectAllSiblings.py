@@ -25,14 +25,14 @@ class TreeNode:
 
 def connect_all_siblings(root):
     que = deque([root])
-    
+
     node, prev = None, None
     while que:
         node = que.popleft()
         if prev:
             prev.next = node
         prev = node
-        
+
         if node.left:
             que.append(node.left)
         if node.right:

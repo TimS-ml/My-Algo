@@ -21,7 +21,7 @@ class Solution:
     def shortestPathBinaryMatrix(self, g: List[List[int]]) -> int:
         if g[0][0]!=0 or g[-1][-1]!=0:
             return -1
-        
+
         # i, j, path
         q = deque([(0, 0, 1)])
 
@@ -50,7 +50,7 @@ class Solution:
                 q.append((i+1, j, path+1))
             if j < n and g[i][j+1] == 0:
                 q.append((i, j+1, path+1))
-        
+
         if (i, j) in dic:
             return dic[(i, j)]
         else:

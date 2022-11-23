@@ -1,5 +1,5 @@
 '''
-Given the head of a LinkedList and two positions ‘p’ and ‘q’, reverse the LinkedList from position ‘p’ to ‘q’.
+Given the head of a LinkedList and two positions 'p' and 'q', reverse the LinkedList from position 'p' to 'q'.
 
 # Code Explain:
 - Time complexity: O(N)
@@ -40,9 +40,9 @@ def reverse_sub_list(head, p, q):
         current = current.next
         i += 1
 
-    # we are interested in three parts of the LinkedList: 
+    # we are interested in three parts of the LinkedList:
     #   the part before index 'p',
-    #   the part between 'p' and 'q', 
+    #   the part between 'p' and 'q',
     #   and the part after index 'q'
     last_node_of_first_part = previous
 

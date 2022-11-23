@@ -17,7 +17,7 @@ xxaxxa <- i
 dp[6][3] = 1
 
 
-case: 
+case:
 t1 acabc
 t2 abc
 

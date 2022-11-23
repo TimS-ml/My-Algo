@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 # https://askubuntu.com/questions/343727/filenames-with-spaces-breaking-for-loop-find-command
 lc="./LeetCode/"

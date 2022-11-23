@@ -31,11 +31,11 @@ class Solution:
 
                 if start < end:
                     arr[start], arr[end] = arr[end], arr[start]
-            
+
             # after while loop, move pivot to the right position
             # remember to save pivot idx first
             arr[end], arr[piv_idx] = arr[piv_idx], arr[end]
-            
+
             return end  # end is the correct piv idx now
 
         def select(start, end, arr, k_smallest):
@@ -46,7 +46,7 @@ class Solution:
                 # p is partitioning index, nums[p]
                 # is at end place
                 p = partition_rand(start, end, nums)
-                
+
                 if k_smallest == p:
                     return nums[p]
                 elif k_smallest < p:
@@ -54,7 +54,7 @@ class Solution:
                 else:
                     return select(p + 1, end, nums, k_smallest)
 
-        # kth largest is (n - k)th smallest 
+        # kth largest is (n - k)th smallest
         ans = select(0, len(nums) - 1, nums, len(nums) - k)
         print(nums)
         return ans

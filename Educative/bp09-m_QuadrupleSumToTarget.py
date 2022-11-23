@@ -13,7 +13,7 @@ def search_quadruplets(nums, target):
 
     def search_triplets(subNums, triplets_target):
         ans = []
-    
+
         for i in range(len(subNums) - 2):
             if i > 0 and subNums[i] == subNums[i - 1]:
                 continue
@@ -27,8 +27,8 @@ def search_quadruplets(nums, target):
                     start += 1
                 else:
                     # triplets_target = target - nums[i]
-                    ans.append([target - triplets_target, 
-                                subNums[i], 
+                    ans.append([target - triplets_target,
+                                subNums[i],
                                 subNums[start], subNums[end]])
                     # move 2 pointers to avoid duplicate ans
                     # think about case: [-1, 0, 0, 0 , 1, 1]

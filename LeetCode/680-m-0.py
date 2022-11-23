@@ -47,7 +47,7 @@ class Solution:
 
         while l < r:
             if s[l] == s[r]:
-                l += 1 
+                l += 1
                 r -= 1
             else:
                 sl = s[l+1:r+1]
@@ -62,7 +62,7 @@ class Solution:
         def isPalindrome(l, r, s, d=1):
             while l < r:
                 if s[l] == s[r]:
-                    l += 1 
+                    l += 1
                     r -= 1
                 else:
                     if d > 0:
@@ -75,7 +75,7 @@ class Solution:
 
 
 @pytest.mark.parametrize(
-    "test_input, expected", 
+    "test_input, expected",
     [("", True),
      ("a", True),
      ("abobca", True),

@@ -16,9 +16,9 @@ element may be used multiple times
 - sorted first, 2 pointers from left and right move to middle
 - !! skip same element to avoid duplicate triplets
 
-case: [-1, -1, -1, 2] 
+case: [-1, -1, -1, 2]
     add [-1, -1, 2] at arr[0]
-case: [-3, -2, -1, 0, 1, 1, 2] 
+case: [-3, -2, -1, 0, 1, 1, 2]
     if arr[i] is -3 (x=-3)
     find y+z = 0-(-3)
 

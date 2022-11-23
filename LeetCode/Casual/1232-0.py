@@ -6,7 +6,7 @@
 
 check if dy/dx = k for every c[0] and c[i!=0]
 
-special case: 
+special case:
 - dx==0 or dy==0
 - point overlap
 

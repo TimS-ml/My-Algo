@@ -28,7 +28,7 @@ class Solution:
             return None
 
         a = b = head
-        
+
         # move to b to k
         for i in range(k):
             if b == None:
@@ -37,7 +37,7 @@ class Solution:
 
         # reverse, and get new head
         newHead = reverse(a, b)
-        
+
         # connect piece together
         a.next = self.reverseKGroup(b, k)
 

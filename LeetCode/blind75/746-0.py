@@ -36,7 +36,7 @@ class Solution:
             old_f, old_s = first, second
             first = old_s
             second = min(old_f, old_s) + cost[i-1]
-        
+
         return min(first, second)
 
 
@@ -50,9 +50,9 @@ class Solution:
 
             if idx in cache:
                 return cache[idx]
-            
+
             ans = min(helper(idx-1), helper(idx-2)) + cost[idx-1]
             cache[idx] = ans
             return ans
-        
+
         return min(helper(len(cost)), helper(len(cost)-1))

@@ -16,7 +16,7 @@ class Solution:
                 return -1
             if remain in cache:
                 return cache[remain]
-            
+
             ans = float('inf')
 
             for c in coins:
@@ -26,11 +26,11 @@ class Solution:
                 # start with {remain=0: 0}
                 # each helper stack will +1 for subprob
                 ans = min(ans, subprob + 1)
-            
+
             if ans != float('inf'):
                 cache[remain] = ans
             else:
                 cache[remain] = -1
             return cache[remain]
-        
+
         return helper(amount)

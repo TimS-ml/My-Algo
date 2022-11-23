@@ -17,12 +17,12 @@ class Solution(object):
         [3, 2, 1]
         [6, 5, 4]
         [9, 8, 7]
-        
+
         step2
         3 7 col-1-i = 2
         2 4 col-1-i = 2
         6 8 col-1-i = 1
-        
+
         out
         [7, 4, 1]
         [8, 5, 2]

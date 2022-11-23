@@ -23,11 +23,11 @@ class Solution:
             # case 1
             if l and r:
                 return node
-            
+
             # case 2
             if l:
                 return l
             else:
                 return r
-        
+
         return helper(root)

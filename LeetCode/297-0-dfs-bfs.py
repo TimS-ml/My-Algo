@@ -67,7 +67,7 @@ class Codec_pre_order:
             first = l.pop(0)
             if first == 'None':
                 return None
-                
+
             root = TreeNode(first)
             root.left = deHelper(l)
             root.right = deHelper(l)
@@ -75,7 +75,7 @@ class Codec_pre_order:
 
         data_list = data.split(',')
         root = deHelper(data_list)
-        return root 
+        return root
 
 
 class Codec_post_order:
@@ -118,7 +118,7 @@ class Codec_post_order:
             last = l.pop()
             if last == 'None':
                 return None
-                
+
             root = TreeNode(last)
 
             # !!! right node at top, so will run x.left first
@@ -129,7 +129,7 @@ class Codec_post_order:
         data_list = data.split(',')
         data_list.pop()  # [x, x, x, '']
         root = deHelper(data_list)
-        return root 
+        return root
 
 
 class Codec_level_order:
@@ -187,7 +187,7 @@ class Codec_level_order:
                 q.append(node.right)
             else:
                 node.right = None
-        
+
         return root
 
 

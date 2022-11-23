@@ -6,7 +6,7 @@
 lc 1481
 
 We can optimize the above algorithm and only push 'K' elements in the heap
-as in the worst case we will be extracting ‘K’ elements from the heap.
+as in the worst case we will be extracting 'K' elements from the heap.
     but we need sort the frequency first
 '''
 

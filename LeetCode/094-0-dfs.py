@@ -11,7 +11,7 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
-        
+
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         ans = []
@@ -21,7 +21,7 @@ class Solution:
             dfs(root.left)
             ans.append(root.val)
             dfs(root.right)
-        
+
         dfs(root)
         return ans
 

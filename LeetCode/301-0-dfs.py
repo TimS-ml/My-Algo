@@ -9,7 +9,7 @@ It is less efficient than BFS because DFS does not guarantee shortest path. We c
 from functools import lru_cache
 
 class Solution:
-    # Generate new strings by removing parenthesis, 
+    # Generate new strings by removing parenthesis,
     #   and calculate the total number of mismatched parentheses inside the string by function calc(s).
     # If the mismatched parentheses increased, then discard the string.
     def removeInvalidParentheses(self, s):
@@ -27,7 +27,7 @@ class Solution:
                     if ns not in visited and calc(ns) < mi:
                         visited.add(ns)
                         ans.extend(dfs(ns))
-            return ans    
+            return ans
 
         def calc(s):
             a = b = 0
@@ -37,12 +37,12 @@ class Solution:
                 a = max(a, 0)
             return a + b
 
-        visited = set([s])    
+        visited = set([s])
         return dfs(s)
 
     def removeInvalidParentheses_2(self, s):
         # Generate all valid parentheses start from string s,
-        #   we can memoize them to avoid re-compute sub-problem again. 
+        #   we can memoize them to avoid re-compute sub-problem again.
         #   It's the same idea with 140. Word Break II.
         @lru_cache(None)
         def dfs(i, nOpen):

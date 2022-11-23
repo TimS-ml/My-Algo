@@ -40,19 +40,19 @@ def find_substring(arr, pattern):
         # You need to be able to go back to last succeful l
         # if ans != '':
         #     print('before: ', l, freqArr)
-        
+
         if valid == len(freqPattern):
             while l <= r:
                 d = arr[l]
                 l += 1
-    
+
                 if d in freqPattern:
                     if freqArr[d] == freqPattern[d]:
                         l -= 1  # go back
                         break
                     else:
                         freqArr[d] -= 1
-    
+
                 if r - l < len(ans):
                     ans = arr[l:r]
                     # print(ans)

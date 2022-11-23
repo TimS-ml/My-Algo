@@ -1,18 +1,18 @@
 '''
-Given a set of positive numbers, determine if a subset exists whose S is equal to a given number ‘S’.
+Given a set of positive numbers, determine if a subset exists whose S is equal to a given number 'S'.
 
 # Code Explain:
 - Time complexity: O(N * S)
 - Space complexity: O(N * S)
-The algorithm has the time and space complexity of O(N*S), where ‘N’ represents total numbers and ‘S’ is the total S of all the numbers.
+The algorithm has the time and space complexity of O(N*S), where 'N' represents total numbers and 'S' is the total S of all the numbers.
 
 
 
 if Basic solution
-for each number 'i' 
-  create a new set which INCLUDES number 'i' if it does not exceed 'S', and recursively 
+for each number 'i'
+  create a new set which INCLUDES number 'i' if it does not exceed 'S', and recursively
      process the remaining numbers
-  create a new set WITHOUT number 'i', and recursively process the remaining numbers 
+  create a new set WITHOUT number 'i', and recursively process the remaining numbers
 return true if any of the above two sets has a S equal to 'S', otherwise return false
 
 Bottom-up Dynamic Programming

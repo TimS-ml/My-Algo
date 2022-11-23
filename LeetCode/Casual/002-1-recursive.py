@@ -18,7 +18,7 @@ In a recursive, we need:
 ## Cons:
 
 # Notation:
-both empty doesn't mean "if not a or not b" 
+both empty doesn't mean "if not a or not b"
     since the latter case only requires one Linked List to be empty
 '''
 

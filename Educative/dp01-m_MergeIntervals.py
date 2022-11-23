@@ -1,5 +1,5 @@
 '''
-Given a list of intervals, 
+Given a list of intervals,
 merge all the overlapping intervals to produce a list that has only mutually exclusive intervals.
 
 # Code Explain:
@@ -40,7 +40,7 @@ def merge(intervals):
             ans.append(Interval(start, end))
             start = intervals[i].start
             end = intervals[i].end
-    
+
     # the last one
     ans.append(Interval(start, end))
     return ans

@@ -20,7 +20,7 @@ class Solution:
         curr = ans = ListNode(0)
 
         # if using while p1.next and p2.next
-        # then after while loop, p1 and p2 both remains 
+        # then after while loop, p1 and p2 both remains
         while p1 and p2:
             if p1.val <= p2.val:
                 curr.next = p1

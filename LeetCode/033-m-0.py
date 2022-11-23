@@ -28,7 +28,7 @@ class Solution:
                 r = mid
             else:
                 l = mid
-        
+
         midpoint = l
         # mid at l
         def search(l, r):

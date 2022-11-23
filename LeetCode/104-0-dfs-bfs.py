@@ -38,7 +38,7 @@ class Solution:
             # post-order position
             depth -= 1
             return
-        
+
         dfs(root, 0)
         return ans
 

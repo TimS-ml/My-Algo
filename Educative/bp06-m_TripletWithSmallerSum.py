@@ -13,7 +13,7 @@ since diff indices is ok (count all triplets), so do not skip duplicate
 About that count += r-l:
     -1, 1, 3, 3, 4, 4 -> count += 5-1
 idx  0  1  2  3  4, 5
-    if 1, 4 matches the case (smaller than target_sum), 
+    if 1, 4 matches the case (smaller than target_sum),
         then number between l + 1 to r also matches
 '''
 

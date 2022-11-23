@@ -14,19 +14,19 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
-        
+
 class Solution:
     def findDuplicateSubtrees(self, root: Optional[TreeNode]) -> List[Optional[TreeNode]]:
         ans = []
         dic = {}  # freq dict
-        
+
         def dfs(node):
             if not node:
                 return 'None'
 
             subL = dfs(node.left)
             subR = dfs(node.right)
-            
+
             # post order
             subAll = subL + ',' + subR + ',' + str(node.val)
 
@@ -39,4 +39,4 @@ class Solution:
 
         dfs(root)
         return ans
- 
+

@@ -1,7 +1,7 @@
 '''
-Given the weights and profits of ‘N’ items, we are asked to put these items in a knapsack with a capacity ‘C.’ 
-The goal is to get the maximum profit out of the knapsack items. 
-Each item can only be selected once, as we don’t have multiple quantities of any item.
+Given the weights and profits of 'N' items, we are asked to put these items in a knapsack with a capacity 'C.'
+The goal is to get the maximum profit out of the knapsack items.
+Each item can only be selected once, as we don't have multiple quantities of any item.
 
 # Code Explain:
 - Time complexity: O(N * C)
@@ -51,7 +51,7 @@ def solve_knapsack(profits, weights, capacity):
                 p1 = profits[i] + dp[i - 1][c - weights[i] + 1]
 
             p2 = dp[i - 1][c + 1]
-            dp[i][c + 1] = max(p1, p2) 
+            dp[i][c + 1] = max(p1, p2)
 
     for index in range(len(dp)):
         print(dp[index])

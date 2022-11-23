@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # 准备试试暴力算法, 官网解答里面用了一种递归一样的方法实现的
-# 20190201 - 我自己是想不出用递归来解决问题的……
+# 20190201 - 我自己是想不出用递归来解决问题的......
 # 顺便一说, range(s, len(prices))是不包括右边界的, 也就是range(s, 12)是从s开始到11结束
 
 

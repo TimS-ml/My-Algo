@@ -1,7 +1,7 @@
 '''
 - kws: consecutive
 - brute force or dp
-- arithmetic slices: 
+- arithmetic slices:
     max len = n
     nums(len window = n) + nums(len window = n-1) ... nums(len window = 3)
     1 + 2 + 3 ... n-2

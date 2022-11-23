@@ -1,6 +1,6 @@
 '''
-We are given an array containing ‘n’ distinct numbers taken from the range 0 to ‘n’. 
-Since the array has only ‘n’ numbers out of the total ‘n+1’ numbers, find the missing number.
+We are given an array containing 'n' distinct numbers taken from the range 0 to 'n'.
+Since the array has only 'n' numbers out of the total 'n+1' numbers, find the missing number.
 
 # Code Explain:
 - Time complexity: O(N)
@@ -22,9 +22,9 @@ def find_missing_number(nums):
             nums[i], nums[j] = nums[j], nums[i]  # swap
         else:
             i += 1
-    
+
     print(nums)
-    # find the first number missing from its index, 
+    # find the first number missing from its index,
     # that will be our required number
     for i in range(n):
         if nums[i] != i:

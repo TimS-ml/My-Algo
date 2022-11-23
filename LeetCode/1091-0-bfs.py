@@ -13,10 +13,10 @@ class Solution:
         max_row = len(grid) - 1
         max_col = len(grid[0]) - 1
         directions = [
-            (1, 0), (-1, 0), (0, 1), (0, -1),  # typical 4 directions
+            (1, 0), (-1, 0), (0, 1), (0, -1), # typical 4 directions
             (1, 1), (1, -1), (-1, 1), (-1, -1)
         ]
-        
+
         # Helper function to find the neighbors of a given cell.
         def get_neighbours(row, col):
             for row_diff, col_diff in directions:
@@ -29,15 +29,15 @@ class Solution:
                 if grid[new_row][new_col] != 0:
                     continue
                 yield (new_row, new_col)  # using yield will return all outputs in for loop
-        
-        # Check that the first and last cells are open. 
+
+        # Check that the first and last cells are open.
         if grid[0][0] != 0 or grid[max_row][max_col] != 0:
             return -1
-        
+
         # Set up the BFS.
         queue = deque([(0, 0, 1)])  # edge: start count 1, not 0
         visited = {(0, 0)}
-        
+
         # Do the BFS.
         while queue:
             row, col, distance = queue.popleft()
@@ -49,17 +49,17 @@ class Solution:
                 visited.add(neighbour)
                 # Note that the * splits neighbour into its values.
                 queue.append((*neighbour, distance + 1))
-                
+
         # There was no path.
         return -1
-    
+
     # Alternatively, we maintain a variable called current_distance
-    def shortestPathBinaryMatrix_2(self, grid: List[List[int]]) -> int:  
+    def shortestPathBinaryMatrix_2(self, grid: List[List[int]]) -> int:
         max_row = len(grid) - 1
         max_col = len(grid[0]) - 1
         directions = [
             (-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
-        
+
         # Helper function to find the neighbors of a given cell.
         def get_neighbours(row, col):
             for row_diff, col_diff in directions:
@@ -70,16 +70,16 @@ class Solution:
                 if grid[new_row][new_col] != 0:
                     continue
                 yield (new_row, new_col)
-        
-        # Check that the first and last cells are open. 
+
+        # Check that the first and last cells are open.
         if grid[0][0] != 0 or grid[max_row][max_col] != 0:
             return -1
-        
+
         # Set up the BFS.
         queue = deque([(0, 0)])  # no distance in queue !!!
         visited = {(0, 0)}
         current_distance = 1
-        
+
         # Do the BFS.
         while queue:
             # Process all nodes at current_distance from the top-left cell.
@@ -95,6 +95,6 @@ class Solution:
                     queue.append(neighbour)
             # We'll now be processing all nodes at current_distance + 1
             current_distance += 1
-                    
+
         # There was no path.
-        return -1 
+        return -1

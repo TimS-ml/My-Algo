@@ -17,11 +17,11 @@ class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
         curr = 0
         ans = float('inf')
-        
+
         def dfs(node):
             if not node:
                 return
-            
+
             dfs(node.left)
             nonlocal curr
             curr += 1
@@ -29,8 +29,8 @@ class Solution:
                 nonlocal ans
                 ans = node.val
                 return
-            
+
             dfs(node.right)
-        
+
         dfs(root)
-        return ans 
+        return ans

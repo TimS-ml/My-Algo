@@ -3,14 +3,14 @@ lc 680
 '''
 
 import unittest
-  
+
 class Solution:
     def validPalindrome(self, s: str) -> bool:
         l, r = 0, len(s)-1
 
         while l <= r:
             if s[l] == s[r]:
-                l += 1 
+                l += 1
                 r -= 1
             else:
                 sl = s[l+1:r+1]
@@ -25,7 +25,7 @@ testFunc = Solution().validPalindrome
 class Test(unittest.TestCase):
     def test_dege(self):
         self.assertEqual(testFunc(""), True)
-    
+
     def test_valid(self):
         self.assertEqual(testFunc("a"), True)
         self.assertEqual(testFunc("aaa"), True)

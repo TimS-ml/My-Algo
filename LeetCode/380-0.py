@@ -18,7 +18,7 @@ class RandomizedSet():
         self.dict = {}  # value: idx dict
         self.list = []
 
-        
+
     def insert(self, val: int) -> bool:
         """
         Inserts a value to the set. Returns true if the set did not already contain the specified element.
@@ -28,7 +28,7 @@ class RandomizedSet():
         self.dict[val] = len(self.list)
         self.list.append(val)
         return True
-        
+
 
     def remove(self, val: int) -> bool:
         """

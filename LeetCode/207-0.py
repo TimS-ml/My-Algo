@@ -44,19 +44,19 @@ class Solution:
         """
         outdegree = [[] for _ in range(numCourses)]
         indegree = [0] * numCourses
-        
+
         for succ, pre in prerequisites:
             outdegree[pre].append(succ)
             indegree[succ] += 1
-           
+
         queue = []
         # find start from all course - indegree == 0
         for i in range(numCourses):
             if indegree[i] == 0:
                 queue.append(i)
-                
+
         count = 0
-        
+
         while queue:
             course = queue.pop(0)
             count += 1
@@ -64,6 +64,6 @@ class Solution:
                 indegree[succ] -= 1
                 if indegree[succ] == 0:
                     queue.append(succ)
-                    
+
         # if we find all course that are equal to the given course
         return count == numCourses

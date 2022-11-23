@@ -22,7 +22,7 @@ case 1:
 ## Cons:
 
 # Notation:
-It’s always a good practice to reverse the string first, so that you could start calculation from left to right.
+It's always a good practice to reverse the string first, so that you could start calculation from left to right.
 '''
 
 

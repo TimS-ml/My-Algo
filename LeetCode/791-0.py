@@ -11,7 +11,7 @@ class Solution(object):
     def customSortString(self, order, s):
         # freq dict of `target` (s)
         # s: char in order + char not in order
-        count = collections.Counter(s)  
+        count = collections.Counter(s)
         ans = []
 
         # char in order

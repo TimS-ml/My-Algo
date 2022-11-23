@@ -28,7 +28,7 @@ def find_path(root, sequence):
         l = dfs(node.left, idx + 1)
         r = dfs(node.right, idx + 1)
         return l or r
-        
+
     return dfs(root, 0)
 
 

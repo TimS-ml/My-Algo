@@ -3,7 +3,7 @@
 - Time complexity: O(1)
 - Space complexity: O(n)
 
-stack =          [-2,  0, -3]
+stack =          [-2, 0, -3]
 min_s = [INT_MAX, -2, -2, -3]
 
 '''
@@ -36,7 +36,7 @@ class MinStack:
 class MinStack_2:
     def __init__(self):
         self.stack = []
-        self.min_stack = []        
+        self.min_stack = []
 
     def push(self, x: int) -> None:
         self.stack.append(x)
@@ -44,7 +44,7 @@ class MinStack_2:
         # case: [6, 6, 6, 6]
         if not self.min_stack or x <= self.min_stack[-1]:
             self.min_stack.append(x)
-    
+
     def pop(self) -> None:
         if self.min_stack[-1] == self.stack[-1]:
             self.min_stack.pop()

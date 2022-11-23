@@ -5,7 +5,7 @@
 
 Reverse the pointers of Linked List
 Since pointer only goes in one way, we need to write a loop until element.next = None
-    [1] change the direction of pointers of each node, 
+    [1] change the direction of pointers of each node,
     [2] need to create a temp element
 
 What we need are:

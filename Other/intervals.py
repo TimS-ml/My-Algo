@@ -13,13 +13,13 @@ https://leetcode.com/problems/meeting-rooms-ii/
 #         return True
 #     elif i2[0] <= i1[0] <= i0[1]:
 #         return True
-    
+
 #     return False
 
 # def check_interval_2(i1, i2):
 #     # overlap
 #     # now we know i1[0] <= i2[0]
-    
+
 #     if i1[0] > i2[0]:
 #         i1, i2 = i2, i1
 
@@ -68,7 +68,7 @@ class Interval:
             else:
                 merged.append([start, end])
                 start, end = self.intvs[i]
-        
+
         self.intvs = merged
         print(self.intvs)
         return self

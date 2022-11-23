@@ -36,7 +36,7 @@ class Solution:
         ans = {}
         for s in li:
             tok = ''.join(sorted(s))
-            
+
             if tok in ans:
                 # ans[tok] = ans[tok].append(s)  # x.append = None
                 ans[tok].append(s)
@@ -64,7 +64,7 @@ class Solution:
         for s in li:
             dic = get_freq(s)
             tok = gen_tok(dic)
-            
+
             if tok in ans:
                 # ans[tok] = ans[tok].append(s)  # x.append = None
                 ans[tok].append(s)

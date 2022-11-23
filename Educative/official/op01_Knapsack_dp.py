@@ -1,7 +1,7 @@
 '''
 # Code Explain:
-- Time complexity: O(N*C) 
-where ‘N’ is the number of items and ‘C’ is the knapsack capacity
+- Time complexity: O(N*C)
+where 'N' is the number of items and 'C' is the knapsack capacity
 - Space complexity: O(N*C)
 
 
@@ -26,7 +26,7 @@ def solve_knapsack(profits, weights, capacity):
     n = len(profits)
     if capacity <= 0 or n == 0 or len(weights) != n:
         return 0
-    
+
     # same as sol b
     dp = [[-1 for x in range(capacity + 1)] for y in range(n)]
 
@@ -52,11 +52,11 @@ def solve_knapsack(profits, weights, capacity):
             profit2 = dp[i - 1][c]
             # take maximum
             dp[i][c] = max(profit1, profit2)
-    
+
     # call our print function
     # print_selected_elements(dp, weights, profits, capacity)
     # maximum profit will be at the bottom-right corner.
-    
+
     for index in range(len(dp)):
         print(dp[index])
     # print(dp)

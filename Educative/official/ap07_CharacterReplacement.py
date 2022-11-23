@@ -9,17 +9,17 @@ same as ap04
 ap04, ap05 dic is frequency dict
 
 key point:
-keep track of the count of the __maximum repeating letter__ in any window (let’s call it maxRepeatLetterCount).
+keep track of the count of the __maximum repeating letter__ in any window (let's call it maxRepeatLetterCount).
 - we can have a window which has one letter repeating maxRepeatLetterCount times
 - this means we should try to replace the remaining letters.
-- If we have more than ‘k’ remaining letters
-  - __shrink the window__ as we are not allowed to replace more than ‘k’ letters
+- If we have more than 'k' remaining letters
+  - __shrink the window__ as we are not allowed to replace more than 'k' letters
 
 situations of maximun window:
-- 'aaaaaaaaa' 
-- 'baaaaaaac' 
-- 'aabacaaaa' 
-- 'aabcaaaaa' 
+- 'aaaaaaaaa'
+- 'baaaaaaac'
+- 'aabacaaaa'
+- 'aabcaaaaa'
 - that is: (window_end - window_start + 1 - max_repeat_letter_count) > k
 - and the answer is depended on `max_repeat_letter_count`
 '''

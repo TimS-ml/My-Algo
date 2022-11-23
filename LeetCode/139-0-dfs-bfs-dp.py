@@ -50,7 +50,7 @@ class Solution:
                 j = i - len(w)
                 if w == s[j + 1:i + 1] and (dp[j] or j == -1):
                     dp[i] = True
-        return dp[-1] 
+        return dp[-1]
 
 
 # False

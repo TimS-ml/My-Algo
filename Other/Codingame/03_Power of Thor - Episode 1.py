@@ -36,6 +36,6 @@ while True:
     elif thorX < light_x:
         directionX += "E"
         thorX -= 1
-    
-    print(directionY + directionX)   
+
+    print(directionY + directionX)
 

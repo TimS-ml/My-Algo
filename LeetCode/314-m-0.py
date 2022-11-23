@@ -29,7 +29,7 @@ class Solution:
             col[colnumber] = node.val
             queue.append([node.left, colnumber-1],
                           [node.right, colnumber+1])
-            
+
         ans = []
         mincol, maxcol = min(col.keys()), max(col.keys())
         for c in range(mincol, maxcol+1):
@@ -41,7 +41,7 @@ class Solution:
         # node, col
         q = deque([(root, 0)])
         colDic = {}
-        
+
         minCol, maxCol = 0, 0
         while q:
             node, col = q.popleft()
@@ -51,17 +51,17 @@ class Solution:
                 colDic[col].append(node.val)
             else:
                 colDic[col] = [node.val]
-            
+
             minCol = min(minCol, col)
             maxCol = max(maxCol, col)
             if node.left:
                 q.append((node.left, col-1))
             if node.right:
                 q.append((node.right, col+1))
-        
+
         ans = []
         for col in range(minCol, maxCol+1):  # maxCol + 1!!!
             print(colDic[col])
             ans.append(colDic[col])
-            
+
         return ans
