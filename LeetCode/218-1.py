@@ -56,7 +56,10 @@ class Solution:
 
     '''
     track all positions (start and end)
+        - this solution pack infos together: start (trigger and sorted), height, end
+        - (R, 0, 0)
     endHeap: (-height, end)  -> max heap by height
+        - only push height !=0
     pop rules: index, when current is ahead of end position
     for each position
         - update heap by idx
@@ -76,21 +79,23 @@ class Solution:
         # 这是因为我们要维护一个堆保存当前最高的轮廓
         events.sort()
 
-        # 保存返回结果
+        # init place holder, remember to return ans[1:]
         ans = [[0, 0]]
 
-        # 最小堆, 保存当前最高的轮廓(-H, R), 用-H转换为最大堆, R的作用是记录该轮廓的有效长度
+        # yet another place holder, so we can skip check the heap
         endHeap = [(0, float("inf"))]
 
-        # 从左至右遍历关键事件
+        # so for R,0,0:
+        #   not trigger heap push
+        #   trigger heap pop
+        #   trigger ans update
         for L, negH, R in events:
 
             # 如果是轮廓升高事件, 记录到最小堆中
-            if negH: heappush(endHeap, (negH, R))
+            if negH != 0:
+                heappush(endHeap, (negH, R))
 
-            # 获取当前最高轮廓
-            # 根据当前遍历的位置L, 判断最高轮廓是否有效
-            # 如果无效则剔除, 让次高的轮廓浮到堆顶, 继续判断
+            # pop buildings that end at or before `L` out of the priority queue
             while endHeap[0][1] <= L:
                 heappop(endHeap)
 
@@ -100,56 +105,118 @@ class Solution:
         return ans[1:]
 
 
-    # offical solution
+    # offical solution, similar to sol2, but worse more if else check since it's not bind end position to start during looping
     # using only one (height, end position) heap
     def getSkyline_3(self, buildings: List[List[int]]) -> List[List[int]]:
         # Iterate over all buildings, for each building i,
-        # add (position, i) to edges.
+        # add (position, building idx) to edges.
         edges = []
-        for i, build in enumerate(buildings):
-            edges.append([build[0], i])
-            edges.append([build[1], i])
-
-        # Sort edges by non-decreasing order.
+        for buildingIdx, build in enumerate(buildings):
+            edges.append([build[0], buildingIdx])
+            edges.append([build[1], buildingIdx])
         edges.sort()
 
         # Initailize an empty Priority Queue 'endHeap' to store all the
         # newly added buildings, an empty list answer to store the skyline key points.
         endHeap, ans = [], []
-        idx = 0
+        edgeIdx = 0
 
         # Iterate over all the sorted edges.
-        while idx < len(edges):
+        while edgeIdx < len(edges):
 
             # Since we might have multiple edges at same x,
-            # Let the 'curr_x' be the current position.
-            curr_x = edges[idx][0]
+            # Let the 'curPos' be the current position.
+            curPos = edges[edgeIdx][0]
 
-            # While we are handling the edges at 'curr_x':
-            while idx < len(edges) and edges[idx][0] == curr_x:
-                # The index 'b' of this building in 'buildings'
-                b = edges[idx][1]
+            # While we are handling the edges at 'curPos':
+            while edgeIdx < len(edges) and edges[edgeIdx][0] == curPos:
+                buildingIdx = edges[edgeIdx][1]
 
                 # If this is a left edge of building 'b', we
                 # add (height, right) of building 'b' to 'endHeap'.
-                if buildings[b][0] == curr_x:
-                    right = buildings[b][1]
-                    height = buildings[b][2]
+                # !!! case: edges is end of building
+                #     then buildings[buildingIdx] != curPos
+                # so only update heap when start of the building, but inside heap it's height and end of the building
+                if buildings[buildingIdx][0] == curPos:
+                    right = buildings[buildingIdx][1]
+                    height = buildings[buildingIdx][2]
                     heappush(endHeap, [-height, right])
 
                 # If the tallest endHeap building has been passed,
                 # we remove it from 'endHeap'.
-                while endHeap and endHeap[0][1] <= curr_x:
+                while endHeap and endHeap[0][1] <= curPos:
                     heappop(endHeap)
-                idx += 1
+                edgeIdx += 1
 
             # Get the maximum height from 'endHeap'.
             max_height = -endHeap[0][0] if endHeap else 0
 
-            # If the height changes at this curr_x, we add this
-            # skyline key point [curr_x, max_height] to 'answer'.
+            # If the height changes at this curPos, we add this
+            # skyline key point [curPos, max_height] to 'answer'.
             if not ans or max_height != ans[-1][1]:
-                ans.append([curr_x, max_height])
+                ans.append([curPos, max_height])
 
         # Return 'answer' as the skyline.
         return ans
+
+
+class Solution_2(object):
+    # two heap solution
+    '''
+    so we still need to mark l r info in edges
+    replace sorted start point with a heap
+    two heap patten is to find mid point, pop from one min heap and insert to another max heap
+    but it's still double sort pattern
+    '''
+    def getSkyline(self, buildings: List[List[int]]) -> List[List[int]]:
+        # Iterate over the left and right edges of all the buildings, 
+        # If its a left edge, add (left, height) to 'edges'.
+        # Otherwise, add (right, -height) to 'edges'.
+        edges = []
+        for left, right, height in buildings:
+            edges.append([left, height])
+            edges.append([right, -height])
+        edges.sort()
+        
+        # Initailize two empty priority queues 'live' and 'past' 
+        # for the live buildings and the past buildings.
+        live, past = [], []
+        answer = []
+        edgeIdx = 0
+        
+        # Iterate over all the sorted edges.
+        while edgeIdx < len(edges):
+            # Since we might have multiple edges at same x,
+            # Let the 'curPos' be the current position.
+            curPos = edges[edgeIdx][0]
+            
+            # While we are handling the edges at 'curPos':
+            while edgeIdx < len(edges) and edges[edgeIdx][0] == curPos:
+                height = edges[edgeIdx][1]
+                
+                # If 'height' > 0, meaning a building of height 'height'
+                # is live, push 'height' to 'live'. 
+                # Otherwise, a building of height 'height' is passed, 
+                # push the height to 'past'.
+                if height > 0:
+                    heappush(live, -height)
+                else:
+                    heappush(past, height)
+                edgeIdx += 1
+            
+            # While the top height from 'live' equals to that from 'past',
+            # Remove top height from both 'live' and 'past'.
+            while past and past[0] == live[0]:
+                heappop(live)
+                heappop(past)
+            
+            # Get the maximum height from 'live'.
+            max_height = -live[0] if live else 0
+            
+            # If the height changes at 'curPos', we add this
+            # skyline key point [curPos, max_height] to 'answer'.
+            if not answer or answer[-1][1] != max_height:
+                answer.append([curPos, max_height])
+                
+        # Return 'answer' as the skyline.
+        return answer            

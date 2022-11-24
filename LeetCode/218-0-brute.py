@@ -24,6 +24,7 @@ from typing import List
 
 # brute force
 class Solution:
+    # leads to union find
     def getSkyline(self, buildings: List[List[int]]) -> List[List[int]]:
         # Sort the unique positions of all the edges.
         # for building in buildings -> for x in building[:2] -> x
@@ -58,7 +59,7 @@ class Solution:
                 answer.append([curr_x, curr_height])
         return answer
 
-    # a better brute force
+    # leads to heap
     def getSkyline_2(self, buildings: List[List[int]]) -> List[List[int]]:
         # Collect and sort the unique positions of all the edges.
         # for building in buildings -> for x in building[:2] -> x
