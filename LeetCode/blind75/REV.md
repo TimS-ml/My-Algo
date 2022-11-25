@@ -15,3 +15,8 @@
 # 2d dp
 1143
 
+# backtracking
+79
+
+# binary search
+33

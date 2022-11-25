@@ -3,22 +3,30 @@
 - Time complexity: O(logN)
 - Space complexity: O(1)
 
+- All are ascending arrays except for a sudden drop at a certain point
 
-- The array itself is not ordered. After the rotation, only the parts of the array are guaranteed to be ordered
-    - All are ascending arrays except for a sudden drop at a certain point
+case1: [5, 6, 7, 1, 2, 3, 4]
+                 |
+                mid
 
-case: [7, 0, 1, 2] mid is 1, target is 7
-we cannot use target vs mid to locate array
-so
-[1] make sure [left, mid] or [mid, right] is ascending order array
-[2] check if tartget inside that ascending array
+case2: [5, 6, 7, 8, 2, 3, 4]
+                 |
+                mid
 
-    nums[0] <= target <= nums[mid]
-               target <= nums[mid] < nums[0]
-                         nums[mid] < nums[0] <= target
+- find out the sudden drop location
+    - if mid < start, then sudden drop at [l, mid]
+        - [mid, r] is the asc array
+        - mid < t < r check is ok (in asc seq)
+            - but we cannot use l < t (case3)
+    - if mid > start, then sudden drop at [mid, r]
 
-what we need to compare
-(nums[0] <= target), (target <= nums[mid]) , (nums[mid] < nums[0])
+case3: [5, 6, 7, 8, 2, 3, 4]
+        |     |           |
+        l    mid          r
+
+for l < t, it could be in both left of mid or right of mid (t = 6 or t = 8)
+for mid < t < r, it must be in right side of mid
+
 
 - If [left, mid-1] is an ascending ordered array, and 'target' in [nums[left], nums[mid])
     - then we should narrow the search scope to [left, mid-1], otherwise, search in [mid+1, right]
