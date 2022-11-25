@@ -1,11 +1,19 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+get mid
+- Time complexity: O(1)
+- Space complexity: O(1)
 
+add
+- Time complexity: O(logN)
+- Space complexity: O(N)
+
+two cases
+[1] small = [1, 2, 3], large = [4]  -> rebalance
+[1] small = [1, 7], large = [4, 6]  -> move 7 to large, then rebalance
 '''
 
-from heapq import *
+from heapq import heappush, heappop, heappushpop
 
 
 class MedianFinder:
