@@ -1,8 +1,47 @@
-# https://leetcode-cn.com/problems/pacific-atlantic-water-flow/
+'''
+# Code Explain:
+- Time complexity: O(MN)
+- Space complexity: O(MN)
+
+M is the number of rows and NN is the number of columns.
+'''
+
+class Solution:
+    def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
+        direction = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+        ROWS, COLS = len(heights), len(heights[0])
+        pac, atl = set(), set()
+
+        def dfs(r, c, visit, prevHeight):
+            if (
+                (r, c) in visit
+                or r < 0
+                or c < 0
+                or r == ROWS
+                or c == COLS
+            ):
+                return
+            
+            if heights[r][c] >= prevHeight:
+                visit.add((r, c))
+            else:
+                return
+            
+            for movI, movJ in direction:
+                dfs(r + movI, c + movJ, visit, heights[r][c])
+
+        for c in range(COLS):
+            dfs(0, c, pac, heights[0][c])
+            dfs(ROWS - 1, c, atl, heights[ROWS - 1][c])
+
+        for r in range(ROWS):
+            dfs(r, 0, pac, heights[r][0])
+            dfs(r, COLS - 1, atl, heights[r][COLS - 1])
+
+        return set.intersection(pac, atl)
 
 
-class Solution(object):
-    def pacificAtlantic(self, matrix):
+    def pacificAtlantic_2(self, matrix):
         """
         :type matrix: List[List[int]]
         :rtype: List[List[int]]
@@ -45,3 +84,4 @@ class Solution(object):
                     y] or matrix[i][j] > matrix[x][y]:
                 continue
             self.dfs(x, y, visited, m, n, matrix)
+

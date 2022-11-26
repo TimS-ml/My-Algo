@@ -1,9 +1,15 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(V + E)
+- Space complexity: O(V + E)
+dependencies + number of courses
 
 判断是否为有向无环图(DAG)
+
+visited must have -1 and 1 and 0 three types of the state
+in sol 1:
+v[x] = 1 means visiting
+v[x] = -1 means done visit and is ok
 '''
 
 
@@ -15,11 +21,13 @@ class Solution:
                 return True
             if visited[i] == 1:
                 return False
+
             visited[i] = 1
             for j in graph[i]:
                 if not dfs(j, graph, visited):
                     return False
             visited[i] = -1
+
             return True
 
         graph = [[] for _ in range(numCourses)]
@@ -30,13 +38,43 @@ class Solution:
             graph[prereq].append(course)
 
         # check if DAG
+        # the reason we need three visited states is because this for loop!!!
         for i in range(numCourses):
             if not dfs(i, graph, visited):
                 return False
         return True
 
-    # bfs
+    # dfs
     def canFinish_2(self, numCourses, prerequisites):
+        graph = {i: [] for i in range(numCourses)}
+
+        # map each course to : prereq list
+        for crouse, pre in prerequisites:
+            graph[crouse].append(pre)
+
+        visiting = set()
+
+        def dfs(crouse):
+            if crouse in visiting:
+                return False
+            if graph[crouse] == []:
+                return True
+
+            visiting.add(crouse)
+            for pre in graph[crouse]:
+                if not dfs(pre):
+                    return False
+            visiting.remove(crouse)
+            graph[crouse] = []  # that's how this solution mark second states
+            return True
+
+        for c in range(numCourses):
+            if not dfs(c):
+                return False
+        return True
+
+    # bfs
+    def canFinish_3(self, numCourses, prerequisites):
         """
         :type numCourses: int
         :type prerequisites: List[List[int]]
