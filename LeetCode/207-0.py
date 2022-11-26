@@ -65,6 +65,8 @@ class Solution:
                 if not dfs(pre):
                     return False
             visiting.remove(crouse)
+
+            # since there gonna be start at each points dfs separately, so this is ok
             graph[crouse] = []  # that's how this solution mark second states
             return True
 
