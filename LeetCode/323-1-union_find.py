@@ -1,7 +1,10 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(E + V)
+- Space complexity: O(E + V)
+
+E = num of edges
+V = num of vertices
 
 '''
 

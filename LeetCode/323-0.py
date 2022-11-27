@@ -1,7 +1,10 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(E + V)
+- Space complexity: O(E + V)
+
+E = num of edges
+V = num of vertices
 
 '''
 
@@ -11,6 +14,8 @@ import collections
 class Solution:
     def countComponents_dfs(self, n: int, edges: List[List[int]]) -> int:
         graph = collections.defaultdict(list)
+
+        # double directions
         for x, y in edges:
             graph[x].append(y)
             graph[y].append(x)
@@ -20,6 +25,7 @@ class Solution:
             for neighbor in graph[node]:
                 if neighbor not in seen:
                     dfs(neighbor, seen)
+
         count = 0
         seen = set()
         for node in range(n):

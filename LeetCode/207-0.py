@@ -3,6 +3,8 @@
 - Time complexity: O(V + E)
 - Space complexity: O(V + E)
 dependencies + number of courses
+E = num of edges
+V = num of vertices
 
 判断是否为有向无环图(DAG)
 
@@ -33,7 +35,7 @@ class Solution:
         graph = [[] for _ in range(numCourses)]
         visited = [0 for _ in range(numCourses)]
 
-        # build graph
+        # build graph, single direction
         for course, prereq in prerequisites:
             graph[prereq].append(course)
 
