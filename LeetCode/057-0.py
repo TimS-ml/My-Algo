@@ -1,11 +1,20 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(N)
+- Space complexity: O(N)
 
+lc 57 (insert + merge)
+lc 987 (insert + intersection)
+
+case:
+ (a, b) (c, d) (e, f)
+    (x,          y)
+
+return (a, f)
 '''
 
 from typing import List
+
 
 class Solution:
     def insert(self, intervals: 'List[List[int]]', newInterval: 'List[int]') -> 'List[List[int]]':
@@ -41,3 +50,21 @@ class Solution:
             else:
                 output[-1][1] = max(output[-1][1], end)
         return output
+
+    def insert_2(self, intervals: 'List[List[int]]', newInterval: 'List[int]') -> 'List[List[int]]':
+        ans = []
+
+        for i in range(len(intervals)):
+            # insert at beginning
+            if newInterval[1] < intervals[i][0]:
+                ans.append(newInterval)
+                return ans + intervals[i:]
+            elif newInterval[0] > intervals[i][1]:
+                ans.append(intervals[i])
+            else:
+                newInterval = [
+                    min(newInterval[0], intervals[i][0]),
+                    max(newInterval[1], intervals[i][1]),
+                ]
+        ans.append(newInterval)
+        return ans

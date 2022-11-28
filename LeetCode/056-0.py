@@ -10,6 +10,20 @@ from typing import List
 
 
 class Solution:
+    '''
+    during looping: 
+    - (fixed) prev_start <= start
+    - if prev_end >= start, intersection
+          (prevS, prevE)
+                  (S,       E)
+
+    - unlike lc 1288, end doesn't matter
+          (prevS, prevE)
+          (S,    E)
+
+          (prevS, prevE)
+          (S,              E)
+    '''
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
         intervals.sort(key=lambda x: x[0])  # sort by start
         # intervals.sort()  # this is OK actually
