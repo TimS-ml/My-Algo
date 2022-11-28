@@ -3,6 +3,9 @@
 - Time complexity: O(NlogN)
 - Space complexity: O(N)
 
+intervals intersection
+we don't care the connection in [start, end], we only care about max number of overlap
+similar to 253, so we can break start and end
 '''
 
 from typing import List

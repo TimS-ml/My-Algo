@@ -5,7 +5,9 @@
 
 '''
 
+import heapq
 from typing import List
+
 
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
@@ -20,6 +22,21 @@ class Solution:
             else:
                 ans.append(intervals[i])
         return ans
+
+    # using heap
+    def merge_2(self, intervals: List[List[int]]) -> List[List[int]]:
+        heapq.heapify(intervals)
+
+        ans = []
+        while intervals:
+            cur = heapq.heappop(intervals)
+            if ans and cur[0] <= ans[-1][1]:
+                ans[-1][1] = max(ans[-1][1], cur[1])  # merge
+            else:
+                ans.append(cur)
+
+        return ans
+
 
 intervals = [[1, 3], [2, 6], [15, 18], [8, 10]]
 print(Solution().merge(intervals))
