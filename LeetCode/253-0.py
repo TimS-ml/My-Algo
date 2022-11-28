@@ -37,8 +37,9 @@ class Solution:
 
     # Chronological Ordering
     '''
+    this is similar as lc 56-2
     input: [[0, 30], [5, 10], [15, 20]]
-    room:  [[0, 1], [5, 1], [10, -1], [15, 1], [20, -1], [30, -1]]
+    out  : [[0, 1], [5, 1], [10, -1], [15, 1], [20, -1], [30, -1]]
     '''
     def minMeetingRooms_2(self, intervals: List[List[int]]) -> int:
         room = []
