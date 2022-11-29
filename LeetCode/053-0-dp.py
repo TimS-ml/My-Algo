@@ -76,9 +76,11 @@ class Solution(object):
 
         dp[0] = nums[0]
         ans = nums[0]
-        for each in range(1, len(nums)):
-            dp[each] = max(dp[each - 1] + nums[each], nums[each])
-            ans = max(ans, dp[each])
+        for i in range(1, len(nums)):
+            # [1] not include i = start from nums[i]
+            # [2] inlude i
+            dp[i] = max(dp[i - 1] + nums[i], nums[i])
+            ans = max(ans, dp[i])
         return ans
 
     # DP rolling optimization
