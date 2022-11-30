@@ -38,14 +38,19 @@ class Solution:
                 return False
 
             match = i < len(s) and (s[i] == p[j] or p[j] == ".")
+
+            # * case
             if (j + 1) < len(p) and p[j + 1] == "*":
-                cache[(i, j)] = dfs(i, j + 2) or (  # dont use *
-                    match and dfs(i + 1, j)
-                )  # use *
+                # don't use * vs use *
+                cache[(i, j)] = dfs(i, j + 2) or \
+                                 (match and dfs(i + 1, j))  # use *
                 return cache[(i, j)]
+
+            # normal case
             if match:
                 cache[(i, j)] = dfs(i + 1, j + 1)
                 return cache[(i, j)]
+
             cache[(i, j)] = False
             return False
 
