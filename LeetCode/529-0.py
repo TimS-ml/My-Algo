@@ -11,14 +11,16 @@ M = unrevealed mine
 X = revealed mine
 '''
 
+from pprint import pprint
+
 
 class Solution(object):
     def updateBoard(self, board, click):
-        """
+        '''
         :type board: List[List[str]]
         :type click: List[int]
         :rtype: List[List[str]]
-        """
+        '''
         if not board:
             return []
 
@@ -61,9 +63,10 @@ class Solution(object):
 
 
 b = [
-        ["E","E","E","E","E"],
-        ["E","E","M","E","E"],
-        ["E","E","E","E","E"],
-        ["E","E","E","E","E"]
+        ['E','E','E','E','E'],
+        ['E','E','M','E','E'],
+        ['E','E','E','E','E'],
+        ['E','E','E','E','E']
 ]
-click = [3,0]
+c = [3,0]
+pprint(Solution().updateBoard(b, c))
