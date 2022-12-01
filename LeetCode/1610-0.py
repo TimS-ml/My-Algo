@@ -6,6 +6,10 @@
 Here are the steps:
 - convert all coordinates to radians
 - sort the array
+    - Extend angles, case: [0, 40, 355] -> [0, 40, 355, 360, 400, 715]
+        - This allows us to see that 355 is close to 0
+        - Won't affect ans at all
+
 - use sliding window to find the longest window that satisfies arr[r] - arr[l] <= angle.
 
 Note that we need to go around the circle, so we duplicate the array and offset the second half by 2*pi.
@@ -41,11 +45,11 @@ class Solution:
         pointsAngles += [i+360 for i in pointsAngles]
         
         l = 0
-        res = 0
+        ans = 0
         for r in range(len(pointsAngles)):
             while(pointsAngles[r] - pointsAngles[l] > angle):
                 l += 1
-            res = max(res, r-l+1)
+            ans = max(ans, r-l+1)
 
         # Add the points those are at the location and return.
-        return res + pointsAtLocationCount
+        return ans + pointsAtLocationCount
