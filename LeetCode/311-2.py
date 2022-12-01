@@ -12,6 +12,10 @@ import numpy as np
 class Matrix(list):
     def __matmul__(self, B):
         A = self
+
+        # [[[sum k, j] i]
+        # ans[i][j] = mat1[i][k] * mat2[k][j]  for k in range(len(mat2))
+        # do the same thing for each i, j
         return Matrix([[sum(A[i][k] * B[k][j] for k in range(len(B)))
                     for j in range(len(B[0])) ] for i in range(len(A))])
 

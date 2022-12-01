@@ -19,14 +19,19 @@ class Solution:
         # m x k @ k x n -> m x n
         ans = [[0] * len(mat2[0]) for _ in range(len(mat1))]
 
-        # ans[r][c] = mat1[r][i] * mat2[i][c]  for i in range(k)
-        for rowID, row in enumerate(mat1):
-            # !!! mat1 and mat2 must share the same elementID
-            for elementID, row_element in enumerate(row):
-                # If current element of mat1 is non-zero then iterate over all columns of mat2.
-                if row_element:
-                    for colID, col_element in enumerate(mat2[elementID]):
-                        ans[rowID][colID] += row_element * col_element
+        # brute force
+        # ans[i][j] = mat1[i][k] * mat2[k][j]  for k in range(len(mat2))
+        # for i in range(len(mat1)):
+        #     for j in range(len(mat2[0])):
+        #         for k in range(len(mat2)):  # should == len(mat1[1])
+        #             ans[i][j] += mat1[i][k] * mat2[k][j]
+        
+        # filter by mat1
+        for i in range(len(mat1)):
+            for k in range(len(mat2)):  # should == len(mat1[1])
+                if mat1[i][k]:
+                    for j in range(len(mat2[0])):
+                        ans[i][j] += mat1[i][k] * mat2[k][j]
 
         return ans
 

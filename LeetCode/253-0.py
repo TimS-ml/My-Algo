@@ -59,12 +59,14 @@ class Solution:
 
 
     # Priority Queues
+    # equal to sort the end
     def minMeetingRooms_3(self, intervals: List[List[int]]) -> int:
         intervals.sort(key=lambda x:x[0])
         heap = []  # stores the end time of intervals
         for meet in intervals:
             if heap and meet[0] >= heap[0]:
                 # means two intervals can use the same room
+                # curr.start >= prev.end
                 heapq.heapreplace(heap, meet[1])  # pop + push
             else:
                 # a new room is allocated
