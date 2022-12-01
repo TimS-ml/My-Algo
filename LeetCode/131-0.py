@@ -8,37 +8,25 @@
 class Solution:
     def partition(self, s):
         ans = []
-        if len(s) == 0:
-            return ans
-
-        def backtrack(start=0, tmp=[]):
+        def backtrack(start, tmp):
             if start >= len(s):
                 ans.append(tmp)
                 return
             for end in range(start + 1, len(s) + 1):
-                split_s = s[start:end]
-                if split_s == s[start:end][::-1]:
-                    backtrack(end, tmp + [split_s])
+                subS = s[start:end]
+                if subS == subS[::-1]:
+                    # backtrack(end, tmp + [subS])
 
-        backtrack()
-        return ans
-
-    def partition_2(self, s):
-        def backtrack(start, end, tmp):
-            if start == end:
-                ans.append(tmp[:])
-            for i in range(start, end):
-                cur = s[start:i+1]
-                if cur == cur[::-1]:
-                    tmp.append(cur)
-                    backtrack(i+1, end, tmp)
+                    # or you can use a more backtracking way
+                    tmp.append(subS)
+                    backtrack(end, tmp)
                     tmp.pop()
-        ans = []
-        backtrack(0, len(s), [])
+
+        backtrack(0, [])
         return ans
 
     # top down
-    def partition_3(self, s):
+    def partition_2(self, s):
         # pal[len(s)][len(s)], false填充
         # 相当于创建了一个二维表, 满足的地方填上True
         pal = [[False for i in range(len(s))] for j in range(len(s))]

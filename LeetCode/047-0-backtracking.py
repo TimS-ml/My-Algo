@@ -30,27 +30,28 @@ class Solution:
 
     # create a list to track if visited or not
     def permuteUnique_2(self, nums: List[int]) -> List[List[int]]:
-        nums.sort()
-        used = [False for _ in nums]
+        nums.sort()  # this is new vs lc 46
+        visited = [False for _ in nums]
 
-        def backtrack(subset, used):
+        def backtrack(subset):
             if len(subset) == len(nums):
                 ans.append(list(subset))
 
             for i in range(len(nums)):
-                if used[i]:
+                if visited[i]:
                     continue
-                if i > 0 and \
-                        nums[i] == nums[i - 1] and not used[i - 1]:
+                if i > 0 and nums[i] == nums[i - 1] and \
+                        not visited[i - 1]:  # not used is new compares to lc 46
                     continue
+
                 subset.append(nums[i])
-                used[i] = True  # track visit
-                backtrack(subset, used)
-                used[i] = False
+                visited[i] = True  # track visit
+                backtrack(subset)
+                visited[i] = False
                 subset.pop()
 
         ans = []
-        backtrack([], used)
+        backtrack([])
         return ans
 
 

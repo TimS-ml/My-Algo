@@ -30,11 +30,12 @@ class Solution:
             ans.append(subset)
             for i in range(start, len(nums)):
                 # skip dupl elements
+                # case: 2, 2' and 2', 2
                 if i > start and nums[i] == nums[i - 1]:
                     continue
                 backtrack(i + 1, subset + [nums[i]])
 
-        nums.sort()
+        nums.sort()  # this is must have
         ans = []
         backtrack(0, [])
         return ans

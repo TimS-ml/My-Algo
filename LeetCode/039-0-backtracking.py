@@ -35,7 +35,6 @@ class Solution:
 
             for i in range(start, len(candidates)):
                 subset.append(candidates[i])
-                # print(subset)
                 backtrack(i, subset)  # not i+1
                 subset.pop()
 

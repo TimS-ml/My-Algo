@@ -50,20 +50,26 @@ class Solution:
         backtrack([])
         return ans
 
-    # def permute_3(self, nums):
-    #     def backtrack(subset, nums):
-    #         if not nums:
-    #             ans.append(subset[:])
-    #             return
-    #         for i in range(len(nums)):
-    #             subset.append(nums[i])
-    #             # terrible, this equals one more for loop
-    #             backtrack(subset, nums[:i] + nums[i + 1:])
-    #             subset.pop()
+    def permute_3(self, nums):
+        visited = [False for _ in nums]
 
-    #     ans = []
-    #     backtrack([], nums)
-    #     return ans
+        def backtrack(subset):
+            # collect perm of size of len(nums)
+            if len(subset) == len(nums):
+                ans.append(subset[:])
+                return
+            for i in range(len(nums)):
+                if visited[i]:
+                    continue
+
+                visited[i] = True
+                subset.append(nums[i])
+                backtrack(subset)
+                subset.pop()
+                visited[i] = False
+        ans = []
+        backtrack([])
+        return ans
 
 
 nums = [1, 2, 3]

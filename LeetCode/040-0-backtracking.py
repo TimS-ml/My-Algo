@@ -28,18 +28,17 @@ class Solution:
             nonlocal trackSum
             if trackSum == target:
                 ans.append(subset[:])
-                # if subset not in ans:
-                #     ans.append(subset[:])
                 return
             if trackSum > target:
                 return
 
             for i in range(start, len(candidates)):
-                # !!!
+                # skip dupl elements
+                # case: 2, 2' and 2', 2
                 if i > start and candidates[i] == candidates[i - 1]:
                     continue
                 subset.append(candidates[i])
-                trackSum += candidates[i]
+                trackSum += candidates[i]  # !!! trackSum and subset are tight together
                 backtrack(i + 1, subset)  # lc39 is i
                 subset.pop()
                 trackSum -= candidates[i]

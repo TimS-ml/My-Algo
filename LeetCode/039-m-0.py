@@ -1,9 +1,14 @@
+'''
+# Code Explain:
+- Time complexity: O()
+- Space complexity: O()
+
+'''
+
 from typing import List
 
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        ans = []
-        
         def helper(temp, idx):
             # forget about terminate '>'
             if sum(temp) == target:
@@ -16,6 +21,7 @@ class Solution:
                 helper(temp, i)
                 temp.pop()
         
+        ans = []
         helper([], 0)
         return ans
 
