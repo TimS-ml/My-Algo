@@ -71,12 +71,16 @@ class Solution:
         for node in lists:
             if node is not None:
                 count += 1
+                # if same node.val, compare count
                 heapq.heappush(heap, (node.val, count, node))
 
         while len(heap) > 0:
+            # assign val to curr.next
             _, _, curr.next = heapq.heappop(heap)
+            
+            # move forward
             curr = curr.next
             if curr.next is not None:
                 count += 1
                 heapq.heappush(heap, (curr.next.val, count, curr.next))
-        return head.next
+        return head.next  # remember this!!!

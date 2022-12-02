@@ -18,6 +18,7 @@ class ListNode:
         self.val = val
         self.next = next
 
+
 # a better Brute Force
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:

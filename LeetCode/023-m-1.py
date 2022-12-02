@@ -5,6 +5,8 @@
 
 '''
 
+from heapq import heappush, heappop
+
 
 # Definition for singly-linked list.
 class ListNode:
@@ -12,8 +14,6 @@ class ListNode:
         self.val = val
         self.next = next
 
-import heapq
-from heapq import heappush, heappop
 
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:

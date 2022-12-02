@@ -19,20 +19,20 @@ class Solution:
         heapq.heapify(maxHeap)
 
         time = 0
-        q = deque()  # pairs of [-cnt, idleTime]
-        while maxHeap or q:
+        queue = deque()  # pairs of [-cnt, idleTime]
+        while maxHeap or queue:
             time += 1
 
             if not maxHeap:
-                time = q[0][1]
+                time = queue[0][1]
             else:
                 # freq - 1, remember we are using max heap
                 cnt = 1 + heapq.heappop(maxHeap)
                 if cnt:
-                    q.append([cnt, time + n])
+                    queue.append([cnt, time + n])
             # only when head of heap reaches the time
-            if q and q[0][1] == time:
-                heapq.heappush(maxHeap, q.popleft()[0])
+            if queue and queue[0][1] == time:
+                heapq.heappush(maxHeap, queue.popleft()[0])
         return time
 
     def leastInterval_2(self, tasks: List[str], n: int) -> int:

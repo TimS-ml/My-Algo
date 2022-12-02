@@ -62,7 +62,7 @@ class Solution:
     # equal to sort the end
     def minMeetingRooms_3(self, intervals: List[List[int]]) -> int:
         intervals.sort(key=lambda x:x[0])
-        heap = []  # stores the end time of intervals
+        heap = []  # min heap, stores the end time of intervals
         for meet in intervals:
             if heap and meet[0] >= heap[0]:
                 # means two intervals can use the same room

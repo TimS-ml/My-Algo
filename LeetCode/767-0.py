@@ -34,8 +34,8 @@ class Solution:
 
 
     def reorganizeString_2(self, S):
-        ans, c = [], Counter(S)
-        pq = [(-value,key) for key,value in c.items()]
+        ans = []
+        pq = [(-value,key) for key,value in Counter(S).items()]
         heapq.heapify(pq)
         p_a, p_b = 0, ''
         while pq:

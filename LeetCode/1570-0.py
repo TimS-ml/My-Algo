@@ -22,6 +22,7 @@ Dot (v1.dot(v2))
 '''
 
 # hash dic
+# index val pairs
 class SparseVector:
     def __init__(self, nums: List[int]):
         self.dic = {}
@@ -39,6 +40,7 @@ class SparseVector:
         return ans
 
 # 2 pointers
+# index val pairs
 class SparseVector_2:
     def __init__(self, nums: List[int]):
         self.dic = []  # 2-d list
