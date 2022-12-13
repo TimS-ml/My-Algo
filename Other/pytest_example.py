@@ -5,6 +5,12 @@ lc 680
 import pytest
 
 class Solution:
+    def demo(self, s: str, print_res: bool) -> bool:
+        if print_res:
+            print(s)
+
+        return True
+
     def validPalindrome(self, s: str) -> bool:
         l, r = 0, len(s)-1
 
@@ -51,6 +57,14 @@ def test_valid(test_input, expected):
 )
 def test_valid_after_Del(test_input, expected):
     assert Solution().validPalindrome(test_input) == expected
+
+# @pytest.mark.parametrize(
+#     "test_input, print_res, expected",
+#     [("a", True, True),
+#      ("aaa", True, True)]
+# )
+# def test_demo(test_input, expected):
+#     assert Solution().demo(test_input, print_res) == expected
 
 pytest.main()
 
