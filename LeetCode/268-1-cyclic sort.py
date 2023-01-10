@@ -1,7 +1,7 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(1)
+- Space complexity: O(1)
 
 '''
 
@@ -21,6 +21,13 @@ class Solution(object):
                 return i
 
         return len(nums)
+
+    def missingNumber_2(self, nums):
+        ans = len(nums)
+
+        for i in range(len(nums)):
+            ans += i - nums[i]
+        return ans
 
 
 # nums = [3, 0, 1]  # 2

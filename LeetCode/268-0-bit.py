@@ -26,6 +26,7 @@ class Solution:
             return len(nums)
 
     # bit XOR
+    # a ^ a = 0
     def missingNumber_3(self, nums):
         missing = len(nums)
         for i, num in enumerate(nums):
