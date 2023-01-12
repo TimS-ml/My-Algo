@@ -1,5 +1,11 @@
 '''
+# Code Explain:
+for rolling
+- Time complexity: O(N)
+- Space complexity: O(1)
+
 You can either start from the step with index 0, or the step with index 1.
+Once you pay the cost, you can either climb one or two steps.
 
 dp[i] = min cost to climb to i
 cost >= 0
