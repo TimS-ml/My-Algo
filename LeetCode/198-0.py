@@ -44,6 +44,7 @@ class Solution:
         dp[1] = nums[0]
 
         for i in range(2, len(nums) + 1):
+            print(dp, dp[i-2] + nums[i-1], dp[i-1])
             dp[i] = max(dp[i-2] + nums[i-1], dp[i-1])
 
         return dp[-1]
@@ -82,3 +83,7 @@ class Solution:
             return ans
 
         return max(helper(len(nums)-1), helper(len(nums)))
+
+
+nums = [2, 1, 1, 2]
+print(Solution().rob_mod(nums))
