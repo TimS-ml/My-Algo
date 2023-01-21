@@ -42,16 +42,6 @@ class Solution:
                         visited[start + l] = 1
         return False
 
-    # dp
-    def wordBreak_3(self, s: str, wordDict: List[str]) -> bool:
-        dp = [False] * len(s)
-        for i in range(len(s)):
-            for w in wordDict:
-                j = i - len(w)
-                if w == s[j + 1:i + 1] and (dp[j] or j == -1):
-                    dp[i] = True
-        return dp[-1]
-
 
 # False
 s = "catsandog"
