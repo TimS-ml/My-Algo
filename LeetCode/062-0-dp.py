@@ -47,11 +47,21 @@ class Solution:
         dp = [1] * n
         for i in range(1, m):
             for j in range(1, n):
-                # notice that this repeat m-1 times for same j
+                # notice that this repeats m-1 times for same j
                 dp[j] = dp[j] + dp[j - 1]
         # [1, 3, 6, 10, 15, 21, 28]
         return dp[-1]
 
+    # rolling from another direction
+    def uniquePaths_4(self, m: int, n: int) -> int:
+        row = [1] * n
+
+        for i in range(m - 1):
+            newRow = [1] * n
+            for j in range(n - 2, -1, -1):
+                newRow[j] = newRow[j + 1] + row[j]
+            row = newRow
+        return row[0]
 
 m, n = 3, 7  # 28
 print(Solution().uniquePaths(m, n))
