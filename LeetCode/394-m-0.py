@@ -3,9 +3,15 @@
 - Time complexity: O()
 - Space complexity: O()
 
-30[a2[c9d]] is not valid
-case: 30[a2[cd]], 30[2[cd]], 30[a2[cd]]a
-stak = [30, a, 2, cd] -> [30, acdcd]
+30[a2[c9d]], 30[2[cd]], 30[a2[cd]]a is not valid
+
+case: 30[a2[cd]]
+             |
+stak = ['', 30, a, 2, cd]
+
+case: 30[a2[cd]]
+              |
+stak = [30, acdcd]
 
 collect all the digs before [
 collect all the chars after [
@@ -21,13 +27,12 @@ class Solution:
         # stack = []
 
         # dig = 0
-        # repeatStr = ''
-        # ans = ''
+        # currStr = ''
         # for c in list(s):
         #     if c.isdigit():
         #         dig = dig * 10 + int(c)
         #     elif c.isalpha():
-        #         repeatStr += c
+        #         currStr += c
         #     elif c == '[':
         #         stack.append(dig)
         #         dig = 0
@@ -36,18 +41,27 @@ class Solution:
         #         stack[-1] += inner
 
         stack = []
-
         dig = 0
-        repeatStr = ''
-        ans = ''
-        for c in list(s):
+        currStr = ''
+        for c in s:
+            print(stack)
             if c.isdigit():
                 dig = dig * 10 + int(c)
             elif c.isalpha():
-                repeatStr += c
+                currStr += c
             elif c == '[':
+                stack.append(currStr)
                 stack.append(dig)
                 dig = 0
+                currStr = ''
             elif c == ']':
-                inner = stack.pop() * stack.pop()
-                stack[-1] += inner
+                # stack append dig last, so pop it first
+                num = stack.pop()
+                prevStr = stack.pop()
+                currStr = prevStr + num*currStr
+        return currStr
+
+
+s = '3[a2[cd]]'
+print(Solution().decodeString(s))
+
