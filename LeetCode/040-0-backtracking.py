@@ -3,16 +3,14 @@
 - Time complexity: O(2^N * N)
 - Space complexity: O(N)
 
-    [1] a simple base case(s) for recursion, not a terminating senario
-    - append
-    [2] a set of rules for backtrack ()
-    - Terminate scenario: sum(curr) == k
-    - Backtrack senario: sum(curr) < k
-    [3] loop over remaining pieces, need a pointer to track the position
-
-for sol 3:
-if c = [1, 1, 1, 3], target = 3
-the subset [1, 1, 1] comes from i == start
+what 'skip dupl' do:
+if c = [1, 1, 1, 1, 3], target = 5
+backtrack idx=0
+for i in range(idx, len)
+- find c0, c1, c4
+    - idx=1, t=4
+    - skip start with c2 to c3
+- skip start with c1 to c3
 '''
 
 from typing import List

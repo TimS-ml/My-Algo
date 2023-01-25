@@ -27,7 +27,7 @@ class Solution:
             subL = dfs(node.left)
             subR = dfs(node.right)
 
-            # post order
+            # post order, Serialization
             subAll = subL + ',' + subR + ',' + str(node.val)
 
             freq = dic.get(subAll, 0)
