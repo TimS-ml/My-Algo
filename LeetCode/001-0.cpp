@@ -20,10 +20,10 @@ public:
 };
 
 int main() {
-  Solution s;
+  Solution sol;
   std::vector<int> v1{2, 7, 11, 15};
-  // cout << s.twoSum(v1, 9) << endl;
-  vector<int> result = s.twoSum(v1, 9);
+  // cout << sol.twoSum(v1, 9) << endl;
+  vector<int> result = sol.twoSum(v1, 9);
   for (int i : result) {
     cout << i << endl;
   }
