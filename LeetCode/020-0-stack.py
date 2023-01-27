@@ -39,5 +39,5 @@ class Solution:
 
 # s = "{[]}"
 # s = "([)]"
-s = "(((())))"
+s = "(([()]))"
 print(Solution().isValid(s))
