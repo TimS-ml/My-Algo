@@ -8,16 +8,13 @@ using namespace std;
 
 class Solution {
 public:
-  // Constant to make elements non-negative.
-  // note that static and constexpr are completely independent of each other.
-  // static defines the object's lifetime during execution; constexpr specifies
-  // that the object should be available during compilation. Compilation and
-  // execution are disjoint and discontiguous, both in time and space. So once
-  // the program is compiled, constexpr is no longer relevant.
+  // https://stackoverflow.com/questions/45987571/difference-between-constexpr-and-static-constexpr-global-variable
   static constexpr int K = 1000;
 
   bool uniqueOccurrences(vector<int> &arr) {
-    // integers in the array will always be in the range [-1000, 1000]. This range is of length 2000
+    // !!! using array instead of hash set to count occurences !!!
+    // integers in the array will always be in the range [-1000, 1000]. This
+    // range is of length 2000
     vector<int> freq(2 * K + 1);
 
     // Store the frequency of elements in the unordered map.
@@ -39,29 +36,61 @@ public:
     // unique.
     return true;
   }
-  bool uniqueOccurrences_2(vector<int>& arr) {
-      // Store the frequency of elements in the unordered map.
-      unordered_map<int, int> freq;
-      for (int num : arr) {
-          freq[num]++;
-      }
-      
-      // Store the frequency count of elements in the unordered set.
-      unordered_set<int> freqSet;
-      for (auto [key, value] : freq) {
-          freqSet.insert(value);
-      }
-      
-      // If the set size is equal to the map size, 
-      // It implies frequency counts are unique.
-      return freqSet.size() == freq.size();
+
+  // We can also note that the array length is limited to 1000, so no element
+  // will repeat more than 1000 times. Therefore we can use another array to do
+  // the counting sort over the occurrences.
+  bool uniqueOccurrences_b(vector<int> &arr) {
+    short m[2001] = {}, s[1001] = {};
+    for (auto n : arr)
+      ++m[n + 1000];
+    for (auto i = 0; i < 2001; ++i)
+      if (m[i] && ++s[m[i]] > 1)
+        return false;
+    return true;
+  }
+
+  bool uniqueOccurrences_2(vector<int> &arr) {
+    // Store the frequency of elements in the unordered map.
+    unordered_map<int, int> freq;
+    for (int num : arr) {
+      freq[num]++;
+    }
+
+    // Store the frequency count of elements in the unordered set.
+    unordered_set<int> freqSet;
+    for (auto [key, value] : freq) {
+      freqSet.insert(value);
+    }
+
+    // If the set size is equal to the map size,
+    // It implies frequency counts are unique.
+    return freqSet.size() == freq.size();
+  }
+
+  // sol2's improve
+  // https://leetcode.com/problems/contains-duplicate-ii/solutions/61599/C++-unordered_map-and-unordered_set/
+  bool uniqueOccurrences_2b(vector<int> &arr) {
+    unordered_map<int, int> freq;
+    for (int num : arr) {
+      freq[num]++;
+    }
+
+    unordered_set<int> freqSet;
+    for (auto &p : freq)
+      // The insert of unordered_set returns a pair with the second element
+      // representing whether the element is actually inserted. to make the
+      // thing clear: auto it = freqSet.insert(p.second);
+      if (!freqSet.insert(p.second).second)
+        return false;
+    return true;
   }
 };
 
-int main() { 
+int main() {
   Solution sol;
   std::vector<int> v1{1, 1, 2, 3, 3, 3};
-  bool result = sol.uniqueOccurrences_2(v1);
+  bool result = sol.uniqueOccurrences_b(v1);
   cout << result << endl;
-  return 0; 
+  return 0;
 };
