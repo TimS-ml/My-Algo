@@ -1,21 +1,22 @@
-#include <vector>
-#include <unordered_map>
 #include <iostream>
-using std::unordered_map;
-using std::vector;
+#include <unordered_map>
+#include <vector>
+// using std::unordered_map;
+// using std::vector;
 using namespace std;
 
 class Solution {
 public:
   vector<int> twoSum(vector<int> &nums, int target) {
-    std::unordered_map<int, int> record;
-    for (int i = 0; i != nums.size(); ++i) {
-      auto found = record.find(nums[i]);
-      if (found != record.end())
-        return {found->second, i};
-      record.emplace(target - nums[i], i);
+    unordered_map<int, int> indices;
+    for (int i = 0; i < nums.size(); i++) {
+      // .end returns an iterator to the end
+      if (indices.find(target - nums[i]) != indices.end()) {
+        return {indices[target - nums[i]], i};
+      }
+      indices[nums[i]] = i;
     }
-    return {-1, -1};
+    return {};
   }
 };
 
