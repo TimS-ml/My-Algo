@@ -1,7 +1,12 @@
 '''
 # Code Explain:
-- Time complexity: O(2 ^ N)
+- Time complexity: O(N * 2 ^ N)
 - Space complexity: O(N)
+
+case:
+"(a)())()", l = 3, r = 4, you can delete ANY ')'
+"(a()" -> "a()" and "(a)"
+
 
 DFS is less efficient than BFS because DFS does not guarantee shortest path. We cannot stop after the first valid strings as in BFS.
 '''

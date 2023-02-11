@@ -4,6 +4,8 @@ https://leetcode.com/problems/remove-invalid-parentheses/
 
 # Thought Process
 Solution
+https://www.youtube.com/watch?v=2k_rS_u6EBk
+
 https://www.youtube.com/watch?v=NWAseBzZj-c
   Purning
   https://youtu.be/NWAseBzZj-c?t=429
