@@ -10,6 +10,7 @@ https://www.youtube.com/watch?v=NWAseBzZj-c
 
 BFS + DFS
 https://leetcode.com/problems/remove-invalid-parentheses/discuss/75038/Evolve-from-intuitive-solution-to-optimal-a-review-of-all-solutions
+There are three challenges. Remove minimum parenthesis, the result is valid and without duplicates.
 
 DFS
 https://leetcode.com/problems/remove-invalid-parentheses/discuss/75117/Python-DFS-Solution

@@ -3,7 +3,7 @@
 - Time complexity: O(2 ^ N)
 - Space complexity: O(N)
 
-It is less efficient than BFS because DFS does not guarantee shortest path. We cannot stop after the first valid strings as in BFS.
+DFS is less efficient than BFS because DFS does not guarantee shortest path. We cannot stop after the first valid strings as in BFS.
 '''
 
 from functools import lru_cache
