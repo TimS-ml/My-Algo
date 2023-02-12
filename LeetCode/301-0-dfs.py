@@ -3,25 +3,80 @@
 - Time complexity: O(N * 2 ^ N)
 - Space complexity: O(N)
 
+Break into 3 parts, l = '(', r = ')'
+# [1] Check whether a input str is valid
+- l == r
+- check if current r < l
+
+# [2] Compute min number of l and r to remove
 case:
 "(a)())()", l = 3, r = 4, you can delete ANY ')'
 "(a()" -> "a()" and "(a)"
+")()" -> must remove first r!
 
+# [3] Generate all the combo
 
-DFS is less efficient than BFS because DFS does not guarantee shortest path. We cannot stop after the first valid strings as in BFS.
 '''
 
 from functools import lru_cache
 
 class Solution:
+    def removeInvalidParentheses(self, s):
+        # init l, r needed to be removed
+        l, r = 0, 0
+        for c in s:
+            l += (c == '(')
+            if l == 0:
+                r += (c == ')')
+            else:
+                l -= (c == ')')
+        # print(l, r)
+
+        ans = []
+
+        def isValid(s):
+            cnt = 0
+            for c in s:
+                if c == '(':
+                    cnt += 1
+                elif c == ')':
+                    cnt -= 1
+                if cnt < 0:
+                    return False
+            return cnt == 0
+        
+        def dfs(subStr, idx, l, r):
+            if l == 0 and r == 0:
+                if isValid(subStr):
+                    ans.append(subStr)
+                return
+
+            for i in range(idx, len(subStr)):
+                if i != idx and subStr[i] == subStr[i-1]:
+                    continue
+
+                if subStr[i] in '()':
+                    if r > 0 and subStr[i] == ')':
+                        curr = subStr[:i] + subStr[i+1:]
+                        dfs(curr, i, l, r-1)
+                    elif l > 0 and subStr[i] == '(':
+                        curr = subStr[:i] + subStr[i+1:]
+                        dfs(curr, i, l-1, r)
+        
+        dfs(s, 0, l, r)
+        return ans
+
+    # terrible but valid solution:
     # Generate new strings by removing parenthesis,
     #   and calculate the total number of mismatched parentheses inside the string by function calc(s).
     # If the mismatched parentheses increased, then discard the string.
-    def removeInvalidParentheses(self, s):
+    # string slicing made this super slow
+    # also might recompute sub-problems
+    def removeInvalidParentheses_2(self, s):
         def dfs(s):
             # number of mismatched
-            mi = calc(s)
-            if mi == 0:
+            mismatch = calcMismatch(s)
+            if mismatch == 0:
                 return [s]
             ans = []
             for x in range(len(s)):
@@ -29,12 +84,12 @@ class Solution:
                     # remove (skip) s[x]
                     ns = s[:x] + s[x+1:]
                     # if remove s[x] does not increase mismatch
-                    if ns not in visited and calc(ns) < mi:
+                    if ns not in visited and calcMismatch(ns) < mismatch:
                         visited.add(ns)
                         ans.extend(dfs(ns))
             return ans
 
-        def calc(s):
+        def calcMismatch(s):
             a = b = 0
             for c in s:
                 a += {'(' : 1, ')' : -1}.get(c, 0)
@@ -45,10 +100,13 @@ class Solution:
         visited = set([s])
         return dfs(s)
 
-    def removeInvalidParentheses_2(self, s):
-        # Generate all valid parentheses start from string s,
-        #   we can memoize them to avoid re-compute sub-problem again.
-        #   It's the same idea with 140. Word Break II.
+    # terrible but valid solution:
+    # GENERATE all valid parentheses start from string s,
+    #   we can memoize them to avoid re-compute sub-problem again.
+    # It's the same idea with 140. Word Break II.
+    # Will generate all the possible combos at any length
+    # Need to filter out the correct length substr then return 
+    def removeInvalidParentheses_3(self, s):
         @lru_cache(None)
         def dfs(i, nOpen):
             # all valid parentheses start from string s
@@ -58,7 +116,11 @@ class Solution:
             if nOpen < 0:
                 return ans  # Invalid, return empty set
             if i == len(s):
-                if nOpen == 0: ans.add("")  # Valid: (all paired)
+                # Valid: (all paired), return empty string
+                #   then perform string generation
+                # if invalid, then return None
+                if nOpen == 0:
+                    ans.add("")
                 return ans
 
             # Case 1: Skip s[i] -> remove???
@@ -82,3 +144,7 @@ class Solution:
         maxLen = max(map(len, validParentheses))
         return filter(lambda x: len(x) == maxLen, validParentheses)
 
+
+
+s = ")((()"
+print(Solution().removeInvalidParentheses(s))
