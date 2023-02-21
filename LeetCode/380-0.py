@@ -25,6 +25,8 @@ class RandomizedSet():
         """
         if val in self.dict:
             return False
+
+        # aims to locate the idx of this value in list
         self.dict[val] = len(self.list)
         self.list.append(val)
         return True
@@ -36,12 +38,15 @@ class RandomizedSet():
         """
         if val in self.dict:
             # move the last element to the place idx of the element to delete
-            last_element, idx = self.list[-1], self.dict[val]
-            self.list[idx], self.dict[last_element] = last_element, idx
+            last_element = self.list[-1]
+            val_idx_to_del = self.dict[val]
+            self.list[val_idx_to_del], self.dict[last_element] = last_element, val_idx_to_del
+
             # delete the last element
             self.list.pop()
-            del self.dict[val]
+            del self.dict[val]  # or self.dict.pop(val)
             return True
+
         return False
 
 
