@@ -3,7 +3,7 @@
 - Time complexity: O(N^2)
 - Space complexity: O(N)
 
-adjacency matrix
+adjacency matrix already give you
 '''
 
 import collections
@@ -20,9 +20,9 @@ class Solution(object):
 
         def dfs(node, color):
             colors[node] = color
-            for nei, adj in enumerate(graph[node]):
-                if adj and nei not in colors:
-                    dfs(nei, color)
+            for n, adj in enumerate(graph[node]):
+                if adj and n not in colors:
+                    dfs(n, color)
 
         for node in range(N):
             if node not in colors:
