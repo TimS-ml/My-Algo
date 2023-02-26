@@ -21,7 +21,7 @@ case:
 from functools import lru_cache
 
 class Solution:
-    def removeInvalidParentheses(self, s: str):
+    def removeInvalidParentheses(self, s: str) -> List[str]:
         # init l, r needed to be removed
         # this l is more like 'balance'
         # l, r = 0, 0
@@ -38,7 +38,7 @@ class Solution:
                 l += 1
             
             elif c == ')':
-                if l == 0:  # '())' or ')('
+                if l == 0:
                     r += 1
                 else:
                     l -= 1
@@ -56,15 +56,15 @@ class Solution:
         #     return l == 0
 
         def isValid(s):
-            l = 0
+            cnt = 0
             for c in s:
                 if c == '(':
-                    l += 1
+                    cnt += 1
                 elif c == ')':
-                    l -= 1
-                if l < 0:
+                    cnt -= 1
+                if cnt < 0:
                     return False
-            return l == 0
+            return cnt == 0
         
         def dfs(subStr, idx, l, r):
             if l == 0 and r == 0:

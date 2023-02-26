@@ -26,3 +26,29 @@ from typing import List
 
 class Solution:
     def removeInvalidParentheses(self, s: str) -> List[str]:
+        def isValid(idx):
+            l = r = 0
+            for _ in range(idx):
+                if s[idx] == '(':
+                    l += 1
+
+                elif s[idx] == ')': 
+                    r += 1
+            return l - r
+
+        def helper(idx, l, r):
+            balance = isValid(idx) > 0
+            if balance > 0:
+                if s[idx] == '(':
+                    helper(idx + 1, l, r)
+                    helper(idx + 1, l - 1, r)
+    
+            elif balance < 0:
+                if s[idx] == ')': 
+                    helper(idx + 1, l, r)
+                    helper(idx + 1, l - 1, r)
+        
+        visited = set()
+        ans = []
+    
+        return ans

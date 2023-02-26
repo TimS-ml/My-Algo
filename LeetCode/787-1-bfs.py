@@ -21,7 +21,17 @@ class Solution:
         visited = {}
         pq = [(0, 0, src)]  # cost, stops, node
         while pq:
+            # we MUST use heap, and put cost at first
+            # min heap, pop smallest cost
+            # this will make sure when we first arrive dst, it's the smallest cost
+            # case:
+            #   n = 4
+            #   flights = [[0,1,100],[1,2,100],[2,0,100],[1,3,100],[2,3,200]]
+            #   src, dst, k = 0, 3, 9
+            # at 2nd move, $100 1->2 will move first, but $100 1->3 will arrive first
             cost, stops, node = heapq.heappop(pq)
+            print(cost, stops, node, pq)
+
             if node == dst and stops - 1 <= k:
                 return cost
 
@@ -52,3 +62,20 @@ class Solution:
 
         return costs[dst] if costs[dst] != float("inf") else -1
 
+
+
+
+# n = 4
+# flights = [[0,1,100],[1,2,100],[2,0,100],[1,3,600],[2,3,200]]
+# # src, dst, k = 0, 3, 1
+# src, dst, k = 0, 3, 9
+
+n = 4
+flights = [[0,1,100],[1,2,100],[2,0,100],[1,3,100],[2,3,200]]
+src, dst, k = 0, 3, 9
+
+# n = 3
+# flights = [[0,1,100],[1,2,100],[0,2,500]]
+# src, dst, k = 0, 2, 1
+
+print(Solution().findCheapestPrice(n, flights, src, dst, k))

@@ -5,6 +5,9 @@
 
 '''
 
+import collections
+
+
 class DSU:
     def __init__(self, N):
         self.p = range(N)
@@ -30,7 +33,7 @@ class Solution(object):
         dsu = DSU(len(graph))
 
         for j, row in enumerate(graph):
-            for i in xrange(j):
+            for i in range(j):
                 if row[i]:
                     dsu.union(i, j)
 
