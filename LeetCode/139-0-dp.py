@@ -24,7 +24,6 @@ class Solution:
                     break
         return dp[-1]
 
-    # a better way of writting
     def wordBreak_2(self, s: str, wordDict: List[str]) -> bool:
         word_set = set(wordDict)
         dp = [False] * (len(s) + 1)

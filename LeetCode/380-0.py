@@ -6,6 +6,8 @@
 Starting from the Insert, we immediately have two good candidates with O(1):
 - Hash (has problem with getRandom)
 - Array List (has problem with delete)
+
+[python - Set.pop() isn't random? - Stack Overflow](https://stackoverflow.com/questions/21017188/set-pop-isnt-random)
 '''
 
 from random import choice

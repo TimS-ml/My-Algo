@@ -1,4 +1,12 @@
-# https://leetcode-cn.com/problems/contains-duplicate/
+'''
+# Code Explain:
+- Time complexity: O(N)
+- Space complexity: O(1)
+
+simply len(nums) != len(set(nums))
+hash set solution costs O(N) space complexity!!!
+
+'''
 
 
 class Solution:
@@ -14,6 +22,16 @@ class Solution:
         for i in range(len(nums) - 1, 0, -1):
             if nums.index(nums[i]) != i:
                 return True
+        return False
+
+    # sort is slow
+    def containsDuplicate_2(self, nums) -> bool:
+        nums.sort()
+        i = 1
+        while i < len(nums):
+            if nums[i-1] ^ nums[i] == 0: 
+                return True 
+            i += 1
         return False
 
 
