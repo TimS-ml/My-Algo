@@ -15,6 +15,7 @@ for s in li:
 '''
 
 import collections
+from typing import List
 
 
 class Solution:
@@ -28,14 +29,11 @@ class Solution:
             ans[tuple(count)].append(s)
         return ans.values()
 
+    # use sort
     def groupAnagrams_1(self, li):
-        '''
-        this is not good, you can do more optimization if char freq = 1
-        for example: not using sort
-        '''
         ans = {}
         for s in li:
-            tok = ''.join(sorted(s))
+            tok = ''.join(sorted(s))  # use sorting
 
             if tok in ans:
                 # ans[tok] = ans[tok].append(s)  # x.append = None
@@ -46,6 +44,7 @@ class Solution:
             print(s, tok, ans)
         return list(ans.values())
 
+    # use sort
     def groupAnagrams_2(self, li):
         def get_freq(s):
             dic = {}
@@ -55,7 +54,7 @@ class Solution:
 
         def gen_tok(dic):
             tok = ''
-            for k in sorted(dic.keys()):
+            for k in sorted(dic.keys()):  # use sorting
                 v = dic[k]
                 tok = tok + str(k) + str(v)
             return tok

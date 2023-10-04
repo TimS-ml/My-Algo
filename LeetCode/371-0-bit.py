@@ -1,10 +1,11 @@
 '''
 # Code Explain:
-- Time complexity: O()
-- Space complexity: O()
+- Time complexity: O(1)
+- Space complexity: O(1)
 
-Or you can...
-return sum([a, b])
+# a is int, convert decimal to binary
+'{0:b}'.format(a)
+bin(a)
 
 '''
 
