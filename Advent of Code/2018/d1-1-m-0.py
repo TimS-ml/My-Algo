@@ -5,17 +5,9 @@ ans[2] = ans[1] + n[2] = 0 + n[0] + n[1] + n[2]
 ...
 '''
 
-import sys
+from utils import grab_input
 
-
-numbers = []
-
-for line in sys.stdin:
-    try:
-        numbers.append(int(line.strip()))
-    except ValueError:
-        continue
-
+numbers = grab_input()
 
 # [1] using numpy
 # import numpy as np
@@ -36,5 +28,4 @@ for line in sys.stdin:
 import itertools
 ans = list(itertools.accumulate(numbers))
 
-
-print(ans)
+print(ans[-1])
