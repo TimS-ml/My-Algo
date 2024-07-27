@@ -4,7 +4,7 @@ keep in mind of the 'reverse'
 
 '''
 
-from typing import Optional
+from typing import Optional, List, Callable
 
 
 # Definition for singly-linked list.
@@ -66,3 +66,61 @@ class Solution:
             l2 = (l2.next if l2 else None)
 
         return self.reverseList(dummy.next)
+
+
+def list_to_linkedlist(arr: List[int]) -> Optional[ListNode]:
+    dummy = ListNode(0)
+    current = dummy
+    for val in arr:
+        current.next = ListNode(val)
+        current = current.next
+    return dummy.next
+
+def linkedlist_to_list(head: Optional[ListNode]) -> List[int]:
+    result = []
+    while head:
+        result.append(head.val)
+        head = head.next
+    return result
+
+current_solution: Callable[[Optional[ListNode], Optional[ListNode]], Optional[ListNode]] = None
+
+def run_tests(input_file: str):
+    global current_solution
+    sol = Solution()
+    
+    # Change this to the function you want to test
+    current_solution = sol.addTwoNumbers
+
+    try:
+        with open(input_file, 'r') as file:
+            test_case = 1
+            while True:
+                l1 = list(map(int, file.readline().strip().split()))
+                if not l1:  # End of file
+                    break
+                l2 = list(map(int, file.readline().strip().split()))
+                expected = list(map(int, file.readline().strip().split()))
+                
+                l1_node = list_to_linkedlist(l1)
+                l2_node = list_to_linkedlist(l2)
+                
+                result = current_solution(l1_node, l2_node)
+                result_list = linkedlist_to_list(result)
+                
+                print(f"Test Case {test_case}:")
+                print(f"Input: l1 = {l1}, l2 = {l2}")
+                print(f"Output: {result_list}")
+                print(f"Expected: {expected}")
+                print(f"Result: {'Correct' if result_list == expected else 'Wrong'}")
+                print()
+                
+                test_case += 1
+
+    except FileNotFoundError:
+        print(f"Error: File '{input_file}' not found.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+if __name__ == "__main__":
+    run_tests("445.txt")

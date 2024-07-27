@@ -13,26 +13,33 @@
 */
 
 #include <iostream>
-#include <numeric>
 #include <unordered_map>
 #include <vector>
+#include <fstream>
+#include <sstream>
+#include <functional>
+#include <numeric>
 // using std::unordered_map;
 // using std::vector;
+// using std::accumulate;
 using namespace std;
 
 class Solution {
 public:
   int candy(vector<int>& ratings) {
     int size = ratings.size(); 
-    if (size < 2) return size;  // corner case, one kid 1 candy
-    vector<int> num(size, 1);  // init all to 1
+    if (size < 2) return size;  // corner case, one kid
+
+    vector<int> num(size, 1);  // init 1 candy for each kid
     
+    // left to right
     for (int i = 1; i < size; i++) {
       if (ratings[i] > ratings[i - 1]) {
         num[i] = num[i - 1] + 1;
       }
     }
 
+    // right to left
     for (int i = size - 1; i > 0; i--) {
       if (ratings[i - 1] > ratings[i]) {
         num[i - 1] = max(num[i - 1], num[i] + 1);
@@ -43,17 +50,45 @@ public:
   }
 };
 
+using SolutionFunc = function<int(vector<int>&)>;
+
+SolutionFunc currentSolution;
+
 int main() {
-  Solution sol;
+    Solution sol;
+    currentSolution = bind(&Solution::candy, &sol, placeholders::_1);
 
-  // vector<int> ratings = {1, 0, 2};
-  vector<int> ratings = {1, 2, 2};
-  int result = sol.candy(ratings);
-  cout << result << endl;
+    ifstream inputFile("135.txt");
+    
+    if (!inputFile.is_open()) {
+        cout << "Error opening file" << endl;
+        return 1;
+    }
 
-  // vector<int> result = sol.xxx;
-  // for (int i : result) {
-  //   cout << i << endl;
-  // }
-  return 0;
-};
+    string line;
+    int testCase = 1;
+    
+    while (getline(inputFile, line)) {
+        istringstream iss1(line);
+        vector<int> in1;
+        int num;
+        
+        while (iss1 >> num) {
+            in1.push_back(num);
+        }
+        
+        getline(inputFile, line);
+        istringstream iss3(line);
+        int expectedAnswer;
+        iss3 >> expectedAnswer;
+        
+        int result = currentSolution(in1);
+        cout << "Test Case " << testCase << ": " << result 
+             << ", " << (result == expectedAnswer ? "Correct" : "Wrong") << endl;
+        
+        testCase++;
+    }
+
+    inputFile.close();
+    return 0;
+}
