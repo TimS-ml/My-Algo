@@ -6,6 +6,7 @@ For Python, checkout ./455-0.py
 
 # LinkedList
 For CPP, checkout ./445-a.cpp
+For C, checkout ./445-x.c (auto generated)
 For Python, checkout ./445-0.py
 
 
