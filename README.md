@@ -30,6 +30,14 @@ d88' d88'  88b`?88P'?8b     `?88P'`88b  88b`?88P'`88b`?8888P'
 - [Codingame](https://www.codingame.com/training)
 
 
+# Leetcode
+Q.md:    question link with hints
+Q.txt:   test cases with expected output
+Q-0.py:  python solution
+Q-a.cpp: C++ solution
+Q-x.c:   C solution
+Q-m-x.x: mork solve
+
 
 # Other
 

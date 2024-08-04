@@ -1,7 +1,10 @@
 '''
+# Code Explain:
+- Time complexity: O()
+- Space complexity: O()
+
 using stack
 keep in mind of the 'reverse'
-
 '''
 
 from typing import Optional, List, Callable
