@@ -8,7 +8,8 @@
 */
 
 #include <iostream>
-#include <unordered_map>
+// #include <unordered_map>
+#include <algorithm>
 #include <vector>
 #include <fstream>
 #include <sstream>
@@ -23,44 +24,12 @@ public:
     // g: child, s: cookie
     sort(g.begin(), g.end());
     sort(s.begin(), s.end());
-
-    // int gidx = 0;
-    // int sidx = 0;
-    // while (gidx < g.size() && sidx < s.size()) {
-    //     if (g[gidx] <= s[sidx]) {
-    //         gidx++;
-    //     }
-    //     sidx++;
-    // }
-    // for (;gidx < g.size() && sidx < s.size();) {
-    //     if (g[gidx] <= s[sidx]) {
-    //         gidx++;
-    //     }
-    //     sidx++;
-    // }
-    
-    // loop option 1
-    int sidx = 0;
-    int gidx = 0;
-    for (; gidx < g.size(); ++gidx) {
-        while (g[gidx] > s[sidx] && sidx < s.size()) {
-            sidx++;
-        }
-        if (sidx == s.size()) {
-            break;
-        }
+    // int gidx = 0, sidx = 0;
+    size_t gidx = 0, sidx = 0;
+    while (gidx < g.size() && sidx < s.size()) {
+      if (g[gidx] <= s[sidx]) ++gidx;
+      ++sidx;
     }
-
-    // loop option 2
-    // int sidx = 0;
-    // int gidx = 0;
-    // for (; sidx < s.size() && gidx < g.size(); ++sidx) {
-    //     if (g[gidx] <= s[sidx]) {
-    //         gidx++;
-    //     }
-    // }
-
-    // gidx is also the number of children who get content
     return gidx;
   }
 };

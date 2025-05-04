@@ -8,7 +8,8 @@
 */
 
 #include <iostream>
-#include <unordered_map>
+// #include <unordered_map>
+#include <algorithm>
 #include <vector>
 #include <fstream>
 #include <sstream>
@@ -24,7 +25,8 @@ public:
     sort(g.begin(), g.end());
     sort(s.begin(), s.end());
 
-    int i = 0, j = 0;
+    // int i = 0, j = 0;
+    size_t i = 0, j = 0;
     while (i < g.size() && j < s.size()) {
       // the lessest greed factor child can get the cookie
       if (g[i] <= s[j]) {
