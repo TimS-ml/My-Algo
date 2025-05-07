@@ -11,34 +11,17 @@ from typing import List, Callable
 
 class Solution:
     def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
-        intervals.sort()
-        ans = 0
+        intervals.sort()  # sort by start only
+        num_removeal = 0
         prev_end = intervals[0][1]
-        for start, end in intervals[1:]:
-            # non-overlapping
-            if start >= prev_end:
-                prev_end = end
-            # [1] the best rule to achieve minimum del is not (non-overlapping)
-            #     which is min End
-            # [2] we don't need to modify the array, only return the count
+        for i in range(1, len(intervals)):
+            if intervals[i][0] >= prev_end:
+                prev_end = intervals[i][1]
             else:
-                ans += 1
-                prev_end = min(end, prev_end)  # if only sort by start
-        return ans
+                num_removeal += 1
+                prev_end = min(prev_end, intervals[i][1])  # if sort by start, you have to add this
 
-    # this is more "greedy"
-    def eraseOverlapIntervals_2(self, intervals: List[List[int]]) -> int:
-        intervals.sort(key=lambda x: x[1])  # Sort by end time
-        ans = 0
-        prev_end = intervals[0][1]
-        for start, end in intervals[1:]:
-            # non-overlapping
-            if start >= prev_end:
-                prev_end = end
-            else:
-                ans += 1
-        return ans
-
+        return num_removeal
 
 current_solution: Callable[[List[List[int]]], int] = None
 

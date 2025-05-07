@@ -13,7 +13,7 @@
 */
 
 #include <iostream>
-#include <unordered_map>
+// #include <unordered_map>
 #include <vector>
 #include <fstream>
 #include <sstream>
@@ -35,6 +35,7 @@ public:
     // left to right
     for (int i = 1; i < size; i++) {
       if (ratings[i] > ratings[i - 1]) {
+        // NOTE: since we init all to 1, so there's no need for comparision
         num[i] = num[i - 1] + 1;
       }
     }
