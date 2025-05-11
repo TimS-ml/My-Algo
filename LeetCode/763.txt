@@ -1,0 +1,12 @@
+ababcbacadefegdehijhklij
+9,7,8
+abc
+1,1,1
+abcba
+5
+aabbc
+2,2,1
+eaaaabaaec
+9,1
+adcabd
+6
