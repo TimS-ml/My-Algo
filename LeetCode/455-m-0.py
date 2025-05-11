@@ -9,6 +9,7 @@ from typing import List, Callable
 
 
 class Solution:
+
     def findContentChildren(self, g, s) -> int:
         g.sort()  # children
         s.sort()  # cookies
@@ -25,10 +26,11 @@ class Solution:
 
 current_solution: Callable[[List[int], List[int]], int] = None
 
+
 def run_tests(input_file: str):
     global current_solution
     sol = Solution()
-    
+
     # Change this to the function you want to test
     current_solution = sol.findContentChildren
 
@@ -39,13 +41,15 @@ def run_tests(input_file: str):
                 in1 = list(map(int, file.readline().strip().split()))
                 in2 = list(map(int, file.readline().strip().split()))
                 ans = list(map(int, file.readline().strip().split()))
-                
+
                 if not in1 and not in2 and not ans:
                     break
-                
+
                 result = current_solution(in1, in2)
-                print(f"Test Case {test_case}: {result}, {'Correct' if result == ans[0] else 'Wrong'}")
-                
+                print(
+                    f"Test Case {test_case}: {result}, {'Correct' if result == ans[0] else 'Wrong'}"
+                )
+
                 test_case += 1
 
     except FileNotFoundError:
@@ -53,6 +57,6 @@ def run_tests(input_file: str):
     except Exception as e:
         print(f"An error occurred: {e}")
 
+
 if __name__ == "__main__":
     run_tests("455.txt")
-

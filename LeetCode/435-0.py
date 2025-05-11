@@ -10,6 +10,7 @@ from typing import List, Callable
 
 
 class Solution:
+
     def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
         intervals.sort()
         ans = 0
@@ -74,10 +75,11 @@ current_solution: Callable[[List[List[int]]], int] = None
 #     except Exception as e:
 #         print(f"An error occurred: {e}")
 
+
 def run_tests(input_file: str):
     global current_solution
     sol = Solution()
-    
+
     # Change this to the function you want to test
     current_solution = sol.eraseOverlapIntervals
 
@@ -89,25 +91,28 @@ def run_tests(input_file: str):
                 n = int(file.readline().strip())
                 if n == 0:  # End of file
                     break
-                
+
                 # Read the intervals
                 intervals = []
                 for _ in range(n):
                     interval = list(map(int, file.readline().strip().split()))
                     intervals.append(interval)
-                
+
                 # Read the expected answer
                 expected = int(file.readline().strip())
-                
+
                 result = current_solution(intervals)
-                print(f"Test Case {test_case}: {result}, {'Correct' if result == expected else 'Wrong'}")
-                
+                print(
+                    f"Test Case {test_case}: {result}, {'Correct' if result == expected else 'Wrong'}"
+                )
+
                 test_case += 1
 
     except FileNotFoundError:
         print(f"Error: File '{input_file}' not found.")
     except Exception as e:
         print(f"An error occurred: {e}")
+
 
 if __name__ == "__main__":
     run_tests("435.txt")

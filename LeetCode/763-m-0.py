@@ -19,13 +19,14 @@ from typing import List, Callable
 
 
 class Solution:
+
     def partitionLabels(self, s: str) -> List[int]:
         ans = []
         last_appear = {}
-        
+
         for i in range(len(s)):
             last_appear[s[i]] = max(i, last_appear.get(s[i], 0))
-        
+
         start, end = 0, 0
         for i in range(len(s)):
             end = max(end, last_appear[s[i]])
@@ -38,29 +39,33 @@ class Solution:
 
 current_solution: Callable[[str], List[int]] = None
 
+
 def run_tests(input_file: str):
     global current_solution
     sol = Solution()
 
-#Change this to the function you want to test
+    #Change this to the function you want to test
     current_solution = sol.partitionLabels
 
     try:
         with open(input_file, 'r') as file:
             test_case = 1
             while True:
-#Read the input string
+                #Read the input string
                 s = file.readline().strip()
                 if not s:  # End of file
                     break
 
+
 #Read the expected answer
                 expected_str = file.readline().strip()
                 expected = list(map(int, expected_str.split(',')))
-                
+
                 result = current_solution(s)
-                print(f"Test Case {test_case}: {result}, {'Correct' if result == expected else 'Wrong'}")
-                
+                print(
+                    f"Test Case {test_case}: {result}, {'Correct' if result == expected else 'Wrong'}"
+                )
+
                 test_case += 1
 
     except FileNotFoundError:
