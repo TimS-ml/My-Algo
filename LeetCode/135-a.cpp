@@ -14,11 +14,11 @@
 
 #include <iostream>
 // #include <unordered_map>
-#include <vector>
 #include <fstream>
-#include <sstream>
 #include <functional>
 #include <numeric>
+#include <sstream>
+#include <vector>
 // using std::unordered_map;
 // using std::vector;
 // using std::accumulate;
@@ -26,12 +26,13 @@ using namespace std;
 
 class Solution {
 public:
-  int candy(vector<int>& ratings) {
-    int size = ratings.size(); 
-    if (size < 2) return size;  // corner case, one kid
+  int candy(vector<int> &ratings) {
+    int size = ratings.size();
+    if (size < 2)
+      return size; // corner case, one kid
 
-    vector<int> num(size, 1);  // init 1 candy for each kid
-    
+    vector<int> num(size, 1); // init 1 candy for each kid
+
     // left to right
     for (int i = 1; i < size; i++) {
       if (ratings[i] > ratings[i - 1]) {
@@ -51,45 +52,45 @@ public:
   }
 };
 
-using SolutionFunc = function<int(vector<int>&)>;
+using SolutionFunc = function<int(vector<int> &)>;
 
 SolutionFunc currentSolution;
 
 int main() {
-    Solution sol;
-    currentSolution = bind(&Solution::candy, &sol, placeholders::_1);
+  Solution sol;
+  currentSolution = bind(&Solution::candy, &sol, placeholders::_1);
 
-    ifstream inputFile("135.txt");
-    
-    if (!inputFile.is_open()) {
-        cout << "Error opening file" << endl;
-        return 1;
+  ifstream inputFile("135.txt");
+
+  if (!inputFile.is_open()) {
+    cout << "Error opening file" << endl;
+    return 1;
+  }
+
+  string line;
+  int testCase = 1;
+
+  while (getline(inputFile, line)) {
+    istringstream iss1(line);
+    vector<int> in1;
+    int num;
+
+    while (iss1 >> num) {
+      in1.push_back(num);
     }
 
-    string line;
-    int testCase = 1;
-    
-    while (getline(inputFile, line)) {
-        istringstream iss1(line);
-        vector<int> in1;
-        int num;
-        
-        while (iss1 >> num) {
-            in1.push_back(num);
-        }
-        
-        getline(inputFile, line);
-        istringstream iss3(line);
-        int expectedAnswer;
-        iss3 >> expectedAnswer;
-        
-        int result = currentSolution(in1);
-        cout << "Test Case " << testCase << ": " << result 
-             << ", " << (result == expectedAnswer ? "Correct" : "Wrong") << endl;
-        
-        testCase++;
-    }
+    getline(inputFile, line);
+    istringstream iss3(line);
+    int expectedAnswer;
+    iss3 >> expectedAnswer;
 
-    inputFile.close();
-    return 0;
+    int result = currentSolution(in1);
+    cout << "Test Case " << testCase << ": " << result << ", "
+         << (result == expectedAnswer ? "Correct" : "Wrong") << endl;
+
+    testCase++;
+  }
+
+  inputFile.close();
+  return 0;
 }

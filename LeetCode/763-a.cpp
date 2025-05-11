@@ -18,15 +18,16 @@ class Solution {
 public:
   vector<int> partitionLabels(string s) {
     vector<int> ans;
-    unordered_map<char, int> last_appear;
+    unordered_map<char, size_t> last_appear;
     for (size_t i = 0; i < s.length(); i++) {
       last_appear[s[i]] = i;
     }
-    int start = 0, end = 0;
+    size_t start = 0, end = 0;
     for (size_t i = 0; i < s.length(); i++) {
       end = max(end, last_appear[s[i]]);
       if (i == end) {
         ans.push_back(end - start + 1);
+        // ans.push_back(static_cast<int>(end - start + 1));  // convert back to int
         start = end + 1;
       }
     }
