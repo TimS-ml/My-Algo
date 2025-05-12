@@ -34,6 +34,47 @@ class Solution:
                     max = maxprofit
         return max
 
+    def maxProfit_2(self, prices):
+        return Solution().calculate_2(prices, 0)
+
+    def calculate_2(self, prices, s):
+        if s >= len(prices):
+            return 0
+        max = 0
+        # slow pointer
+        for start in range(s, len(prices)):  # day: s~end
+            maxprofit = 0
+            # fast pointer
+            for i in range(start + 1, len(prices)):
+                # update profit if day i prices is higher than day start
+                if prices[start] < prices[i]:
+                    # profit = (max profit from day i+1~end) + (buy at day i)
+                    profit = Solution().calculate_2(prices, i + 1) + \
+                        prices[i] - prices[start]
+                    if profit > maxprofit:  # update max profit in range
+                        maxprofit = profit
+                if maxprofit > max:  # update global max profit
+                    max = maxprofit
+        return max
+
+    def maxProfit_3(self, prices):
+        ans = 0
+        valley = prices[0]
+        peak = prices[0]
+
+        for i in range(len(prices) - 1):
+            if prices[i] >= prices[i + 1]:
+                valley = prices[i + 1]
+            else:  # prices[i] < prices[i + 1]
+                # small, large, small
+                if i < len(prices) - 2 and prices[i + 1] >= prices[i + 2]:
+                    peak = prices[i + 1]
+                    ans += (peak - valley)
+                if i >= len(prices) - 2:
+                    peak = prices[i + 1]
+                    ans += (peak - valley)
+        return ans
+
 
 # 最终价格应该是12
 prices = [7, 1, 5, 3, 6, 4, 2, 1, 5, 5, 6, 4]
