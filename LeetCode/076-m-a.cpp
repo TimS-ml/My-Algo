@@ -60,6 +60,56 @@ public:
       }
       return min_sz > static_cast<int>(s.size()) ? "" : s.substr(min_l, min_sz);
     }
+    
+    // this is way faster: from 18ms to 3ms
+    std::string minWindow_2(std::string s, std::string t) {
+        if (s.empty() || t.empty()) return "";
+        
+        std::vector<int> target_count(128, 0);
+        std::vector<bool> is_target(128, false);
+        
+        int required_chars = 0;
+        
+        for (char c : t) {
+            if (!is_target[c]) {
+                is_target[c] = true;
+                required_chars++;
+            }
+            target_count[c]++;
+        }
+        
+        std::vector<int> window_count(128, 0);
+        int formed = 0;
+        int l = 0;
+        int min_l = 0;
+        int min_sz = INT_MAX;
+        
+        for (int r = 0; r < s.size(); ++r) {
+            char cr = s[r];
+            window_count[cr]++;
+            
+            if (is_target[cr] && window_count[cr] == target_count[cr]) {
+                formed++;
+            }
+            
+            while (l <= r && formed == required_chars) {
+                if (r - l + 1 < min_sz) {
+                    min_sz = r - l + 1;
+                    min_l = l;
+                }
+                
+                char cl = s[l];
+                window_count[cl]--;
+                
+                if (is_target[cl] && window_count[cl] < target_count[cl]) {
+                    formed--;
+                }
+                l++;
+            }
+        }
+        
+        return min_sz == INT_MAX ? "" : s.substr(min_l, min_sz);
+    }
 };
 
 using SolutionFunc = function<string(string, string)>;
